@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CreateUsernameView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
-    @State private var showCreatePasswordView = false
+    @State private var showSelectDateOfBirthView = false
 
     var body: some View {
         VStack(spacing: 12) {
@@ -45,14 +45,14 @@ struct CreateUsernameView: View {
         }
         .onReceive(viewModel.$usernameIsValid, perform: { usernameIsValid in
             if usernameIsValid {
-                self.showCreatePasswordView.toggle()
+                self.showSelectDateOfBirthView.toggle()
             }
         })
-        .navigationDestination(isPresented: $showCreatePasswordView, destination: {
-            CreatePasswordView()
+        .navigationDestination(isPresented: $showSelectDateOfBirthView, destination: {
+            SelectDateOfBirthView()
         })
         .onAppear {
-            showCreatePasswordView = false
+            showSelectDateOfBirthView = false
             viewModel.usernameIsValid = false
         }
     }

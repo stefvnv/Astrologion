@@ -23,24 +23,34 @@ class AuthService {
         }
     }
     
+    
     @MainActor
-    func createUser(email: String, password: String, username: String) async throws {
+    func createUser(email: String, password: String, username: String, birthYear: Int, birthMonth: Int, birthDay: Int, birthHour: Int, birthMinute: Int, latitude: Double, longitude: Double) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            
+
             let data: [String: Any] = [
                 "email": email,
                 "username": username,
-                "id": result.user.uid
+                "uid": result.user.uid,
+                "birthYear": birthYear,
+                "birthMonth": birthMonth,
+                "birthDay": birthDay,
+                "birthHour": birthHour,
+                "birthMinute": birthMinute,
+                "latitude": latitude,
+                "longitude": longitude
             ]
-            
+
             try await FirestoreConstants.UserCollection.document(result.user.uid).setData(data)
             self.user = try await UserService.fetchUser(withUid: result.user.uid)
         } catch {
             print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
         }
     }
+
+
     
     @MainActor
     func loadUserData() async throws {
@@ -59,5 +69,9 @@ class AuthService {
         self.userSession = nil
         self.user = nil
         try? Auth.auth().signOut()
+    }
+    
+    func deleteUser() async throws {
+        print("To be implemented")
     }
 }

@@ -4,12 +4,19 @@ import Firebase
 struct User: Identifiable, Codable {
     @DocumentID var uid: String?
     var username: String
-    let email: String
+    var email: String
     var profileImageUrl: String?
     var fullname: String?
     var bio: String?
     var stats: UserStats?
     var isFollowed: Bool? = false
+    var birthDay: Int
+    var birthMonth: Int
+    var birthYear: Int
+    var birthHour: Int
+    var birthMinute: Int
+    var latitude: Double
+    var longitude: Double
     
     var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == id }
     var id: String { return uid ?? NSUUID().uuidString }
