@@ -17,6 +17,7 @@ struct User: Identifiable, Codable {
     var birthMinute: Int
     var latitude: Double
     var longitude: Double
+    var chartId: String?
     
     var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == id }
     var id: String { return uid ?? NSUUID().uuidString }

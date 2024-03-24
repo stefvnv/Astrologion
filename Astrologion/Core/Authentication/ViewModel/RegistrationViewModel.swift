@@ -17,7 +17,6 @@ class RegistrationViewModel: ObservableObject {
     
     @MainActor
     func createUser() async throws {
-        // Extracting date components
         let birthDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: birthDate)
         guard let birthYear = birthDateComponents.year,
               let birthMonth = birthDateComponents.month,

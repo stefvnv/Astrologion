@@ -30,4 +30,17 @@ public enum AngularHouse: String, CaseIterable {
             return 4
         }
     }
+    
+    var icon: String {
+        switch self {
+        case .ascendant:
+            return "↑"
+        case .descendant:
+            return "↓"
+        case .midheaven:
+            return "MC"
+        case .imumCoeli:
+            return "IC"
+        }
+    }
 }

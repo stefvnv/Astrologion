@@ -126,3 +126,19 @@ extension UserService {
         }
     }
 }
+
+
+extension UserService {
+
+    // Fetches the astrological chart for a given user by their UID
+    static func fetchUserChart(uid: String) async throws -> Chart? {
+        guard let user = try? await fetchUser(withUid: uid), let chartId = user.chartId else { return nil }
+        return try await ChartService.shared.fetchChart(for: chartId)
+    }
+
+    // Updates the astrological chart for a given user with new chart information
+    static func updateUserChart(uid: String, with chart: Chart) async throws {
+        guard let user = try? await fetchUser(withUid: uid), let chartId = user.chartId else { return }
+        try await ChartService.shared.updateChart(for: chartId, with: chart)
+    }
+}

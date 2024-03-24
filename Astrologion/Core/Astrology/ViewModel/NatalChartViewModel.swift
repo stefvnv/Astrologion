@@ -1,15 +1,31 @@
 import Foundation
+import Combine
 
-class NatalChartViewModel {
-    @Published var astrologicalService: AstrologyModel?
+class NatalChartViewModel:ObservableObject {
+    @Published var astrologyModel: AstrologyModel
+    @Published var aspects: [AstrologicalAspectData] = []
+    @Published var needsRedraw: Bool = false
     
+    private var cancellables = Set<AnyCancellable>()
+    
+    func triggerRedraw() {
+        needsRedraw = true
+    }
+
     
     ///
-    init(service: AstrologyModel?) {
-        self.astrologicalService = service
+    init(astrologyModel: AstrologyModel) {
+        self.astrologyModel = astrologyModel
+        
+        $astrologyModel
+            .sink { [weak self] updatedModel in
+                self?.aspects = updatedModel.calculateAspects()
+            }
+            .store(in: &cancellables)
     }
     
-    // NOT WORKING
+    
+    // TO DO NOT WORKING
     ///
     func handleTap(location: CGPoint, inViewBounds bounds: CGRect) {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
@@ -36,19 +52,19 @@ class NatalChartViewModel {
             if let tappedHouse = houseTapped(angle: angle) {
                 print("Tapped in house \(tappedHouse)")
             } else {
+                print("TO DO TRANSITS")
                 // New functionality to check for taps near transits
-                let tapAngle = calculateAngle(from: center, to: location)
-                if let transitTapped = isTapNearTransit(tapAngle: tapAngle, center: center, tapLocation: location) {
-                    print("Tapped on transit between \(transitTapped.planet1) and \(transitTapped.planet2) with aspect \(transitTapped.aspect)")
-                } else {
-                    print("Tapped in the house area but not on a specific house or transit")
-                }
+//                let tapAngle = calculateAngle(from: center, to: location)
+//                if let transitTapped = isTapNearTransit(tapAngle: tapAngle, center: center, tapLocation: location) {
+//                    print("Tapped on transit between \(transitTapped.planet1) and \(transitTapped.planet2) with aspect \(transitTapped.aspect)")
+//                } else {
+//                    print("Tapped in the house area but not on a specific house or transit")
+//                }
             }
         } else {
             print("Tapped outside of the house area")
         }
     }
-
 
 
     // TRANSITS
@@ -60,25 +76,24 @@ class NatalChartViewModel {
         return angle
     }
     
-    func isTapNearTransit(tapAngle: Double, center: CGPoint, tapLocation: CGPoint) -> AstrologicalAspectData? {
-        let aspects = calculateAspects()
-        let threshold = 5.0
-        
-        for aspectData in aspects {
-            let planet1Position = calculatePositionForPlanet(aspectData.planet1, at: aspectData.planet1.longitude(using: astrologicalService!), usingAscendant: ascendant(), in: CGRect(x: 0, y: 0, width: center.x * 2, height: center.y * 2))
-            let planet2Position = calculatePositionForPlanet(aspectData.planet2, at: aspectData.planet2.longitude(using: astrologicalService!), usingAscendant: ascendant(), in: CGRect(x: 0, y: 0, width: center.x * 2, height: center.y * 2))
-            
-            let aspectAngle = calculateAngle(from: planet1Position, to: planet2Position)
-            
-            if abs(tapAngle - aspectAngle) <= threshold || abs((tapAngle - 360) - aspectAngle) <= threshold || abs(tapAngle - (aspectAngle - 360)) <= threshold {
-                return aspectData
-            }
-        }
-        
-        return nil
-    }
+//    func isTapNearTransit(tapAngle: Double, center: CGPoint, tapLocation: CGPoint) -> AstrologicalAspectData? {
+//        let aspects = calculateAspects()
+//        let threshold = 5.0
+//        
+//        for aspectData in aspects {
+//            let planet1Position = calculatePositionForPlanet(aspectData.planet1, at: aspectData.planet1.longitude(using: astrologyModel!), usingAscendant: ascendant(), in: CGRect(x: 0, y: 0, width: center.x * 2, height: center.y * 2))
+//            let planet2Position = calculatePositionForPlanet(aspectData.planet2, at: aspectData.planet2.longitude(using: astrologyModel!), usingAscendant: ascendant(), in: CGRect(x: 0, y: 0, width: center.x * 2, height: center.y * 2))
+//            
+//            let aspectAngle = calculateAngle(from: planet1Position, to: planet2Position)
+//            
+//            if abs(tapAngle - aspectAngle) <= threshold || abs((tapAngle - 360) - aspectAngle) <= threshold || abs(tapAngle - (aspectAngle - 360)) <= threshold {
+//                return aspectData
+//            }
+//        }
+//        
+//        return nil
+//    }
     ///
-
 
 
     // PLANET
@@ -90,7 +105,6 @@ class NatalChartViewModel {
     }
 
     
-    // HOUSE
     // HOUSE (working)
     func houseTapped(angle: Double) -> Int? {
         let houseCusps = self.houseCusps()
@@ -118,33 +132,30 @@ class NatalChartViewModel {
         return nil
     }
 
-
-
-
     ///
+    
     
     ///
     func longitude(for planet: Point) -> Double {
-        guard let service = astrologicalService else { return 0.0 }
-        return planet.longitude(using: service)
+        return planet.longitude(using: astrologyModel)
     }
     
     
     ///
     func houseCusps() -> [Double] {
-        return astrologicalService?.houseCusps ?? []
+        return astrologyModel.houseCusps
     }
     
     
     ///
     func ascendant() -> Double {
-        return astrologicalService?.ascendant ?? 0
+        return astrologyModel.ascendant
     }
     
 
     ///
     func midheaven() -> Double {
-        return astrologicalService?.midheavenLongitude ?? 0
+        return astrologyModel.midheavenLongitude
     }
 
     
@@ -167,68 +178,22 @@ class NatalChartViewModel {
     
     ///
     func getPlanetPositions(in rect: CGRect) -> [PlanetPosition] {
-        guard let service = astrologicalService else { return [] }
-        let ascendant = service.ascendant
+        let ascendant = astrologyModel.ascendant
         return Point.allCases.map { planet in
-            let longitude = planet.longitude(using: service)
+            let longitude = planet.longitude(using: astrologyModel)
             let position = calculatePositionForPlanet(planet, at: longitude, usingAscendant: ascendant, in: rect)
             return PlanetPosition(planet: planet, position: position, longitude: longitude)
         }
     }
-    
+
     
     ///
-    func calculateAspects() -> [AstrologicalAspectData] {
-        guard let planets = astrologicalService?.astrologicalPointPositions else { return [] }
-        var aspects: [AstrologicalAspectData] = []
-        
-        for i in 0..<planets.count {
-            for j in (i+1)..<planets.count {
-                let (planet1, longitude1) = planets[i]
-                let (planet2, longitude2) = planets[j]
-                let angleDifference = abs(longitude1 - longitude2)
-                let normalizedAngle = min(angleDifference, 360 - angleDifference)
-                
-                for aspect in Aspect.allCases {
-                    if normalizedAngle >= aspect.angle - aspect.orb && normalizedAngle <= aspect.angle + aspect.orb {
-                        let aspectData = AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect)
-                        aspects.append(aspectData)
-                        
-                        // TO BE DELETED
-                        let aspectOrb = abs(normalizedAngle - aspect.angle) // Calculates the difference from the exact aspect angle
-                        print("Aspect: \(aspect) between \(planet1) and \(planet2), Angle Difference: \(normalizedAngle), Orb: \(aspectOrb)")
-                    }
-                }
-            }
-        }
-        return aspects
-    }
-    
-    
     func angleForHouseCusp(houseNumber: Int) -> Double {
-        guard let cusps = astrologicalService?.houseCusps, cusps.count >= 12 else {
-            return 0.0
-        }
-        let cuspLongitude = houseNumber >= 1 && houseNumber <= 12 ? cusps[houseNumber - 1] : 0.0
-        let ascendantLongitude = astrologicalService?.ascendant ?? 0.0
+        let cuspLongitude = houseNumber >= 1 && houseNumber <= 12 ? astrologyModel.houseCusps[houseNumber - 1] : 0.0
+        let ascendantLongitude = astrologyModel.ascendant
         let adjustedLongitude = cuspLongitude - ascendantLongitude
         let angle = (adjustedLongitude.truncatingRemainder(dividingBy: 360) + 360).truncatingRemainder(dividingBy: 360)
         
         return angle
     }
 }
-
-
-struct AstrologicalAspectData {
-    let planet1: Point
-    let planet2: Point
-    let aspect: Aspect
-}
-
-
-struct PlanetPosition {
-    var planet: Point
-    var position: CGPoint
-    var longitude: CGFloat
-}
-

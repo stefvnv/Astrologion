@@ -1,8 +1,16 @@
-//
-//  NatalChartViewRepresentable.swift
-//  Astrologion
-//
-//  Created by Stefana Chiritescu on 23/03/2024.
-//
+import SwiftUI
 
-import Foundation
+struct NatalChartViewRepresentable: UIViewRepresentable {
+    @ObservedObject var viewModel: NatalChartViewModel
+
+    func makeUIView(context: Context) -> NatalChartView {
+        let natalChartView = NatalChartView()
+        natalChartView.viewModel = viewModel
+        return natalChartView
+    }
+
+    func updateUIView(_ uiView: NatalChartView, context: Context) {
+        uiView.viewModel = viewModel
+        uiView.setNeedsDisplay()
+    }
+}

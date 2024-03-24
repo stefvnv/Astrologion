@@ -1,8 +1,24 @@
-//
-//  Chart.swift
-//  Astrologion
-//
-//  Created by Stefana Chiritescu on 23/03/2024.
-//
+import FirebaseFirestoreSwift
+import Firebase
 
-import Foundation
+struct Chart: Identifiable, Codable {
+    @DocumentID var id: String?
+    let userId: String
+    var sunSign: String
+    var moonSign: String
+    var ascendantSign: String
+    var planetaryPositions: [String: String]  // Key: Planet, Value: Sign and degree
+    var houseCusps: [String: String]  // Key: House number, Value: Sign and degree
+
+    var timestamp: Timestamp?
+}
+
+
+extension AstrologyModel {
+    convenience init(from chart: Chart) {
+        self.init()
+        
+        self.sunPosition = chart.sunSign
+        self.moonPosition = chart.moonSign
+    }
+}

@@ -1,3 +1,5 @@
+// TO BE MOVED WITH ITS VIEW IN SETTINGS
+
 import SwiftUI
 import PhotosUI
 import FirebaseFirestoreSwift

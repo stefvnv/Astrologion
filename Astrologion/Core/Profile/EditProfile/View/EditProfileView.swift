@@ -1,3 +1,5 @@
+//TO BE MOVED IN SETTINGS
+
 import SwiftUI
 import Kingfisher
 import PhotosUI

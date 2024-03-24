@@ -2,19 +2,26 @@ import SwiftUI
 
 struct ProfileView: View {
     let user: User
-    @StateObject var viewModel: ProfileViewModel
-    
+    @StateObject var profileViewModel: ProfileViewModel
+
     init(user: User) {
         self.user = user
-        self._viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
+        _profileViewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
     }
-    
+
     var body: some View {
         ScrollView {
             VStack(spacing: 24) {
-                ProfileHeaderView(viewModel: viewModel)
-                
-                PostGridView(config: .profile(user))
+                ProfileHeaderView(viewModel: profileViewModel)
+
+                if let natalChartViewModel = profileViewModel.natalChartViewModel {
+                    NatalChartViewRepresentable(viewModel: natalChartViewModel)
+                        .frame(height: 800)  
+                } else if profileViewModel.isLoadingChartData {
+                    Text("Loading astrological details...")
+                } else {
+                    Text("Unable to load chart data.")
+                }
             }
             .padding(.top)
         }

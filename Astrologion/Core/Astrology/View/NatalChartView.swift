@@ -19,6 +19,11 @@ class NatalChartView: UIView {
         initializeView()
     }
     
+    func redrawChart() {
+        setNeedsDisplay()  // This triggers the draw(_:) method
+    }
+
+    
     private func initializeView() {
         
         // Initialize tap gesture recognizer
@@ -296,21 +301,20 @@ class NatalChartView: UIView {
     ///
     private func drawAspects(context: CGContext, houseInnerRadius: CGFloat) {
         guard let viewModel = viewModel else { return }
-        let aspects = viewModel.calculateAspects()
+        let aspects = viewModel.aspects
         let planetPositions = viewModel.getPlanetPositions(in: bounds)
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
-        let houseInnerRadius = self.houseInnerRadius
-        
+
         for aspectData in aspects {
             guard let startPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet1 })?.position,
                   let endPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet2 })?.position else {
                 continue
             }
-            
+
             // Calculate the intersection points for both planets
             let startIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: startPlanetPosition)
             let endIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: endPlanetPosition)
-            
+
             // Draw the aspect line between the two intersection points
             context.setStrokeColor(aspectData.aspect.uiColor.cgColor)
             context.setLineWidth(2)
@@ -320,6 +324,7 @@ class NatalChartView: UIView {
             context.strokePath()
         }
     }
+
     
     
     ///

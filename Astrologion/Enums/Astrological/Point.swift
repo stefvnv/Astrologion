@@ -59,7 +59,6 @@ extension Point {
     }
     
     
-    
     /// Calculates the longitude of the body using the provided `AstrologyModel` service
     func longitude(using service: AstrologyModel) -> Double {
         switch self {

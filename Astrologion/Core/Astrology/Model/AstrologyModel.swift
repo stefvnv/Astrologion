@@ -51,7 +51,7 @@ public class AstrologyModel: ObservableObject {
     @Published var midheavenLongitude: Double = 0.0
 
 
-    
+    ///
     var astrologicalPointPositions: [(body: Point, longitude: Double)] {
         var positions: [(body: Point, longitude: Double)] = [
             (body: .Sun, longitude: sunLongitude),
@@ -82,49 +82,60 @@ public class AstrologyModel: ObservableObject {
     }
     
     
+    ///
+    public func populateAndCalculate(
+        day: Int, month: Int, year: Int,
+        hour: Int, minute: Int,
+        latitude: Double, longitude: Double,
+        houseSystem: HouseSystem = .placidus
+    ) async {
+        await calculateAstrologicalDetails(
+            day: day, month: month, year: year,
+            hour: hour, minute: minute,
+            latitude: latitude, longitude: longitude,
+            houseSystem: houseSystem
+        )
+    }
+
+
+    
+    ///
     public func calculateAstrologicalDetails(
-        day: Int, month: Int, year: Int, hour: Int, minute: Int,
-        latitude: Double, longitude: Double, houseSystem: HouseSystem,
-        completion: @escaping () -> Void
-    ) {
+        day: Int, month: Int, year: Int,
+        hour: Int, minute: Int,
+        latitude: Double, longitude: Double,
+        houseSystem: HouseSystem
+    ) async {
         let location = CLLocation(latitude: latitude, longitude: longitude)
         let geocoder = CLGeocoder()
         
-        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    self?.sunPosition = "Error: \(error.localizedDescription)"
-                    completion()
-                    return
-                }
-                
-                guard let self = self, let timeZone = placemarks?.first?.timeZone else {
-                    self?.sunPosition = "Timezone error"
-                    completion()
-                    return
-                }
-                
-                var dateComponents = DateComponents()
-                dateComponents.year = year
-                dateComponents.month = month
-                dateComponents.day = day
-                dateComponents.hour = hour
-                dateComponents.minute = minute
-                dateComponents.timeZone = timeZone
-
-                if let date = Calendar.current.date(from: dateComponents) {
-                    let isDST = timeZone.isDaylightSavingTime(for: date)
-                    let dstOffset = isDST ? timeZone.daylightSavingTimeOffset(for: date) : 0
-                    let jd = swe_julday(Int32(year), Int32(month), Int32(day), Double(hour) + Double(minute) / 60.0 - Double(dstOffset) / 3600.0, SE_GREG_CAL)
-
-                    self.calculatePlanetaryPositions(julianDay: jd)
-                    self.calculateHouseCusps(julianDay: jd, latitude: latitude, longitude: longitude, houseSystem: houseSystem.rawValue)
-                } else {
-                    self.sunPosition = "Date conversion error"
-                }
-
-                completion()
+        do {
+            let placemarks = try await geocoder.reverseGeocodeLocation(location)
+            guard let timeZone = placemarks.first?.timeZone else {
+                self.sunPosition = "Timezone error"
+                return
             }
+            
+            var dateComponents = DateComponents()
+            dateComponents.year = year
+            dateComponents.month = month
+            dateComponents.day = day
+            dateComponents.hour = hour
+            dateComponents.minute = minute
+            dateComponents.timeZone = timeZone
+            
+            if let date = Calendar.current.date(from: dateComponents) {
+                let isDST = timeZone.isDaylightSavingTime(for: date)
+                let dstOffset = isDST ? timeZone.daylightSavingTimeOffset(for: date) : 0
+                let jd = swe_julday(Int32(year), Int32(month), Int32(day), Double(hour) + Double(minute) / 60.0 - Double(dstOffset) / 3600.0, SE_GREG_CAL)
+                
+                calculatePlanetaryPositions(julianDay: jd)
+                calculateHouseCusps(julianDay: jd, latitude: latitude, longitude: longitude, houseSystem: houseSystem.rawValue)
+            } else {
+                self.sunPosition = "Date conversion error"
+            }
+        } catch {
+            self.sunPosition = "Error: \(error.localizedDescription)"
         }
     }
 
@@ -178,7 +189,8 @@ public class AstrologyModel: ObservableObject {
         completion()
     }
     
-    // TEMPORARY
+    
+    // TO BE DELETED (converted to table)
     func printHouseCusps() {
         guard houseCusps.count == 12 else {
             print("Error: Expected 12 house cusps but found \(houseCusps.count)")
@@ -192,7 +204,35 @@ public class AstrologyModel: ObservableObject {
             }
         }
     }
+    
+    
+    func calculateAspects() -> [AstrologicalAspectData] {
+        let planets = self.astrologicalPointPositions
+        var aspects: [AstrologicalAspectData] = []
+        
+        for i in 0..<planets.count {
+            for j in (i+1)..<planets.count {
+                let (planet1, longitude1) = planets[i]
+                let (planet2, longitude2) = planets[j]
+                let angleDifference = abs(longitude1 - longitude2)
+                let normalizedAngle = min(angleDifference, 360 - angleDifference)
+                
+                for aspect in Aspect.allCases {
+                    if normalizedAngle >= aspect.angle - aspect.orb && normalizedAngle <= aspect.angle + aspect.orb {
+                        let aspectData = AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect)
+                        aspects.append(aspectData)
+                        
+                        // TO BE DELETED
+                        let aspectOrb = abs(normalizedAngle - aspect.angle)
+                        print("Aspect: \(aspect) between \(planet1) and \(planet2), Angle Difference: \(normalizedAngle), Orb: \(aspectOrb)")
+                    }
+                }
+            }
+        }
+        return aspects
+    }
 
+    
     
 } // class ending
 
@@ -278,7 +318,7 @@ extension AstrologyModel {
     }
 
     
-    
+    ///
     private func updateAstrologicalBodyPosition(julianDay jd: Double, planet: Int32, updateLongitude longitude: inout Double, updatePosition position: inout String) {
         var xx = [Double](repeating: 0, count: 6)
         var serr = [Int8](repeating: 0, count: 256)
@@ -297,6 +337,7 @@ extension AstrologyModel {
     }
     
     
+    ///
     public func zodiacSignAndDegree(fromLongitude longitude: Double) -> String {
         let signIndex = Int(longitude / 30) % Zodiac.allCases.count
         let zodiacSign = Zodiac.allCases[signIndex]
@@ -307,4 +348,25 @@ extension AstrologyModel {
 
         return "\(zodiacSign.rawValue) \(degrees)°\(String(format: "%02d", minutes))'"
     }
+    
+    
+    ///
+    func extractZodiacSign(from position: String) -> String {
+        let components = position.components(separatedBy: " ")
+        return components.first ?? "Unknown"
+    }
+}
+
+
+struct AstrologicalAspectData {
+    let planet1: Point
+    let planet2: Point
+    let aspect: Aspect
+}
+
+
+struct PlanetPosition {
+    var planet: Point
+    var position: CGPoint
+    var longitude: CGFloat
 }

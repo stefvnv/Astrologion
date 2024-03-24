@@ -132,6 +132,9 @@
 		F840A0112BAE0E2000D007F8 /* LocationSearchCompleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0102BAE0E2000D007F8 /* LocationSearchCompleter.swift */; };
 		F840A0142BAE299900D007F8 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0132BAE299900D007F8 /* CustomError.swift */; };
 		F840A0162BAE43CB00D007F8 /* CompleteSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0152BAE43CB00D007F8 /* CompleteSignUpViewModel.swift */; };
+		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
+		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
+		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -233,6 +236,9 @@
 		F840A0102BAE0E2000D007F8 /* LocationSearchCompleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCompleter.swift; sourceTree = "<group>"; };
 		F840A0132BAE299900D007F8 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		F840A0152BAE43CB00D007F8 /* CompleteSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewModel.swift; sourceTree = "<group>"; };
+		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
+		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +339,7 @@
 			children = (
 				F819B5712BACBF63001B138A /* ImageUploader.swift */,
 				F819B56F2BACBF56001B138A /* UserService.swift */,
+				F8B1CF452BAF22640014E8CF /* ChartService.swift */,
 				F819B56D2BACBF47001B138A /* PostService.swift */,
 				F840A0102BAE0E2000D007F8 /* LocationSearchCompleter.swift */,
 			);
@@ -343,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				F819B5692BACBF20001B138A /* User.swift */,
+				F8B1CF432BAF21C20014E8CF /* Chart.swift */,
 				F819B56B2BACBF2B001B138A /* Post.swift */,
 			);
 			path = Model;
@@ -807,6 +815,7 @@
 				F8409FDD2BADD8EF00D007F8 /* Model */,
 				F8409FDF2BADD90300D007F8 /* View */,
 				F8409FDE2BADD8FD00D007F8 /* ViewModel */,
+				F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */,
 			);
 			path = Astrology;
 			sourceTree = "<group>";
@@ -1042,8 +1051,10 @@
 				F819B5C12BACC625001B138A /* FeedCellViewModel.swift in Sources */,
 				F8409FE12BADD9BC00D007F8 /* AstrologyModel.swift in Sources */,
 				F819B6092BACE42A001B138A /* SearchViewModel.swift in Sources */,
+				F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */,
 				F819B5BD2BACC53F001B138A /* CommentsView.swift in Sources */,
 				F8409FF52BADDBA400D007F8 /* Aspect.swift in Sources */,
+				F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */,
 				F819B4D62BAC970A001B138A /* AstrologionApp.swift in Sources */,
 				F8409FFE2BADDBF700D007F8 /* ChartColor.swift in Sources */,
 				F8409FF72BADDBB000D007F8 /* Point.swift in Sources */,
@@ -1067,6 +1078,7 @@
 				F8409FE52BADD9ED00D007F8 /* NatalChartViewModel.swift in Sources */,
 				F819B6012BACE33A001B138A /* CurrentUserProfileView.swift in Sources */,
 				F819B5C72BACC65A001B138A /* FeedView.swift in Sources */,
+				F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */,
 				F840A0162BAE43CB00D007F8 /* CompleteSignUpViewModel.swift in Sources */,
 				F819B60D2BACE474001B138A /* UploadPostViewModel.swift in Sources */,
 				F8409FE32BADD9D400D007F8 /* NatalChartView.swift in Sources */,

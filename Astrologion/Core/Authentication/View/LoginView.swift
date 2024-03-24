@@ -44,34 +44,6 @@ struct LoginView: View {
                 })
                 .disabled(!formIsValid)
                 .opacity(formIsValid ? 1.0 : 0.5)
-                
-                VStack(spacing: 24) {
-                    HStack {
-                        Rectangle()
-                            .frame(width:( UIScreen.main.bounds.width / 2) - 40, height: 0.5)
-                            .foregroundColor(Color(.separator))
-                        
-                        Text("OR")
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color(.gray))
-                        
-                        Rectangle()
-                            .frame(width:( UIScreen.main.bounds.width / 2) - 40, height: 0.5)
-                            .foregroundColor(Color(.separator))
-                    }
-                    
-                    HStack {
-                        Image("facebook_logo")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                        
-                        Text("Continue with Facebook")
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color(.systemBlue))
-                    }
-                }
                 .padding(.top, 4)
                 
                 Spacer()

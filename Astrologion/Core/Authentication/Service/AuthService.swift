@@ -30,7 +30,21 @@ class AuthService {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
 
-            let data: [String: Any] = [
+            let user = User(
+                uid: result.user.uid,
+                username: username,
+                email: email,
+                birthDay: birthDay,
+                birthMonth: birthMonth,
+                birthYear: birthYear,
+                birthHour: birthHour,
+                birthMinute: birthMinute,
+                latitude: latitude,
+                longitude: longitude
+            )
+            let chart = try await ChartService.shared.createChart(for: result.user.uid, with: user)
+            
+            let userData: [String: Any] = [
                 "email": email,
                 "username": username,
                 "uid": result.user.uid,
@@ -40,10 +54,11 @@ class AuthService {
                 "birthHour": birthHour,
                 "birthMinute": birthMinute,
                 "latitude": latitude,
-                "longitude": longitude
+                "longitude": longitude,
+                "chartId": chart.id ?? ""
             ]
+            try await FirestoreConstants.UserCollection.document(result.user.uid).setData(userData)
 
-            try await FirestoreConstants.UserCollection.document(result.user.uid).setData(data)
             self.user = try await UserService.fetchUser(withUid: result.user.uid)
         } catch {
             print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
