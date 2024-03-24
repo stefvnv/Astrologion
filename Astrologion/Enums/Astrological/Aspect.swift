@@ -41,4 +41,16 @@ public enum Aspect: CaseIterable {
         case .opposition: return 8
         }
     }
+    
+    /// Converts a string description to an `Aspect` enum value
+    static func from(description: String) -> Aspect? {
+        switch description.lowercased() {
+            case "conjunction": return .conjunction
+            case "sextile": return .sextile
+            case "square": return .square
+            case "trine": return .trine
+            case "opposition": return .opposition
+            default: return nil
+        }
+    }
 }

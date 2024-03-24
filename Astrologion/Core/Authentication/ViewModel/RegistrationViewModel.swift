@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 class RegistrationViewModel: ObservableObject {
     @Published var username: String = ""
@@ -14,66 +15,72 @@ class RegistrationViewModel: ObservableObject {
     @Published var emailValidationFailed = false
     @Published var usernameValidationFailed = false
     
+    private var cancellables = Set<AnyCancellable>()
     
     @MainActor
     func createUser() async throws {
+        isLoading = true
+        
         let birthDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: birthDate)
-        guard let birthYear = birthDateComponents.year,
-              let birthMonth = birthDateComponents.month,
-              let birthDay = birthDateComponents.day else {
+        let birthTimeComponents = Calendar.current.dateComponents([.hour, .minute], from: birthTime)
+        
+        guard let birthYear = birthDateComponents.year, let birthMonth = birthDateComponents.month, let birthDay = birthDateComponents.day,
+              let birthHour = birthTimeComponents.hour, let birthMinute = birthTimeComponents.minute else {
             throw CustomError.missingDateComponents
         }
-
-        // Extracting time components
-        let birthTimeComponents = Calendar.current.dateComponents([.hour, .minute], from: birthTime)
-        guard let birthHour = birthTimeComponents.hour,
-              let birthMinute = birthTimeComponents.minute else {
-            throw CustomError.missingTimeComponents
-        }
-
-        try await AuthService.shared.createUser(
-            email: email,
-            password: password,
-            username: username,
-            birthYear: birthYear,
-            birthMonth: birthMonth,
-            birthDay: birthDay,
-            birthHour: birthHour,
-            birthMinute: birthMinute,
-            latitude: latitude,
-            longitude: longitude
+        
+        let userId = try await AuthService.shared.createUser(
+            email: email, password: password, username: username,
+            birthYear: birthYear, birthMonth: birthMonth, birthDay: birthDay,
+            birthHour: birthHour, birthMinute: birthMinute,
+            latitude: latitude, longitude: longitude
         )
+        
+        await calculateAndSaveAstrologyDetails(
+            userId: userId, birthYear: birthYear, birthMonth: birthMonth, birthDay: birthDay,
+            birthHour: birthHour, birthMinute: birthMinute, latitude: latitude, longitude: longitude
+        )
+        
+        isLoading = false
+    }
+    
+    private func calculateAndSaveAstrologyDetails(
+        userId: String, birthYear: Int, birthMonth: Int, birthDay: Int,
+        birthHour: Int, birthMinute: Int, latitude: Double, longitude: Double
+    ) async {
+        let astrologyModel = AstrologyModel()
+        await astrologyModel.populateAndCalculate(
+            day: birthDay, month: birthMonth, year: birthYear,
+            hour: birthHour, minute: birthMinute,
+            latitude: latitude, longitude: longitude
+        )
+        
+        let chart = astrologyModel.toChart(userId: userId)
+        
+        do {
+            try await ChartService.shared.saveChart(chart)
+        } catch {
+            print("Failed to save chart: \(error.localizedDescription)")
+            // Handle the error as needed, perhaps by setting an error message property that the UI can display
+        }
     }
 
     
-    
     @MainActor
     func validateEmail() async throws {
-        self.isLoading = true
-        self.emailValidationFailed = false
-        
-        let snapshot = try await FirestoreConstants
-            .UserCollection
-            .whereField("email", isEqualTo: email)
-            .getDocuments()
-        
-        self.emailValidationFailed = !snapshot.isEmpty
-        self.emailIsValid = snapshot.isEmpty
-        
-        self.isLoading = false
+        isLoading = true
+        let snapshot = try await FirestoreConstants.UserCollection.whereField("email", isEqualTo: email).getDocuments()
+        emailValidationFailed = !snapshot.isEmpty
+        emailIsValid = snapshot.isEmpty
+        isLoading = false
     }
     
     @MainActor
     func validateUsername() async throws {
-        self.isLoading = true
-        
-        let snapshot = try await FirestoreConstants
-            .UserCollection
-            .whereField("username", isEqualTo: username)
-            .getDocuments()
-        
-        self.usernameIsValid = snapshot.isEmpty
-        self.isLoading = false
+        isLoading = true
+        let snapshot = try await FirestoreConstants.UserCollection.whereField("username", isEqualTo: username).getDocuments()
+        usernameIsValid = snapshot.isEmpty
+        isLoading = false
     }
     
     var formIsValid: Bool {

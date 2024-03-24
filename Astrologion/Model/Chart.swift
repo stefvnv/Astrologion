@@ -9,6 +9,7 @@ struct Chart: Identifiable, Codable {
     var ascendantSign: String
     var planetaryPositions: [String: String]  // Key: Planet, Value: Sign and degree
     var houseCusps: [String: String]  // Key: House number, Value: Sign and degree
+    var aspects: [String: String]  // Key: Aspect description, Value: Aspect angle
 
     var timestamp: Timestamp?
 }

@@ -19,15 +19,15 @@ struct ProfileHeaderView: View {
                         Text("Loading astrological details...")
                             .font(.subheadline)
                             .foregroundColor(.gray)
-                    } else if let astrologyModel = viewModel.natalChartViewModel?.astrologyModel {
+                    } else if let chart = viewModel.chart {
                         HStack {
-                            Text("☉ \(viewModel.natalChartViewModel?.astrologyModel.extractZodiacSign(from: astrologyModel.sunPosition) ?? "Unknown")")
-                            Text("☾ \(viewModel.natalChartViewModel?.astrologyModel.extractZodiacSign(from: astrologyModel.moonPosition) ?? "Unknown")")
-
-                            Text("↑ \(viewModel.formattedAscendant)")
-                            
-                            // TO DO - REMOVE DEGREE
-                            Text("↑ \(astrologyModel.zodiacSignAndDegree(fromLongitude: astrologyModel.ascendant))")
+                            Text("☉ \(chart.sunSign)") 
+                            Text("☾ \(chart.moonSign)")
+                            if let ascendantSign = chart.houseCusps["House 1"] {
+                                Text("↑ \(ascendantSign)")
+                            } else {
+                                Text("↑ Unknown")
+                            }
                         }
                         .font(.subheadline)
                     } else if let errorMessage = viewModel.chartDataErrorMessage {

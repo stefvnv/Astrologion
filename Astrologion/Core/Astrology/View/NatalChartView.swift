@@ -1,51 +1,88 @@
 import UIKit
 import Foundation
 import CoreGraphics
+import Combine
 
 class NatalChartView: UIView {
+    
+    // variables
+    private var cancellables = Set<AnyCancellable>()
+    
+    
     var viewModel: NatalChartViewModel? {
         didSet {
-            setNeedsDisplay()
+            viewModel?.$planetPositions
+                .sink { [weak self] _ in
+                    self?.setNeedsDisplay()
+                }
+                .store(in: &cancellables)
+
+            viewModel?.$aspects
+                .sink { [weak self] _ in
+                    self?.setNeedsDisplay()
+                }
+                .store(in: &cancellables)
         }
     }
     
+    
+    var planetPositions: [PlanetPosition] = [] {
+        didSet {
+            setNeedsDisplay() // Redraw the view when planet positions change
+        }
+    }
+    
+    
+    var aspects: [AstrologicalAspectData] = [] {
+        didSet {
+            setNeedsDisplay() // Redraw the view when aspects change
+        }
+    }
+    //
+    
+    
+    ///
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializeView()
     }
 
+    
+    ///
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         initializeView()
     }
     
+    
+    /// Retriggers draw method
     func redrawChart() {
-        setNeedsDisplay()  // This triggers the draw(_:) method
+        setNeedsDisplay()
     }
 
     
+    ///
     private func initializeView() {
-        
-        // Initialize tap gesture recognizer
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         self.addGestureRecognizer(tapGestureRecognizer)
 
-        // Set background color to navy
         backgroundColor = ChartColor.navy.uiColor
     }
 
     
+    ///
     @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
         let tapLocation = gestureRecognizer.location(in: self)
         viewModel?.handleTap(location: tapLocation, inViewBounds: bounds)
     }
+    
     
     var houseInnerRadius: CGFloat {
         return min(bounds.size.width, bounds.size.height) / 2 * 0.8 * 0.7 // innerZodiacRadius * houseInnerRadius (last 2 numbers)
     }
     
     
-    
+    ///
     fileprivate func defineChartSize(_ rect: CGRect, _ context: CGContext) {
         let scaleFactor: CGFloat = 0.85 // scales chart size
         
@@ -160,7 +197,6 @@ class NatalChartView: UIView {
         let icTextPoint = CGPoint(x: icEndPoint.x - icTextSize.width / 2, y: icEndPoint.y + 10)
         icText.draw(at: icTextPoint)
     }
-
 
 
     ///
@@ -325,7 +361,6 @@ class NatalChartView: UIView {
         }
     }
 
-    
     
     ///
     private func intersectionPointOnCircle(circleCenter: CGPoint, circleRadius: CGFloat, externalPoint: CGPoint) -> CGPoint {

@@ -14,19 +14,25 @@ struct ProfileView: View {
             VStack(spacing: 24) {
                 ProfileHeaderView(viewModel: profileViewModel)
 
-                if let natalChartViewModel = profileViewModel.natalChartViewModel {
+                if let chart = profileViewModel.chart {
+                    // Create a NatalChartViewModel from the Chart object
+                    let natalChartViewModel = NatalChartViewModel(chart: chart)
                     NatalChartViewRepresentable(viewModel: natalChartViewModel)
-                        .frame(height: 800)  
+                        .frame(height: 800)
                 } else if profileViewModel.isLoadingChartData {
-                    Text("Loading astrological details...")
+                    ProgressView("Loading astrological details...")
                 } else {
                     Text("Unable to load chart data.")
+                        .foregroundColor(.secondary)
                 }
             }
             .padding(.top)
         }
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            profileViewModel.loadUserData()
+        }
     }
 }
 

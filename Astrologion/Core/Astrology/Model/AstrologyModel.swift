@@ -206,20 +206,26 @@ public class AstrologyModel: ObservableObject {
     }
     
     
+    //
     func calculateAspects() -> [AstrologicalAspectData] {
         let planets = self.astrologicalPointPositions
         var aspects: [AstrologicalAspectData] = []
-        
+
         for i in 0..<planets.count {
             for j in (i+1)..<planets.count {
                 let (planet1, longitude1) = planets[i]
                 let (planet2, longitude2) = planets[j]
                 let angleDifference = abs(longitude1 - longitude2)
                 let normalizedAngle = min(angleDifference, 360 - angleDifference)
-                
+
                 for aspect in Aspect.allCases {
                     if normalizedAngle >= aspect.angle - aspect.orb && normalizedAngle <= aspect.angle + aspect.orb {
-                        let aspectData = AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect)
+                        let aspectData = AstrologicalAspectData(
+                            planet1: planet1,
+                            planet2: planet2,
+                            aspect: aspect,
+                            angleDifference: normalizedAngle
+                        )
                         aspects.append(aspectData)
                         
                         // TO BE DELETED
@@ -232,7 +238,6 @@ public class AstrologyModel: ObservableObject {
         return aspects
     }
 
-    
     
 } // class ending
 
@@ -328,7 +333,7 @@ extension AstrologyModel {
         position = zodiacSignAndDegree(fromLongitude: xx[0])
         
         // TO BE DELETED: console test
-        var nameBuffer = [Int8](repeating: 0, count: 30)  // Assuming name will not exceed 29 characters
+        var nameBuffer = [Int8](repeating: 0, count: 30)
         swe_get_planet_name(planet, &nameBuffer)
         let planetName = String(cString: nameBuffer)
         
@@ -362,6 +367,14 @@ struct AstrologicalAspectData {
     let planet1: Point
     let planet2: Point
     let aspect: Aspect
+    let angleDifference: Double
+    
+    init(planet1: Point, planet2: Point, aspect: Aspect, angleDifference: Double) {
+        self.planet1 = planet1
+        self.planet2 = planet2
+        self.aspect = aspect
+        self.angleDifference = angleDifference
+    }
 }
 
 

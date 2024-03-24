@@ -26,21 +26,15 @@ class ChartService {
             longitude: user.longitude
         )
         
-        let chart = Chart(
-            userId: userId,
-            sunSign: astrologyModel.sunPosition,
-            moonSign: astrologyModel.moonPosition,
-            ascendantSign: astrologyModel.zodiacSignAndDegree(fromLongitude: astrologyModel.ascendant),
-            planetaryPositions: astrologyModel.planetaryPositionsDictionary(),
-            houseCusps: astrologyModel.houseCuspsDictionary()
-        )
-        
-        let encodedChart = try Firestore.Encoder().encode(chart)
-        try await Firestore.firestore().collection("charts").document(userId).setData(encodedChart)
+        let chart = astrologyModel.toChart(userId: userId)
+        try await saveChart(chart)
         return chart
     }
-
     
+    func saveChart(_ chart: Chart) async throws {
+        let documentRef = Firestore.firestore().collection("charts").document(chart.userId)
+        try documentRef.setData(from: chart)
+    }
 
     func fetchChart(for userId: String) async throws -> Chart? {
         let documentSnapshot = try await Firestore.firestore().collection("charts").document(userId).getDocument()
@@ -48,29 +42,43 @@ class ChartService {
     }
 
     func updateChart(for userId: String, with details: Chart) async throws {
-        let encodedDetails = try Firestore.Encoder().encode(details)
-        try await Firestore.firestore().collection("charts").document(userId).updateData(encodedDetails)
+        let documentRef = Firestore.firestore().collection("charts").document(userId)
+        try documentRef.setData(from: details)
     }
 
     func deleteChart(for userId: String) async throws {
-        try await Firestore.firestore().collection("charts").document(userId).delete()
+        let documentRef = Firestore.firestore().collection("charts").document(userId)
+        try await documentRef.delete()
     }
 }
 
+
 extension AstrologyModel {
-    func planetaryPositionsDictionary() -> [String: String] {
-        let positions = astrologicalPointPositions.reduce(into: [String: String]()) { (dict, tuple) in
+    func toChart(userId: String) -> Chart {
+        let planetaryPositions = astrologicalPointPositions.reduce(into: [String: String]()) { (dict, tuple) in
             let (planet, longitude) = tuple
             dict[planet.rawValue] = zodiacSignAndDegree(fromLongitude: longitude)
         }
-        return positions
-    }
-
-    func houseCuspsDictionary() -> [String: String] {
-        let dict = houseCusps.enumerated().reduce(into: [String: String]()) { (dict, tuple) in
+        
+        let houseCuspsDict = houseCusps.enumerated().reduce(into: [String: String]()) { (dict, tuple) in
             let (index, cusp) = tuple
             dict["House \(index + 1)"] = zodiacSignAndDegree(fromLongitude: cusp)
         }
-        return dict
+        
+        let aspectsDict = calculateAspects().reduce(into: [String: String]()) { (dict, aspectData) in
+            let key = "\(aspectData.aspect) between \(aspectData.planet1) and \(aspectData.planet2)"
+            dict[key] = String(format: "%.2f", aspectData.angleDifference)
+        }
+
+        return Chart(
+            userId: userId,
+            sunSign: extractZodiacSign(from: sunPosition),
+            moonSign: extractZodiacSign(from: moonPosition),
+            ascendantSign: extractZodiacSign(from: zodiacSignAndDegree(fromLongitude: ascendant)),
+            planetaryPositions: planetaryPositions,
+            houseCusps: houseCuspsDict,
+            aspects: aspectsDict
+        )
     }
 }
+

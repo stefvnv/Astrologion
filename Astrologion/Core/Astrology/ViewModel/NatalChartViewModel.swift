@@ -3,7 +3,10 @@ import Combine
 
 class NatalChartViewModel:ObservableObject {
     @Published var astrologyModel: AstrologyModel
+    
+    @Published var planetPositions: [PlanetPosition] = []
     @Published var aspects: [AstrologicalAspectData] = []
+    
     @Published var needsRedraw: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
@@ -23,6 +26,44 @@ class NatalChartViewModel:ObservableObject {
             }
             .store(in: &cancellables)
     }
+    
+    
+    convenience init(chart: Chart) {
+        let model = AstrologyModel(from: chart)
+        self.init(astrologyModel: model)
+    }
+    
+    
+    ///
+    func update(with chart: Chart) {
+        self.planetPositions = chart.planetaryPositions.compactMap { key, value in
+            guard let planet = Point(rawValue: key),
+                  let longitudeString = value.split(separator: " ").last?.trimmingCharacters(in: CharacterSet(charactersIn: "°'")),
+                  let longitude = Double(longitudeString) else { return nil }
+            
+            let position = CGPoint(x: cos(longitude.degreesToRadians), y: sin(longitude.degreesToRadians))
+            
+            return PlanetPosition(planet: planet, position: position, longitude: CGFloat(longitude))
+        }
+
+
+        // Update aspects
+        self.aspects = chart.aspects.compactMap { description, angleString in
+            let components = description.split(separator: " between ", maxSplits: 1, omittingEmptySubsequences: true)
+            guard let aspectType = components.first,
+                  let planetsPart = components.last?.split(separator: " and "),
+                  planetsPart.count == 2,
+                  let planet1 = Point(rawValue: String(planetsPart[0])),
+                  let planet2 = Point(rawValue: String(planetsPart[1])),
+                  let aspect = Aspect.from(description: String(aspectType)),
+                  let angle = Double(angleString) else { return nil }
+
+            return AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect, angleDifference: angle)
+        }
+
+        self.objectWillChange.send()
+    }
+
     
     
     // TO DO NOT WORKING
