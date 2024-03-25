@@ -14,14 +14,3 @@ struct Chart: Codable {
     var timestamp: Timestamp?
 }
 
-
-extension AstrologyModel {
-    convenience init(from chart: Chart) {
-        self.init()
-        self.sunPosition = chart.sunSign
-        self.moonPosition = chart.moonSign
-
-        // TO BE DELETED - Test
-        print("AstrologyModel initialized from Chart: Sun Sign - \(self.sunPosition), Moon Sign - \(self.moonPosition)")
-    }
-}

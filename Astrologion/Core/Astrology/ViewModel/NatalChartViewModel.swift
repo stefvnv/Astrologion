@@ -11,7 +11,7 @@ class NatalChartViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    
+
     ///
     init() {
         self.astrologyModel = AstrologyModel() // Initialize with a default AstrologyModel
@@ -47,35 +47,48 @@ class NatalChartViewModel: ObservableObject {
     
     ///
     func update(with chart: Chart) {
+        print("NatalChartViewModel: Updating with chart data")
+
+        // Log the raw chart data for diagnostic purposes
+        print("NatalChartViewModel: Raw Chart Data - Planetary Positions: \(chart.planetaryPositions), Aspects: \(chart.aspects)")
+
         self.planetPositions = chart.planetaryPositions.compactMap { key, value in
-            guard let pointKey = Int32(key),
-                  let point = Point(rawValue: pointKey), // Safely unwrap pointKey
-                  let longitude = Double(value.filter("0123456789.".contains)) else { return nil }
+            guard let point = Point.from(symbol: key), // Adjusted to use symbols
+                  let longitude = Double(value.filter("0123456789.".contains)) else {
+                print("Failed to transform planetary position for key: \(key), value: \(value)")
+                return nil
+            }
 
             let position = CGPoint(x: cos(longitude.degreesToRadians), y: sin(longitude.degreesToRadians))
             return PlanetPosition(planet: point, position: position, longitude: CGFloat(longitude))
         }
 
+        // Log the count of successfully processed planet positions
+        print("NatalChartViewModel: Processed \(self.planetPositions.count) Planet Positions")
+
+        
+        
         self.aspects = chart.aspects.compactMap { aspectString in
             let components = aspectString.split(separator: "-").map(String.init)
             guard components.count == 4,
-                  let planet1Key = Int32(components[0]),
-                  let planet1 = Point(rawValue: planet1Key),
-                  let planet2Key = Int32(components[1]),
-                  let planet2 = Point(rawValue: planet2Key),
+                  let planet1 = Point.from(symbol: components[0]), // Ensure Ascendant and other special points are handled
+                  let planet2 = Point.from(symbol: components[1]),
                   let aspect = Aspect.from(description: components[2]),
                   let angle = Double(components[3]) else {
+                print("Failed to transform aspect string: \(aspectString)")
                 return nil
             }
-
             return AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect, angleDifference: angle)
         }
 
+        // Log the count of successfully processed aspects
+        print("NatalChartViewModel: Processed \(self.aspects.count) Aspects")
+
+        // Indicate that the view needs to be redrawn with the new data
         self.needsRedraw = true
         self.objectWillChange.send()
     }
 
-    
     
     // TO DO NOT WORKING
     ///
@@ -184,15 +197,7 @@ class NatalChartViewModel: ObservableObject {
         return nil
     }
 
-    ///
-    
-    
-    ///
-//    func longitude(for planet: Point) -> Double {
-//        return planet.longitude(using: astrologyModel)
-//    }
-//    
-    
+
     ///
     func houseCusps() -> [Double] {
         return astrologyModel.houseCusps

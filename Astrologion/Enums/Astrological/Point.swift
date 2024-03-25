@@ -13,8 +13,8 @@ public enum Point: Int32, CaseIterable {
     case Pluto = 9 // SE_PLUTO
     case NorthNode = 10 // SE_TRUE_NODE
     case Lilith = 11 // SE_MEAN_APOG
-    case Ascendant = -1
-    case Midheaven = -2
+    //case Ascendant = -1
+    //case Midheaven = -2
 
     var symbol: String? {
         switch self {
@@ -30,7 +30,8 @@ public enum Point: Int32, CaseIterable {
         case .Pluto: return "♇"
         case .NorthNode: return "☊"
         case .Lilith: return "⚸"
-        case .Ascendant, .Midheaven: return nil
+        //case .Ascendant: return "ASC"
+        //case .Midheaven: return "MC"
         }
     }
 
@@ -48,9 +49,34 @@ public enum Point: Int32, CaseIterable {
         case .Pluto: return PointColor.pluto.uiColor
         case .NorthNode: return PointColor.northNode.uiColor
         case .Lilith: return PointColor.lilith.uiColor
-        case .Ascendant, .Midheaven: return PointColor.gold.uiColor
+        //case .Ascendant, .Midheaven: return PointColor.gold.uiColor
         }
     }
 }
 
-extension Point: Hashable {}
+
+extension Point {
+    static func from(symbol: String) -> Point? {
+        switch symbol {
+        case "☉": return .Sun
+        case "☾": return .Moon
+        case "☿": return .Mercury
+        case "♀": return .Venus
+        case "♂": return .Mars
+        case "♃": return .Jupiter
+        case "♄": return .Saturn
+        case "♅": return .Uranus
+        case "♆": return .Neptune
+        case "♇": return .Pluto
+        case "☊": return .NorthNode
+        case "⚸": return .Lilith
+        //case "ASC": return .Ascendant
+        //case "MC": return .Midheaven
+        default: return nil
+        }
+    }
+}
+
+
+
+
