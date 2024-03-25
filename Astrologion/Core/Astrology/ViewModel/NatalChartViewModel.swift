@@ -11,13 +11,15 @@ class NatalChartViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
+    
+    ///
     init() {
         self.astrologyModel = AstrologyModel() // Initialize with a default AstrologyModel
         setupBindings()
     }
     
     
-    // Existing initializer with an astrologyModel parameter
+    ///
     init(astrologyModel: AstrologyModel) {
         self.astrologyModel = astrologyModel
         setupBindings()
@@ -25,14 +27,10 @@ class NatalChartViewModel: ObservableObject {
     
     
     ///
-    convenience init(chart: Chart) {
-        let model = AstrologyModel(from: chart)
-        self.init(astrologyModel: model)
-        
-        // TO BE DELETED
-        print("Initialized AstrologyModel with chart data: \(model)")
-        
-        update(with: chart)
+    init(chart: Chart) {
+        self.astrologyModel = AstrologyModel() // Initialize with a default AstrologyModel
+        update(with: chart) // Use the existing update method to set up the model based on the chart
+        setupBindings() // Set up any required bindings
     }
     
     
@@ -47,37 +45,24 @@ class NatalChartViewModel: ObservableObject {
     }
     
     
-    /// NEW
-    func updateChart(with chart: Chart) {
-        let newAstrologyModel = AstrologyModel(from: chart)
-        self.astrologyModel = newAstrologyModel
-
-        update(with: chart)
-
-        print("Updated AstrologyModel with new chart data")
-    }
-
-
-    
     ///
     func update(with chart: Chart) {
-        
-        // TO BE DELETED - test
-        print("Updating NatalChartViewModel with chart: \(chart)")
-        
         self.planetPositions = chart.planetaryPositions.compactMap { key, value in
-            guard let planet = Point(rawValue: key),
+            guard let pointKey = Int32(key),
+                  let point = Point(rawValue: pointKey), // Safely unwrap pointKey
                   let longitude = Double(value.filter("0123456789.".contains)) else { return nil }
 
             let position = CGPoint(x: cos(longitude.degreesToRadians), y: sin(longitude.degreesToRadians))
-            return PlanetPosition(planet: planet, position: position, longitude: CGFloat(longitude))
+            return PlanetPosition(planet: point, position: position, longitude: CGFloat(longitude))
         }
 
         self.aspects = chart.aspects.compactMap { aspectString in
             let components = aspectString.split(separator: "-").map(String.init)
             guard components.count == 4,
-                  let planet1 = Point(rawValue: components[0]),
-                  let planet2 = Point(rawValue: components[1]),
+                  let planet1Key = Int32(components[0]),
+                  let planet1 = Point(rawValue: planet1Key),
+                  let planet2Key = Int32(components[1]),
+                  let planet2 = Point(rawValue: planet2Key),
                   let aspect = Aspect.from(description: components[2]),
                   let angle = Double(components[3]) else {
                 return nil
@@ -203,10 +188,10 @@ class NatalChartViewModel: ObservableObject {
     
     
     ///
-    func longitude(for planet: Point) -> Double {
-        return planet.longitude(using: astrologyModel)
-    }
-    
+//    func longitude(for planet: Point) -> Double {
+//        return planet.longitude(using: astrologyModel)
+//    }
+//    
     
     ///
     func houseCusps() -> [Double] {
@@ -245,11 +230,9 @@ class NatalChartViewModel: ObservableObject {
     
     ///
     func getPlanetPositions(in rect: CGRect) -> [PlanetPosition] {
-        let ascendant = astrologyModel.ascendant
-        return Point.allCases.map { planet in
-            let longitude = planet.longitude(using: astrologyModel)
-            let position = calculatePositionForPlanet(planet, at: longitude, usingAscendant: ascendant, in: rect)
-            return PlanetPosition(planet: planet, position: position, longitude: longitude)
+        return astrologyModel.planetaryPositions.compactMap { point, longitude in
+            let position = calculatePositionForPlanet(point, at: longitude, usingAscendant: astrologyModel.ascendant, in: rect)
+            return PlanetPosition(planet: point, position: position, longitude: CGFloat(longitude))
         }
     }
 

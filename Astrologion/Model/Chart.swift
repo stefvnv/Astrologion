@@ -20,7 +20,8 @@ extension AstrologyModel {
         self.init()
         self.sunPosition = chart.sunSign
         self.moonPosition = chart.moonSign
-        
-        print("AstrologyModel initialized from Chart: Sun Sign - \(sunPosition), Moon Sign - \(moonPosition)")
+
+        // TO BE DELETED - Test
+        print("AstrologyModel initialized from Chart: Sun Sign - \(self.sunPosition), Moon Sign - \(self.moonPosition)")
     }
 }

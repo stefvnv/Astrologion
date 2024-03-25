@@ -1,23 +1,21 @@
 import UIKit
 
-/// Represents the major astrological planets, each with an associated symbol
-public enum Point: String, CaseIterable {
-    case Sun = "Sun"
-    case Moon = "Moon"
-    case Mercury = "Mercury"
-    case Venus = "Venus"
-    case Mars = "Mars"
-    case Jupiter = "Jupiter"
-    case Saturn = "Saturn"
-    case Uranus = "Uranus"
-    case Neptune = "Neptune"
-    case Pluto = "Pluto"
-    case NorthNode = "North Node"
-    case Lilith = "Lilith"
-    case Ascendant = "Ascendant"
-    case Midheaven = "Midheaven"
-    
-    /// The astrological symbol associated with the body
+public enum Point: Int32, CaseIterable {
+    case Sun = 0 // SE_SUN
+    case Moon = 1 // SE_MOON
+    case Mercury = 2 // SE_MERCURY
+    case Venus = 3 // SE_VENUS
+    case Mars = 4 // SE_MARS
+    case Jupiter = 5 // SE_JUPITER
+    case Saturn = 6 // SE_SATURN
+    case Uranus = 7 // SE_URANUS
+    case Neptune = 8 // SE_NEPTUNE
+    case Pluto = 9 // SE_PLUTO
+    case NorthNode = 10 // SE_TRUE_NODE
+    case Lilith = 11 // SE_MEAN_APOG
+    case Ascendant = -1
+    case Midheaven = -2
+
     var symbol: String? {
         switch self {
         case .Sun: return "☉"
@@ -32,14 +30,10 @@ public enum Point: String, CaseIterable {
         case .Pluto: return "♇"
         case .NorthNode: return "☊"
         case .Lilith: return "⚸"
-        case .Ascendant, .Midheaven: return nil // no symbol returned
+        case .Ascendant, .Midheaven: return nil
         }
     }
-}
 
-
-/// Extension for `AstrologicalPoint` adding functionality related to color representation and calculating longitude using an astrological service
-extension Point {
     var color: UIColor {
         switch self {
         case .Sun: return PointColor.sun.uiColor
@@ -57,40 +51,6 @@ extension Point {
         case .Ascendant, .Midheaven: return PointColor.gold.uiColor
         }
     }
-    
-    
-    /// Calculates the longitude of the body using the provided `AstrologyModel` service
-    func longitude(using service: AstrologyModel) -> Double {
-        switch self {
-        case .Sun:
-            return service.sunLongitude
-        case .Moon:
-            return service.moonLongitude
-        case .Mercury:
-            return service.mercuryLongitude
-        case .Venus:
-            return service.venusLongitude
-        case .Mars:
-            return service.marsLongitude
-        case .Jupiter:
-            return service.jupiterLongitude
-        case .Saturn:
-            return service.saturnLongitude
-        case .Uranus:
-            return service.uranusLongitude
-        case .Neptune:
-            return service.neptuneLongitude
-        case .Pluto:
-            return service.plutoLongitude
-        case .NorthNode:
-            return service.northNodeLongitude
-        case .Lilith:
-            return service.lilithLongitude
-        case .Ascendant:
-            return service.ascendant
-        case .Midheaven:
-            return service.midheavenLongitude
-        }
-    }
 }
 
+extension Point: Hashable {}

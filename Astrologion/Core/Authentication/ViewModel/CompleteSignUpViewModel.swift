@@ -28,14 +28,25 @@ class CompleteSignUpViewModel: ObservableObject {
 
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                let sunPosition = self.astrologyModel.extractZodiacSign(from: self.astrologyModel.sunPosition)
-                let moonPosition = self.astrologyModel.extractZodiacSign(from: self.astrologyModel.moonPosition)
-                let ascendant = self.astrologyModel.extractZodiacSign(from: self.astrologyModel.zodiacSignAndDegree(fromLongitude: self.astrologyModel.ascendant))
-                
-                self.sunPosition = sunPosition
-                self.moonPosition = moonPosition
-                self.ascendant = ascendant
+
+                // Access positions using the planetaryPositions dictionary
+                if let sunLongitude = self.astrologyModel.planetaryPositions[.Sun],
+                   let moonLongitude = self.astrologyModel.planetaryPositions[.Moon] {
+                    
+                    let sunPosition = self.astrologyModel.zodiacSignAndDegree(fromLongitude: sunLongitude)
+                    let moonPosition = self.astrologyModel.zodiacSignAndDegree(fromLongitude: moonLongitude)
+                    
+                    // Directly use ascendantLongitude since it's not optional
+                    let ascendantLongitude = self.astrologyModel.ascendant
+                    let ascendantSign = self.astrologyModel.zodiacSignAndDegree(fromLongitude: ascendantLongitude)
+                    
+                    // Extract the zodiac sign from the position string
+                    self.sunPosition = self.astrologyModel.extractZodiacSign(from: sunPosition)
+                    self.moonPosition = self.astrologyModel.extractZodiacSign(from: moonPosition)
+                    self.ascendant = self.astrologyModel.extractZodiacSign(from: ascendantSign)
+                }
             }
         }
     }
+
 }
