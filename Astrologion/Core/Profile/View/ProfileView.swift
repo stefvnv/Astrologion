@@ -3,6 +3,7 @@ import SwiftUI
 struct ProfileView: View {
     let user: User
     @StateObject var profileViewModel: ProfileViewModel
+    @State var natalChartViewModel: NatalChartViewModel? = nil // Changed to optional to handle cases when chart data isn't available
 
     init(user: User) {
         self.user = user
@@ -14,11 +15,9 @@ struct ProfileView: View {
             VStack(spacing: 24) {
                 ProfileHeaderView(viewModel: profileViewModel)
 
-                if let chart = profileViewModel.chart {
-                    // Create a NatalChartViewModel from the Chart object
-                    let natalChartViewModel = NatalChartViewModel(chart: chart)
+                if let natalChartViewModel = profileViewModel.natalChartViewModel {
                     NatalChartViewRepresentable(viewModel: natalChartViewModel)
-                        .frame(height: 800)
+                        .frame(height: 600)
                 } else if profileViewModel.isLoadingChartData {
                     ProgressView("Loading astrological details...")
                 } else {
@@ -32,6 +31,9 @@ struct ProfileView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             profileViewModel.loadUserData()
+            if let chart = profileViewModel.chart {
+                natalChartViewModel = NatalChartViewModel(chart: chart)
+            }
         }
     }
 }

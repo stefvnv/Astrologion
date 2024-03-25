@@ -11,14 +11,20 @@ class NatalChartView: UIView {
     
     var viewModel: NatalChartViewModel? {
         didSet {
+            print("NatalChartView's viewModel was set or changed.")
+            
             viewModel?.$planetPositions
+                .receive(on: DispatchQueue.main)
                 .sink { [weak self] _ in
+                    print("NatalChartView detected changes in planet positions.")
                     self?.setNeedsDisplay()
                 }
                 .store(in: &cancellables)
 
             viewModel?.$aspects
+                .receive(on: DispatchQueue.main)
                 .sink { [weak self] _ in
+                    print("NatalChartView detected changes in aspects.")
                     self?.setNeedsDisplay()
                 }
                 .store(in: &cancellables)
@@ -56,7 +62,7 @@ class NatalChartView: UIView {
     
     
     /// Retriggers draw method
-    func redrawChart() {
+    func updateChart() {
         setNeedsDisplay()
     }
 
@@ -91,9 +97,11 @@ class NatalChartView: UIView {
         context.scaleBy(x: scaleFactor, y: scaleFactor)
     }
     
+    
     /// Main draw method which calls other methods for drawing all elements onto the view
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+
         guard let context = UIGraphicsGetCurrentContext(), let viewModel = viewModel else { return }
         
         // Define chart size
@@ -145,6 +153,9 @@ class NatalChartView: UIView {
         drawMcIcArrow(context, center, outerZodiacRadius)
         
         context.restoreGState() // restore graphics
+        
+        
+        print("Drawing Natal Chart with \(viewModel.planetPositions.count) planets and \(viewModel.aspects.count) aspects")
     }
     
     

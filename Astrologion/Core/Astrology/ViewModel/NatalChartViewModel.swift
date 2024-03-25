@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class NatalChartViewModel:ObservableObject {
+class NatalChartViewModel: ObservableObject {
     @Published var astrologyModel: AstrologyModel
     
     @Published var planetPositions: [PlanetPosition] = []
@@ -11,56 +11,82 @@ class NatalChartViewModel:ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    func triggerRedraw() {
-        needsRedraw = true
+    init() {
+        self.astrologyModel = AstrologyModel() // Initialize with a default AstrologyModel
+        setupBindings()
     }
-
     
-    ///
+    
+    // Existing initializer with an astrologyModel parameter
     init(astrologyModel: AstrologyModel) {
         self.astrologyModel = astrologyModel
+        setupBindings()
+    }
+    
+    
+    ///
+    convenience init(chart: Chart) {
+        let model = AstrologyModel(from: chart)
+        self.init(astrologyModel: model)
         
+        // TO BE DELETED
+        print("Initialized AstrologyModel with chart data: \(model)")
+        
+        update(with: chart)
+    }
+    
+    
+    ///
+    private func setupBindings() {
         $astrologyModel
             .sink { [weak self] updatedModel in
                 self?.aspects = updatedModel.calculateAspects()
+                self?.needsRedraw = true // Directly set needsRedraw here
             }
             .store(in: &cancellables)
     }
     
     
-    convenience init(chart: Chart) {
-        let model = AstrologyModel(from: chart)
-        self.init(astrologyModel: model)
+    /// NEW
+    func updateChart(with chart: Chart) {
+        let newAstrologyModel = AstrologyModel(from: chart)
+        self.astrologyModel = newAstrologyModel
+
+        update(with: chart)
+
+        print("Updated AstrologyModel with new chart data")
     }
-    
+
+
     
     ///
     func update(with chart: Chart) {
+        
+        // TO BE DELETED - test
+        print("Updating NatalChartViewModel with chart: \(chart)")
+        
         self.planetPositions = chart.planetaryPositions.compactMap { key, value in
             guard let planet = Point(rawValue: key),
-                  let longitudeString = value.split(separator: " ").last?.trimmingCharacters(in: CharacterSet(charactersIn: "°'")),
-                  let longitude = Double(longitudeString) else { return nil }
-            
+                  let longitude = Double(value.filter("0123456789.".contains)) else { return nil }
+
             let position = CGPoint(x: cos(longitude.degreesToRadians), y: sin(longitude.degreesToRadians))
-            
             return PlanetPosition(planet: planet, position: position, longitude: CGFloat(longitude))
         }
 
-
-        // Update aspects
-        self.aspects = chart.aspects.compactMap { description, angleString in
-            let components = description.split(separator: " between ", maxSplits: 1, omittingEmptySubsequences: true)
-            guard let aspectType = components.first,
-                  let planetsPart = components.last?.split(separator: " and "),
-                  planetsPart.count == 2,
-                  let planet1 = Point(rawValue: String(planetsPart[0])),
-                  let planet2 = Point(rawValue: String(planetsPart[1])),
-                  let aspect = Aspect.from(description: String(aspectType)),
-                  let angle = Double(angleString) else { return nil }
+        self.aspects = chart.aspects.compactMap { aspectString in
+            let components = aspectString.split(separator: "-").map(String.init)
+            guard components.count == 4,
+                  let planet1 = Point(rawValue: components[0]),
+                  let planet2 = Point(rawValue: components[1]),
+                  let aspect = Aspect.from(description: components[2]),
+                  let angle = Double(components[3]) else {
+                return nil
+            }
 
             return AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect, angleDifference: angle)
         }
 
+        self.needsRedraw = true
         self.objectWillChange.send()
     }
 

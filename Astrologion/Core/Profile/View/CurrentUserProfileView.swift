@@ -6,19 +6,30 @@ struct CurrentUserProfileView: View {
     @State private var showSettingsSheet = false
     @State private var selectedSettingsOption: SettingsItemModel?
     @State private var showDetail = false
-    
+
     init(user: User) {
         self.user = user
-        self._viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
+        _viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
     }
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     ProfileHeaderView(viewModel: viewModel)
-                    
-                    PostGridView(config: .profile(user))
+
+                    // Optionally display the NatalChartViewRepresentable
+                    if let chart = viewModel.chart {
+                        NatalChartViewRepresentable(viewModel: NatalChartViewModel(chart: chart))
+                            .frame(height: 600) // Adjust height as needed
+                    } else if viewModel.isLoadingChartData {
+                        ProgressView("Loading astrological details...")
+                    } else {
+                        Text("Unable to load chart data.")
+                            .foregroundColor(.secondary)
+                    }
+
+                    // PostGridView(config: .profile(user)) // Uncomment or replace this with your actual content
                 }
             }
             .navigationTitle("Profile")
@@ -31,7 +42,6 @@ struct CurrentUserProfileView: View {
                     .presentationDetents([.height(CGFloat(SettingsItemModel.allCases.count * 56))])
                     .presentationDragIndicator(.visible)
             }
-            
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -44,7 +54,7 @@ struct CurrentUserProfileView: View {
             }
             .onChange(of: selectedSettingsOption) { newValue in
                 guard let option = newValue else { return }
-                
+
                 if option != .logout {
                     self.showDetail.toggle()
                 } else {

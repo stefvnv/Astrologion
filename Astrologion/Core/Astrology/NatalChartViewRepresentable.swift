@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NatalChartViewRepresentable: UIViewRepresentable {
-    @ObservedObject var viewModel: NatalChartViewModel
+    var viewModel: NatalChartViewModel
 
     func makeUIView(context: Context) -> NatalChartView {
         let natalChartView = NatalChartView()
@@ -10,7 +10,9 @@ struct NatalChartViewRepresentable: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: NatalChartView, context: Context) {
-        uiView.viewModel = viewModel
-        uiView.setNeedsDisplay()
+        if uiView.viewModel !== viewModel {
+            uiView.viewModel = viewModel
+            uiView.updateChart()
+        }
     }
 }

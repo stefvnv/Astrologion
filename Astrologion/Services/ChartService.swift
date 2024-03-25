@@ -55,21 +55,25 @@ class ChartService {
 
 extension AstrologyModel {
     func toChart(userId: String) -> Chart {
+        
+        // parsing planets
         let planetaryPositions = astrologicalPointPositions.reduce(into: [String: String]()) { (dict, tuple) in
             let (planet, longitude) = tuple
             dict[planet.rawValue] = zodiacSignAndDegree(fromLongitude: longitude)
         }
         
+        // parsing houses
         let houseCuspsDict = houseCusps.enumerated().reduce(into: [String: String]()) { (dict, tuple) in
             let (index, cusp) = tuple
             dict["House \(index + 1)"] = zodiacSignAndDegree(fromLongitude: cusp)
         }
         
-        let aspectsDict = calculateAspects().reduce(into: [String: String]()) { (dict, aspectData) in
-            let key = "\(aspectData.aspect) between \(aspectData.planet1) and \(aspectData.planet2)"
-            dict[key] = String(format: "%.2f", aspectData.angleDifference)
+        // parsing aspects
+        let aspectsList = calculateAspects().map { aspectData -> String in
+            return "\(aspectData.planet1.rawValue)-\(aspectData.planet2.rawValue)-\(aspectData.aspect)-\(aspectData.angleDifference)"
         }
-
+        
+        // create chart object
         return Chart(
             userId: userId,
             sunSign: extractZodiacSign(from: sunPosition),
@@ -77,7 +81,7 @@ extension AstrologyModel {
             ascendantSign: extractZodiacSign(from: zodiacSignAndDegree(fromLongitude: ascendant)),
             planetaryPositions: planetaryPositions,
             houseCusps: houseCuspsDict,
-            aspects: aspectsDict
+            aspects: aspectsList
         )
     }
 }

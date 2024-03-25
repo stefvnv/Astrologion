@@ -1,5 +1,4 @@
 import SwiftUI
-import Kingfisher
 
 struct ProfileHeaderView: View {
     @ObservedObject var viewModel: ProfileViewModel
@@ -21,13 +20,9 @@ struct ProfileHeaderView: View {
                             .foregroundColor(.gray)
                     } else if let chart = viewModel.chart {
                         HStack {
-                            Text("☉ \(chart.sunSign)") 
+                            Text("☉ \(chart.sunSign)")
                             Text("☾ \(chart.moonSign)")
-                            if let ascendantSign = chart.houseCusps["House 1"] {
-                                Text("↑ \(ascendantSign)")
-                            } else {
-                                Text("↑ Unknown")
-                            }
+                            Text("↑ \(chart.ascendantSign)")
                         }
                         .font(.subheadline)
                     } else if let errorMessage = viewModel.chartDataErrorMessage {

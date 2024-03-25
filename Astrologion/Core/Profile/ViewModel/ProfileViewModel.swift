@@ -6,16 +6,28 @@ class ProfileViewModel: ObservableObject {
     @Published var user: User
     @Published var isLoadingChartData = true
     @Published var chartDataErrorMessage: String?
-    @Published var chart: Chart? // Use Chart directly rather than through NatalChartViewModel
+    @Published var natalChartViewModel: NatalChartViewModel?
     private var cancellables: Set<AnyCancellable> = []
-
     
+    
+    @Published var chart: Chart? {
+        didSet {
+            if let newChart = chart {
+                print("Passing Chart to NatalChartViewModel: \(newChart)")
+                natalChartViewModel = NatalChartViewModel(chart: newChart)
+            }
+        }
+    }
+
+
+    ///
     init(user: User) {
         self.user = user
         loadUserData()
     }
 
     
+    ///
     func loadUserData() {
         Task {
             do {
@@ -24,6 +36,8 @@ class ProfileViewModel: ObservableObject {
                 async let chartData = ChartService.shared.fetchChart(for: user.id)
 
                 let (stats, isFollowed, chart) = try await (userStats, followedStatus, chartData)
+                
+                print("Fetched Chart Data: \(String(describing: chart))") // Logging fetched chart data
 
                 DispatchQueue.main.async {
                     self.user.stats = stats
@@ -40,11 +54,6 @@ class ProfileViewModel: ObservableObject {
         }
     }
 
-    
-    var formattedAscendant: String {
-        guard let ascendant = chart?.ascendantSign else { return "Unknown" }
-        return ascendant
-    }
 
     
     // MARK: - Following
