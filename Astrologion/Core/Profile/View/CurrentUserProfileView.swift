@@ -19,9 +19,9 @@ struct CurrentUserProfileView: View {
                     ProfileHeaderView(viewModel: viewModel)
 
                     // Optionally display the NatalChartViewRepresentable
-                    if let chart = viewModel.chart {
-                        NatalChartViewRepresentable(viewModel: NatalChartViewModel(chart: chart))
-                            .frame(height: 600) // Adjust height as needed
+                    if let _ = viewModel.natalChartViewModel {
+                        NatalChartViewRepresentable(viewModel: $viewModel.natalChartViewModel)
+                            .frame(height: 600)
                     } else if viewModel.isLoadingChartData {
                         ProgressView("Loading astrological details...")
                     } else {

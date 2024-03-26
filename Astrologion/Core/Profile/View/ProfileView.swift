@@ -16,7 +16,7 @@ struct ProfileView: View {
                 ProfileHeaderView(viewModel: profileViewModel)
 
                 if let natalChartViewModel = profileViewModel.natalChartViewModel {
-                    NatalChartViewRepresentable(viewModel: natalChartViewModel)
+                    NatalChartViewRepresentable(viewModel: $profileViewModel.natalChartViewModel)
                         .frame(height: 600)
                 } else if profileViewModel.isLoadingChartData {
                     ProgressView("Loading astrological details...")

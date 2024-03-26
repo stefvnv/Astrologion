@@ -54,3 +54,16 @@ public enum Aspect: CaseIterable {
         }
     }
 }
+
+
+extension Aspect: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .conjunction: return "conjunction"
+        case .sextile: return "sextile"
+        case .square: return "square"
+        case .trine: return "trine"
+        case .opposition: return "opposition"
+        }
+    }
+}

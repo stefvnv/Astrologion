@@ -78,5 +78,9 @@ extension Point {
 }
 
 
-
+extension Point: CustomStringConvertible {
+    public var description: String {
+        return self.symbol ?? "Unknown Point"
+    }
+}
 

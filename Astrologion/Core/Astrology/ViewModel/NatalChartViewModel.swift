@@ -47,6 +47,7 @@ class NatalChartViewModel: ObservableObject {
                 return nil
             }
             let position = CGPoint(x: cos(longitude.degreesToRadians), y: sin(longitude.degreesToRadians))
+            print("Transformed planet position: \(key) -> \(position)")
             return PlanetPosition(planet: point, position: position, longitude: CGFloat(longitude))
         }
         print("Processed \(planetPositions.count) Planet Positions")
@@ -61,15 +62,19 @@ class NatalChartViewModel: ObservableObject {
                 print("Failed to transform aspect string: \(aspectString)")
                 return nil
             }
+            //print("Transformed aspect: \(aspectData)")
             return AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect, angleDifference: angle)
         }
 
         // Log the count of successfully processed aspects
         print("NatalChartViewModel: Processed \(self.aspects.count) Aspects")
-
-        // Indicate that the view needs to be redrawn with the new data
-        self.needsRedraw = true
-        self.objectWillChange.send()
+        
+        DispatchQueue.main.async {
+            assert(Thread.isMainThread, "Must be on the main thread.")
+            self.needsRedraw = true
+            self.objectWillChange.send()
+            print("DISPATCH QUEUE FROM VIEW MODEL PRINT")
+        }
     }
 
     
@@ -183,6 +188,16 @@ class NatalChartViewModel: ObservableObject {
 
     ///
     func houseCusps() -> [Double] {
+        
+
+        
+        // Example of hard-coding values for testing
+        //astrologyModel.houseCusps = [120.0, 150.0, 180.0, 210.0, 240.0, 270.0, 300.0, 330.0, 0.0, 30.0, 60.0, 90.0]
+        
+        
+        print("House cusps: \(astrologyModel.houseCusps)")
+
+        
         return astrologyModel.houseCusps
     }
     

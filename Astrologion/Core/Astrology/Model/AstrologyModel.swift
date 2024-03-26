@@ -27,12 +27,16 @@ public class AstrologyModel: ObservableObject {
         latitude: Double, longitude: Double,
         houseSystem: HouseSystem = .placidus
     ) async {
-        await calculateAstrologicalDetails(
-            day: day, month: month, year: year,
-            hour: hour, minute: minute,
-            latitude: latitude, longitude: longitude,
-            houseSystem: houseSystem
-        )
+        do {
+            try await calculateAstrologicalDetails(
+                day: day, month: month, year: year,
+                hour: hour, minute: minute,
+                latitude: latitude, longitude: longitude,
+                houseSystem: houseSystem
+            )
+        } catch {
+            print("An error occurred: \(error)")
+        }
     }
 
     
@@ -42,37 +46,35 @@ public class AstrologyModel: ObservableObject {
         hour: Int, minute: Int,
         latitude: Double, longitude: Double,
         houseSystem: HouseSystem
-    ) async {
+    ) async throws {
         let location = CLLocation(latitude: latitude, longitude: longitude)
         let geocoder = CLGeocoder()
-
-        do {
-            let placemarks = try await geocoder.reverseGeocodeLocation(location)
-            guard let timeZone = placemarks.first?.timeZone else {
-                return
-            }
-
-            var dateComponents = DateComponents()
-            dateComponents.year = year
-            dateComponents.month = month
-            dateComponents.day = day
-            dateComponents.hour = hour
-            dateComponents.minute = minute
-            dateComponents.timeZone = timeZone
-
-            if let date = Calendar.current.date(from: dateComponents) {
-                let isDST = timeZone.isDaylightSavingTime(for: date)
-                let dstOffset = isDST ? timeZone.daylightSavingTimeOffset(for: date) : 0
-                let jd = swe_julday(Int32(year), Int32(month), Int32(day), Double(hour) + Double(minute) / 60.0 - Double(dstOffset) / 3600.0, SE_GREG_CAL)
-
-                calculatePlanetaryPositions(julianDay: jd)
-                calculateHouseCusps(julianDay: jd, latitude: latitude, longitude: longitude, houseSystem: houseSystem.rawValue)
-            }
-        } catch {
-            print("Error: \(error.localizedDescription)")
+        
+        let placemarks = try await geocoder.reverseGeocodeLocation(location)
+        guard let timeZone = placemarks.first?.timeZone else {
+            throw GeocoderError.timezoneError
         }
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        dateComponents.timeZone = timeZone
+
+        guard let date = Calendar.current.date(from: dateComponents) else {
+            throw GeocoderError.dateConversionError
+        }
+        
+        let isDST = timeZone.isDaylightSavingTime(for: date)
+        let dstOffset = isDST ? timeZone.daylightSavingTimeOffset(for: date) : 0
+        let jd = swe_julday(Int32(year), Int32(month), Int32(day), Double(hour) + Double(minute) / 60.0 - Double(dstOffset) / 3600.0, SE_GREG_CAL)
+
+        calculatePlanetaryPositions(julianDay: jd)
+        calculateHouseCusps(julianDay: jd, latitude: latitude, longitude: longitude, houseSystem: houseSystem.rawValue)
     }
-    
+
     
     ///
     private func calculatePlanetaryPositions(julianDay jd: Double) {
@@ -92,51 +94,21 @@ public class AstrologyModel: ObservableObject {
     
     ///
     private func calculateHouseCusps(julianDay jd: Double, latitude: Double, longitude: Double, houseSystem: Int32) {
-        var cusps = [Double](repeating: 0.0, count: 13)
-        var ascmc = [Double](repeating: 0.0, count: 10)
+        var cusps = [Double](repeating: 0.0, count: 13) // array for cusps
+        var ascmc = [Double](repeating: 0.0, count: 10) // array for special points
 
-        let result = swe_houses(jd, latitude, longitude, houseSystem, &cusps, &ascmc)
-        if result == 0 {
-            DispatchQueue.main.async {
-                self.houseCusps = Array(cusps[1...12])
-                self.ascendant = ascmc[0]
-                self.midheavenLongitude = cusps[10]
-            }
-        } else {
-            print("Error calculating house cusps")
+        // call SE function to calculate house cusps
+        swe_houses(jd, latitude, longitude, houseSystem, &cusps, &ascmc)
+
+        // update published properties
+        DispatchQueue.main.async {
+            
+            print("DISPATCH SECTION INSIDE CALCULATE HOUSE CUSPS!!!!")
+            
+            self.houseCusps = Array(cusps[1...12]) // set house cusps
+            self.ascendant = ascmc[0] // ascendant
+            self.midheavenLongitude = ascmc[1] // midheaven
         }
-    }
-
-    
-    ///
-    private func performCalculations(
-        withTimeZone timeZone: TimeZone,
-        day: Int, month: Int, year: Int,
-        hour: Int, minute: Int,
-        latitude: Double, longitude: Double, houseSystem: Int32,
-        completion: @escaping () -> Void
-    ) {
-        var dateComponents = DateComponents()
-        dateComponents.year = year
-        dateComponents.month = month
-        dateComponents.day = day
-        dateComponents.hour = hour
-        dateComponents.minute = minute
-        dateComponents.timeZone = timeZone
-
-        guard let date = Calendar.current.date(from: dateComponents) else {
-            print("Date conversion error")
-            completion()
-            return
-        }
-
-        let isDST = timeZone.isDaylightSavingTime(for: date)
-        let dstOffset = isDST ? timeZone.daylightSavingTimeOffset(for: date) : 0
-        let jd = swe_julday(Int32(year), Int32(month), Int32(day), Double(hour) + Double(minute) / 60.0 - Double(dstOffset) / 3600.0, SE_GREG_CAL)
-
-        calculatePlanetaryPositions(julianDay: jd)
-        calculateHouseCusps(julianDay: jd, latitude: latitude, longitude: longitude, houseSystem: houseSystem)
-        completion()
     }
     
     
