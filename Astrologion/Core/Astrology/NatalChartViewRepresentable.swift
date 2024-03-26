@@ -10,9 +10,6 @@ struct NatalChartViewRepresentable: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: NatalChartView, context: Context) {
-        if uiView.viewModel !== viewModel {
-            uiView.viewModel = viewModel
-            uiView.updateChart()
-        }
+        uiView.updateChart()
     }
 }

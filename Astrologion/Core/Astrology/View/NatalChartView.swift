@@ -34,16 +34,19 @@ class NatalChartView: UIView {
     
     var planetPositions: [PlanetPosition] = [] {
         didSet {
+            print("Planet positions updated, count: \(planetPositions.count)")
             setNeedsDisplay() // Redraw the view when planet positions change
         }
     }
-    
-    
+
     var aspects: [AstrologicalAspectData] = [] {
         didSet {
+            print("Aspects updated, count: \(aspects.count)")
             setNeedsDisplay() // Redraw the view when aspects change
         }
     }
+
+
     //
     
     
@@ -370,6 +373,8 @@ class NatalChartView: UIView {
             context.addLine(to: endIntersection)
             context.strokePath()
         }
+
+        print("Drawing Aspects: \(aspects.count) to draw")
     }
 
     
@@ -589,7 +594,7 @@ class NatalChartView: UIView {
             context.strokePath()
         }
     }
-}
+} //end
 
 
 extension CGFloat {

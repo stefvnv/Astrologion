@@ -6,46 +6,34 @@ class NatalChartViewModel: ObservableObject {
     
     @Published var planetPositions: [PlanetPosition] = []
     @Published var aspects: [AstrologicalAspectData] = []
-    
     @Published var needsRedraw: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
     
-
-    ///
     init() {
-        self.astrologyModel = AstrologyModel() // Initialize with a default AstrologyModel
+        self.astrologyModel = AstrologyModel()
         setupBindings()
     }
     
-    
-    ///
     init(astrologyModel: AstrologyModel) {
         self.astrologyModel = astrologyModel
         setupBindings()
     }
     
-    
-    ///
     init(chart: Chart) {
-        self.astrologyModel = AstrologyModel() // Initialize with a default AstrologyModel
-        update(with: chart) // Use the existing update method to set up the model based on the chart
-        setupBindings() // Set up any required bindings
+        self.astrologyModel = AstrologyModel()
+        update(with: chart)
     }
     
-    
-    ///
     private func setupBindings() {
         $astrologyModel
             .sink { [weak self] updatedModel in
                 self?.aspects = updatedModel.calculateAspects()
-                self?.needsRedraw = true // Directly set needsRedraw here
+                self?.needsRedraw = true
             }
             .store(in: &cancellables)
     }
     
-    
-    ///
     func update(with chart: Chart) {
         print("NatalChartViewModel: Updating with chart data")
 
@@ -58,20 +46,15 @@ class NatalChartViewModel: ObservableObject {
                 print("Failed to transform planetary position for key: \(key), value: \(value)")
                 return nil
             }
-
             let position = CGPoint(x: cos(longitude.degreesToRadians), y: sin(longitude.degreesToRadians))
             return PlanetPosition(planet: point, position: position, longitude: CGFloat(longitude))
         }
-
-        // Log the count of successfully processed planet positions
-        print("NatalChartViewModel: Processed \(self.planetPositions.count) Planet Positions")
-
+        print("Processed \(planetPositions.count) Planet Positions")
         
-        
-        self.aspects = chart.aspects.compactMap { aspectString in
+        aspects = chart.aspects.compactMap { aspectString in
             let components = aspectString.split(separator: "-").map(String.init)
             guard components.count == 4,
-                  let planet1 = Point.from(symbol: components[0]), // Ensure Ascendant and other special points are handled
+                  let planet1 = Point.from(symbol: components[0]),
                   let planet2 = Point.from(symbol: components[1]),
                   let aspect = Aspect.from(description: components[2]),
                   let angle = Double(components[3]) else {
