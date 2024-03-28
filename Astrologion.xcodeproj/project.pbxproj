@@ -140,6 +140,13 @@
 		F8C006F72BB58391005741FC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F62BB58391005741FC /* Double.swift */; };
 		F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */; };
 		F8C006FC2BB586A1005741FC /* PlanetPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006FB2BB586A1005741FC /* PlanetPosition.swift */; };
+		F8C006FE2BB5C6BD005741FC /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006FD2BB5C6BD005741FC /* SummaryView.swift */; };
+		F8C007002BB5C6CA005741FC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006FF2BB5C6C9005741FC /* ChartView.swift */; };
+		F8C007022BB5C6E4005741FC /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007012BB5C6E4005741FC /* PlanetsView.swift */; };
+		F8C007042BB5C6EE005741FC /* HousesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007032BB5C6EE005741FC /* HousesView.swift */; };
+		F8C007062BB5C798005741FC /* AspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007052BB5C798005741FC /* AspectsView.swift */; };
+		F8C007082BB5C7D3005741FC /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007072BB5C7D3005741FC /* ProfileTab.swift */; };
+		F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007092BB5D14E005741FC /* ProfileTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -249,6 +256,13 @@
 		F8C006F62BB58391005741FC /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalAspectData.swift; sourceTree = "<group>"; };
 		F8C006FB2BB586A1005741FC /* PlanetPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetPosition.swift; sourceTree = "<group>"; };
+		F8C006FD2BB5C6BD005741FC /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		F8C006FF2BB5C6C9005741FC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		F8C007012BB5C6E4005741FC /* PlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsView.swift; sourceTree = "<group>"; };
+		F8C007032BB5C6EE005741FC /* HousesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesView.swift; sourceTree = "<group>"; };
+		F8C007052BB5C798005741FC /* AspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectsView.swift; sourceTree = "<group>"; };
+		F8C007072BB5C7D3005741FC /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
+		F8C007092BB5D14E005741FC /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,6 +588,11 @@
 			children = (
 				F819B5FE2BACE300001B138A /* ProfileView.swift */,
 				F819B6002BACE33A001B138A /* CurrentUserProfileView.swift */,
+				F8C006FF2BB5C6C9005741FC /* ChartView.swift */,
+				F8C007012BB5C6E4005741FC /* PlanetsView.swift */,
+				F8C007032BB5C6EE005741FC /* HousesView.swift */,
+				F8C007052BB5C798005741FC /* AspectsView.swift */,
+				F8C006FD2BB5C6BD005741FC /* SummaryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -602,6 +621,7 @@
 				F819B5EA2BACE17B001B138A /* ProfileActionButtonView.swift */,
 				F819B5EC2BACE18B001B138A /* ProfileHeaderView.swift */,
 				F819B5EE2BACE1D5001B138A /* UserStatView.swift */,
+				F8C007092BB5D14E005741FC /* ProfileTabView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -863,6 +883,7 @@
 				F840A0122BAE298F00D007F8 /* Error */,
 				F8409FED2BADDB3700D007F8 /* Astrological */,
 				F8409FEC2BADDB3200D007F8 /* UI */,
+				F8C007072BB5C7D3005741FC /* ProfileTab.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1037,10 +1058,13 @@
 				F819B5BF2BACC54F001B138A /* CommentsViewModel.swift in Sources */,
 				F819B5722BACBF63001B138A /* ImageUploader.swift in Sources */,
 				F819B5D72BACE06D001B138A /* MessageViewModel.swift in Sources */,
+				F8C007002BB5C6CA005741FC /* ChartView.swift in Sources */,
 				F819B61B2BACE555001B138A /* Constants.swift in Sources */,
+				F8C007042BB5C6EE005741FC /* HousesView.swift in Sources */,
 				F819B5D32BACE047001B138A /* MessageView.swift in Sources */,
 				F819B5A92BACC413001B138A /* PostGridViewModel.swift in Sources */,
 				F819B5A72BACC3F0001B138A /* RegistrationViewModel.swift in Sources */,
+				F8C006FE2BB5C6BD005741FC /* SummaryView.swift in Sources */,
 				F819B5D92BACE085001B138A /* ConversationsViewModel.swift in Sources */,
 				F819B5ED2BACE18B001B138A /* ProfileHeaderView.swift in Sources */,
 				F819B5992BACC1F8001B138A /* CompleteSignUpView.swift in Sources */,
@@ -1083,6 +1107,7 @@
 				F819B4D62BAC970A001B138A /* AstrologionApp.swift in Sources */,
 				F8409FFE2BADDBF700D007F8 /* ChartColor.swift in Sources */,
 				F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */,
+				F8C007062BB5C798005741FC /* AspectsView.swift in Sources */,
 				F8409FF72BADDBB000D007F8 /* Point.swift in Sources */,
 				F819B5972BACC1D1001B138A /* AuthService.swift in Sources */,
 				F819B59D2BACC341001B138A /* AddEmailView.swift in Sources */,
@@ -1098,6 +1123,7 @@
 				F819B61D2BACE570001B138A /* IGButtonModifier.swift in Sources */,
 				F819B5DF2BACE0CD001B138A /* NotificationType.swift in Sources */,
 				F819B5E72BACE136001B138A /* NotificationsCellViewModel.swift in Sources */,
+				F8C007022BB5C6E4005741FC /* PlanetsView.swift in Sources */,
 				F819B5C92BACDFD5001B138A /* Message.swift in Sources */,
 				F8409FD72BADD05A00D007F8 /* SelectDateOfBirthView.swift in Sources */,
 				F819B59F2BACC36A001B138A /* CreateUsernameView.swift in Sources */,
@@ -1119,6 +1145,7 @@
 				F8409FFC2BADDBEA00D007F8 /* AspectColor.swift in Sources */,
 				F819B5FF2BACE300001B138A /* ProfileView.swift in Sources */,
 				F819B5EF2BACE1D5001B138A /* UserStatView.swift in Sources */,
+				F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */,
 				F8409FD92BADD15300D007F8 /* SelectLocationView.swift in Sources */,
 				F819B5AD2BACC450001B138A /* CustomInputView.swift in Sources */,
 				F819B60F2BACE491001B138A /* PreviewProvider.swift in Sources */,
@@ -1129,6 +1156,7 @@
 				F819B6052BACE3F9001B138A /* ContentViewModel.swift in Sources */,
 				F819B5E12BACE0EB001B138A /* NotificationsView.swift in Sources */,
 				F819B5DB2BACE09C001B138A /* ChatViewModel.swift in Sources */,
+				F8C007082BB5C7D3005741FC /* ProfileTab.swift in Sources */,
 				F8C006F72BB58391005741FC /* Double.swift in Sources */,
 				F819B5CB2BACDFF4001B138A /* ConversationsView.swift in Sources */,
 			);

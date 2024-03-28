@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct ProfileView: View {
-    let user: User
+    @State private var selectedTab: ProfileTab = .chart
     @StateObject var profileViewModel: ProfileViewModel
+    let user: User
 
     init(user: User) {
         self.user = user
@@ -14,21 +15,13 @@ struct ProfileView: View {
             VStack(spacing: 24) {
                 ProfileHeaderView(viewModel: profileViewModel)
 
-                if let chart = profileViewModel.userChart {
-                    NatalChartViewRepresentable(chart: chart)
-                        .frame(height: 600) 
-                }
+                ProfileTabView(selectedTab: $selectedTab, user: user, profileViewModel: profileViewModel)
             }
         }
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            print("ProfileView appeared")
-        }
-
     }
 }
-
 
 
 struct ProfileView_Previews: PreviewProvider {
