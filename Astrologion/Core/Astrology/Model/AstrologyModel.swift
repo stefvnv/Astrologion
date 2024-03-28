@@ -202,6 +202,10 @@ public class AstrologyModel: ObservableObject {
 
                         let aspectData = AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspect, exactAngle: exactAngle, orb: aspectOrb)
                         aspects.append(aspectData)
+                        
+                        // TO BE DELETED
+                        print("Aspect: \(aspect) between \(planet1) and \(planet2), Angle Difference: \(normalizedAngle), Orb: \(aspectOrb)")
+
                     }
                 }
             }
