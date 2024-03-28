@@ -9,29 +9,25 @@ struct ProfileHeaderView: View {
                 CircularProfileImageView(user: viewModel.user, size: .large)
                     .padding(.leading)
                 
-//                VStack(alignment: .leading) {
-//                    Text("\(viewModel.user.fullname ?? "No Name") (@\(viewModel.user.username))")
-//                        .font(.headline)
-//                        .fontWeight(.semibold)
-//                    
-//                    if viewModel.isLoadingChartData {
-//                        Text("Loading astrological details...")
-//                            .font(.subheadline)
-//                            .foregroundColor(.gray)
-//                    } else if let chart = viewModel.chart {
-//                        HStack {
-//                            Text("☉ \(chart.sunSign)")
-//                            Text("☾ \(chart.moonSign)")
-//                            Text("↑ \(chart.ascendantSign)")
-//                        }
-//                        .font(.subheadline)
-//                    } else if let errorMessage = viewModel.chartDataErrorMessage {
-//                        Text(errorMessage)
-//                            .font(.subheadline)
-//                            .foregroundColor(.red)
-//                    }
-//                }
-//                .frame(maxWidth: .infinity, alignment: .leading)
+                VStack(alignment: .leading) {
+                    Text("\(viewModel.user.fullname ?? "No Name") (@\(viewModel.user.username))")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                    
+                    if viewModel.isLoadingChartData {
+                        Text("Loading astrological details...")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    } else {
+                        HStack {
+                            Text("☉ \(viewModel.sunSign)")
+                            Text("☾ \(viewModel.moonSign)")
+                            Text("↑ \(viewModel.ascendantSign)")
+                        }
+                        .font(.subheadline)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
 
             ProfileActionButtonView(viewModel: viewModel)
