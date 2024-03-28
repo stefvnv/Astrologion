@@ -1,8 +1,7 @@
-//
-//  PlanetPosition.swift
-//  Astrologion
-//
-//  Created by Stefana Chiritescu on 28/03/2024.
-//
-
 import Foundation
+
+struct PlanetPosition {
+    var planet: Point
+    var position: CGPoint
+    var longitude: CGFloat
+}

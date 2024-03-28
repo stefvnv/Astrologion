@@ -129,16 +129,16 @@ extension UserService {
 
 
 extension UserService {
-
-    // Fetches the astrological chart for a given user by their UID
+    
     static func fetchUserChart(uid: String) async throws -> Chart? {
-        guard let user = try? await fetchUser(withUid: uid), let chartId = user.chartId else { return nil }
-        return try await ChartService.shared.fetchChart(for: chartId)
+        let user = try await UserService.fetchUser(withUid: uid)
+        guard let chartId = user.chartId, !chartId.isEmpty else {
+            print("Error: Chart ID is missing for user: \(uid)")
+            return nil
+        }
+        let chart = try await ChartService.shared.fetchChart(for: chartId)
+        print("Fetched chart for user \(uid): \(String(describing: chart))")
+        return chart
     }
 
-    // Updates the astrological chart for a given user with new chart information
-    static func updateUserChart(uid: String, with chart: Chart) async throws {
-        guard let user = try? await fetchUser(withUid: uid), let chartId = user.chartId else { return }
-        try await ChartService.shared.updateChart(for: chartId, with: chart)
-    }
 }

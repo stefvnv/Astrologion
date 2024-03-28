@@ -18,16 +18,16 @@ struct CurrentUserProfileView: View {
                 VStack(spacing: 24) {
                     ProfileHeaderView(viewModel: viewModel)
 
-                    // Optionally display the NatalChartViewRepresentable
-                    if let _ = viewModel.natalChartViewModel {
-                        NatalChartViewRepresentable(viewModel: $viewModel.natalChartViewModel)
-                            .frame(height: 600)
-                    } else if viewModel.isLoadingChartData {
-                        ProgressView("Loading astrological details...")
-                    } else {
-                        Text("Unable to load chart data.")
-                            .foregroundColor(.secondary)
-                    }
+//                    // Optionally display the NatalChartViewRepresentable
+//                    if let _ = viewModel.natalChartViewModel {
+//                        NatalChartViewRepresentable(viewModel: $viewModel.natalChartViewModel)
+//                            .frame(height: 600)
+//                    } else if viewModel.isLoadingChartData {
+//                        ProgressView("Loading astrological details...")
+//                    } else {
+//                        Text("Unable to load chart data.")
+//                            .foregroundColor(.secondary)
+//                    }
 
                     // PostGridView(config: .profile(user)) // Uncomment or replace this with your actual content
                 }

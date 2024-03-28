@@ -1,21 +1,24 @@
 import UIKit
 
-public enum Point: Int32, CaseIterable {
-    case Sun = 0 // SE_SUN
-    case Moon = 1 // SE_MOON
-    case Mercury = 2 // SE_MERCURY
-    case Venus = 3 // SE_VENUS
-    case Mars = 4 // SE_MARS
-    case Jupiter = 5 // SE_JUPITER
-    case Saturn = 6 // SE_SATURN
-    case Uranus = 7 // SE_URANUS
-    case Neptune = 8 // SE_NEPTUNE
-    case Pluto = 9 // SE_PLUTO
-    case NorthNode = 10 // SE_TRUE_NODE
-    case Lilith = 11 // SE_MEAN_APOG
-    //case Ascendant = -1
-    //case Midheaven = -2
 
+/// Represents the major astrological planets, each with an associated symbol
+public enum Point: String, CaseIterable {
+    case Sun = "Sun"
+    case Moon = "Moon"
+    case Mercury = "Mercury"
+    case Venus = "Venus"
+    case Mars = "Mars"
+    case Jupiter = "Jupiter"
+    case Saturn = "Saturn"
+    case Uranus = "Uranus"
+    case Neptune = "Neptune"
+    case Pluto = "Pluto"
+    case NorthNode = "North Node"
+    case Lilith = "Lilith"
+    case Ascendant = "Ascendant"
+    case Midheaven = "Midheaven"
+    
+    /// The astrological symbol associated with the body
     var symbol: String? {
         switch self {
         case .Sun: return "☉"
@@ -30,11 +33,45 @@ public enum Point: Int32, CaseIterable {
         case .Pluto: return "♇"
         case .NorthNode: return "☊"
         case .Lilith: return "⚸"
-        //case .Ascendant: return "ASC"
-        //case .Midheaven: return "MC"
+        case .Ascendant, .Midheaven: return nil // no symbol returned
         }
     }
 
+    /// Calculates the longitude of the body using the provided `AstrologyModel` service
+    func longitude(using model: AstrologyModel) -> Double {
+        switch self {
+        case .Sun:
+            return model.sunLongitude
+        case .Moon:
+            return model.moonLongitude
+        case .Mercury:
+            return model.mercuryLongitude
+        case .Venus:
+            return model.venusLongitude
+        case .Mars:
+            return model.marsLongitude
+        case .Jupiter:
+            return model.jupiterLongitude
+        case .Saturn:
+            return model.saturnLongitude
+        case .Uranus:
+            return model.uranusLongitude
+        case .Neptune:
+            return model.neptuneLongitude
+        case .Pluto:
+            return model.plutoLongitude
+        case .NorthNode:
+            return model.northNodeLongitude
+        case .Lilith:
+            return model.lilithLongitude
+        case .Ascendant:
+            return model.ascendant
+        case .Midheaven:
+            return model.midheavenLongitude
+        }
+    }
+    
+    ///
     var color: UIColor {
         switch self {
         case .Sun: return PointColor.sun.uiColor
@@ -49,38 +86,7 @@ public enum Point: Int32, CaseIterable {
         case .Pluto: return PointColor.pluto.uiColor
         case .NorthNode: return PointColor.northNode.uiColor
         case .Lilith: return PointColor.lilith.uiColor
-        //case .Ascendant, .Midheaven: return PointColor.gold.uiColor
+        case .Ascendant, .Midheaven: return PointColor.gold.uiColor
         }
     }
 }
-
-
-extension Point {
-    static func from(symbol: String) -> Point? {
-        switch symbol {
-        case "☉": return .Sun
-        case "☾": return .Moon
-        case "☿": return .Mercury
-        case "♀": return .Venus
-        case "♂": return .Mars
-        case "♃": return .Jupiter
-        case "♄": return .Saturn
-        case "♅": return .Uranus
-        case "♆": return .Neptune
-        case "♇": return .Pluto
-        case "☊": return .NorthNode
-        case "⚸": return .Lilith
-        //case "ASC": return .Ascendant
-        //case "MC": return .Midheaven
-        default: return nil
-        }
-    }
-}
-
-
-extension Point: CustomStringConvertible {
-    public var description: String {
-        return self.symbol ?? "Unknown Point"
-    }
-}
-

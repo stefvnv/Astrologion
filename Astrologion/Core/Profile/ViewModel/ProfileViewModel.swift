@@ -4,52 +4,26 @@ import Combine
 @MainActor
 class ProfileViewModel: ObservableObject {
     @Published var user: User
-    @Published var isLoadingChartData = true
-    @Published var chartDataErrorMessage: String?
-    @Published var natalChartViewModel: NatalChartViewModel?
-    private var cancellables: Set<AnyCancellable> = []
+    @Published var userChart: Chart?
     
-    
-    @Published var chart: Chart? {
-        didSet {
-            if let newChart = chart {
-                print("Passing Chart to NatalChartViewModel: \(newChart)")
-                natalChartViewModel = NatalChartViewModel(chart: newChart)
-            }
-        }
-    }
-
-
     ///
     init(user: User) {
         self.user = user
-        loadUserData()
+        fetchUserChart()
     }
 
     
     ///
-    func loadUserData() {
+    func fetchUserChart() {
         Task {
             do {
-                async let userStats = UserService.fetchUserStats(uid: user.id)
-                async let followedStatus = UserService.checkIfUserIsFollowed(uid: user.id)
-                async let chartData = ChartService.shared.fetchChart(for: user.id)
-
-                let (stats, isFollowed, chart) = try await (userStats, followedStatus, chartData)
-                
-                print("Fetched Chart Data: \(String(describing: chart))") // Logging fetched chart data
-
+                let fetchedChart = try await UserService.fetchUserChart(uid: user.uid ?? "")
                 DispatchQueue.main.async {
-                    self.user.stats = stats
-                    self.user.isFollowed = isFollowed
-                    self.chart = chart
-                    self.isLoadingChartData = false
+                    self.userChart = fetchedChart
+                    print("Successfully fetched chart: \(String(describing: fetchedChart))")
                 }
             } catch {
-                DispatchQueue.main.async {
-                    self.chartDataErrorMessage = "Failed to load data: \(error.localizedDescription)"
-                    self.isLoadingChartData = false
-                }
+                print("Failed to fetch user chart: \(error.localizedDescription)")
             }
         }
     }

@@ -13,12 +13,12 @@ public enum Zodiac: String, CaseIterable {
     case Aquarius = "Aquarius"
     case Pisces = "Pisces"
     
-    /// The ordinal position of the Zodiac sign within the zodiacal cycle, starting from Aries as 0
+    /// ordinal position of the Zodiac sign within the zodiacal cycle, starting from Aries as 0
     var order: Int {
         return Zodiac.allCases.firstIndex(of: self) ?? 0
     }
     
-    /// The astrological symbol associated with the Zodiac sign
+    /// astrological symbol associated with the Zodiac sign
     var symbol: String {
         switch self {
         case .Aries: return "♈︎"
@@ -33,6 +33,24 @@ public enum Zodiac: String, CaseIterable {
         case .Capricorn: return "♑︎"
         case .Aquarius: return "♒︎"
         case .Pisces: return "♓︎"
+        }
+    }
+
+    /// base degree associated with the Zodiac sign
+    var baseDegree: Double {
+        switch self {
+        case .Aries: return 0
+        case .Taurus: return 30
+        case .Gemini: return 60
+        case .Cancer: return 90
+        case .Leo: return 120
+        case .Virgo: return 150
+        case .Libra: return 180
+        case .Scorpio: return 210
+        case .Sagittarius: return 240
+        case .Capricorn: return 270
+        case .Aquarius: return 300
+        case .Pisces: return 330
         }
     }
 }

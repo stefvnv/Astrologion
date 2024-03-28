@@ -32,6 +32,13 @@ class AuthService {
         let result = try await Auth.auth().createUser(withEmail: email, password: password)
         self.userSession = result.user
 
+        // Create a user instance for chart creation
+        let newUser = User(uid: result.user.uid, username: username, email: email, birthDay: birthDay, birthMonth: birthMonth, birthYear: birthYear, birthHour: birthHour, birthMinute: birthMinute, latitude: latitude, longitude: longitude, chartId: nil)
+
+        // Create and save the chart
+        let chart = try await ChartService.shared.createChart(for: newUser.uid!, with: newUser)
+
+        // Prepare userData with chartId included
         let userData: [String: Any] = [
             "email": email,
             "username": username,
@@ -42,8 +49,11 @@ class AuthService {
             "birthHour": birthHour,
             "birthMinute": birthMinute,
             "latitude": latitude,
-            "longitude": longitude
+            "longitude": longitude,
+            "chartId": chart.id!
         ]
+
+        // Save user data with chartId to Firestore
         try await Firestore.firestore().collection("users").document(result.user.uid).setData(userData)
         self.user = try await UserService.fetchUser(withUid: result.user.uid)
         return result.user.uid
@@ -77,5 +87,23 @@ class AuthService {
     ///
     func deleteUser() async throws {
         print("To be implemented")
+    }
+}
+
+
+extension AuthService {
+    
+    @MainActor
+    func updateUserChartId(userId: String, chartId: String) async {
+        // Reference to the user's document in the Firestore "users" collection
+        let userRef = Firestore.firestore().collection("users").document(userId)
+        
+        // Update the user's document with the chartId
+        do {
+            try await userRef.updateData(["chartId": chartId])
+            print("Successfully updated user with chartId: \(chartId)")
+        } catch let error {
+            print("Error updating user with chartId: \(error.localizedDescription)")
+        }
     }
 }

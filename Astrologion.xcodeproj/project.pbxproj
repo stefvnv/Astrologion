@@ -136,6 +136,10 @@
 		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
 		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
+		F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F42BB5832F005741FC /* CGFloat.swift */; };
+		F8C006F72BB58391005741FC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F62BB58391005741FC /* Double.swift */; };
+		F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */; };
+		F8C006FC2BB586A1005741FC /* PlanetPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006FB2BB586A1005741FC /* PlanetPosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,6 +245,10 @@
 		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
+		F8C006F42BB5832F005741FC /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		F8C006F62BB58391005741FC /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalAspectData.swift; sourceTree = "<group>"; };
+		F8C006FB2BB586A1005741FC /* PlanetPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetPosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +336,7 @@
 		F819B5582BACBE82001B138A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8C006F82BB5864F005741FC /* Astrological */,
 				F819B6142BACE50C001B138A /* ViewModifiers */,
 				F819B6162BACE530001B138A /* Extensions.swift */,
 				F819B6182BACE547001B138A /* ImagePicker.swift */,
@@ -361,9 +370,11 @@
 		F819B55B2BACBE97001B138A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F8C006F42BB5832F005741FC /* CGFloat.swift */,
 				F819B6102BACE4A4001B138A /* Color.swift */,
 				F819B60E2BACE491001B138A /* PreviewProvider.swift */,
 				F819B6122BACE4B7001B138A /* Timestamp.swift */,
+				F8C006F62BB58391005741FC /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -903,6 +914,15 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		F8C006F82BB5864F005741FC /* Astrological */ = {
+			isa = PBXGroup;
+			children = (
+				F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */,
+				F8C006FB2BB586A1005741FC /* PlanetPosition.swift */,
+			);
+			path = Astrological;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1026,6 +1046,8 @@
 				F819B5992BACC1F8001B138A /* CompleteSignUpView.swift in Sources */,
 				F819B5B52BACC4C7001B138A /* CircularProfileImageView.swift in Sources */,
 				F8409FF32BADDB9800D007F8 /* AngularHouse.swift in Sources */,
+				F8C006FC2BB586A1005741FC /* PlanetPosition.swift in Sources */,
+				F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */,
 				F840A0142BAE299900D007F8 /* CustomError.swift in Sources */,
 				F819B6032BACE3CD001B138A /* ProfileViewModel.swift in Sources */,
 				F819B5DD2BACE0BA001B138A /* Notification.swift in Sources */,
@@ -1102,10 +1124,12 @@
 				F819B60F2BACE491001B138A /* PreviewProvider.swift in Sources */,
 				F819B5D52BACE05B001B138A /* NewMessageView.swift in Sources */,
 				F819B5BB2BACC522001B138A /* CommentCell.swift in Sources */,
+				F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */,
 				F840A0112BAE0E2000D007F8 /* LocationSearchCompleter.swift in Sources */,
 				F819B6052BACE3F9001B138A /* ContentViewModel.swift in Sources */,
 				F819B5E12BACE0EB001B138A /* NotificationsView.swift in Sources */,
 				F819B5DB2BACE09C001B138A /* ChatViewModel.swift in Sources */,
+				F8C006F72BB58391005741FC /* Double.swift in Sources */,
 				F819B5CB2BACDFF4001B138A /* ConversationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,25 +17,25 @@ struct CompleteSignUpView: View {
                 .padding(.top)
                 .multilineTextAlignment(.center)
 
-            if showSunSign {
-                Text("Sun Sign: \(viewModel.sunPosition)")
-                    .transition(.opacity)
-                    .animation(.easeIn(duration: 0.3), value: showSunSign)
-            }
+//            if showSunSign {
+//                Text("Sun Sign: \(viewModel.sunPosition)")
+//                    .transition(.opacity)
+//                    .animation(.easeIn(duration: 0.3), value: showSunSign)
+//            }
+//
+//            if showMoonSign {
+//                Text("Moon Sign: \(viewModel.moonPosition)")
+//                    .transition(.opacity)
+//                    .animation(.easeIn(duration: 0.3), value: showMoonSign)
+//            }
+//
+//            if showAscendant {
+//                Text("Rising Sign: \(viewModel.ascendant)")
+//                    .transition(.opacity)
+//                    .animation(.easeIn(duration: 0.3), value: showAscendant)
+//            }
 
-            if showMoonSign {
-                Text("Moon Sign: \(viewModel.moonPosition)")
-                    .transition(.opacity)
-                    .animation(.easeIn(duration: 0.3), value: showMoonSign)
-            }
-
-            if showAscendant {
-                Text("Rising Sign: \(viewModel.ascendant)")
-                    .transition(.opacity)
-                    .animation(.easeIn(duration: 0.3), value: showAscendant)
-            }
-
-            if showButton {
+            //if showButton {
                 Button("Complete Sign Up") {
                     Task {
                         do {
@@ -44,53 +44,50 @@ struct CompleteSignUpView: View {
                             print("Error during user creation: \(error.localizedDescription)")
                         }
                     }
-                }
-                .modifier(IGButtonModifier())
-                .disabled(!registrationViewModel.formIsValid)
-                .transition(.opacity)
-                .animation(.easeIn(duration: 0.3), value: showButton)
+                //}
+                //.modifier(IGButtonModifier())
+                //.disabled(!registrationViewModel.formIsValid)
+                //.transition(.opacity)
+                //.animation(.easeIn(duration: 0.3), value: showButton)
             }
             Spacer()
         }
-        .onAppear {
-            performAstrologicalCalculations()
-        }
     }
 
-    func performAstrologicalCalculations() {
-        let birthDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: registrationViewModel.birthDate)
-        let birthYear = birthDateComponents.year ?? 2000
-        let birthMonth = birthDateComponents.month ?? 1
-        let birthDay = birthDateComponents.day ?? 1
-
-        let birthTimeComponents = Calendar.current.dateComponents([.hour, .minute], from: registrationViewModel.birthTime)
-        let birthHour = birthTimeComponents.hour ?? 0
-        let birthMinute = birthTimeComponents.minute ?? 0
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.showSunSign = true
-            
-            viewModel.calculateAstrologicalDetails(
-                day: birthDay,
-                month: birthMonth,
-                year: birthYear,
-                hour: birthHour,
-                minute: birthMinute,
-                latitude: registrationViewModel.latitude,
-                longitude: registrationViewModel.longitude
-            )
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                self.showMoonSign = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                    self.showAscendant = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
-                        self.showButton = true
-                    }
-                }
-            }
-        }
-    }
+//    func performAstrologicalCalculations() {
+//        let birthDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: registrationViewModel.birthDate)
+//        let birthYear = birthDateComponents.year ?? 2000
+//        let birthMonth = birthDateComponents.month ?? 1
+//        let birthDay = birthDateComponents.day ?? 1
+//
+//        let birthTimeComponents = Calendar.current.dateComponents([.hour, .minute], from: registrationViewModel.birthTime)
+//        let birthHour = birthTimeComponents.hour ?? 0
+//        let birthMinute = birthTimeComponents.minute ?? 0
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.showSunSign = true
+//            
+//            viewModel.calculateAstrologicalDetails(
+//                day: birthDay,
+//                month: birthMonth,
+//                year: birthYear,
+//                hour: birthHour,
+//                minute: birthMinute,
+//                latitude: registrationViewModel.latitude,
+//                longitude: registrationViewModel.longitude
+//            )
+//            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+//                self.showMoonSign = true
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+//                    self.showAscendant = true
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
+//                        self.showButton = true
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
 
 struct CompleteSignUpView_Previews: PreviewProvider {

@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 
+
 class RegistrationViewModel: ObservableObject {
     @Published var username: String = ""
     @Published var password: String = ""
@@ -17,6 +18,8 @@ class RegistrationViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
+    
+    ///
     @MainActor
     func createUser() async throws {
         isLoading = true
@@ -36,34 +39,47 @@ class RegistrationViewModel: ObservableObject {
             latitude: latitude, longitude: longitude
         )
         
-        await calculateAndSaveAstrologyDetails(
+        // calculate and save astrology details
+        let chart = await calculateAndCreateChart(
             userId: userId, birthYear: birthYear, birthMonth: birthMonth, birthDay: birthDay,
             birthHour: birthHour, birthMinute: birthMinute, latitude: latitude, longitude: longitude
         )
         
+        // save chart ID to the user's Firestore document
+        if let chartId = chart?.id {
+            await AuthService.shared.updateUserChartId(userId: userId, chartId: chartId)
+        }
         isLoading = false
     }
+
     
-    private func calculateAndSaveAstrologyDetails(
+    
+    
+    private func calculateAndCreateChart(
         userId: String, birthYear: Int, birthMonth: Int, birthDay: Int,
         birthHour: Int, birthMinute: Int, latitude: Double, longitude: Double
-    ) async {
+    ) async -> Chart? {
         let astrologyModel = AstrologyModel()
-        await astrologyModel.populateAndCalculate(
-            day: birthDay, month: birthMonth, year: birthYear,
-            hour: birthHour, minute: birthMinute,
-            latitude: latitude, longitude: longitude
-        )
-        
-        let chart = astrologyModel.toChart(userId: userId)
-        
+        astrologyModel.initializeEphemeris()
+
         do {
-            try await ChartService.shared.saveChart(chart)
+            try await astrologyModel.calculateAstrologicalDetails(
+                day: birthDay, month: birthMonth, year: birthYear,
+                hour: birthHour, minute: birthMinute,
+                latitude: latitude, longitude: longitude,
+                houseSystem: .placidus // Assuming Placidus; adjust as needed
+            )
+
+            var chart = astrologyModel.toChart(userId: userId)
+
+            try await ChartService.shared.saveChart(&chart)
+            return chart
         } catch {
-            print("Failed to save chart: \(error.localizedDescription)")
-            // Handle the error as needed, perhaps by setting an error message property that the UI can display
+            print("Failed to create and save chart: \(error.localizedDescription)")
+            return nil
         }
     }
+
 
     
     @MainActor

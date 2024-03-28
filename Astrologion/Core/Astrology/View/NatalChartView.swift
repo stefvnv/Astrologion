@@ -1,55 +1,16 @@
 import UIKit
 import Foundation
 import CoreGraphics
-import Combine
 
 class NatalChartView: UIView {
     
-    // variables
-    private var cancellables = Set<AnyCancellable>()
-    
-    
+    ///
     var viewModel: NatalChartViewModel? {
         didSet {
-            print("Cancellables before subscribing: \(cancellables)")
-            
-            print("NatalChartView's viewModel was set or changed.")
-
-            viewModel?.$planetPositions
-                .receive(on: RunLoop.main)
-                .sink { [weak self] _ in
-                    print("NatalChartView detected changes in planet positions.")
-                    self?.setNeedsDisplay()
-                }
-                .store(in: &cancellables)
-
-            viewModel?.$aspects
-                .receive(on: RunLoop.main)
-                .sink { [weak self] _ in
-                    print("NatalChartView detected changes in aspects.")
-                    self?.setNeedsDisplay()
-                }
-                .store(in: &cancellables)
+            print("ViewModel didSet. New chart: \(String(describing: viewModel?.chart))")
+            setNeedsDisplay()
         }
     }
-    
-    
-    var planetPositions: [PlanetPosition] = [] {
-        didSet {
-            print("Planet positions updated, count: \(planetPositions.count)")
-            setNeedsDisplay() // Redraw the view when planet positions change
-        }
-    }
-
-    var aspects: [AstrologicalAspectData] = [] {
-        didSet {
-            print("Aspects updated, count: \(aspects.count)")
-            setNeedsDisplay() // Redraw the view when aspects change
-        }
-    }
-
-
-    //
     
     
     ///
@@ -66,28 +27,13 @@ class NatalChartView: UIView {
     }
     
     
-    /// Retriggers draw method
-    func updateChart() {
-        setNeedsDisplay()
-    }
-
-    
     ///
     private func initializeView() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        self.addGestureRecognizer(tapGestureRecognizer)
-
-        backgroundColor = ChartColor.navy.uiColor
+        backgroundColor = ChartColor.navy.uiColor // navy
     }
 
     
     ///
-    @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
-        let tapLocation = gestureRecognizer.location(in: self)
-        viewModel?.handleTap(location: tapLocation, inViewBounds: bounds)
-    }
-    
-    
     var houseInnerRadius: CGFloat {
         return min(bounds.size.width, bounds.size.height) / 2 * 0.8 * 0.7 // innerZodiacRadius * houseInnerRadius (last 2 numbers)
     }
@@ -106,18 +52,9 @@ class NatalChartView: UIView {
     /// Main draw method which calls other methods for drawing all elements onto the view
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-
-        guard let context = UIGraphicsGetCurrentContext(), let viewModel = viewModel else {
-            print("Failed to get graphics context or viewModel is nil.")
-            return
-        }
-    
-        print("Starting to draw Natal Chart with \(viewModel.planetPositions.count) planets and \(viewModel.aspects.count) aspects")
+        guard let context = UIGraphicsGetCurrentContext(), let viewModel = viewModel else { return }
         
-        print("Received planet positions: \(viewModel.planetPositions)")
-        print("Received aspects: \(viewModel.aspects)")
-        
-        // Define chart size
+        // define chart size
         defineChartSize(rect, context)
         
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
@@ -129,46 +66,41 @@ class NatalChartView: UIView {
         let houseOuterRadius = innerZodiacRadius * 0.8
         let houseInnerRadius = innerZodiacRadius * 0.7
         
-        ///
-        // Draw zodiac portion of chart
-        // Draw the outer zodiac circle
+        // outer zodiac circle
         drawZodiacOuterCircle(context, center, outerZodiacRadius)
 
-        // Fill the area between the outer and inner zodiac circles with gold
+        // fill the area between the outer and inner zodiac circles with gold
         context.setFillColor(ChartColor.gold.uiColor.cgColor)
         context.addArc(center: center, radius: outerZodiacRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         context.addArc(center: center, radius: innerZodiacRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: false)
         context.fillPath()
 
-        // Draw the inner zodiac circle
+        // inner zodiac circle
         drawZodiacInnerCircle(context, center, innerZodiacRadius)
 
-        ///
+        // lines and zodiac symbols
         drawMidpointLines(context, innerZodiacRadius, outerZodiacRadius, ascendant)
         drawZodiacSymbols(outerZodiacRadius, innerZodiacRadius, center)
         
-        // Draw house portion of chart
+        // houses
         drawHouseOuterCircle(context, center, houseOuterRadius)
         drawHouseInnerCircle(context, center, houseInnerRadius)
         drawHouses(rect, context, houseInnerRadius, houseOuterRadius, innerZodiacRadius, center)
         
-        // Draw planets onto chart
+        // planets
         drawPlanets(rect, context, outerZodiacRadius, innerZodiacRadius)
         
-        // Draw aspects onto chart
+        // aspects
         drawAspects(context: context, houseInnerRadius: houseInnerRadius)
         
         //
         drawScaleMarkings(context, center, innerZodiacRadius, outerZodiacRadius, viewModel.ascendant())
 
-        // Draw ASC/DSC and MC/IC arrows (pointers)
+        // ASC/DSC and MC/IC arrows (pointers)
         drawAscDscArrow(context, center, outerZodiacRadius)
         drawMcIcArrow(context, center, outerZodiacRadius)
         
         context.restoreGState() // restore graphics
-        
-        
-        print("Drawing Natal Chart with \(viewModel.planetPositions.count) planets and \(viewModel.aspects.count) aspects")
     }
     
     
@@ -177,7 +109,7 @@ class NatalChartView: UIView {
         guard let viewModel = viewModel else { return }
 
         let houseCusps = viewModel.houseCusps()
-        if houseCusps.count < 4 { return }
+        if houseCusps.count < 4 { return } // Ensure there are at least 4 cusps
 
         let fontSize: CGFloat = outerRadius / 20 // Text size
         let attributes: [NSAttributedString.Key: Any] = [
@@ -359,28 +291,22 @@ class NatalChartView: UIView {
     
     
     ///
-    fileprivate func drawAspects(context: CGContext, houseInnerRadius: CGFloat) {
-        
-        print("drawAspects called")
-        
+    private func drawAspects(context: CGContext, houseInnerRadius: CGFloat) {
         guard let viewModel = viewModel else { return }
-        let aspects = viewModel.aspects
+        let aspects = viewModel.aspects 
         let planetPositions = viewModel.getPlanetPositions(in: bounds)
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
-
+        
         for aspectData in aspects {
-            
-            print("Drawing aspect \(aspectData.aspect) between \(aspectData.planet1.symbol ?? "") and \(aspectData.planet2.symbol ?? "")")
-            
             guard let startPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet1 })?.position,
                   let endPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet2 })?.position else {
                 continue
             }
-
+            
             // Calculate the intersection points for both planets
             let startIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: startPlanetPosition)
             let endIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: endPlanetPosition)
-
+            
             // Draw the aspect line between the two intersection points
             context.setStrokeColor(aspectData.aspect.uiColor.cgColor)
             context.setLineWidth(2)
@@ -390,7 +316,7 @@ class NatalChartView: UIView {
             context.strokePath()
         }
     }
-
+    
     
     ///
     private func intersectionPointOnCircle(circleCenter: CGPoint, circleRadius: CGFloat, externalPoint: CGPoint) -> CGPoint {
@@ -428,9 +354,6 @@ class NatalChartView: UIView {
     
     ///
     fileprivate func drawHouses(_ rect: CGRect, _ context: CGContext, _ houseInnerRadius: CGFloat, _ houseOuterRadius: CGFloat, _ innerZodiacRadius: CGFloat, _ center: CGPoint) {
-        
-        print("drawHouses called")
-        
         guard let houseCusps = viewModel?.houseCusps(), houseCusps.count == 12, let ascendant = viewModel?.ascendant() else { return }
         
         let font = UIFont.systemFont(ofSize: 12)
@@ -443,8 +366,6 @@ class NatalChartView: UIView {
             var adjustedCuspAngle = cusp + offsetToNineOClock
             adjustedCuspAngle = adjustedCuspAngle.truncatingRemainder(dividingBy: 360)
             let angle = (360 - adjustedCuspAngle).degreesToRadians
-            
-            print("House \(index + 1): Original Cusp: \(cusp)°, Adjusted Cusp: \(adjustedCuspAngle)°, Drawing Angle: \(angle.radiansToDegrees)°")
             
             let start = CGPoint(x: center.x + houseInnerRadius * cos(angle), y: center.y + houseInnerRadius * sin(angle))
             let end = CGPoint(x: center.x + innerZodiacRadius * cos(angle), y: center.y + innerZodiacRadius * sin(angle))
@@ -556,10 +477,6 @@ class NatalChartView: UIView {
     
     ///
     fileprivate func drawPlanets(_ rect: CGRect, _ context: CGContext, _ outerZodiacRadius: CGFloat, _ innerZodiacRadius: CGFloat) {
-        
-        print("drawPlanets called")
-        
-        
         guard let viewModel = viewModel else { return }
         let ascendant = viewModel.ascendant()
         let font = UIFont.systemFont(ofSize: outerZodiacRadius / 10) // size
@@ -588,12 +505,10 @@ class NatalChartView: UIView {
             }
         }
         
-        // Draw the planets and their lines
+        // draw planets and lines between them
         for (index, planetPosition) in planetPositions.enumerated() {
             
-            
-            print("Planet: \(planetPosition.planet.symbol ?? "Unknown"), Position: \(planetPosition.position), Longitude: \(planetPosition.longitude)")
-            
+            print("Drawing \(planetPosition.planet.rawValue) at position \(planetPosition.position)")
             
             let planet = planetPosition.planet
             let originalPosition = planetPosition.position
@@ -621,24 +536,5 @@ class NatalChartView: UIView {
             context.addLine(to: lineEnd)
             context.strokePath()
         }
-    }
-} //end
-
-
-extension CGFloat {
-    var degreesToRadians: CGFloat {
-        return self * .pi / 180
-    }
-}
-
-extension Double {
-    var degreesToRadians: Double {
-        return self * .pi / 180.0
-    }
-}
-
-extension Double {
-    var radiansToDegrees: Double {
-        return self * 180.0 / .pi
     }
 }

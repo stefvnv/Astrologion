@@ -6,6 +6,8 @@ enum CustomError: Error {
     case invalidUsername
     case missingDateComponents
     case missingTimeComponents
+    case timezoneError
+    case dateConversionError
 
     var errorMessage: String {
         switch self {
@@ -19,6 +21,10 @@ enum CustomError: Error {
             return "Date components (year, month, day) are missing or invalid."
         case .missingTimeComponents:
             return "Time components (hour, minute) are missing or invalid."
+        case .timezoneError:
+            return "Timezone data could not be determined. Please ensure the location is correct."
+        case .dateConversionError:
+            return "There was a problem converting your date. Please check the date components and try again."
         }
     }
 }

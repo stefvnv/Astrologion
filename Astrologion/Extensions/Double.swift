@@ -1,8 +1,7 @@
-//
-//  Double.swift
-//  Astrologion
-//
-//  Created by Stefana Chiritescu on 28/03/2024.
-//
+import UIKit
 
-import Foundation
+extension Double {
+    var degreesToRadians: Double {
+        return self * .pi / 180.0
+    }
+}
