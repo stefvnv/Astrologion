@@ -21,12 +21,19 @@ struct FeedCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                CircularProfileImageView(user: user, size: .xSmall)
+                CircularProfileImageView(user: viewModel.post.user, size: .xSmall)
                 
-                NavigationLink(value: user) {
-                    Text(user?.username ?? "")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(Color.theme.systemBackground)
+                VStack(alignment: .leading) {
+                    NavigationLink(value: viewModel.post.user) {
+                        Text(viewModel.post.user?.username ?? "")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(Color.theme.systemBackground)
+                    }
+                    
+                    // Display Sun, Moon, and Ascendant signs
+                    Text("☉ \(viewModel.sunSign) ☾ \(viewModel.moonSign) ↑ \(viewModel.ascendantSign)")
+                        .font(.system(size: 12))
+                        .foregroundColor(Color.gray)
                 }
             }
             .padding([.leading, .bottom], 8)
