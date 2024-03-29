@@ -1,22 +1,22 @@
 import SwiftUI
 
+let planetOrder = ["Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "North Node", "Lilith"]
+
 struct PlanetsView: View {
-    let user: User
-    @StateObject var profileViewModel: ProfileViewModel
-    
-    
+    @ObservedObject var profileViewModel: ProfileViewModel
+
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                Text("Planets to be displayed here")
+        VStack {
+            if let chart = profileViewModel.userChart {
+                ForEach(planetOrder, id: \.self) { planet in
+                    // Check if the planet is in the chart
+                    if let zodiacSign = chart.planetaryPositions[planet] {
+                        PlanetDetailView(planetName: planet, zodiacSign: zodiacSign)
+                    }
+                }
+            } else {
+                Text("Loading planets or no chart available")
             }
         }
-    }
-}
-
-
-struct PlanetsView_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("Planets displayed here")
     }
 }

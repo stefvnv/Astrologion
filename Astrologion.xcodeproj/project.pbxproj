@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F819B4D62BAC970A001B138A /* AstrologionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B4D52BAC970A001B138A /* AstrologionApp.swift */; };
 		F819B4D82BAC970A001B138A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B4D72BAC970A001B138A /* ContentView.swift */; };
-		F819B4DA2BAC970C001B138A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F819B4D92BAC970C001B138A /* Assets.xcassets */; };
 		F819B4DD2BAC970C001B138A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F819B4DC2BAC970C001B138A /* Preview Assets.xcassets */; };
 		F819B4E42BAC9809001B138A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F819B4E32BAC9809001B138A /* GoogleService-Info.plist */; };
 		F819B4E72BAC98AA001B138A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F819B4E62BAC98AA001B138A /* FirebaseAnalytics */; };
@@ -147,13 +146,14 @@
 		F8C007062BB5C798005741FC /* AspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007052BB5C798005741FC /* AspectsView.swift */; };
 		F8C007082BB5C7D3005741FC /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007072BB5C7D3005741FC /* ProfileTab.swift */; };
 		F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007092BB5D14E005741FC /* ProfileTabView.swift */; };
+		F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0070B2BB61495005741FC /* PlanetDetailView.swift */; };
+		F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C0070E2BB62F90005741FC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F819B4D22BAC970A001B138A /* Astrologion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrologion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F819B4D52BAC970A001B138A /* AstrologionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologionApp.swift; sourceTree = "<group>"; };
 		F819B4D72BAC970A001B138A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F819B4D92BAC970C001B138A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F819B4DC2BAC970C001B138A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F819B4E32BAC9809001B138A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F819B5692BACBF20001B138A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -263,6 +263,8 @@
 		F8C007052BB5C798005741FC /* AspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectsView.swift; sourceTree = "<group>"; };
 		F8C007072BB5C7D3005741FC /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
 		F8C007092BB5D14E005741FC /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
+		F8C0070B2BB61495005741FC /* PlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailView.swift; sourceTree = "<group>"; };
+		F8C0070E2BB62F90005741FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,7 +334,7 @@
 				F819B55A2BACBE8F001B138A /* Model */,
 				F819B5592BACBE8A001B138A /* Services */,
 				F819B5582BACBE82001B138A /* Utils */,
-				F819B4D92BAC970C001B138A /* Assets.xcassets */,
+				F8C0070E2BB62F90005741FC /* Assets.xcassets */,
 				F819B4E32BAC9809001B138A /* GoogleService-Info.plist */,
 				F819B4DB2BAC970C001B138A /* Preview Content */,
 			);
@@ -622,6 +624,7 @@
 				F819B5EC2BACE18B001B138A /* ProfileHeaderView.swift */,
 				F819B5EE2BACE1D5001B138A /* UserStatView.swift */,
 				F8C007092BB5D14E005741FC /* ProfileTabView.swift */,
+				F8C0070B2BB61495005741FC /* PlanetDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -880,8 +883,8 @@
 		F8409FEA2BADDB1B00D007F8 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				F840A0122BAE298F00D007F8 /* Error */,
 				F8409FED2BADDB3700D007F8 /* Astrological */,
+				F840A0122BAE298F00D007F8 /* Error */,
 				F8409FEC2BADDB3200D007F8 /* UI */,
 				F8C007072BB5C7D3005741FC /* ProfileTab.swift */,
 			);
@@ -1039,7 +1042,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F819B4DD2BAC970C001B138A /* Preview Assets.xcassets in Resources */,
-				F819B4DA2BAC970C001B138A /* Assets.xcassets in Resources */,
+				F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */,
 				F819B4E42BAC9809001B138A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1111,6 +1114,7 @@
 				F8409FF72BADDBB000D007F8 /* Point.swift in Sources */,
 				F819B5972BACC1D1001B138A /* AuthService.swift in Sources */,
 				F819B59D2BACC341001B138A /* AddEmailView.swift in Sources */,
+				F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */,
 				F819B5E32BACE0FF001B138A /* NotificationsCell.swift in Sources */,
 				F819B6172BACE530001B138A /* Extensions.swift in Sources */,
 				F819B5B32BACC4AC001B138A /* AdaptiveImage.swift in Sources */,

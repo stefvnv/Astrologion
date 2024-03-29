@@ -14,23 +14,28 @@ class ProfileViewModel: ObservableObject {
     }
     
     
-    // Computed properties for Sun, Moon, and Ascendant signs
+    /// Extracts sun property
     var sunSign: String {
         signFromPosition(userChart?.planetaryPositions["Sun"])
     }
     
+    
+    /// Extracts moon property
     var moonSign: String {
         signFromPosition(userChart?.planetaryPositions["Moon"])
     }
     
+    
+    /// Extracts ascendant property
     var ascendantSign: String {
         signFromPosition(userChart?.houseCusps["House 1"])
     }
     
-    private func signFromPosition(_ position: String?) -> String {
-        // Extracts the zodiac sign from the position string
+    
+    ///
+    public func signFromPosition(_ position: String?) -> String {
         guard let positionString = position, let sign = positionString.split(separator: " ").first else { return "Unknown" }
-        return String(sign) // Converts the substring to String, only taking the zodiac sign.
+        return String(sign)
     }
 
     

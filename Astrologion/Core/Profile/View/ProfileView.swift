@@ -12,7 +12,7 @@ struct ProfileView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 24) {
+            VStack(spacing: 1) {
                 ProfileHeaderView(viewModel: profileViewModel)
 
                 ProfileTabView(selectedTab: $selectedTab, user: user, profileViewModel: profileViewModel)
