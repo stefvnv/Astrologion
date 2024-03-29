@@ -8,20 +8,6 @@ public enum Aspect: CaseIterable {
     case trine
     case opposition
     
-    var color: AspectColor {
-        switch self {
-        case .conjunction: return .lightGreen
-        case .sextile: return .darkGreen
-        case .square: return .pink
-        case .trine: return .red
-        case .opposition: return .orange
-        }
-    }
-
-    var uiColor: UIColor {
-        return self.color.uiColor
-    }
-    
     var angle: Double {
         switch self {
         case .conjunction: return 0
@@ -42,6 +28,16 @@ public enum Aspect: CaseIterable {
         }
     }
     
+    var symbol: String {
+        switch self {
+        case .conjunction: return "☌"
+        case .sextile: return "⚹"
+        case .square: return "□"
+        case .trine: return "△"
+        case .opposition: return "☍"
+        }
+    }
+    
     var description: String {
         switch self {
         case .conjunction: return "Conjunction"
@@ -51,5 +47,18 @@ public enum Aspect: CaseIterable {
         case .opposition: return "Opposition"
         }
     }
-}
+    
+    var color: AspectColor {
+        switch self {
+        case .conjunction: return .gold
+        case .sextile: return .blue
+        case .square: return .red
+        case .trine: return .green
+        case .opposition: return .orange
+        }
+    }
 
+    var uiColor: UIColor {
+        return self.color.uiColor
+    }
+}

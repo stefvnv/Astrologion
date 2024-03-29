@@ -1,4 +1,4 @@
-struct AstrologicalAspectData {
+struct AstrologicalAspectData: Hashable {
     let planet1: Point
     let planet2: Point
     let aspect: Aspect

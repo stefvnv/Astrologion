@@ -1,22 +1,26 @@
 import SwiftUI
 
 struct AspectsView: View {
-    let user: User
-    @StateObject var profileViewModel: ProfileViewModel
-    
-    
+    @ObservedObject var profileViewModel: ProfileViewModel
+
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                Text("Aspects to be displayed here")
+        VStack {
+            if let chart = profileViewModel.userChart {
+                let aspectsData = profileViewModel.parseAspects(from: chart)
+                ForEach(aspectsData, id: \.self) { aspectData in
+                    AspectDetailView(
+                        leadingPlanetName: aspectData.planet1.rawValue,
+                        trailingPlanetName: aspectData.planet2.rawValue,
+                        aspectType: aspectData.aspect,
+                        orb: aspectData.orb
+                    )
+                }
+            } else {
+                Text("Loading aspects...")
             }
         }
-    }
-}
-
-
-struct AspectsView_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("Planets displayed here")
+        .onAppear {
+            profileViewModel.fetchUserChart()
+        }
     }
 }

@@ -54,6 +54,34 @@ class ProfileViewModel: ObservableObject {
             self.isLoadingChartData = false
         }
     }
+    
+    
+    ///
+    func parseAspects(from chart: Chart?) -> [AstrologicalAspectData] {
+        guard let chart = chart else { return [] }
+
+        let aspectPattern = "([A-Za-z]+) ([A-Za-z]+) ([A-Za-z]+) at (\\d+\\.\\d+)° with orb of (\\d+\\.\\d+)°"
+        let regex = try? NSRegularExpression(pattern: aspectPattern, options: [])
+
+        return chart.aspects.compactMap { aspectDescription in
+            guard let match = regex?.firstMatch(in: aspectDescription, options: [], range: NSRange(aspectDescription.startIndex..., in: aspectDescription)) else {
+                return nil
+            }
+    
+            func capture(_ index: Int) -> String {
+                let range = Range(match.range(at: index), in: aspectDescription)!
+                return String(aspectDescription[range])
+            }
+            guard let planet1 = Point(rawValue: capture(1)),
+                  let aspectType = Aspect.allCases.first(where: { $0.description.lowercased() == capture(2).lowercased() }),
+                  let planet2 = Point(rawValue: capture(3)),
+                  let exactAngle = Double(capture(4)),
+                  let orb = Double(capture(5)) else {
+                return nil
+            }
+            return AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspectType, exactAngle: exactAngle, orb: orb)
+        }
+    }
 
 
     // MARK: - Following

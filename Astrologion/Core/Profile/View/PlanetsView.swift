@@ -9,7 +9,8 @@ struct PlanetsView: View {
         VStack {
             if let chart = profileViewModel.userChart {
                 ForEach(planetOrder, id: \.self) { planet in
-                    // Check if the planet is in the chart
+                    
+                    // check if planet is in chart
                     if let zodiacSign = chart.planetaryPositions[planet] {
                         PlanetDetailView(planetName: planet, zodiacSign: zodiacSign)
                     }

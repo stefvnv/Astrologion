@@ -1,11 +1,11 @@
 import UIKit
 
 public enum AspectColor: String {
-    case lightGreen = "#9BCB9B" // Muted Light Green
-    case darkGreen = "#8FBC8F" // Muted Dark Green
-    case pink = "#F4C2C2" // Muted Pink
-    case red = "#FF6347" // Muted Red
-    case orange = "#FFDAB9" // Muted Orange
+    case gold = "#EAD9A4" // gold
+    case blue = "#A3C1D9" // blue
+    case red = "#FFA07A" // red
+    case green = "#A5C9A0" // green
+    case orange = "#FFE5CC" // orange
 
     var uiColor: UIColor {
         return UIColor(hex: self.rawValue) ?? .black

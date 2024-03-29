@@ -135,6 +135,8 @@
 		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
 		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
+		F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */; };
+		F8BAA9822BB6D200002E349C /* PlanetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9812BB6D200002E349C /* PlanetImage.swift */; };
 		F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F42BB5832F005741FC /* CGFloat.swift */; };
 		F8C006F72BB58391005741FC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F62BB58391005741FC /* Double.swift */; };
 		F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */; };
@@ -252,6 +254,8 @@
 		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
+		F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectDetailView.swift; sourceTree = "<group>"; };
+		F8BAA9812BB6D200002E349C /* PlanetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetImage.swift; sourceTree = "<group>"; };
 		F8C006F42BB5832F005741FC /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		F8C006F62BB58391005741FC /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalAspectData.swift; sourceTree = "<group>"; };
@@ -625,6 +629,7 @@
 				F819B5EE2BACE1D5001B138A /* UserStatView.swift */,
 				F8C007092BB5D14E005741FC /* ProfileTabView.swift */,
 				F8C0070B2BB61495005741FC /* PlanetDetailView.swift */,
+				F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -943,6 +948,7 @@
 			children = (
 				F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */,
 				F8C006FB2BB586A1005741FC /* PlanetPosition.swift */,
+				F8BAA9812BB6D200002E349C /* PlanetImage.swift */,
 			);
 			path = Astrological;
 			sourceTree = "<group>";
@@ -1063,6 +1069,7 @@
 				F819B5D72BACE06D001B138A /* MessageViewModel.swift in Sources */,
 				F8C007002BB5C6CA005741FC /* ChartView.swift in Sources */,
 				F819B61B2BACE555001B138A /* Constants.swift in Sources */,
+				F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */,
 				F8C007042BB5C6EE005741FC /* HousesView.swift in Sources */,
 				F819B5D32BACE047001B138A /* MessageView.swift in Sources */,
 				F819B5A92BACC413001B138A /* PostGridViewModel.swift in Sources */,
@@ -1108,6 +1115,7 @@
 				F8409FF52BADDBA400D007F8 /* Aspect.swift in Sources */,
 				F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */,
 				F819B4D62BAC970A001B138A /* AstrologionApp.swift in Sources */,
+				F8BAA9822BB6D200002E349C /* PlanetImage.swift in Sources */,
 				F8409FFE2BADDBF700D007F8 /* ChartColor.swift in Sources */,
 				F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */,
 				F8C007062BB5C798005741FC /* AspectsView.swift in Sources */,
