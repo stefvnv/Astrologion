@@ -137,6 +137,7 @@
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
 		F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */; };
 		F8BAA9822BB6D200002E349C /* PlanetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9812BB6D200002E349C /* PlanetImage.swift */; };
+		F8BAA9842BB6E71D002E349C /* HouseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9832BB6E71D002E349C /* HouseDetailView.swift */; };
 		F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F42BB5832F005741FC /* CGFloat.swift */; };
 		F8C006F72BB58391005741FC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F62BB58391005741FC /* Double.swift */; };
 		F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */; };
@@ -256,6 +257,7 @@
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
 		F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectDetailView.swift; sourceTree = "<group>"; };
 		F8BAA9812BB6D200002E349C /* PlanetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetImage.swift; sourceTree = "<group>"; };
+		F8BAA9832BB6E71D002E349C /* HouseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailView.swift; sourceTree = "<group>"; };
 		F8C006F42BB5832F005741FC /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		F8C006F62BB58391005741FC /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalAspectData.swift; sourceTree = "<group>"; };
@@ -629,6 +631,7 @@
 				F819B5EE2BACE1D5001B138A /* UserStatView.swift */,
 				F8C007092BB5D14E005741FC /* ProfileTabView.swift */,
 				F8C0070B2BB61495005741FC /* PlanetDetailView.swift */,
+				F8BAA9832BB6E71D002E349C /* HouseDetailView.swift */,
 				F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */,
 			);
 			path = Components;
@@ -1158,6 +1161,7 @@
 				F819B5FF2BACE300001B138A /* ProfileView.swift in Sources */,
 				F819B5EF2BACE1D5001B138A /* UserStatView.swift in Sources */,
 				F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */,
+				F8BAA9842BB6E71D002E349C /* HouseDetailView.swift in Sources */,
 				F8409FD92BADD15300D007F8 /* SelectLocationView.swift in Sources */,
 				F819B5AD2BACC450001B138A /* CustomInputView.swift in Sources */,
 				F819B60F2BACE491001B138A /* PreviewProvider.swift in Sources */,

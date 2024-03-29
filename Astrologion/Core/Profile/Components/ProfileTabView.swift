@@ -40,7 +40,7 @@ struct ProfileTabView: View {
             case .planets:
                 PlanetsView(profileViewModel: profileViewModel)
             case .houses:
-                HousesView(user: user, profileViewModel: profileViewModel)
+                HousesView(profileViewModel: profileViewModel)
             case .aspects:
                 AspectsView(profileViewModel: profileViewModel)
             case .summary:

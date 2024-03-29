@@ -20,10 +20,8 @@ public enum House: Int, CaseIterable {
         case .twelfth: return "XII"
         }
     }
-}
-
-///
-extension House {
+    
+    /// Roman numeral representation of the house number
     var romanNumeral: String {
         switch self {
         case .first: return "I"
@@ -39,5 +37,17 @@ extension House {
         case .eleventh: return "XI"
         case .twelfth: return "XII"
         }
+    }
+    
+    /// The formatted house name with ordinal suffixes, e.g., "1st House", "2nd House"
+    var formattedName: String {
+        let suffix: String
+        switch self.rawValue {
+        case 1, 21, 31: suffix = "st"
+        case 2, 22: suffix = "nd"
+        case 3, 23: suffix = "rd"
+        default: suffix = "th"
+        }
+        return "\(self.rawValue)\(suffix) House"
     }
 }
