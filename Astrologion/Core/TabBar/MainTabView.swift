@@ -7,6 +7,8 @@ struct MainTabView: View {
     
     var body: some View {
             TabView(selection: $selectedIndex) {
+                
+                // feed
                 FeedView()
                     .tabItem {
                         Image(systemName: selectedIndex == 0 ? "house.fill" : "house")
@@ -15,10 +17,11 @@ struct MainTabView: View {
                     .onAppear { selectedIndex = 0 }
                     .tag(0)
                 
-                SearchView()
-                    .tabItem { Image(systemName: "magnifyingglass") }
-                    .onAppear { selectedIndex = 1 }
-                    .tag(1)
+                // TODO: Change to LearnView()
+//                SearchView()
+//                    .tabItem { Image(systemName: "magnifyingglass") }
+//                    .onAppear { selectedIndex = 1 }
+//                    .tag(1)
                     
                 // TODO: Change to TransitsView()
 //                UploadMediaView(tabIndex: $selectedIndex)
@@ -26,8 +29,8 @@ struct MainTabView: View {
 //                    .onAppear { selectedIndex = 2 }
 //                    .tag(2)
                 
-                // TODO: Change to OrbitView()
-                NotificationsView()
+                // orbit
+                OrbitView(user: user)
                     .tabItem {
                         Image(systemName: selectedIndex == 3 ? "heart.fill" : "heart")
                             .environment(\.symbolVariants, selectedIndex == 3 ? .fill : .none)
@@ -35,6 +38,7 @@ struct MainTabView: View {
                     .onAppear { selectedIndex = 3 }
                     .tag(3)
                 
+                // profile
                 CurrentUserProfileView(user: user)
                     .tabItem {
                         Image(systemName: selectedIndex == 4 ? "person.fill" : "person")

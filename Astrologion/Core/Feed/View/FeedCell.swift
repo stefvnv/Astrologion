@@ -18,6 +18,7 @@ struct FeedCell: View {
         return viewModel.post
     }
     
+    // TODO: Fix structure (figma)
     var body: some View {
         VStack(alignment: .leading) {
             HStack {

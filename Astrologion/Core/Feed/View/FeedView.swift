@@ -34,16 +34,6 @@ struct FeedView: View {
                                 .scaledToFit()
                                 .foregroundColor(Color.theme.systemBackground)
                         })
-                    
-                    // TODO: Move to orbit tab
-//                    NavigationLink(
-//                        destination: ConversationsView(),
-//                        label: {
-//                            Image(systemName: "paperplane")
-//                                .imageScale(.large)
-//                                .scaledToFit()
-//                                .foregroundColor(Color.theme.systemBackground)
-//                        })
                 }
             }
             .navigationTitle("Feed")
