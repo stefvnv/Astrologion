@@ -20,11 +20,13 @@ struct MainTabView: View {
                     .onAppear { selectedIndex = 1 }
                     .tag(1)
                     
-                UploadMediaView(tabIndex: $selectedIndex)
-                    .tabItem { Image(systemName: "plus") }
-                    .onAppear { selectedIndex = 2 }
-                    .tag(2)
+                // TODO: Change to TransitsView()
+//                UploadMediaView(tabIndex: $selectedIndex)
+//                    .tabItem { Image(systemName: "plus") }
+//                    .onAppear { selectedIndex = 2 }
+//                    .tag(2)
                 
+                // TODO: Change to OrbitView()
                 NotificationsView()
                     .tabItem {
                         Image(systemName: selectedIndex == 3 ? "heart.fill" : "heart")

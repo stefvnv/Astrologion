@@ -9,6 +9,7 @@ struct FeedView: View {
                 LazyVStack(spacing: 32) {
                     ForEach(viewModel.posts) { post in
                         FeedCell(post: post)
+                        
                     }
                 }
                 .padding(.top)
@@ -16,7 +17,7 @@ struct FeedView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     
-                    // logo, TODO: Change to astrologion
+                    // logo TODO: Import text and add
                     AdaptiveImage(light: "instagram_logo_black",
                                   dark: "instagram_logo_white",
                                   width: 100, height: 50)
@@ -24,18 +25,25 @@ struct FeedView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
-                    HStack {
-                        
-                        // messages TODO: move to orbit section
-                        NavigationLink(
-                            destination: ConversationsView(),
-                            label: {
-                                Image(systemName: "paperplane")
-                                    .imageScale(.large)
-                                    .scaledToFit()
-                                    .foregroundColor(Color.theme.systemBackground)
+                    // create post TODO: fix after clicking share button
+                    NavigationLink(
+                        destination: UploadMediaView(),
+                        label: {
+                            Image(systemName: "plus")
+                                .imageScale(.large)
+                                .scaledToFit()
+                                .foregroundColor(Color.theme.systemBackground)
                         })
-                    }
+                    
+                    // TODO: Move to orbit tab
+//                    NavigationLink(
+//                        destination: ConversationsView(),
+//                        label: {
+//                            Image(systemName: "paperplane")
+//                                .imageScale(.large)
+//                                .scaledToFit()
+//                                .foregroundColor(Color.theme.systemBackground)
+//                        })
                 }
             }
             .navigationTitle("Feed")

@@ -7,7 +7,7 @@ struct ProfileTabView: View {
     
     var body: some View {
         VStack {
-            HStack(spacing: 20) {
+            HStack(spacing: 1) {
                 ForEach(ProfileTab.allCases, id: \.self) { tab in
                     VStack {
                         Button(action: {

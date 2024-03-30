@@ -3,7 +3,7 @@ import SwiftUI
 struct UploadMediaView: View {
     @State var captionText = ""
     @State var imagePickerPresented = false
-    @Binding var tabIndex: Int
+    //@Binding var tabIndex: Int
     @StateObject var viewModel = UploadPostViewModel()
     
     var body: some View {
@@ -25,7 +25,7 @@ struct UploadMediaView: View {
                         captionText = ""
                         viewModel.selectedImage = nil
                         viewModel.profileImage = nil
-                        tabIndex = 0
+                        //tabIndex = 0
                     }, label: {
                         Text("Cancel")
                             .font(.system(size: 16, weight: .semibold))
@@ -39,7 +39,7 @@ struct UploadMediaView: View {
                         Task {
                             try await viewModel.uploadPost(caption: captionText)
                             captionText = ""
-                            tabIndex = 0
+                            //tabIndex = 0
                         }
                     }, label: {
                         Text("Share")
@@ -68,6 +68,6 @@ struct UploadMediaView: View {
 
 struct UploadMediaView_Previews: PreviewProvider {
     static var previews: some View {
-        UploadMediaView(tabIndex: .constant(0))
+        UploadMediaView()
     }
 }
