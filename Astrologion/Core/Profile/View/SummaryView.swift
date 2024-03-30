@@ -1,22 +1,26 @@
 import SwiftUI
 
 struct SummaryView: View {
-    let user: User
-    @StateObject var profileViewModel: ProfileViewModel
-    
-    
+    @ObservedObject var profileViewModel: ProfileViewModel
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 24) {
-                Text("Summary to be displayed here")
+            VStack {
+                
+                // TODO: Add ruler
+                
+                ElementSummaryView(profileViewModel: profileViewModel) // elements
+                ModalitySummaryView(profileViewModel: profileViewModel) // modalities
+                PolaritySummaryView(profileViewModel: profileViewModel) // polarity
             }
         }
+        .navigationTitle("Summary")
+        .padding()
     }
 }
 
-
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        Text("Summary displayed here")
+        SummaryView(profileViewModel: ProfileViewModel(user: dev.user))
     }
 }

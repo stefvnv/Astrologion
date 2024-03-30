@@ -16,10 +16,11 @@ struct ProfileTabView: View {
                             }
                         }) {
                             Text(tab.text)
+                                .font(.system(size: 13))
                                 .foregroundColor(self.selectedTab == tab ? .black : .gray)
                                 .fontWeight(self.selectedTab == tab ? .bold : .regular)
                         }
-                        .padding(.vertical) // tap area
+                        .padding(.vertical, 6) // tap area
                         
                         // underline selected tab
                         if selectedTab == tab {
@@ -44,7 +45,7 @@ struct ProfileTabView: View {
             case .aspects:
                 AspectsView(profileViewModel: profileViewModel)
             case .summary:
-                SummaryView(user: user, profileViewModel: profileViewModel)
+                SummaryView(profileViewModel: profileViewModel)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

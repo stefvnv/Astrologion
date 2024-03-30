@@ -1,0 +1,40 @@
+import SwiftUI
+
+struct BarView: View {
+    var summaries: [Summary]
+    let totalWidth = UIScreen.main.bounds.width - 32
+
+    var body: some View {
+        VStack {
+            HStack(spacing: 0) {
+                ForEach(summaries, id: \.type) { summary in
+                    ZStack {
+                        Color(summary.color)
+                            .frame(width: totalWidth * summary.percentage, height: 30)
+                        summary.symbol
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                            .position(x: totalWidth * summary.percentage / 2, y: 15)
+                    }
+                }
+            }
+            .cornerRadius(10)
+            
+            HStack(spacing: 0) {
+                ForEach(summaries, id: \.type) { summary in
+                    VStack {
+                        Text(summary.type)
+                            .font(.caption2)
+                            .frame(width: totalWidth * summary.percentage, alignment: .center)
+                        Text("\(Int(summary.percentage * 100))%") // percentage
+                            .font(.caption2)
+                            .frame(width: totalWidth * summary.percentage, alignment: .center)
+                    }
+                    .background(Color.clear)
+                }
+            }
+        }
+        .frame(height: 60)
+    }
+}

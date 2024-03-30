@@ -6,6 +6,7 @@ class ProfileViewModel: ObservableObject {
     @Published var userChart: Chart?
     @Published var isLoadingChartData: Bool = false
     
+    
     ///
     init(user: User) {
         self.user = user
@@ -28,6 +29,13 @@ class ProfileViewModel: ObservableObject {
     /// Extracts ascendant property
     var ascendantSign: String {
         signFromPosition(userChart?.houseCusps["House 1"])
+    }
+    
+    
+    ///
+    var elementSummaryData: [ElementSummary] {
+        let percentages = calculateElementPercentages()
+        return percentages.map { ElementSummary(element: $0.key, percentage: $0.value) }
     }
     
     
@@ -81,10 +89,96 @@ class ProfileViewModel: ObservableObject {
             return AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspectType, exactAngle: exactAngle, orb: orb)
         }
     }
+    
+    // MARK: - Summary Tab
+    
+    ///
+    func calculateElementPercentages() -> [Element: CGFloat] {
+        guard let chart = userChart else { return [:] }
+
+        // initialize counts
+        var elementCounts: [Element: Int] = [.fire: 0, .earth: 0, .air: 0, .water: 0]
+
+        // count each element in planetary positions
+        for position in chart.planetaryPositions.values {
+            if let zodiacSign = Zodiac(rawValue: String(position.split(separator: " ").first ?? "")) {
+                elementCounts[zodiacSign.element, default: 0] += 1
+            }
+        }
+
+        // calculate total counts
+        let totalCount = elementCounts.values.reduce(0, +)
+
+        // convert to percentage
+        var elementPercentages: [Element: CGFloat] = [:]
+        for (element, count) in elementCounts {
+            elementPercentages[element] = CGFloat(count) / CGFloat(totalCount)
+        }
+        return elementPercentages
+    }
+    
+    
+    ///
+    func calculateModalityPercentages() -> [Modality: CGFloat] {
+        guard let chart = userChart else { return [:] }
+
+        var modalityCounts: [Modality: Int] = [.cardinal: 0, .fixed: 0, .mutable: 0]
+
+        // count each modality in the planetary positions
+        for position in chart.planetaryPositions.values {
+            if let zodiacSign = Zodiac(rawValue: String(position.split(separator: " ").first ?? "")) {
+                modalityCounts[zodiacSign.modality, default: 0] += 1
+            }
+        }
+
+        // count each modality in house cusps
+        for cusp in chart.houseCusps.values {
+            if let zodiacSign = Zodiac(rawValue: String(cusp.split(separator: " ").first ?? "")) {
+                modalityCounts[zodiacSign.modality, default: 0] += 1
+            }
+        }
+
+        // calculate total counts
+        let totalCount = modalityCounts.values.reduce(0, +)
+
+        // convert to percentage
+        var modalityPercentages: [Modality: CGFloat] = [:]
+        for (modality, count) in modalityCounts {
+            modalityPercentages[modality] = CGFloat(count) / CGFloat(totalCount)
+        }
+        return modalityPercentages
+    }
+    
+    
+    ///
+    func calculatePolarityPercentages() -> [Polarity: CGFloat] {
+        guard let chart = userChart else { return [:] }
+
+        var polarityCounts: [Polarity: Int] = [.yin: 0, .yang: 0]
+
+        // count each polarity in planetary positions
+        for position in chart.planetaryPositions.values {
+            if let zodiacSign = Zodiac(rawValue: String(position.split(separator: " ").first ?? "")) {
+                polarityCounts[zodiacSign.polarity, default: 0] += 1
+            }
+        }
+
+        // calculate total counts
+        let totalCount = polarityCounts.values.reduce(0, +)
+
+        // convert to percentage
+        var polarityPercentages: [Polarity: CGFloat] = [:]
+        for (polarity, count) in polarityCounts {
+            polarityPercentages[polarity] = CGFloat(count) / CGFloat(totalCount)
+        }
+        return polarityPercentages
+    }
+
 
 
     // MARK: - Following
 
+    ///
     func follow() {
         Task {
             try await UserService.follow(uid: user.id)
@@ -94,6 +188,8 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    
+    ///
     func unfollow() {
         Task {
             try await UserService.unfollow(uid: user.id)
@@ -102,6 +198,8 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    
+    ///
     func checkIfUserIsFollowed() async -> Bool {
         guard !user.isCurrentUser else { return false }
         return await UserService.checkIfUserIsFollowed(uid: user.id)

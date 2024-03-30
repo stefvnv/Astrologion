@@ -138,6 +138,19 @@
 		F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */; };
 		F8BAA9822BB6D200002E349C /* PlanetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9812BB6D200002E349C /* PlanetImage.swift */; };
 		F8BAA9842BB6E71D002E349C /* HouseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9832BB6E71D002E349C /* HouseDetailView.swift */; };
+		F8BAA9872BB74DED002E349C /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9862BB74DED002E349C /* Element.swift */; };
+		F8BAA98A2BB74E25002E349C /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9892BB74E25002E349C /* Modality.swift */; };
+		F8BAA98C2BB74E37002E349C /* Polarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA98B2BB74E37002E349C /* Polarity.swift */; };
+		F8BAA98E2BB74EB7002E349C /* Ruler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA98D2BB74EB7002E349C /* Ruler.swift */; };
+		F8BAA9902BB756A3002E349C /* ElementSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA98F2BB756A2002E349C /* ElementSummaryView.swift */; };
+		F8BAA9942BB7698A002E349C /* ElementColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9932BB7698A002E349C /* ElementColor.swift */; };
+		F8BAA9972BB76F9D002E349C /* ElementSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9962BB76F9D002E349C /* ElementSummary.swift */; };
+		F8BAA9992BB7808B002E349C /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9982BB7808B002E349C /* Summary.swift */; };
+		F8BAA99B2BB780B2002E349C /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA99A2BB780B2002E349C /* BarView.swift */; };
+		F8BAA99D2BB78395002E349C /* ModalitySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA99C2BB78395002E349C /* ModalitySummaryView.swift */; };
+		F8BAA99F2BB7899D002E349C /* ModalityColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA99E2BB7899D002E349C /* ModalityColor.swift */; };
+		F8BAA9A12BB7917C002E349C /* PolarityColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9A02BB7917C002E349C /* PolarityColor.swift */; };
+		F8BAA9A32BB7930E002E349C /* PolaritySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9A22BB7930E002E349C /* PolaritySummaryView.swift */; };
 		F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F42BB5832F005741FC /* CGFloat.swift */; };
 		F8C006F72BB58391005741FC /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F62BB58391005741FC /* Double.swift */; };
 		F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */; };
@@ -258,6 +271,19 @@
 		F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectDetailView.swift; sourceTree = "<group>"; };
 		F8BAA9812BB6D200002E349C /* PlanetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetImage.swift; sourceTree = "<group>"; };
 		F8BAA9832BB6E71D002E349C /* HouseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailView.swift; sourceTree = "<group>"; };
+		F8BAA9862BB74DED002E349C /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		F8BAA9892BB74E25002E349C /* Modality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
+		F8BAA98B2BB74E37002E349C /* Polarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polarity.swift; sourceTree = "<group>"; };
+		F8BAA98D2BB74EB7002E349C /* Ruler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruler.swift; sourceTree = "<group>"; };
+		F8BAA98F2BB756A2002E349C /* ElementSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSummaryView.swift; sourceTree = "<group>"; };
+		F8BAA9932BB7698A002E349C /* ElementColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementColor.swift; sourceTree = "<group>"; };
+		F8BAA9962BB76F9D002E349C /* ElementSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSummary.swift; sourceTree = "<group>"; };
+		F8BAA9982BB7808B002E349C /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		F8BAA99A2BB780B2002E349C /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		F8BAA99C2BB78395002E349C /* ModalitySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalitySummaryView.swift; sourceTree = "<group>"; };
+		F8BAA99E2BB7899D002E349C /* ModalityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalityColor.swift; sourceTree = "<group>"; };
+		F8BAA9A02BB7917C002E349C /* PolarityColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolarityColor.swift; sourceTree = "<group>"; };
+		F8BAA9A22BB7930E002E349C /* PolaritySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaritySummaryView.swift; sourceTree = "<group>"; };
 		F8C006F42BB5832F005741FC /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		F8C006F62BB58391005741FC /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalAspectData.swift; sourceTree = "<group>"; };
@@ -358,6 +384,7 @@
 		F819B5582BACBE82001B138A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8BAA9952BB76F85002E349C /* Summary */,
 				F8C006F82BB5864F005741FC /* Astrological */,
 				F819B6142BACE50C001B138A /* ViewModifiers */,
 				F819B6162BACE530001B138A /* Extensions.swift */,
@@ -626,6 +653,7 @@
 		F819B5812BACC0AB001B138A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F8BAA9852BB749B2002E349C /* Summary */,
 				F819B5EA2BACE17B001B138A /* ProfileActionButtonView.swift */,
 				F819B5EC2BACE18B001B138A /* ProfileHeaderView.swift */,
 				F819B5EE2BACE1D5001B138A /* UserStatView.swift */,
@@ -911,6 +939,7 @@
 		F8409FED2BADDB3700D007F8 /* Astrological */ = {
 			isa = PBXGroup;
 			children = (
+				F8BAA9882BB74E14002E349C /* Summary */,
 				F8409FEE2BADDB7D00D007F8 /* Zodiac.swift */,
 				F8409FF02BADDB8900D007F8 /* House.swift */,
 				F8409FF22BADDB9800D007F8 /* AngularHouse.swift */,
@@ -926,6 +955,9 @@
 				F8409FFB2BADDBEA00D007F8 /* AspectColor.swift */,
 				F8409FFD2BADDBF700D007F8 /* ChartColor.swift */,
 				F840A0012BADDC1300D007F8 /* PointColor.swift */,
+				F8BAA9932BB7698A002E349C /* ElementColor.swift */,
+				F8BAA99E2BB7899D002E349C /* ModalityColor.swift */,
+				F8BAA9A02BB7917C002E349C /* PolarityColor.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -944,6 +976,37 @@
 				F8A28F522BB3589A00342AB9 /* GeocodeError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		F8BAA9852BB749B2002E349C /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				F8BAA98F2BB756A2002E349C /* ElementSummaryView.swift */,
+				F8BAA99C2BB78395002E349C /* ModalitySummaryView.swift */,
+				F8BAA9A22BB7930E002E349C /* PolaritySummaryView.swift */,
+				F8BAA99A2BB780B2002E349C /* BarView.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		F8BAA9882BB74E14002E349C /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				F8BAA9862BB74DED002E349C /* Element.swift */,
+				F8BAA9892BB74E25002E349C /* Modality.swift */,
+				F8BAA98B2BB74E37002E349C /* Polarity.swift */,
+				F8BAA98D2BB74EB7002E349C /* Ruler.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		F8BAA9952BB76F85002E349C /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				F8BAA9982BB7808B002E349C /* Summary.swift */,
+				F8BAA9962BB76F9D002E349C /* ElementSummary.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		F8C006F82BB5864F005741FC /* Astrological */ = {
@@ -1067,6 +1130,7 @@
 				F819B5D12BACE033001B138A /* ChatBubble.swift in Sources */,
 				F819B6112BACE4A4001B138A /* Color.swift in Sources */,
 				F8409FF12BADDB8900D007F8 /* House.swift in Sources */,
+				F8BAA99D2BB78395002E349C /* ModalitySummaryView.swift in Sources */,
 				F819B5BF2BACC54F001B138A /* CommentsViewModel.swift in Sources */,
 				F819B5722BACBF63001B138A /* ImageUploader.swift in Sources */,
 				F819B5D72BACE06D001B138A /* MessageViewModel.swift in Sources */,
@@ -1075,6 +1139,7 @@
 				F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */,
 				F8C007042BB5C6EE005741FC /* HousesView.swift in Sources */,
 				F819B5D32BACE047001B138A /* MessageView.swift in Sources */,
+				F8BAA9A12BB7917C002E349C /* PolarityColor.swift in Sources */,
 				F819B5A92BACC413001B138A /* PostGridViewModel.swift in Sources */,
 				F819B5A72BACC3F0001B138A /* RegistrationViewModel.swift in Sources */,
 				F8C006FE2BB5C6BD005741FC /* SummaryView.swift in Sources */,
@@ -1084,6 +1149,7 @@
 				F819B5B52BACC4C7001B138A /* CircularProfileImageView.swift in Sources */,
 				F8409FF32BADDB9800D007F8 /* AngularHouse.swift in Sources */,
 				F8C006FC2BB586A1005741FC /* PlanetPosition.swift in Sources */,
+				F8BAA99F2BB7899D002E349C /* ModalityColor.swift in Sources */,
 				F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */,
 				F840A0142BAE299900D007F8 /* CustomError.swift in Sources */,
 				F819B6032BACE3CD001B138A /* ProfileViewModel.swift in Sources */,
@@ -1099,18 +1165,23 @@
 				F8409FEF2BADDB7D00D007F8 /* Zodiac.swift in Sources */,
 				F819B5F92BACE2A6001B138A /* SettingsView.swift in Sources */,
 				F840A0022BADDC1300D007F8 /* PointColor.swift in Sources */,
+				F8BAA9942BB7698A002E349C /* ElementColor.swift in Sources */,
 				F819B6192BACE547001B138A /* ImagePicker.swift in Sources */,
+				F8BAA9902BB756A3002E349C /* ElementSummaryView.swift in Sources */,
 				F819B5952BACC1AF001B138A /* AuthenticationFormProtocol.swift in Sources */,
 				F819B5702BACBF56001B138A /* UserService.swift in Sources */,
 				F819B5AB2BACC425001B138A /* UserListViewModel.swift in Sources */,
 				F819B5CD2BACE00A001B138A /* ConversationsCell.swift in Sources */,
 				F819B5F32BACE20D001B138A /* EditProfileViewModel.swift in Sources */,
 				F819B5FB2BACE2B8001B138A /* SettingsRowView.swift in Sources */,
+				F8BAA9A32BB7930E002E349C /* PolaritySummaryView.swift in Sources */,
 				F819B5C32BACC639001B138A /* FeedViewModel.swift in Sources */,
+				F8BAA9992BB7808B002E349C /* Summary.swift in Sources */,
 				F819B5B12BACC48F001B138A /* UserCell.swift in Sources */,
 				F819B6072BACE416001B138A /* SearchView.swift in Sources */,
 				F819B5FD2BACE2DB001B138A /* SettingsItemModel.swift in Sources */,
 				F819B5C12BACC625001B138A /* FeedCellViewModel.swift in Sources */,
+				F8BAA98E2BB74EB7002E349C /* Ruler.swift in Sources */,
 				F8409FE12BADD9BC00D007F8 /* AstrologyModel.swift in Sources */,
 				F819B6092BACE42A001B138A /* SearchViewModel.swift in Sources */,
 				F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */,
@@ -1121,6 +1192,7 @@
 				F8BAA9822BB6D200002E349C /* PlanetImage.swift in Sources */,
 				F8409FFE2BADDBF700D007F8 /* ChartColor.swift in Sources */,
 				F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */,
+				F8BAA9972BB76F9D002E349C /* ElementSummary.swift in Sources */,
 				F8C007062BB5C798005741FC /* AspectsView.swift in Sources */,
 				F8409FF72BADDBB000D007F8 /* Point.swift in Sources */,
 				F819B5972BACC1D1001B138A /* AuthService.swift in Sources */,
@@ -1139,6 +1211,7 @@
 				F819B5DF2BACE0CD001B138A /* NotificationType.swift in Sources */,
 				F819B5E72BACE136001B138A /* NotificationsCellViewModel.swift in Sources */,
 				F8C007022BB5C6E4005741FC /* PlanetsView.swift in Sources */,
+				F8BAA98A2BB74E25002E349C /* Modality.swift in Sources */,
 				F819B5C92BACDFD5001B138A /* Message.swift in Sources */,
 				F8409FD72BADD05A00D007F8 /* SelectDateOfBirthView.swift in Sources */,
 				F819B59F2BACC36A001B138A /* CreateUsernameView.swift in Sources */,
@@ -1157,6 +1230,7 @@
 				F819B5B92BACC50D001B138A /* Comment.swift in Sources */,
 				F819B5E92BACE14C001B138A /* NotificationService.swift in Sources */,
 				F819B5E52BACE124001B138A /* NotificationsViewModel.swift in Sources */,
+				F8BAA99B2BB780B2002E349C /* BarView.swift in Sources */,
 				F8409FFC2BADDBEA00D007F8 /* AspectColor.swift in Sources */,
 				F819B5FF2BACE300001B138A /* ProfileView.swift in Sources */,
 				F819B5EF2BACE1D5001B138A /* UserStatView.swift in Sources */,
@@ -1165,10 +1239,12 @@
 				F8409FD92BADD15300D007F8 /* SelectLocationView.swift in Sources */,
 				F819B5AD2BACC450001B138A /* CustomInputView.swift in Sources */,
 				F819B60F2BACE491001B138A /* PreviewProvider.swift in Sources */,
+				F8BAA9872BB74DED002E349C /* Element.swift in Sources */,
 				F819B5D52BACE05B001B138A /* NewMessageView.swift in Sources */,
 				F819B5BB2BACC522001B138A /* CommentCell.swift in Sources */,
 				F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */,
 				F840A0112BAE0E2000D007F8 /* LocationSearchCompleter.swift in Sources */,
+				F8BAA98C2BB74E37002E349C /* Polarity.swift in Sources */,
 				F819B6052BACE3F9001B138A /* ContentViewModel.swift in Sources */,
 				F819B5E12BACE0EB001B138A /* NotificationsView.swift in Sources */,
 				F819B5DB2BACE09C001B138A /* ChatViewModel.swift in Sources */,

@@ -1,5 +1,6 @@
 import SwiftUI
 
+// TODO: Refactor 
 struct MainTabView: View {
     let user: User
     @Binding var selectedIndex: Int

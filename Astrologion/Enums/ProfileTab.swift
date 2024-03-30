@@ -5,7 +5,7 @@ enum ProfileTab: Int, CaseIterable {
     case aspects
     case summary
     
-    // TO DO: ADD ICONS
+    // TODO: ADD ICONS
     var text: String {
         switch self {
         case .chart:
