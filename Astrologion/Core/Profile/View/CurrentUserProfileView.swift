@@ -2,57 +2,56 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     let user: User
-    @StateObject var viewModel: ProfileViewModel
+    @State private var selectedTab: ProfileTab = .chart
+    @StateObject var profileViewModel: ProfileViewModel
     @State private var showSettingsSheet = false
     @State private var selectedSettingsOption: SettingsItemModel?
     @State private var showDetail = false
+    @State private var showNotificationsView = false
 
     init(user: User) {
         self.user = user
-        _viewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
+        _profileViewModel = StateObject(wrappedValue: ProfileViewModel(user: user))
     }
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 24) {
-                    ProfileHeaderView(viewModel: viewModel)
+                VStack(spacing: 1) {
+                    ProfileHeaderView(viewModel: profileViewModel)
 
-//                    // Optionally display the NatalChartViewRepresentable
-//                    if let _ = viewModel.natalChartViewModel {
-//                        NatalChartViewRepresentable(viewModel: $viewModel.natalChartViewModel)
-//                            .frame(height: 600)
-//                    } else if viewModel.isLoadingChartData {
-//                        ProgressView("Loading astrological details...")
-//                    } else {
-//                        Text("Unable to load chart data.")
-//                            .foregroundColor(.secondary)
-//                    }
-
-                    // PostGridView(config: .profile(user)) // Uncomment or replace this with your actual content
+                    ProfileTabView(selectedTab: $selectedTab, user: user, profileViewModel: profileViewModel)
                 }
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(isPresented: $showDetail, destination: {
-                Text(selectedSettingsOption?.title ?? "")
-            })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showNotificationsView.toggle()
+                    }) {
+                        Image(systemName: "bell")
+                    }
+                }
+
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        selectedSettingsOption = nil
+                        showSettingsSheet.toggle()
+                    }) {
+                        Image(systemName: "line.3.horizontal")
+                    }
+                }
+            }
+            .navigationDestination(isPresented: $showNotificationsView) {
+                NotificationsView()
+            }
             .sheet(isPresented: $showSettingsSheet) {
                 SettingsView(selectedOption: $selectedSettingsOption)
                     .presentationDetents([.height(CGFloat(SettingsItemModel.allCases.count * 56))])
                     .presentationDragIndicator(.visible)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        selectedSettingsOption = nil
-                        showSettingsSheet.toggle()
-                    } label: {
-                        Image(systemName: "line.3.horizontal")
-                    }
-                }
-            }
-            .onChange(of: selectedSettingsOption) { newValue in
+            .onChange(of: selectedSettingsOption) { newValue, _ in
                 guard let option = newValue else { return }
 
                 if option != .logout {

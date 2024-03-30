@@ -49,12 +49,10 @@ struct FeedCell: View {
                 Button(action: {
                     Task { didLike ? try await viewModel.unlike() : try await viewModel.like() }
                 }, label: {
-                    Image(systemName: didLike ? "heart.fill" : "heart")
+                    Image(didLike ? "stardust_fill" : "stardust")
                         .resizable()
                         .scaledToFill()
-                        .foregroundColor(didLike ? .red : Color.theme.systemBackground)
                         .frame(width: 20, height: 20)
-                        .font(.system(size: 20))
                         .padding(4)
                 })
                 
@@ -68,18 +66,19 @@ struct FeedCell: View {
                         .foregroundColor(Color.theme.systemBackground)
                 }
                 
-                Button(action: {}, label: {
-                    Image(systemName: "paperplane")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 20, height: 20)
-                        .font(.system(size: 20))
-                        .padding(4)
-                        .foregroundColor(Color.theme.systemBackground)
-                })
+//                Button(action: {}, label: {
+//                    Image(systemName: "paperplane")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 20, height: 20)
+//                        .font(.system(size: 20))
+//                        .padding(4)
+//                        .foregroundColor(Color.theme.systemBackground)
+//                })
             }
             .padding(.leading, 4)
             
+            // likes display
             NavigationLink(value: SearchViewModelConfig.likes(viewModel.post.id ?? "")) {
                 Text(viewModel.likeString)
                     .font(.system(size: 14, weight: .semibold))
@@ -88,12 +87,14 @@ struct FeedCell: View {
                     .foregroundColor(Color.theme.systemBackground)
             }
             
+            
             HStack {
-                Text(post.user?.username ?? "").font(.system(size: 14, weight: .semibold)) +
+                //Text(post.user?.username ?? "").font(.system(size: 14, weight: .semibold)) +
                     Text(" \(post.caption)")
                     .font(.system(size: 14))
             }.padding(.horizontal, 8)
             
+            // post age
             Text(post.timestamp.timestampString())
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
