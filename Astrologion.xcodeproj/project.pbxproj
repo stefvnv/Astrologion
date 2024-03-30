@@ -993,9 +993,6 @@
 				F819B5602BACBECB001B138A /* Search */,
 				F89751A32BB85ED400138D25 /* ViewModel */,
 				F89751A22BB85EC700138D25 /* Views */,
-				F89751962BB84F1000138D25 /* OrbitView.swift */,
-				F897519C2BB8526F00138D25 /* OrbitTabView.swift */,
-				F819B5AE2BACC473001B138A /* UserListView.swift */,
 			);
 			path = Orbit;
 			sourceTree = "<group>";
@@ -1003,6 +1000,9 @@
 		F89751A22BB85EC700138D25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F89751962BB84F1000138D25 /* OrbitView.swift */,
+				F897519C2BB8526F00138D25 /* OrbitTabView.swift */,
+				F819B5AE2BACC473001B138A /* UserListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

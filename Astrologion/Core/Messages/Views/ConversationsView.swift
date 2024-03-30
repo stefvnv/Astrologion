@@ -30,11 +30,11 @@ struct ConversationsView: View {
             Button {
                 isShowingNewMessageView.toggle()
             } label: {
-                Image(systemName: "square.and.pencil")
-                    .imageScale(.large)
-                    .foregroundColor(Color.theme.systemBackground)
+                Image("write")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 28)
             }
-            
         })
         .onAppear {
             viewModel.loadData()
