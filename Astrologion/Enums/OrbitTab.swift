@@ -1,5 +1,5 @@
 enum OrbitTab: String, CaseIterable {
-    case followers, following, search
+    case search, followers, following
     
     var navigationTitle: String {
         switch self {
@@ -13,7 +13,7 @@ enum OrbitTab: String, CaseIterable {
     var text: String {
         switch self {
         case .search:
-            return "Search User"
+            return "Search"
         case .followers:
             return "Followers"
         case .following:

@@ -131,7 +131,7 @@
 		F840A0142BAE299900D007F8 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0132BAE299900D007F8 /* CustomError.swift */; };
 		F840A0162BAE43CB00D007F8 /* CompleteSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0152BAE43CB00D007F8 /* CompleteSignUpViewModel.swift */; };
 		F89751972BB84F1000138D25 /* OrbitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751962BB84F1000138D25 /* OrbitView.swift */; };
-		F897519B2BB8523C00138D25 /* OrbitViewModelConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897519A2BB8523C00138D25 /* OrbitViewModelConfig.swift */; };
+		F897519B2BB8523C00138D25 /* SearchViewModelConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897519A2BB8523C00138D25 /* SearchViewModelConfig.swift */; };
 		F897519D2BB8526F00138D25 /* OrbitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897519C2BB8526F00138D25 /* OrbitTabView.swift */; };
 		F89751A52BB8865200138D25 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A42BB8865200138D25 /* SearchViewModel.swift */; };
 		F89751A72BB89C1B00138D25 /* OrbitTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A62BB89C1B00138D25 /* OrbitTab.swift */; };
@@ -268,7 +268,7 @@
 		F840A0132BAE299900D007F8 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		F840A0152BAE43CB00D007F8 /* CompleteSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpViewModel.swift; sourceTree = "<group>"; };
 		F89751962BB84F1000138D25 /* OrbitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitView.swift; sourceTree = "<group>"; };
-		F897519A2BB8523C00138D25 /* OrbitViewModelConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitViewModelConfig.swift; sourceTree = "<group>"; };
+		F897519A2BB8523C00138D25 /* SearchViewModelConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelConfig.swift; sourceTree = "<group>"; };
 		F897519C2BB8526F00138D25 /* OrbitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTabView.swift; sourceTree = "<group>"; };
 		F89751A42BB8865200138D25 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F89751A62BB89C1B00138D25 /* OrbitTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTab.swift; sourceTree = "<group>"; };
@@ -930,8 +930,8 @@
 				F840A0122BAE298F00D007F8 /* Error */,
 				F8409FEC2BADDB3200D007F8 /* UI */,
 				F8C007072BB5C7D3005741FC /* ProfileTab.swift */,
-				F897519A2BB8523C00138D25 /* OrbitViewModelConfig.swift */,
 				F89751A62BB89C1B00138D25 /* OrbitTab.swift */,
+				F897519A2BB8523C00138D25 /* SearchViewModelConfig.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1162,7 +1162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F897519B2BB8523C00138D25 /* OrbitViewModelConfig.swift in Sources */,
+				F897519B2BB8523C00138D25 /* SearchViewModelConfig.swift in Sources */,
 				F819B5CF2BACE020001B138A /* ChatView.swift in Sources */,
 				F819B5D12BACE033001B138A /* ChatBubble.swift in Sources */,
 				F819B6112BACE4A4001B138A /* Color.swift in Sources */,
