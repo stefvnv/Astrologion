@@ -1,4 +1,4 @@
-enum OrbitViewModelConfig: String, CaseIterable {
+enum SearchViewModelConfig: String, CaseIterable {
     case followers, following, likes, search, newMessage
     
     var navigationTitle: String {
