@@ -8,6 +8,7 @@ struct CurrentUserProfileView: View {
     @State private var selectedSettingsOption: SettingsItemModel?
     @State private var showDetail = false
     @State private var showNotificationsView = false
+    @State private var showConfirmationDialog = false
 
     init(user: User) {
         self.user = user
@@ -47,17 +48,32 @@ struct CurrentUserProfileView: View {
                 NotificationsView()
             }
             .sheet(isPresented: $showSettingsSheet) {
-                SettingsView(selectedOption: $selectedSettingsOption)
-                    .presentationDetents([.height(CGFloat(SettingsItemModel.allCases.count * 56))])
+                SettingsView()
+                    .presentationDetents([.height(360)])
                     .presentationDragIndicator(.visible)
             }
-            .onChange(of: selectedSettingsOption) { newValue, _ in
-                guard let option = newValue else { return }
-
-                if option != .logout {
-                    self.showDetail.toggle()
-                } else {
+            .confirmationDialog("Are you sure?", isPresented: $showConfirmationDialog, titleVisibility: .visible) {
+                Button("Delete Account", role: .destructive) {
+                    Task {
+                        do {
+                            try await AuthService.shared.deleteUser()
+                            // Handle navigation to login or welcome screen here.
+                        } catch {
+                            print("Failed to delete account")
+                        }
+                    }
+                }
+            } message: {
+                Text("This will permanently delete your account and all associated data.")
+            }
+            .onChange(of: selectedSettingsOption) { newValue in
+                switch newValue {
+                case .logout:
                     AuthService.shared.signout()
+                case .deleteAccount:
+                    showConfirmationDialog = true
+                default:
+                    break
                 }
             }
         }

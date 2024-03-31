@@ -74,9 +74,11 @@ class AuthService {
     func sendResetPasswordLink(toEmail email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
     }
-
     
-    ///
+    
+    // MARK: - Settings
+
+    /// Signs user out of account
     func signout() {
         self.userSession = nil
         self.user = nil
@@ -84,9 +86,17 @@ class AuthService {
     }
     
     
-    ///
+    /// Deletes user account
     func deleteUser() async throws {
-        print("To be implemented")
+        guard let user = Auth.auth().currentUser else { return }
+        
+        do {
+            try await user.delete()
+            self.userSession = nil
+            self.user = nil
+        } catch let error {
+            throw error
+        }
     }
 }
 
