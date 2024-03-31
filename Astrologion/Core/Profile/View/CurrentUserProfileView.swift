@@ -3,12 +3,13 @@ import SwiftUI
 struct CurrentUserProfileView: View {
     let user: User
     @State private var selectedTab: ProfileTab = .chart
-    @StateObject var profileViewModel: ProfileViewModel
     @State private var showSettingsSheet = false
     @State private var selectedSettingsOption: SettingsItemModel?
     @State private var showDetail = false
     @State private var showNotificationsView = false
     @State private var showConfirmationDialog = false
+    @StateObject var profileViewModel: ProfileViewModel
+    @Environment(\.presentationMode) var presentationMode
 
     init(user: User) {
         self.user = user
@@ -57,12 +58,13 @@ struct CurrentUserProfileView: View {
                     Task {
                         do {
                             try await AuthService.shared.deleteUser()
-                            // Handle navigation to login or welcome screen here.
+                            presentationMode.wrappedValue.dismiss()
                         } catch {
-                            print("Failed to delete account")
+                            print("Failed to delete account: \(error.localizedDescription)")
                         }
                     }
                 }
+
             } message: {
                 Text("This will permanently delete your account and all associated data.")
             }

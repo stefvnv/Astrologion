@@ -32,13 +32,13 @@ class AuthService {
         let result = try await Auth.auth().createUser(withEmail: email, password: password)
         self.userSession = result.user
 
-        // Create a user instance for chart creation
+        // create a user instance for chart creation
         let newUser = User(uid: result.user.uid, username: username, email: email, birthDay: birthDay, birthMonth: birthMonth, birthYear: birthYear, birthHour: birthHour, birthMinute: birthMinute, latitude: latitude, longitude: longitude, chartId: nil)
 
-        // Create and save the chart
+        // create and save chart
         let chart = try await ChartService.shared.createChart(for: newUser.uid!, with: newUser)
 
-        // Prepare userData with chartId included
+        // prepare userData with chartId included
         let userData: [String: Any] = [
             "email": email,
             "username": username,
@@ -68,7 +68,20 @@ class AuthService {
             self.user = try await UserService.fetchUser(withUid: session.uid)
         }
     }
-
+    
+    
+    @MainActor
+    func updateUserChartId(userId: String, chartId: String) async {
+        let userRef = Firestore.firestore().collection("users").document(userId)
+        
+        do {
+            try await userRef.updateData(["chartId": chartId])
+            print("Successfully updated user with chartId: \(chartId)")
+        } catch let error {
+            print("Error updating user with chartId: \(error.localizedDescription)")
+        }
+    }
+    
     
     ///
     func sendResetPasswordLink(toEmail email: String) async throws {
@@ -86,11 +99,16 @@ class AuthService {
     }
     
     
-    /// Deletes user account
+    /// Deletes user account and user data from Firestore
+    @MainActor
     func deleteUser() async throws {
-        guard let user = Auth.auth().currentUser else { return }
-        
+        guard let user = Auth.auth().currentUser else {
+            throw CustomError.userNotLoggedIn
+        }
+
+        let userRef = Firestore.firestore().collection("users").document(user.uid)
         do {
+            try await userRef.delete()
             try await user.delete()
             self.userSession = nil
             self.user = nil
@@ -98,22 +116,4 @@ class AuthService {
             throw error
         }
     }
-}
-
-
-extension AuthService {
-    
-    @MainActor
-    func updateUserChartId(userId: String, chartId: String) async {
-        // Reference to the user's document in the Firestore "users" collection
-        let userRef = Firestore.firestore().collection("users").document(userId)
-        
-        // Update the user's document with the chartId
-        do {
-            try await userRef.updateData(["chartId": chartId])
-            print("Successfully updated user with chartId: \(chartId)")
-        } catch let error {
-            print("Error updating user with chartId: \(error.localizedDescription)")
-        }
-    }
-}
+} //end

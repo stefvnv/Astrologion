@@ -8,7 +8,8 @@ enum CustomError: Error {
     case missingTimeComponents
     case timezoneError
     case dateConversionError
-
+    case userNotLoggedIn
+    
     var errorMessage: String {
         switch self {
         case .missingLocationData:
@@ -25,6 +26,8 @@ enum CustomError: Error {
             return "Timezone data could not be determined. Please ensure the location is correct."
         case .dateConversionError:
             return "There was a problem converting your date. Please check the date components and try again."
+        case .userNotLoggedIn:
+            return "You are not logged in. Please log in to continue."
         }
     }
 }
