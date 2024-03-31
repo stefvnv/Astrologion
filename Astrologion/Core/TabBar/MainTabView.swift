@@ -32,7 +32,7 @@ struct MainTabView: View {
                 // orbit
                 OrbitView(user: user)
                     .tabItem {
-                        Image(systemName: selectedIndex == 3 ? "heart.fill" : "heart")
+                        Image(systemName: selectedIndex == 3 ? "heart.fill" : "heart") // TODO: Change to orbit-fill, orbit
                             .environment(\.symbolVariants, selectedIndex == 3 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 3 }

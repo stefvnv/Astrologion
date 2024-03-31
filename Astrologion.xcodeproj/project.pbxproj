@@ -136,6 +136,8 @@
 		F89751A52BB8865200138D25 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A42BB8865200138D25 /* SearchViewModel.swift */; };
 		F89751A72BB89C1B00138D25 /* OrbitTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A62BB89C1B00138D25 /* OrbitTab.swift */; };
 		F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A28F522BB3589A00342AB9 /* GeocodeError.swift */; };
+		F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A709292BB8F3E9008599A5 /* Dosis.ttf */; };
+		F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */; };
 		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
 		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
@@ -272,7 +274,10 @@
 		F897519C2BB8526F00138D25 /* OrbitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTabView.swift; sourceTree = "<group>"; };
 		F89751A42BB8865200138D25 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F89751A62BB89C1B00138D25 /* OrbitTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTab.swift; sourceTree = "<group>"; };
+		F89751AA2BB8EDD300138D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F8A28F522BB3589A00342AB9 /* GeocodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeError.swift; sourceTree = "<group>"; };
+		F8A709292BB8F3E9008599A5 /* Dosis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dosis.ttf; sourceTree = "<group>"; };
+		F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
@@ -350,6 +355,8 @@
 		F819B4C92BAC970A001B138A = {
 			isa = PBXGroup;
 			children = (
+				F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */,
+				F8A709292BB8F3E9008599A5 /* Dosis.ttf */,
 				F819B6232BACFBCB001B138A /* Astrologion-Bridging-Header.h */,
 				F819B4D42BAC970A001B138A /* Astrologion */,
 				F819B4D32BAC970A001B138A /* Products */,
@@ -367,6 +374,7 @@
 		F819B4D42BAC970A001B138A /* Astrologion */ = {
 			isa = PBXGroup;
 			children = (
+				F89751AA2BB8EDD300138D25 /* Info.plist */,
 				F819B55D2BACBEA1001B138A /* App */,
 				F819B55C2BACBE9C001B138A /* Core */,
 				F8409FEA2BADDB1B00D007F8 /* Enums */,
@@ -1149,6 +1157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */,
+				F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */,
 				F819B4DD2BAC970C001B138A /* Preview Assets.xcassets in Resources */,
 				F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */,
 				F819B4E42BAC9809001B138A /* GoogleService-Info.plist in Resources */,
@@ -1426,6 +1436,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Astrologion/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Astrologion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1455,6 +1466,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Astrologion/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Astrologion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
