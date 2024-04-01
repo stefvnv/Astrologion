@@ -355,9 +355,8 @@
 		F819B4C92BAC970A001B138A = {
 			isa = PBXGroup;
 			children = (
-				F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */,
-				F8A709292BB8F3E9008599A5 /* Dosis.ttf */,
 				F819B6232BACFBCB001B138A /* Astrologion-Bridging-Header.h */,
+				F8A6208F2BBAC1CA00F84AFE /* Fonts */,
 				F819B4D42BAC970A001B138A /* Astrologion */,
 				F819B4D32BAC970A001B138A /* Products */,
 			);
@@ -1020,6 +1019,15 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F8A6208F2BBAC1CA00F84AFE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */,
+				F8A709292BB8F3E9008599A5 /* Dosis.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F8BAA9852BB749B2002E349C /* Summary */ = {

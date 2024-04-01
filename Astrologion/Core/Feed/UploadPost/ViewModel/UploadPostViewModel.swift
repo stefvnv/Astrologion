@@ -15,6 +15,8 @@ class UploadPostViewModel: ObservableObject {
     
     private var uiImage: UIImage?
     
+    
+    ///
     func uploadPost(caption: String) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let image = uiImage else { return }
@@ -37,6 +39,8 @@ class UploadPostViewModel: ObservableObject {
         }
     }
     
+    
+    ///
     func loadImage(fromItem item: PhotosPickerItem?) async {
         guard let item = item else { return }
         
