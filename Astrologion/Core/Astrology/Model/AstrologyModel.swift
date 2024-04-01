@@ -54,8 +54,8 @@ public class AstrologyModel: ObservableObject {
 
 
     ///
-    var astrologicalPointPositions: [(body: Point, longitude: Double)] {
-        var positions: [(body: Point, longitude: Double)] = [
+    var astrologicalPlanetaryPositions: [(body: Planet, longitude: Double)] {
+        var positions: [(body: Planet, longitude: Double)] = [
             (body: .Sun, longitude: sunLongitude),
             (body: .Moon, longitude: moonLongitude),
             (body: .Mercury, longitude: mercuryLongitude),
@@ -188,10 +188,10 @@ public class AstrologyModel: ObservableObject {
     func calculateAspects() -> [AstrologicalAspectData] {
         var aspects: [AstrologicalAspectData] = []
         
-        for i in 0..<astrologicalPointPositions.count {
-            for j in (i + 1)..<astrologicalPointPositions.count {
-                let (planet1, longitude1) = astrologicalPointPositions[i]
-                let (planet2, longitude2) = astrologicalPointPositions[j]
+        for i in 0..<astrologicalPlanetaryPositions.count {
+            for j in (i + 1)..<astrologicalPlanetaryPositions.count {
+                let (planet1, longitude1) = astrologicalPlanetaryPositions[i]
+                let (planet2, longitude2) = astrologicalPlanetaryPositions[j]
                 let angleDifference = abs(longitude1 - longitude2)
                 let normalizedAngle = min(angleDifference, 360 - angleDifference)
                 
@@ -335,7 +335,7 @@ extension AstrologyModel {
     func toChart(userId: String) -> Chart {
         
         // convert planetary longitudes to zodiac sign and degree strings
-        let planetaryPositions = self.astrologicalPointPositions.reduce(into: [String: String]()) { (dict, tuple) in
+        let planetaryPositions = self.astrologicalPlanetaryPositions.reduce(into: [String: String]()) { (dict, tuple) in
             let (body, longitude) = tuple
             dict[body.rawValue] = self.zodiacSignAndDegree(fromLongitude: longitude)
         }

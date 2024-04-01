@@ -1,7 +1,7 @@
 import Foundation
 
 struct PlanetPosition {
-    var planet: Point
+    var planet: Planet
     var position: CGPoint
     var longitude: CGFloat
 }

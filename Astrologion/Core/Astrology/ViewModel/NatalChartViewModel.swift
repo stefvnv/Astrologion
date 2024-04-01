@@ -35,9 +35,9 @@ class NatalChartViewModel {
                 return String(aspectDescription[range])
             }
             
-            guard let planet1 = Point(rawValue: capture(1)),
+            guard let planet1 = Planet(rawValue: capture(1)),
                   let aspectType = Aspect.allCases.first(where: { $0.description.lowercased() == capture(2).lowercased() }),
-                  let planet2 = Point(rawValue: capture(3)),
+                  let planet2 = Planet(rawValue: capture(3)),
                   let exactAngle = Double(capture(4)),
                   let orb = Double(capture(5)) else {
                 return nil
@@ -49,7 +49,7 @@ class NatalChartViewModel {
     
     
     ///
-    func longitude(for planet: Point) -> Double {
+    func longitude(for planet: Planet) -> Double {
         guard let chart = chart, let positionString = chart.planetaryPositions[planet.rawValue] else { return 0.0 }
         return parseLongitude(from: positionString) ?? 0.0
     }
@@ -104,7 +104,7 @@ class NatalChartViewModel {
 
     
     ///
-    func calculatePositionForPlanet(_ planet: Point, at longitude: Double, usingAscendant ascendant: Double, in rect: CGRect) -> CGPoint {
+    func calculatePositionForPlanet(_ planet: Planet, at longitude: Double, usingAscendant ascendant: Double, in rect: CGRect) -> CGPoint {
         let ascendantOffset = 180.0 - ascendant
         let adjustedLongitude = longitude + ascendantOffset
         let angle = (360 - (adjustedLongitude.truncatingRemainder(dividingBy: 360))).truncatingRemainder(dividingBy: 360)
@@ -130,7 +130,7 @@ class NatalChartViewModel {
 
         let ascendantLongitude = self.ascendant() // Confirm this method gets the correct ascendant value from the chart.
 
-        return Point.allCases.compactMap { planet in
+        return Planet.allCases.compactMap { planet in
             guard let positionString = chart.planetaryPositions[planet.rawValue],
                   let planetLongitude = parseLongitude(from: positionString) else {
                 print("Could not parse position for \(planet.rawValue)")

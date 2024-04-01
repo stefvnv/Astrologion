@@ -11,19 +11,6 @@ class ProfileViewModel: ObservableObject {
     init(user: User) {
         self.user = user
         fetchUserChart()
-        loadUserData()
-    }
-    
-    
-    ///
-    func loadUserData() {
-        Task {
-            async let stats = try await UserService.fetchUserStats(uid: user.id)
-            self.user.stats = try await stats
-            
-            async let isFollowed = await checkIfUserIsFollowed()
-            self.user.isFollowed = await isFollowed
-        }
     }
     
     
@@ -92,9 +79,9 @@ class ProfileViewModel: ObservableObject {
                 let range = Range(match.range(at: index), in: aspectDescription)!
                 return String(aspectDescription[range])
             }
-            guard let planet1 = Point(rawValue: capture(1)),
+            guard let planet1 = Planet(rawValue: capture(1)),
                   let aspectType = Aspect.allCases.first(where: { $0.description.lowercased() == capture(2).lowercased() }),
-                  let planet2 = Point(rawValue: capture(3)),
+                  let planet2 = Planet(rawValue: capture(3)),
                   let exactAngle = Double(capture(4)),
                   let orb = Double(capture(5)) else {
                 return nil

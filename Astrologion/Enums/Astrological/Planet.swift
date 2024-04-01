@@ -2,7 +2,7 @@ import UIKit
 
 
 /// Represents the major astrological planets, each with an associated symbol
-public enum Point: String, CaseIterable {
+public enum Planet: String, CaseIterable {
     case Sun = "Sun"
     case Moon = "Moon"
     case Mercury = "Mercury"
@@ -74,19 +74,19 @@ public enum Point: String, CaseIterable {
     ///
     var color: UIColor {
         switch self {
-        case .Sun: return PointColor.sun.uiColor
-        case .Moon: return PointColor.moon.uiColor
-        case .Mercury: return PointColor.mercury.uiColor
-        case .Venus: return PointColor.venus.uiColor
-        case .Mars: return PointColor.mars.uiColor
-        case .Jupiter: return PointColor.jupiter.uiColor
-        case .Saturn: return PointColor.saturn.uiColor
-        case .Uranus: return PointColor.uranus.uiColor
-        case .Neptune: return PointColor.neptune.uiColor
-        case .Pluto: return PointColor.pluto.uiColor
-        case .NorthNode: return PointColor.northNode.uiColor
-        case .Lilith: return PointColor.lilith.uiColor
-        case .Ascendant, .Midheaven: return PointColor.gold.uiColor
+        case .Sun: return PlanetColor.sun.uiColor
+        case .Moon: return PlanetColor.moon.uiColor
+        case .Mercury: return PlanetColor.mercury.uiColor
+        case .Venus: return PlanetColor.venus.uiColor
+        case .Mars: return PlanetColor.mars.uiColor
+        case .Jupiter: return PlanetColor.jupiter.uiColor
+        case .Saturn: return PlanetColor.saturn.uiColor
+        case .Uranus: return PlanetColor.uranus.uiColor
+        case .Neptune: return PlanetColor.neptune.uiColor
+        case .Pluto: return PlanetColor.pluto.uiColor
+        case .NorthNode: return PlanetColor.northNode.uiColor
+        case .Lilith: return PlanetColor.lilith.uiColor
+        case .Ascendant, .Midheaven: return PlanetColor.gold.uiColor
         }
     }
 }

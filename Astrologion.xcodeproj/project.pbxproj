@@ -122,10 +122,10 @@
 		F8409FF12BADDB8900D007F8 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FF02BADDB8900D007F8 /* House.swift */; };
 		F8409FF32BADDB9800D007F8 /* AngularHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FF22BADDB9800D007F8 /* AngularHouse.swift */; };
 		F8409FF52BADDBA400D007F8 /* Aspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FF42BADDBA400D007F8 /* Aspect.swift */; };
-		F8409FF72BADDBB000D007F8 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FF62BADDBB000D007F8 /* Point.swift */; };
+		F8409FF72BADDBB000D007F8 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FF62BADDBB000D007F8 /* Planet.swift */; };
 		F8409FFC2BADDBEA00D007F8 /* AspectColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FFB2BADDBEA00D007F8 /* AspectColor.swift */; };
 		F8409FFE2BADDBF700D007F8 /* ChartColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FFD2BADDBF700D007F8 /* ChartColor.swift */; };
-		F840A0022BADDC1300D007F8 /* PointColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0012BADDC1300D007F8 /* PointColor.swift */; };
+		F840A0022BADDC1300D007F8 /* PlanetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0012BADDC1300D007F8 /* PlanetColor.swift */; };
 		F840A00A2BAE09B300D007F8 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0092BAE09B300D007F8 /* LocationSearchView.swift */; };
 		F840A0112BAE0E2000D007F8 /* LocationSearchCompleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0102BAE0E2000D007F8 /* LocationSearchCompleter.swift */; };
 		F840A0142BAE299900D007F8 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840A0132BAE299900D007F8 /* CustomError.swift */; };
@@ -261,10 +261,10 @@
 		F8409FF02BADDB8900D007F8 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		F8409FF22BADDB9800D007F8 /* AngularHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngularHouse.swift; sourceTree = "<group>"; };
 		F8409FF42BADDBA400D007F8 /* Aspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aspect.swift; sourceTree = "<group>"; };
-		F8409FF62BADDBB000D007F8 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		F8409FF62BADDBB000D007F8 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		F8409FFB2BADDBEA00D007F8 /* AspectColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectColor.swift; sourceTree = "<group>"; };
 		F8409FFD2BADDBF700D007F8 /* ChartColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartColor.swift; sourceTree = "<group>"; };
-		F840A0012BADDC1300D007F8 /* PointColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointColor.swift; sourceTree = "<group>"; };
+		F840A0012BADDC1300D007F8 /* PlanetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetColor.swift; sourceTree = "<group>"; };
 		F840A0092BAE09B300D007F8 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		F840A0102BAE0E2000D007F8 /* LocationSearchCompleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCompleter.swift; sourceTree = "<group>"; };
 		F840A0132BAE299900D007F8 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
@@ -959,7 +959,7 @@
 				F8409FF02BADDB8900D007F8 /* House.swift */,
 				F8409FF22BADDB9800D007F8 /* AngularHouse.swift */,
 				F8409FF42BADDBA400D007F8 /* Aspect.swift */,
-				F8409FF62BADDBB000D007F8 /* Point.swift */,
+				F8409FF62BADDBB000D007F8 /* Planet.swift */,
 			);
 			path = Astrological;
 			sourceTree = "<group>";
@@ -969,7 +969,7 @@
 			children = (
 				F8409FFB2BADDBEA00D007F8 /* AspectColor.swift */,
 				F8409FFD2BADDBF700D007F8 /* ChartColor.swift */,
-				F840A0012BADDC1300D007F8 /* PointColor.swift */,
+				F840A0012BADDC1300D007F8 /* PlanetColor.swift */,
 				F8BAA9932BB7698A002E349C /* ElementColor.swift */,
 				F8BAA99E2BB7899D002E349C /* ModalityColor.swift */,
 				F8BAA9A02BB7917C002E349C /* PolarityColor.swift */,
@@ -1220,7 +1220,7 @@
 				F819B61F2BACE579001B138A /* TextFieldModifier.swift in Sources */,
 				F8409FEF2BADDB7D00D007F8 /* Zodiac.swift in Sources */,
 				F819B5F92BACE2A6001B138A /* SettingsView.swift in Sources */,
-				F840A0022BADDC1300D007F8 /* PointColor.swift in Sources */,
+				F840A0022BADDC1300D007F8 /* PlanetColor.swift in Sources */,
 				F8BAA9942BB7698A002E349C /* ElementColor.swift in Sources */,
 				F819B6192BACE547001B138A /* ImagePicker.swift in Sources */,
 				F8BAA9902BB756A3002E349C /* ElementSummaryView.swift in Sources */,
@@ -1250,7 +1250,7 @@
 				F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */,
 				F8BAA9972BB76F9D002E349C /* ElementSummary.swift in Sources */,
 				F8C007062BB5C798005741FC /* AspectsView.swift in Sources */,
-				F8409FF72BADDBB000D007F8 /* Point.swift in Sources */,
+				F8409FF72BADDBB000D007F8 /* Planet.swift in Sources */,
 				F819B5972BACC1D1001B138A /* AuthService.swift in Sources */,
 				F819B59D2BACC341001B138A /* AddEmailView.swift in Sources */,
 				F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */,

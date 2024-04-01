@@ -1,6 +1,6 @@
 import UIKit
 
-public enum PointColor {
+public enum PlanetColor {
     case sun
     case moon
     case mercury
