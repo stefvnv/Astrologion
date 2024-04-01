@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct PlanetaryPlacement: Decodable {
+struct PlanetaryPlacementDescription: Decodable {
     let planet: String
     let sign: String
     let description: String
@@ -9,7 +9,7 @@ struct PlanetaryPlacement: Decodable {
 
 
 ///
-func loadAstrologicalData() -> [PlanetaryPlacement] {
+func loadAstrologicalData() -> [PlanetaryPlacementDescription] {
     guard let url = Bundle.main.url(forResource: "PlanetaryPlacementData", withExtension: "json") else {
         fatalError("PlanetaryPlacementData.json not found")
     }
@@ -17,7 +17,7 @@ func loadAstrologicalData() -> [PlanetaryPlacement] {
     do {
         let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
-        let jsonData = try decoder.decode([PlanetaryPlacement].self, from: data)
+        let jsonData = try decoder.decode([PlanetaryPlacementDescription].self, from: data)
         return jsonData
     } catch {
         fatalError("Failed to decode PlanetaryPlacementData.json: \(error)")
