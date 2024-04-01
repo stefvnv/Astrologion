@@ -8,7 +8,6 @@ struct PlanetaryPlacementDescription: Decodable {
 }
 
 
-///
 func loadAstrologicalData() -> [PlanetaryPlacementDescription] {
     guard let url = Bundle.main.url(forResource: "PlanetaryPlacementData", withExtension: "json") else {
         fatalError("PlanetaryPlacementData.json not found")

@@ -93,7 +93,7 @@ public enum Zodiac: String, CaseIterable {
         }
     }
     
-    // MARK: - Settings
+    // MARK: - Planet Expanded View
     
     var image: String {
         return self.rawValue.lowercased()

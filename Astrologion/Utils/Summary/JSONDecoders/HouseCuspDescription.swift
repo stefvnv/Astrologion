@@ -7,17 +7,19 @@ struct HouseCuspDescription: Decodable {
     let description: String
 }
 
+
+///
 func loadHouseCuspData() -> [HouseCuspDescription] {
     guard let url = Bundle.main.url(forResource: "HouseCuspData", withExtension: "json") else {
         fatalError("HouseCuspData.json not found")
     }
-    
+
     do {
         let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
-        let jsonData = try decoder.decode([HouseCuspDescription].self, from: data)
-        return jsonData
+        return try decoder.decode([HouseCuspDescription].self, from: data)
     } catch {
         fatalError("Failed to decode HouseCuspData.json: \(error)")
     }
 }
+

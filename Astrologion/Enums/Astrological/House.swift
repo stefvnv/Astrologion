@@ -39,7 +39,23 @@ public enum House: Int, CaseIterable {
         }
     }
     
-    /// The formatted house name with ordinal suffixes, e.g., "1st House", "2nd House"
+    var keyword: String {
+        switch self {
+        case .first: return "Self"
+        case .second: return "Values"
+        case .third: return "Communications"
+        case .fourth: return "Home"
+        case .fifth: return "Pleasure"
+        case .sixth: return "Health"
+        case .seventh: return "Partnership"
+        case .eighth: return "Transformation"
+        case .ninth: return "Purpose"
+        case .tenth: return "Social Status"
+        case .eleventh: return "Friendships"
+        case .twelfth: return "Subconscious"
+        }
+    }
+    
     var formattedName: String {
         let suffix: String
         switch self.rawValue {
@@ -49,5 +65,23 @@ public enum House: Int, CaseIterable {
         default: suffix = "th"
         }
         return "\(self.rawValue)\(suffix) House"
+    }
+    
+    
+    
+    // MARK: - House Expanded View
+    
+    var image: String {
+        return "\(self.rawValue)-house"
+    }
+    
+    func description(forSign sign: String) -> String {
+        let houseDescriptions = loadHouseCuspData()
+        
+        if let description = houseDescriptions.first(where: { $0.house == self.rawValue && $0.sign.caseInsensitiveCompare(sign) == .orderedSame }) {
+            return description.description
+        } else {
+            return "No description available for the \(self.formattedName) in \(sign)."
+        }
     }
 }

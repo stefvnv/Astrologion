@@ -3,8 +3,26 @@ import SwiftUI
 struct HouseDetailView: View {
     let house: House
     let signWithDegree: String
+    @State private var showExpandedView = false
 
     var body: some View {
+        Button(action: {
+            showExpandedView = true
+        }) {
+            content
+        }
+        .sheet(isPresented: $showExpandedView) {
+            let components = signWithDegree.split(separator: " ")
+            if let zodiacEnum = Zodiac(rawValue: String(components[0])) {
+                HouseExpandedView(house: house, zodiacSign: zodiacEnum)
+            } else {
+                Text("Invalid Zodiac Sign")
+            }
+        }
+    }
+
+    @ViewBuilder
+    var content: some View {
         ZStack(alignment: .leading) {
             HStack {
                 VStack(alignment: .leading) {
