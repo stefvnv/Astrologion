@@ -3,18 +3,31 @@ import SwiftUI
 struct PlanetDetailView: View {
     var planetName: String
     var zodiacSign: String
+    @State private var showExpandedView = false
 
-    private var imageName: String {
-        switch planetName {
-        case "North Node": return "northnode"
-        default: return planetName.lowercased().replacingOccurrences(of: " ", with: "")
+    var body: some View {
+        Button(action: {
+            showExpandedView = true
+        }) {
+            content
+        }
+        .sheet(isPresented: $showExpandedView) {
+            let components = zodiacSign.split(separator: " ")
+            if let zodiacEnum = Zodiac(rawValue: String(components[0])),
+               let planetEnum = Planet(rawValue: planetName) {
+                PlanetExpandedView(planet: planetEnum, zodiacSign: zodiacEnum)
+            } else {
+                Text("Invalid Planet or Zodiac Sign")
+            }
         }
     }
     
-    var body: some View {
+    
+    @ViewBuilder
+    var content: some View {
         ZStack(alignment: .leading) {
             HStack {
-                Spacer().frame(width: 25) // make space for image to overlap
+                Spacer().frame(width: 25)
                 
                 VStack(alignment: .leading) {
                     Text(planetName)
@@ -32,14 +45,21 @@ struct PlanetDetailView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 60, height: 60)
-                    .offset(x: -30), // move image to left by half of its width
+                    .offset(x: -30),
                 alignment: .leading
             )
         }
         .frame(maxWidth: .infinity)
-        .padding(.leading, 30) // + of offset to ensure alignment
+        .padding(.leading, 30)
         .padding(.horizontal)
         .padding(.vertical, 10)
+    }
+
+    private var imageName: String {
+        switch planetName {
+        case "North Node": return "northnode"
+        default: return planetName.lowercased().replacingOccurrences(of: " ", with: "")
+        }
     }
 }
 

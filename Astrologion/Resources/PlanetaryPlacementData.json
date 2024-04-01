@@ -1,0 +1,18 @@
+
+[
+  {
+    "planet": "Sun",
+    "sign": "Virgo",
+    "description": "Description for Sun in Virgo..."
+  },
+  {
+    "planet": "Moon",
+    "sign": "Pisces",
+    "description": "Description for Moon in Pisces..."
+  },
+  {
+    "planet": "Sun",
+    "sign": "Pisces",
+    "description": "Description for Sun in Pisces..."
+  }
+]

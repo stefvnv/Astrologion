@@ -92,4 +92,21 @@ public enum Zodiac: String, CaseIterable {
         case .Pisces: return .neptune
         }
     }
+    
+    // MARK: - Settings
+    
+    var image: String {
+        return self.rawValue.lowercased()
+    }
+
+    ///
+    func description(for planet: Planet) -> String {
+        let placements = loadAstrologicalData()
+
+        if let placement = placements.first(where: { $0.planet == planet.rawValue && $0.sign == self.rawValue }) {
+            return placement.description
+        } else {
+            return "No description available for \(planet.rawValue) in \(self.rawValue)."
+        }
+    }
 }
