@@ -142,11 +142,14 @@
 		F8A620A02BBB406100F84AFE /* HouseCuspData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A6209F2BBB406100F84AFE /* HouseCuspData.json */; };
 		F8A620A22BBB409200F84AFE /* HouseExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A620A12BBB409200F84AFE /* HouseExpandedView.swift */; };
 		F8A620A42BBB40B300F84AFE /* HouseCuspDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A620A32BBB40B300F84AFE /* HouseCuspDescription.swift */; };
+		F8A620A72BBB79A200F84AFE /* AspectExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A620A62BBB79A200F84AFE /* AspectExpandedView.swift */; };
+		F8A620AB2BBB79E200F84AFE /* AspectsData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A620AA2BBB79E200F84AFE /* AspectsData.json */; };
 		F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A709292BB8F3E9008599A5 /* Dosis.ttf */; };
 		F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */; };
 		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
 		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
+		F8B840DA2BBC0407007716EF /* AspectsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B840D92BBC0407007716EF /* AspectsDescription.swift */; };
 		F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */; };
 		F8BAA9822BB6D200002E349C /* PlanetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9812BB6D200002E349C /* PlanetImage.swift */; };
 		F8BAA9842BB6E71D002E349C /* HouseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9832BB6E71D002E349C /* HouseDetailView.swift */; };
@@ -288,11 +291,14 @@
 		F8A6209F2BBB406100F84AFE /* HouseCuspData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HouseCuspData.json; sourceTree = "<group>"; };
 		F8A620A12BBB409200F84AFE /* HouseExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseExpandedView.swift; sourceTree = "<group>"; };
 		F8A620A32BBB40B300F84AFE /* HouseCuspDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCuspDescription.swift; sourceTree = "<group>"; };
+		F8A620A62BBB79A200F84AFE /* AspectExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectExpandedView.swift; sourceTree = "<group>"; };
+		F8A620AA2BBB79E200F84AFE /* AspectsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AspectsData.json; sourceTree = "<group>"; };
 		F8A709292BB8F3E9008599A5 /* Dosis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dosis.ttf; sourceTree = "<group>"; };
 		F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
+		F8B840D92BBC0407007716EF /* AspectsDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectsDescription.swift; sourceTree = "<group>"; };
 		F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectDetailView.swift; sourceTree = "<group>"; };
 		F8BAA9812BB6D200002E349C /* PlanetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetImage.swift; sourceTree = "<group>"; };
 		F8BAA9832BB6E71D002E349C /* HouseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailView.swift; sourceTree = "<group>"; };
@@ -680,6 +686,7 @@
 		F819B5812BACC0AB001B138A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F8A620A52BBB798900F84AFE /* New Group */,
 				F8A620902BBAF93500F84AFE /* Planets */,
 				F8A620912BBAF93B00F84AFE /* Houses */,
 				F8A620922BBAF94200F84AFE /* Aspects */,
@@ -1065,6 +1072,7 @@
 			isa = PBXGroup;
 			children = (
 				F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */,
+				F8A620A62BBB79A200F84AFE /* AspectExpandedView.swift */,
 			);
 			path = Aspects;
 			sourceTree = "<group>";
@@ -1074,6 +1082,7 @@
 			children = (
 				F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */,
 				F8A6209F2BBB406100F84AFE /* HouseCuspData.json */,
+				F8A620AA2BBB79E200F84AFE /* AspectsData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1083,8 +1092,16 @@
 			children = (
 				F8A6209A2BBB0EDE00F84AFE /* PlanetaryPlacementDescription.swift */,
 				F8A620A32BBB40B300F84AFE /* HouseCuspDescription.swift */,
+				F8B840D92BBC0407007716EF /* AspectsDescription.swift */,
 			);
 			path = JSONDecoders;
+			sourceTree = "<group>";
+		};
+		F8A620A52BBB798900F84AFE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F8BAA9852BB749B2002E349C /* Summary */ = {
@@ -1224,6 +1241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */,
+				F8A620AB2BBB79E200F84AFE /* AspectsData.json in Resources */,
 				F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */,
 				F8A620972BBB0E4A00F84AFE /* PlanetaryPlacementData.json in Resources */,
 				F819B4DD2BAC970C001B138A /* Preview Assets.xcassets in Resources */,
@@ -1262,6 +1280,7 @@
 				F819B5D92BACE085001B138A /* ConversationsViewModel.swift in Sources */,
 				F819B5ED2BACE18B001B138A /* ProfileHeaderView.swift in Sources */,
 				F819B5992BACC1F8001B138A /* CompleteSignUpView.swift in Sources */,
+				F8B840DA2BBC0407007716EF /* AspectsDescription.swift in Sources */,
 				F819B5B52BACC4C7001B138A /* CircularProfileImageView.swift in Sources */,
 				F8409FF32BADDB9800D007F8 /* AngularHouse.swift in Sources */,
 				F8C006FC2BB586A1005741FC /* PlanetPosition.swift in Sources */,
@@ -1369,6 +1388,7 @@
 				F8BAA98C2BB74E37002E349C /* Polarity.swift in Sources */,
 				F819B6052BACE3F9001B138A /* ContentViewModel.swift in Sources */,
 				F819B5E12BACE0EB001B138A /* NotificationsView.swift in Sources */,
+				F8A620A72BBB79A200F84AFE /* AspectExpandedView.swift in Sources */,
 				F819B5DB2BACE09C001B138A /* ChatViewModel.swift in Sources */,
 				F8C007082BB5C7D3005741FC /* ProfileTab.swift in Sources */,
 				F8C006F72BB58391005741FC /* Double.swift in Sources */,

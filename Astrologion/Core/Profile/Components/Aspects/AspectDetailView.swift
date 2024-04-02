@@ -5,10 +5,22 @@ struct AspectDetailView: View {
     var trailingPlanetName: String
     var aspectType: Aspect
     var orb: Double
-    
+    @State private var showExpandedView = false
+
     var body: some View {
+        Button(action: {
+            showExpandedView = true
+        }) {
+            content
+        }
+        .sheet(isPresented: $showExpandedView) {
+            AspectExpandedView(leadingPlanet: leadingPlanetName, trailingPlanet: trailingPlanetName, aspectType: aspectType)
+        }
+    }
+
+    @ViewBuilder
+    var content: some View {
         HStack {
-            
             VStack { // planet1
                 PlanetImage(name: leadingPlanetName)
                 Text(leadingPlanetName)
@@ -41,7 +53,6 @@ struct AspectDetailView: View {
         .padding(.vertical, 10)
     }
 }
-
 
 struct AspectDetailView_Previews: PreviewProvider {
     static var previews: some View {
