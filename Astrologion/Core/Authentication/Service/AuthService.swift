@@ -101,19 +101,32 @@ class AuthService {
     
     /// Deletes user account and user data from Firestore
     @MainActor
-    func deleteUser() async throws {
+    func deleteUser(currentPassword: String) async throws {
         guard let user = Auth.auth().currentUser else {
             throw CustomError.userNotLoggedIn
         }
+        
+        // Re-authenticate the user to ensure they have recently signed in.
+        let email = user.email ?? ""
+        let credential = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
 
-        let userRef = Firestore.firestore().collection("users").document(user.uid)
         do {
+            try await user.reauthenticate(with: credential)
+            
+            // Proceed with deleting the Firestore data.
+            let userRef = Firestore.firestore().collection("users").document(user.uid)
             try await userRef.delete()
+            
+            // Delete the user from Firebase Authentication.
             try await user.delete()
+            
+            // Clear local session data.
             self.userSession = nil
             self.user = nil
         } catch let error {
             throw error
         }
     }
+
+    
 } //end

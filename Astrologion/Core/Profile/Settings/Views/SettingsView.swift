@@ -2,8 +2,10 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
+    @State private var showPasswordInputSheet = false
     @State private var showAlert = false
-    
+    @State private var errorMessage: String?
+
     var body: some View {
         List(SettingsItemModel.allCases) { model in
             SettingsRowView(model: model)
@@ -12,28 +14,55 @@ struct SettingsView: View {
                         AuthService.shared.signout()
                         dismiss()
                     } else if model == .deleteAccount {
-                        showAlert = true
+                        showPasswordInputSheet = true
                     }
                 }
         }
-        .alert("Delete Account", isPresented: $showAlert, actions: {
-            Button("Cancel", role: .cancel) { }
-            Button("Delete", role: .destructive) {
+        .sheet(isPresented: $showPasswordInputSheet) {
+            PasswordInputView { password in
                 Task {
                     do {
-                        try await AuthService.shared.deleteUser()
-                        // Handle post-deletion navigation or closure
+                        try await AuthService.shared.deleteUser(currentPassword: password)
                         dismiss()
                     } catch {
-                        // Handle error, show an error message
+                        errorMessage = error.localizedDescription
+                        showAlert = true
                     }
                 }
             }
+        }
+        .alert("Error", isPresented: $showAlert, actions: {
+            Button("OK", role: .cancel) { }
         }, message: {
-            Text("Are you sure you want to delete your account? This cannot be undone.")
+            if let errorMessage = errorMessage {
+                Text(errorMessage)
+            }
         })
         .navigationTitle("Settings")
         .listStyle(PlainListStyle())
         .padding(.vertical)
+    }
+}
+
+
+struct PasswordInputView: View {
+    @Environment(\.dismiss) var dismiss
+    var onDelete: (String) -> Void
+    @State private var password: String = ""
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("Please enter your password to confirm account deletion:")
+            SecureField("Password", text: $password)
+                .modifier(TextFieldModifier())
+            
+            Button("Confirm Deletion") {
+                onDelete(password)
+                dismiss()
+            }
+            .foregroundColor(.red)
+            .padding()
+        }
+        .padding()
     }
 }

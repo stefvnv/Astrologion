@@ -7,7 +7,9 @@ struct CurrentUserProfileView: View {
     @State private var selectedSettingsOption: SettingsItemModel?
     @State private var showDetail = false
     @State private var showNotificationsView = false
-    @State private var showConfirmationDialog = false
+    @State private var showPasswordInputSheet = false
+    @State private var errorMessage: String?
+
     @StateObject var profileViewModel: ProfileViewModel
     @Environment(\.presentationMode) var presentationMode
 
@@ -53,27 +55,25 @@ struct CurrentUserProfileView: View {
                     .presentationDetents([.height(360)])
                     .presentationDragIndicator(.visible)
             }
-            .confirmationDialog("Are you sure?", isPresented: $showConfirmationDialog, titleVisibility: .visible) {
-                Button("Delete Account", role: .destructive) {
+            .sheet(isPresented: $showPasswordInputSheet) { // Present password input view
+                PasswordInputView { password in
                     Task {
                         do {
-                            try await AuthService.shared.deleteUser()
+                            try await AuthService.shared.deleteUser(currentPassword: password)
                             presentationMode.wrappedValue.dismiss()
                         } catch {
-                            print("Failed to delete account: \(error.localizedDescription)")
+                            errorMessage = error.localizedDescription
+                            // Show error message, if needed
                         }
                     }
                 }
-
-            } message: {
-                Text("This will permanently delete your account and all associated data.")
             }
             .onChange(of: selectedSettingsOption) { newValue in
                 switch newValue {
                 case .logout:
                     AuthService.shared.signout()
                 case .deleteAccount:
-                    showConfirmationDialog = true
+                    showPasswordInputSheet = true // Show password input view when deleting account
                 default:
                     break
                 }
@@ -81,6 +81,9 @@ struct CurrentUserProfileView: View {
         }
     }
 }
+
+// Define the PasswordInputView here or use the previously defined one
+
 
 struct CurrentUserProfileView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,8 +8,7 @@ struct LocationSearchView: View {
     var body: some View {
         VStack {
             TextField("Enter a city", text: $searchQuery)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .modifier(TextFieldModifier())
                 .onChange(of: searchQuery) { newValue in
                     completer.updateSearchQuery(newValue)
                 }
