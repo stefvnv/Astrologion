@@ -1,0 +1,722 @@
+[
+    {
+        "planet": "Sun",
+        "sign": "Aries",
+        "description": "SUN IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Taurus",
+        "description": "SUN IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Gemini",
+        "description": "SUN IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Cancer",
+        "description": "SUN IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Leo",
+        "description": "SUN IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Virgo",
+        "description": "SUN IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Libra",
+        "description": "SUN IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Scorpio",
+        "description": "SUN IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Sagittarius",
+        "description": "SUN IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Capricorn",
+        "description": "SUN IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Aquarius",
+        "description": "SUN IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Sun",
+        "sign": "Pisces",
+        "description": "SUN IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aries",
+        "description": "MOON IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Taurus",
+        "description": "MOON IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "description": "MOON IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "description": "MOON IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "description": "MOON IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "description": "MOON IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "description": "MOON IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "description": "MOON IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "description": "MOON IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "description": "MOON IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "description": "MOON IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "description": "MOON IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "description": "MERCURY IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "description": "MERCURY IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "description": "MERCURY IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "description": "MERCURY IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "description": "MERCURY IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "description": "MERCURY IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "description": "MERCURY IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "description": "MERCURY IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "description": "MERCURY IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "description": "MERCURY IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "description": "MERCURY IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "description": "MERCURY IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Aries",
+        "description": "VENUS IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Taurus",
+        "description": "VENUS IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Gemini",
+        "description": "VENUS IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Cancer",
+        "description": "VENUS IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Leo",
+        "description": "VENUS IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Virgo",
+        "description": "VENUS IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Libra",
+        "description": "VENUS IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Scorpio",
+        "description": "VENUS IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Sagittarius",
+        "description": "VENUS IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Capricorn",
+        "description": "VENUS IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Aquarius",
+        "description": "VENUS IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Venus",
+        "sign": "Pisces",
+        "description": "VENUS IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Aries",
+        "description": "MARS IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Taurus",
+        "description": "MARS IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Gemini",
+        "description": "MARS IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Cancer",
+        "description": "MARS IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Leo",
+        "description": "MARS IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Virgo",
+        "description": "MARS IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Libra",
+        "description": "MARS IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Scorpio",
+        "description": "MARS IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Sagittarius",
+        "description": "MARS IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Capricorn",
+        "description": "MARS IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Aquarius",
+        "description": "MARS IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Mars",
+        "sign": "Pisces",
+        "description": "MARS IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "description": "JUPITER IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Taurus",
+        "description": "JUPITER IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Gemini",
+        "description": "JUPITER IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Cancer",
+        "description": "JUPITER IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Leo",
+        "description": "JUPITER IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Virgo",
+        "description": "JUPITER IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Libra",
+        "description": "JUPITER IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Scorpio",
+        "description": "JUPITER IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Sagittarius",
+        "description": "JUPITER IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Capricorn",
+        "description": "JUPITER IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aquarius",
+        "description": "JUPITER IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Pisces",
+        "description": "JUPITER IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Aries",
+        "description": "SATURN IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Taurus",
+        "description": "SATURN IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Gemini",
+        "description": "SATURN IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Cancer",
+        "description": "SATURN IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Leo",
+        "description": "SATURN IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Virgo",
+        "description": "SATURN IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Libra",
+        "description": "SATURN IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Scorpio",
+        "description": "SATURN IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Sagittarius",
+        "description": "SATURN IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Capricorn",
+        "description": "SATURN IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Aquarius",
+        "description": "SATURN IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Saturn",
+        "sign": "Pisces",
+        "description": "SATURN IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Aries",
+        "description": "URANUS IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Taurus",
+        "description": "URANUS IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Gemini",
+        "description": "URANUS IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Cancer",
+        "description": "URANUS IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Leo",
+        "description": "URANUS IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Virgo",
+        "description": "URANUS IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Libra",
+        "description": "URANUS IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Scorpio",
+        "description": "URANUS IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Sagittarius",
+        "description": "URANUS IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Capricorn",
+        "description": "URANUS IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Aquarius",
+        "description": "URANUS IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Uranus",
+        "sign": "Pisces",
+        "description": "URANUS IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Aries",
+        "description": "NEPTUNE IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Taurus",
+        "description": "NEPTUNE IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Gemini",
+        "description": "NEPTUNE IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Cancer",
+        "description": "NEPTUNE IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Leo",
+        "description": "NEPTUNE IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Virgo",
+        "description": "NEPTUNE IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Libra",
+        "description": "NEPTUNE IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Scorpio",
+        "description": "NEPTUNE IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Sagittarius",
+        "description": "NEPTUNE IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Capricorn",
+        "description": "NEPTUNE IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Aquarius",
+        "description": "NEPTUNE IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Neptune",
+        "sign": "Pisces",
+        "description": "NEPTUNE IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aries",
+        "description": "PLUTO IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Taurus",
+        "description": "PLUTO IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Gemini",
+        "description": "PLUTO IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Cancer",
+        "description": "PLUTO IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Leo",
+        "description": "PLUTO IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "description": "PLUTO IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "description": "PLUTO IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "description": "PLUTO IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "description": "PLUTO IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "description": "PLUTO IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "description": "PLUTO IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "description": "PLUTO IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Aries",
+        "description": "NORTH NODE IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Taurus",
+        "description": "NORTH NODE IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Gemini",
+        "description": "NORTH NODE IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Cancer",
+        "description": "NORTH NODE IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Leo",
+        "description": "NORTH NODE IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Virgo",
+        "description": "NORTH NODE IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Libra",
+        "description": "NORTH NODE IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Scorpio",
+        "description": "NORTH NODE IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Sagittarius",
+        "description": "NORTH NODE IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Capricorn",
+        "description": "NORTH NODE IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Aquarius",
+        "description": "NORTH NODE IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "North Node",
+        "sign": "Pisces",
+        "description": "NORTH NODE IN PISCES DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Aries",
+        "description": "LILITH IN ARIES DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Taurus",
+        "description": "LILITH IN TAURUS DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Gemini",
+        "description": "LILITH IN GEMINI DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Cancer",
+        "description": "LILITH IN CANCER DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Leo",
+        "description": "LILITH IN LEO DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Virgo",
+        "description": "LILITH IN VIRGO DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Libra",
+        "description": "LILITH IN LIBRA DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Scorpio",
+        "description": "LILITH IN SCORPIO DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Sagittarius",
+        "description": "LILITH IN SAGITTARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Capricorn",
+        "description": "LILITH IN CAPRICORN DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Aquarius",
+        "description": "LILITH IN AQUARIUS DESCRIPTION"
+    },
+    {
+        "planet": "Lilith",
+        "sign": "Pisces",
+        "description": "LILITH IN PISCES DESCRIPTION"
+    }
+]

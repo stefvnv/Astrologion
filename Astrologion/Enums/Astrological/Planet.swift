@@ -1,7 +1,5 @@
 import UIKit
 
-
-/// Represents the major astrological planets, each with an associated symbol
 public enum Planet: String, CaseIterable {
     case Sun = "Sun"
     case Moon = "Moon"
@@ -18,7 +16,6 @@ public enum Planet: String, CaseIterable {
     case Ascendant = "Ascendant"
     case Midheaven = "Midheaven"
     
-    /// The astrological symbol associated with the body
     var symbol: String? {
         switch self {
         case .Sun: return "☉"
@@ -33,45 +30,40 @@ public enum Planet: String, CaseIterable {
         case .Pluto: return "♇"
         case .NorthNode: return "☊"
         case .Lilith: return "⚸"
-        case .Ascendant, .Midheaven: return nil // no symbol returned
+        case .Ascendant, .Midheaven: return nil 
         }
     }
-
-    /// Calculates the longitude of the body using the provided `AstrologyModel` service
-    func longitude(using model: AstrologyModel) -> Double {
+    
+    var seIdentifier: Int32? {
         switch self {
-        case .Sun:
-            return model.sunLongitude
-        case .Moon:
-            return model.moonLongitude
-        case .Mercury:
-            return model.mercuryLongitude
-        case .Venus:
-            return model.venusLongitude
-        case .Mars:
-            return model.marsLongitude
-        case .Jupiter:
-            return model.jupiterLongitude
-        case .Saturn:
-            return model.saturnLongitude
-        case .Uranus:
-            return model.uranusLongitude
-        case .Neptune:
-            return model.neptuneLongitude
-        case .Pluto:
-            return model.plutoLongitude
-        case .NorthNode:
-            return model.northNodeLongitude
-        case .Lilith:
-            return model.lilithLongitude
+        case .Sun: return SE_SUN
+        case .Moon: return SE_MOON
+        case .Mercury: return SE_MERCURY
+        case .Venus: return SE_VENUS
+        case .Mars: return SE_MARS
+        case .Jupiter: return SE_JUPITER
+        case .Saturn: return SE_SATURN
+        case .Uranus: return SE_URANUS
+        case .Neptune: return SE_NEPTUNE
+        case .Pluto: return SE_PLUTO
+        case .NorthNode: return SE_TRUE_NODE
+        case .Lilith: return SE_MEAN_APOG
+        case .Ascendant, .Midheaven:
+            return nil
+        }
+    }
+    
+    func longitude(using model: AstrologyModel) -> Double? {
+        switch self {
         case .Ascendant:
             return model.ascendant
         case .Midheaven:
             return model.midheavenLongitude
+        default:
+            return model.planetPositions[self]?.longitude
         }
     }
-    
-    ///
+
     var color: UIColor {
         switch self {
         case .Sun: return PlanetColor.sun.uiColor

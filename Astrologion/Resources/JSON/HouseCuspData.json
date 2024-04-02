@@ -1,0 +1,722 @@
+[
+    {
+        "house": 1,
+        "sign": "Aries",
+        "description": "1ST HOUSE IN ARIES"
+    },
+    {
+        "house": 1,
+        "sign": "Taurus",
+        "description": "1ST HOUSE IN TAURUS"
+    },
+    {
+        "house": 1,
+        "sign": "Gemini",
+        "description": "1ST HOUSE IN GEMINI"
+    },
+    {
+        "house": 1,
+        "sign": "Cancer",
+        "description": "1ST HOUSE IN CANCER"
+    },
+    {
+        "house": 1,
+        "sign": "Leo",
+        "description": "1ST HOUSE IN LEO"
+    },
+    {
+        "house": 1,
+        "sign": "Virgo",
+        "description": "1ST HOUSE IN VIRGO"
+    },
+    {
+        "house": 1,
+        "sign": "Libra",
+        "description": "1ST HOUSE IN LIBRA"
+    },
+    {
+        "house": 1,
+        "sign": "Scorpio",
+        "description": "1ST HOUSE IN SCORPIO"
+    },
+    {
+        "house": 1,
+        "sign": "Sagittarius",
+        "description": "1ST HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 1,
+        "sign": "Capricorn",
+        "description": "1ST HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 1,
+        "sign": "Aquarius",
+        "description": "1ST HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 1,
+        "sign": "Pisces",
+        "description": "1ST HOUSE IN PISCES"
+    },
+    {
+        "house": 2,
+        "sign": "Aries",
+        "description": "2ND HOUSE IN ARIES"
+    },
+    {
+        "house": 2,
+        "sign": "Taurus",
+        "description": "2ND HOUSE IN TAURUS"
+    },
+    {
+        "house": 2,
+        "sign": "Gemini",
+        "description": "2ND HOUSE IN GEMINI"
+    },
+    {
+        "house": 2,
+        "sign": "Cancer",
+        "description": "2ND HOUSE IN CANCER"
+    },
+    {
+        "house": 2,
+        "sign": "Leo",
+        "description": "2ND HOUSE IN LEO"
+    },
+    {
+        "house": 2,
+        "sign": "Virgo",
+        "description": "2ND HOUSE IN VIRGO"
+    },
+    {
+        "house": 2,
+        "sign": "Libra",
+        "description": "2ND HOUSE IN LIBRA"
+    },
+    {
+        "house": 2,
+        "sign": "Scorpio",
+        "description": "2ND HOUSE IN SCORPIO"
+    },
+    {
+        "house": 2,
+        "sign": "Sagittarius",
+        "description": "2ND HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 2,
+        "sign": "Capricorn",
+        "description": "2ND HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 2,
+        "sign": "Aquarius",
+        "description": "2ND HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 2,
+        "sign": "Pisces",
+        "description": "2ND HOUSE IN PISCES"
+    },
+    {
+        "house": 3,
+        "sign": "Aries",
+        "description": "3RD HOUSE IN ARIES"
+    },
+    {
+        "house": 3,
+        "sign": "Taurus",
+        "description": "3RD HOUSE IN TAURUS"
+    },
+    {
+        "house": 3,
+        "sign": "Gemini",
+        "description": "3RD HOUSE IN GEMINI"
+    },
+    {
+        "house": 3,
+        "sign": "Cancer",
+        "description": "3RD HOUSE IN CANCER"
+    },
+    {
+        "house": 3,
+        "sign": "Leo",
+        "description": "3RD HOUSE IN LEO"
+    },
+    {
+        "house": 3,
+        "sign": "Virgo",
+        "description": "3RD HOUSE IN VIRGO"
+    },
+    {
+        "house": 3,
+        "sign": "Libra",
+        "description": "3RD HOUSE IN LIBRA"
+    },
+    {
+        "house": 3,
+        "sign": "Scorpio",
+        "description": "3RD HOUSE IN SCORPIO"
+    },
+    {
+        "house": 3,
+        "sign": "Sagittarius",
+        "description": "3RD HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 3,
+        "sign": "Capricorn",
+        "description": "3RD HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 3,
+        "sign": "Aquarius",
+        "description": "3RD HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 3,
+        "sign": "Pisces",
+        "description": "3RD HOUSE IN PISCES"
+    },
+    {
+        "house": 4,
+        "sign": "Aries",
+        "description": "4TH HOUSE IN ARIES"
+    },
+    {
+        "house": 4,
+        "sign": "Taurus",
+        "description": "4TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 4,
+        "sign": "Gemini",
+        "description": "4TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 4,
+        "sign": "Cancer",
+        "description": "4TH HOUSE IN CANCER"
+    },
+    {
+        "house": 4,
+        "sign": "Leo",
+        "description": "4TH HOUSE IN LEO"
+    },
+    {
+        "house": 4,
+        "sign": "Virgo",
+        "description": "4TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 4,
+        "sign": "Libra",
+        "description": "4TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 4,
+        "sign": "Scorpio",
+        "description": "4TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 4,
+        "sign": "Sagittarius",
+        "description": "4TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 4,
+        "sign": "Capricorn",
+        "description": "4TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 4,
+        "sign": "Aquarius",
+        "description": "4TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 4,
+        "sign": "Pisces",
+        "description": "4TH HOUSE IN PISCES"
+    },
+    {
+        "house": 5,
+        "sign": "Aries",
+        "description": "5TH HOUSE IN ARIES"
+    },
+    {
+        "house": 5,
+        "sign": "Taurus",
+        "description": "5TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 5,
+        "sign": "Gemini",
+        "description": "5TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 5,
+        "sign": "Cancer",
+        "description": "5TH HOUSE IN CANCER"
+    },
+    {
+        "house": 5,
+        "sign": "Leo",
+        "description": "5TH HOUSE IN LEO"
+    },
+    {
+        "house": 5,
+        "sign": "Virgo",
+        "description": "5TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 5,
+        "sign": "Libra",
+        "description": "5TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 5,
+        "sign": "Scorpio",
+        "description": "5TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 5,
+        "sign": "Sagittarius",
+        "description": "5TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 5,
+        "sign": "Capricorn",
+        "description": "5TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 5,
+        "sign": "Aquarius",
+        "description": "5TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 5,
+        "sign": "Pisces",
+        "description": "5TH HOUSE IN PISCES"
+    },
+    {
+        "house": 6,
+        "sign": "Aries",
+        "description": "6TH HOUSE IN ARIES"
+    },
+    {
+        "house": 6,
+        "sign": "Taurus",
+        "description": "6TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 6,
+        "sign": "Gemini",
+        "description": "6TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 6,
+        "sign": "Cancer",
+        "description": "6TH HOUSE IN CANCER"
+    },
+    {
+        "house": 6,
+        "sign": "Leo",
+        "description": "6TH HOUSE IN LEO"
+    },
+    {
+        "house": 6,
+        "sign": "Virgo",
+        "description": "6TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 6,
+        "sign": "Libra",
+        "description": "6TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 6,
+        "sign": "Scorpio",
+        "description": "6TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 6,
+        "sign": "Sagittarius",
+        "description": "6TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 6,
+        "sign": "Capricorn",
+        "description": "6TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 6,
+        "sign": "Aquarius",
+        "description": "6TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 6,
+        "sign": "Pisces",
+        "description": "6TH HOUSE IN PISCES"
+    },
+    {
+        "house": 7,
+        "sign": "Aries",
+        "description": "7TH HOUSE IN ARIES"
+    },
+    {
+        "house": 7,
+        "sign": "Taurus",
+        "description": "7TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 7,
+        "sign": "Gemini",
+        "description": "7TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 7,
+        "sign": "Cancer",
+        "description": "7TH HOUSE IN CANCER"
+    },
+    {
+        "house": 7,
+        "sign": "Leo",
+        "description": "7TH HOUSE IN LEO"
+    },
+    {
+        "house": 7,
+        "sign": "Virgo",
+        "description": "7TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 7,
+        "sign": "Libra",
+        "description": "7TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 7,
+        "sign": "Scorpio",
+        "description": "7TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 7,
+        "sign": "Sagittarius",
+        "description": "7TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 7,
+        "sign": "Capricorn",
+        "description": "7TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 7,
+        "sign": "Aquarius",
+        "description": "7TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 7,
+        "sign": "Pisces",
+        "description": "7TH HOUSE IN PISCES"
+    },
+    {
+        "house": 8,
+        "sign": "Aries",
+        "description": "8TH HOUSE IN ARIES"
+    },
+    {
+        "house": 8,
+        "sign": "Taurus",
+        "description": "8TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 8,
+        "sign": "Gemini",
+        "description": "8TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 8,
+        "sign": "Cancer",
+        "description": "8TH HOUSE IN CANCER"
+    },
+    {
+        "house": 8,
+        "sign": "Leo",
+        "description": "8TH HOUSE IN LEO"
+    },
+    {
+        "house": 8,
+        "sign": "Virgo",
+        "description": "8TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 8,
+        "sign": "Libra",
+        "description": "8TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 8,
+        "sign": "Scorpio",
+        "description": "8TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 8,
+        "sign": "Sagittarius",
+        "description": "8TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 8,
+        "sign": "Capricorn",
+        "description": "8TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 8,
+        "sign": "Aquarius",
+        "description": "8TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 8,
+        "sign": "Pisces",
+        "description": "8TH HOUSE IN PISCES"
+    },
+    {
+        "house": 9,
+        "sign": "Aries",
+        "description": "9TH HOUSE IN ARIES"
+    },
+    {
+        "house": 9,
+        "sign": "Taurus",
+        "description": "9TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 9,
+        "sign": "Gemini",
+        "description": "9TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 9,
+        "sign": "Cancer",
+        "description": "9TH HOUSE IN CANCER"
+    },
+    {
+        "house": 9,
+        "sign": "Leo",
+        "description": "9TH HOUSE IN LEO"
+    },
+    {
+        "house": 9,
+        "sign": "Virgo",
+        "description": "9TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 9,
+        "sign": "Libra",
+        "description": "9TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 9,
+        "sign": "Scorpio",
+        "description": "9TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 9,
+        "sign": "Sagittarius",
+        "description": "9TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 9,
+        "sign": "Capricorn",
+        "description": "9TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 9,
+        "sign": "Aquarius",
+        "description": "9TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 9,
+        "sign": "Pisces",
+        "description": "9TH HOUSE IN PISCES"
+    },
+    {
+        "house": 10,
+        "sign": "Aries",
+        "description": "10TH HOUSE IN ARIES"
+    },
+    {
+        "house": 10,
+        "sign": "Taurus",
+        "description": "10TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 10,
+        "sign": "Gemini",
+        "description": "10TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 10,
+        "sign": "Cancer",
+        "description": "10TH HOUSE IN CANCER"
+    },
+    {
+        "house": 10,
+        "sign": "Leo",
+        "description": "10TH HOUSE IN LEO"
+    },
+    {
+        "house": 10,
+        "sign": "Virgo",
+        "description": "10TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 10,
+        "sign": "Libra",
+        "description": "10TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 10,
+        "sign": "Scorpio",
+        "description": "10TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 10,
+        "sign": "Sagittarius",
+        "description": "10TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 10,
+        "sign": "Capricorn",
+        "description": "10TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 10,
+        "sign": "Aquarius",
+        "description": "10TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 10,
+        "sign": "Pisces",
+        "description": "10TH HOUSE IN PISCES"
+    },
+    {
+        "house": 11,
+        "sign": "Aries",
+        "description": "11TH HOUSE IN ARIES"
+    },
+    {
+        "house": 11,
+        "sign": "Taurus",
+        "description": "11TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 11,
+        "sign": "Gemini",
+        "description": "11TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 11,
+        "sign": "Cancer",
+        "description": "11TH HOUSE IN CANCER"
+    },
+    {
+        "house": 11,
+        "sign": "Leo",
+        "description": "11TH HOUSE IN LEO"
+    },
+    {
+        "house": 11,
+        "sign": "Virgo",
+        "description": "11TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 11,
+        "sign": "Libra",
+        "description": "11TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 11,
+        "sign": "Scorpio",
+        "description": "11TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 11,
+        "sign": "Sagittarius",
+        "description": "11TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 11,
+        "sign": "Capricorn",
+        "description": "11TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 11,
+        "sign": "Aquarius",
+        "description": "11TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 11,
+        "sign": "Pisces",
+        "description": "11TH HOUSE IN PISCES"
+    },
+    {
+        "house": 12,
+        "sign": "Aries",
+        "description": "12TH HOUSE IN ARIES"
+    },
+    {
+        "house": 12,
+        "sign": "Taurus",
+        "description": "12TH HOUSE IN TAURUS"
+    },
+    {
+        "house": 12,
+        "sign": "Gemini",
+        "description": "12TH HOUSE IN GEMINI"
+    },
+    {
+        "house": 12,
+        "sign": "Cancer",
+        "description": "12TH HOUSE IN CANCER"
+    },
+    {
+        "house": 12,
+        "sign": "Leo",
+        "description": "12TH HOUSE IN LEO"
+    },
+    {
+        "house": 12,
+        "sign": "Virgo",
+        "description": "12TH HOUSE IN VIRGO"
+    },
+    {
+        "house": 12,
+        "sign": "Libra",
+        "description": "12TH HOUSE IN LIBRA"
+    },
+    {
+        "house": 12,
+        "sign": "Scorpio",
+        "description": "12TH HOUSE IN SCORPIO"
+    },
+    {
+        "house": 12,
+        "sign": "Sagittarius",
+        "description": "12TH HOUSE IN SAGITTARIUS"
+    },
+    {
+        "house": 12,
+        "sign": "Capricorn",
+        "description": "12TH HOUSE IN CAPRICORN"
+    },
+    {
+        "house": 12,
+        "sign": "Aquarius",
+        "description": "12TH HOUSE IN AQUARIUS"
+    },
+    {
+        "house": 12,
+        "sign": "Pisces",
+        "description": "12TH HOUSE IN PISCES"
+    }
+]

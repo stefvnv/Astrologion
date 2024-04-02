@@ -53,8 +53,6 @@ class RegistrationViewModel: ObservableObject {
     }
 
     
-    
-    
     private func calculateAndCreateChart(
         userId: String, birthYear: Int, birthMonth: Int, birthDay: Int,
         birthHour: Int, birthMinute: Int, latitude: Double, longitude: Double
@@ -67,7 +65,7 @@ class RegistrationViewModel: ObservableObject {
                 day: birthDay, month: birthMonth, year: birthYear,
                 hour: birthHour, minute: birthMinute,
                 latitude: latitude, longitude: longitude,
-                houseSystem: .placidus // Assuming Placidus; adjust as needed
+                houseSystem: .placidus
             )
 
             var chart = astrologyModel.toChart(userId: userId)

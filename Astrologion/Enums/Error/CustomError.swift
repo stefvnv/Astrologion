@@ -9,6 +9,7 @@ enum CustomError: Error {
     case timezoneError
     case dateConversionError
     case userNotLoggedIn
+    case unwrappedError
     
     var errorMessage: String {
         switch self {
@@ -28,6 +29,8 @@ enum CustomError: Error {
             return "There was a problem converting your date. Please check the date components and try again."
         case .userNotLoggedIn:
             return "You are not logged in. Please log in to continue."
+        case .unwrappedError:
+            return "Unwrapping Optional value failed."
         }
     }
 }

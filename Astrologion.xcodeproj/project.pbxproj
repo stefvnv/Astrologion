@@ -1080,9 +1080,7 @@
 		F8A620952BBB0D9700F84AFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */,
-				F8A6209F2BBB406100F84AFE /* HouseCuspData.json */,
-				F8A620AA2BBB79E200F84AFE /* AspectsData.json */,
+				F8B7BD9C2BBC24190014DD7A /* JSON */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1102,6 +1100,16 @@
 			children = (
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F8B7BD9C2BBC24190014DD7A /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */,
+				F8A6209F2BBB406100F84AFE /* HouseCuspData.json */,
+				F8A620AA2BBB79E200F84AFE /* AspectsData.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		F8BAA9852BB749B2002E349C /* Summary */ = {

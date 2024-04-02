@@ -1,0 +1,523 @@
+[
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Moon",
+        "aspectType": "Conjunction",
+        "description": "DESCRIPTION FOR SUN CONJUNCT MOON"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Moon",
+        "aspectType": "Sextile",
+        "description": "DESCRIPTION FOR SUN SEXTILE MOON"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Moon",
+        "aspectType": "Square",
+        "description": "DESCRIPTION FOR SUN SQUARE MOON"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Moon",
+        "aspectType": "Trine",
+        "description": "DESCRIPTION FOR SUN TRINE MOON"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Moon",
+        "aspectType": "Opposition",
+        "description": "DESCRIPTION FOR SUN OPPOSITION MOON"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Mercury",
+        "aspectType": "Conjunction",
+        "description": "DESCRIPTION FOR SUN CONJUNCT MERCURY"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Mercury",
+        "aspectType": "Sextile",
+        "description": "DESCRIPTION FOR SUN SEXTILE MERCURY"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Mercury",
+        "aspectType": "Square",
+        "description": "DESCRIPTION FOR SUN SQUARE MERCURY"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Mercury",
+        "aspectType": "Trine",
+        "description": "DESCRIPTION FOR SUN TRINE MERCURY"
+    },
+    {
+        "leadingPlanet": "Sun",
+        "trailingPlanet": "Mercury",
+        "aspectType": "Opposition",
+        "description": "DESCRIPTION FOR SUN OPPOSITION MERCURY"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Venus",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT VENUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Venus",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE VENUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Venus",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE VENUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Venus",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE VENUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Venus",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION VENUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Mars",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT MARS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Mars",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE MARS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Mars",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE MARS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Mars",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE MARS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Mars",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION MARS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT JUPITER"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE JUPITER"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE JUPITER"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE JUPITER"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION JUPITER"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT SATURN"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE SATURN"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE SATURN"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE SATURN"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION SATURN"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT URANUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE URANUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE URANUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE URANUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION URANUS"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Neptune",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT NEPTUNE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Neptune",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE NEPTUNE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Neptune",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE NEPTUNE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Neptune",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE NEPTUNE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Neptune",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION NEPTUNE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Pluto",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT PLUTO"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Pluto",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE PLUTO"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Pluto",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE PLUTO"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Pluto",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE PLUTO"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Pluto",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION PLUTO"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "North Node",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT NORTH NODE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "North Node",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE NORTH NODE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "North Node",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE NORTH NODE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "North Node",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE NORTH NODE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "North Node",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION NORTH NODE"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Lilith",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR SUN CONJUNCT LILITH"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Lilith",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR SUN SEXTILE LILITH"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Lilith",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR SUN SQUARE LILITH"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Lilith",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR SUN TRINE LILITH"
+    },
+    {
+      "leadingPlanet": "Sun",
+      "trailingPlanet": "Lilith",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR SUN OPPOSITION LILITH"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mercury",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR MOON CONJUNCT MERCURY"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mercury",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR MOON SEXTILE MERCURY"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mercury",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR MOON SQUARE MERCURY"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mercury",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR MOON TRINE MERCURY"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mercury",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR MOON OPPOSITION MERCURY"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Venus",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR MOON CONJUNCT VENUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Venus",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR MOON SEXTILE VENUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Venus",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR MOON SQUARE VENUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Venus",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR MOON TRINE VENUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Venus",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR MOON OPPOSITION VENUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mars",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR MOON CONJUNCT MARS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mars",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR MOON SEXTILE MARS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mars",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR MOON SQUARE MARS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mars",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR MOON TRINE MARS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Mars",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR MOON OPPOSITION MARS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR MOON CONJUNCT JUPITER"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR MOON SEXTILE JUPITER"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR MOON SQUARE JUPITER"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR MOON TRINE JUPITER"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Jupiter",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR MOON OPPOSITION JUPITER"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR MOON CONJUNCT SATURN"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR MOON SEXTILE SATURN"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR MOON SQUARE SATURN"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR MOON TRINE SATURN"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Saturn",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR MOON OPPOSITION SATURN"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Conjunction",
+      "description": "DESCRIPTION FOR MOON CONJUNCT URANUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Sextile",
+      "description": "DESCRIPTION FOR MOON SEXTILE URANUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Square",
+      "description": "DESCRIPTION FOR MOON SQUARE URANUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Trine",
+      "description": "DESCRIPTION FOR MOON TRINE URANUS"
+    },
+    {
+      "leadingPlanet": "Moon",
+      "trailingPlanet": "Uranus",
+      "aspectType": "Opposition",
+      "description": "DESCRIPTION FOR MOON OPPOSITION URANUS"
+    }
+    ]
+
+
+
+
+
+
+
+    
+
+
+    
