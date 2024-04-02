@@ -149,6 +149,7 @@
 		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
 		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
+		F8B7BD9E2BBC85120014DD7A /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */; };
 		F8B840DA2BBC0407007716EF /* AspectsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B840D92BBC0407007716EF /* AspectsDescription.swift */; };
 		F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */; };
 		F8BAA9822BB6D200002E349C /* PlanetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BAA9812BB6D200002E349C /* PlanetImage.swift */; };
@@ -298,6 +299,7 @@
 		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
+		F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		F8B840D92BBC0407007716EF /* AspectsDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectsDescription.swift; sourceTree = "<group>"; };
 		F8BAA97F2BB6CB8D002E349C /* AspectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectDetailView.swift; sourceTree = "<group>"; };
 		F8BAA9812BB6D200002E349C /* PlanetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetImage.swift; sourceTree = "<group>"; };
@@ -910,6 +912,7 @@
 			children = (
 				F819B61C2BACE570001B138A /* IGButtonModifier.swift */,
 				F819B61E2BACE579001B138A /* TextFieldModifier.swift */,
+				F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -1394,6 +1397,7 @@
 				F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */,
 				F840A0112BAE0E2000D007F8 /* LocationSearchCompleter.swift in Sources */,
 				F8BAA98C2BB74E37002E349C /* Polarity.swift in Sources */,
+				F8B7BD9E2BBC85120014DD7A /* PasswordInputView.swift in Sources */,
 				F819B6052BACE3F9001B138A /* ContentViewModel.swift in Sources */,
 				F819B5E12BACE0EB001B138A /* NotificationsView.swift in Sources */,
 				F8A620A72BBB79A200F84AFE /* AspectExpandedView.swift in Sources */,
