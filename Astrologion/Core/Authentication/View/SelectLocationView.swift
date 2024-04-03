@@ -16,7 +16,6 @@ struct SelectLocationView: View {
             
             Button(action: {
                 viewModel.geocodeLocationName(locationText) {
-                    // This completion block gets called when geocoding is done
                     self.showCreatePasswordView = true
                 }
             }) {

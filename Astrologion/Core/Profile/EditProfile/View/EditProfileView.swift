@@ -56,6 +56,11 @@ struct EditProfileView: View {
                 
                 Spacer()
             }
+            .onAppear{
+                Task {
+                    await viewModel.refreshView()
+                }
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {

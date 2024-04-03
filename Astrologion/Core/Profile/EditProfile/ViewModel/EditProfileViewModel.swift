@@ -100,8 +100,6 @@ class EditProfileViewModel: ObservableObject {
         // Perform the Firestore update
         try await FirestoreConstants.UserCollection.document(user.id).updateData(data)
     }
-
-    
     
     private func calculateAndCreateChart(
         userId: String, birthYear: Int, birthMonth: Int, birthDay: Int,
@@ -127,6 +125,30 @@ class EditProfileViewModel: ObservableObject {
             return nil
         }
     }
+    
+
+    func refreshView() async {
+        do {
+            // Assuming UserService.fetchUser(withUid:) is an existing method that fetches user data from Firestore
+            let updatedUser = try await UserService.fetchUser(withUid: user.id)
+            DispatchQueue.main.async {
+                // Update the EditProfileViewModel's properties with the fresh user data
+                self.user = updatedUser
+                self.fullname = updatedUser.fullname ?? ""
+                self.bio = updatedUser.bio ?? ""
+                self.username = updatedUser.username
+                // Make sure to update the birthDate and birthTime properties to reflect any changes
+                self.birthDate = DateComponents(calendar: .current, year: updatedUser.birthYear, month: updatedUser.birthMonth, day: updatedUser.birthDay).date ?? Date()
+                self.birthTime = DateComponents(calendar: .current, hour: updatedUser.birthHour, minute: updatedUser.birthMinute).date ?? Date()
+                self.birthLocation = updatedUser.birthLocation
+                self.latitude = updatedUser.latitude
+                self.longitude = updatedUser.longitude
+            }
+        } catch {
+            print("Error fetching user data: \(error)")
+        }
+    }
+
     
     
 }
