@@ -101,9 +101,8 @@ class TransitsViewModel: ObservableObject {
         var transits: [Transit] = []
         let natalPlanetaryPositions = chart.planetaryPositions.mapValues { LongitudeParser.parseLongitude(from: $0) ?? 0.0 }
 
-        // Consider only major transiting planets
         let transitingPlanets = currentPositions.filter { planet, _ in
-            [.Sun, .Moon, .Mercury, .Venus, .Mars, .Jupiter, .Saturn].contains(planet)
+            [.Sun, .Moon, .Mercury, .Venus, .Mars, .Jupiter, .Saturn, . Uranus, .Neptune, .Pluto].contains(planet)
         }
 
         for (transitingPlanet, transitingLongitude) in transitingPlanets {

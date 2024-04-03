@@ -81,4 +81,12 @@ public enum Planet: String, CaseIterable {
         case .Ascendant, .Midheaven: return PlanetColor.gold.uiColor
         }
     }
+    
+    // MARK: - Transits
+    var descriptionPrefix: String {
+        switch self {
+        case .Sun, .Moon: return "The \(self.rawValue)"
+        default: return self.rawValue
+        }
+    }
 }

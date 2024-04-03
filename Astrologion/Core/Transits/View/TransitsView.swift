@@ -12,28 +12,10 @@ struct TransitsView: View {
 
     var body: some View {
         VStack {
-            // Horizontal scroll view for tabs
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(TransitTab.allCases, id: \.self) { tab in
-                        Button(action: {
-                            withAnimation { self.selectedTab = tab }
-                        }) {
-                            Text(tab.title)
-                                .padding()
-                                .frame(minWidth: 100)
-                                .background(selectedTab == tab ? Color.blue : Color.gray.opacity(0.2))
-                                .foregroundColor(selectedTab == tab ? .white : .black)
-                                .cornerRadius(10)
-                        }
-                    }
-                }
-                .padding()
-            }
+            TransitsTabView(selectedTab: $selectedTab)
 
-            Divider()
+            //Divider()
 
-            // Vertical scroll view for the content of the selected tab
             ScrollView {
                 switch selectedTab {
                 case .overview:

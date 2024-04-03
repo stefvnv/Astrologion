@@ -188,6 +188,8 @@
 		F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007092BB5D14E005741FC /* ProfileTabView.swift */; };
 		F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0070B2BB61495005741FC /* PlanetDetailView.swift */; };
 		F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C0070E2BB62F90005741FC /* Assets.xcassets */; };
+		F8D3C0832BBDDD520075A137 /* TransitsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */; };
+		F8D3C0852BBDE2E80075A137 /* TransitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0842BBDE2E80075A137 /* TransitDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -346,6 +348,8 @@
 		F8C007092BB5D14E005741FC /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 		F8C0070B2BB61495005741FC /* PlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailView.swift; sourceTree = "<group>"; };
 		F8C0070E2BB62F90005741FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsTabView.swift; sourceTree = "<group>"; };
+		F8D3C0842BBDE2E80075A137 /* TransitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1151,6 +1155,7 @@
 				F8B7BDA52BBC8B230014DD7A /* TransitsView.swift */,
 				F8B7BDAF2BBC93270014DD7A /* TransitsOverviewView.swift */,
 				F8B7BDB22BBCA6DE0014DD7A /* PlanetTransitView.swift */,
+				F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1166,6 +1171,7 @@
 		F8B7BDB12BBC93C10014DD7A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F8D3C0842BBDE2E80075A137 /* TransitDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1342,6 +1348,7 @@
 				F819B5D32BACE047001B138A /* MessageView.swift in Sources */,
 				F8B7BDB52BBCAA2D0014DD7A /* Transit.swift in Sources */,
 				F8BAA9A12BB7917C002E349C /* PolarityColor.swift in Sources */,
+				F8D3C0832BBDDD520075A137 /* TransitsTabView.swift in Sources */,
 				F819B5A92BACC413001B138A /* PostGridViewModel.swift in Sources */,
 				F819B5A72BACC3F0001B138A /* RegistrationViewModel.swift in Sources */,
 				F8C006FE2BB5C6BD005741FC /* SummaryView.swift in Sources */,
@@ -1409,6 +1416,7 @@
 				F819B5E32BACE0FF001B138A /* NotificationsCell.swift in Sources */,
 				F819B6172BACE530001B138A /* Extensions.swift in Sources */,
 				F819B5B32BACC4AC001B138A /* AdaptiveImage.swift in Sources */,
+				F8D3C0852BBDE2E80075A137 /* TransitDetailView.swift in Sources */,
 				F819B60B2BACE45E001B138A /* UploadMediaView.swift in Sources */,
 				F819B5A52BACC3D8001B138A /* LoginViewModel.swift in Sources */,
 				F8B7BDAB2BBC91F80014DD7A /* TransitsTab.swift in Sources */,
