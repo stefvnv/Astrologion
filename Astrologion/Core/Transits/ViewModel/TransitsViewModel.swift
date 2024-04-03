@@ -27,8 +27,7 @@ class TransitsViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-    
+
     func parseHouseCusps(from chart: Chart) -> [Double] {
         return chart.houseCusps.compactMap { key, value in
             LongitudeParser.parseLongitude(from: value)
@@ -57,7 +56,6 @@ class TransitsViewModel: ObservableObject {
             }
         }
     }
-    
     
     func getCurrentTransits() {
         guard let userChart = userChart else {
@@ -99,44 +97,35 @@ class TransitsViewModel: ObservableObject {
         }
     }
 
-
     private func determineTransits(for currentPositions: [(body: Planet, longitude: Double)], with chart: Chart) -> [Transit] {
         var transits: [Transit] = []
-        
-        // Parse house cusps from the natal chart
-        let cusps = parseHouseCusps(from: chart)
-        print("Parsed house cusps: \(cusps)")
+        let natalPlanetaryPositions = chart.planetaryPositions.mapValues { LongitudeParser.parseLongitude(from: $0) ?? 0.0 }
 
-        for (planet, currentLongitude) in currentPositions {
-            // Skip Ascendant, Midheaven, Lilith, and North Node
-            if planet == .Ascendant || planet == .Midheaven || planet == .Lilith || planet == .NorthNode {
-                print("Skipping \(planet.rawValue)")
-                continue
-            }
-
-            // Determine the zodiac sign based on the current longitude
-            let currentSign = ZodiacSign.allCases.first { $0.baseDegree <= currentLongitude && $0.baseDegree + 30 > currentLongitude } ?? .Aries
-            print("Processing \(planet.rawValue) at longitude \(currentLongitude), determined sign: \(currentSign.rawValue)")
-
-            // Determine the house based on the current longitude and the natal chart's house cusps
-            let currentHouse = astrologyModel.determineHouse(for: currentLongitude, usingCusps: cusps)
-            print("Determined house for \(planet.rawValue): \(currentHouse)")
-
-            // Find aspects between the current planet position and natal chart positions (This is a simplified example)
-            let aspect = Aspect.conjunction // Placeholder for actual aspect calculation
-
-            // Create a Transit object with the determined values
-            let transit = Transit(planet: planet, sign: currentSign, house: currentHouse, aspect: aspect)
-            print("Created transit: \(transit)")
-
-            transits.append(transit)
+        // Consider only major transiting planets
+        let transitingPlanets = currentPositions.filter { planet, _ in
+            [.Sun, .Moon, .Mercury, .Venus, .Mars, .Jupiter, .Saturn].contains(planet)
         }
 
+        for (transitingPlanet, transitingLongitude) in transitingPlanets {
+            for (natalPlanetName, natalLongitude) in natalPlanetaryPositions {
+                guard let natalPlanet = Planet(rawValue: natalPlanetName), natalPlanet != transitingPlanet else { continue } // Skip same planet comparison
+                
+                let angleDifference = abs(transitingLongitude - natalLongitude)
+                let normalizedAngle = min(angleDifference, 360 - angleDifference)
+
+                if let aspect = Aspect.allCases.first(where: { aspect in
+                    normalizedAngle >= aspect.angle - aspect.orb && normalizedAngle <= aspect.angle + aspect.orb
+                }) {
+                    let currentSign = ZodiacSign.allCases.first { $0.baseDegree <= transitingLongitude && $0.baseDegree + 30 > transitingLongitude } ?? .Aries
+                    let currentHouse = astrologyModel.determineHouse(for: transitingLongitude, usingCusps: parseHouseCusps(from: chart))
+                    
+                    let transit = Transit(planet: transitingPlanet, sign: currentSign, house: currentHouse, aspect: aspect, natalPlanet: natalPlanet)
+                    transits.append(transit)
+                    print("Transit added: \(transit) aspecting \(natalPlanetName)")
+                }
+            }
+        }
         return transits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
     }
-
-
-
-
 
 } // end

@@ -484,15 +484,15 @@
 		F819B55C2BACBE9C001B138A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F819B5682BACBF08001B138A /* Authentication */,
 				F8409FDC2BADD8DE00D007F8 /* Astrology */,
+				F819B5652BACBEF8001B138A /* Feed */,
 				F8B7BDA12BBC8AF10014DD7A /* Transits */,
 				F89751952BB84E1000138D25 /* Orbit */,
-				F819B5682BACBF08001B138A /* Authentication */,
-				F819B5672BACBF02001B138A /* Components */,
-				F819B5652BACBEF8001B138A /* Feed */,
 				F819B5622BACBEE4001B138A /* Profile */,
-				F819B5612BACBEDE001B138A /* Root */,
+				F819B5672BACBF02001B138A /* Components */,
 				F819B55F2BACBEC4001B138A /* TabBar */,
+				F819B5612BACBEDE001B138A /* Root */,
 			);
 			path = Core;
 			sourceTree = "<group>";

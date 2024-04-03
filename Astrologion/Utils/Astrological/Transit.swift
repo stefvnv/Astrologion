@@ -6,4 +6,5 @@ struct Transit: Identifiable {
     let sign: ZodiacSign
     let house: Int
     let aspect: Aspect
+    let natalPlanet: Planet
 }

@@ -22,8 +22,11 @@ struct TransitsOverviewView: View {
             } else {
                 Text("Transits count: \(transitsViewModel.currentTransits.count)")
                 ForEach(transitsViewModel.currentTransits) { transit in
-                    Text("The \(transit.planet.rawValue) is in \(transit.sign.rawValue), in your \(ordinal(number: transit.house)) house - \(transit.aspect.rawValue) aspect.")
-                        .padding()
+                    VStack {
+                        Text("Transiting \(transit.planet.rawValue) in \(transit.sign.rawValue), in the \(ordinal(number: transit.house)) house")
+                        Text("Aspects natal \(transit.natalPlanet.rawValue) with \(transit.aspect.rawValue) aspect")
+                    }
+                    .padding()
                 }
             }
         }
