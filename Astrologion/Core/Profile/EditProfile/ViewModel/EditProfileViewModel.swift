@@ -1,5 +1,3 @@
-// TO BE MOVED WITH ITS VIEW IN SETTINGS
-
 import SwiftUI
 import PhotosUI
 import FirebaseFirestoreSwift
@@ -15,19 +13,30 @@ class EditProfileViewModel: ObservableObject {
     @Published var profileImage: Image?
     private var uiImage: UIImage?
     
+    // User details
     var fullname = ""
     var bio = ""
+    var username = ""
+    
+    // Birth details
+    @Published var birthDate: Date
+    @Published var birthTime: Date
+    @Published var birthLocation: String
+    @Published var latitude: Double
+    @Published var longitude: Double
                 
     init(user: User) {
         self.user = user
+        self.fullname = user.fullname ?? ""
+        self.bio = user.bio ?? ""
+        self.username = user.username
+        self.birthLocation = user.birthLocation // Initialize birthLocation
         
-        if let bio = user.bio {
-            self.bio = bio
-        }
-        
-        if let fullname = user.fullname {
-            self.fullname = fullname
-        }
+        // Initialize birth details
+        self.birthDate = DateComponents(calendar: .current, year: user.birthYear, month: user.birthMonth, day: user.birthDay).date ?? Date()
+        self.birthTime = DateComponents(calendar: .current, hour: user.birthHour, minute: user.birthMinute).date ?? Date()
+        self.latitude = user.latitude
+        self.longitude = user.longitude
     }
     
     @MainActor
@@ -38,7 +47,6 @@ class EditProfileViewModel: ObservableObject {
         guard let uiImage = UIImage(data: data) else { return }
         self.uiImage = uiImage
         self.profileImage = Image(uiImage: uiImage)
-
     }
     
     func updateProfileImage(_ uiImage: UIImage) async throws {
@@ -46,25 +54,79 @@ class EditProfileViewModel: ObservableObject {
         self.user.profileImageUrl = imageUrl
     }
     
+    
     func updateUserData() async throws {
-        var data: [String: String] = [:]
-
+        var data: [String: Any] = [:]
+        
         if let uiImage = uiImage {
             try? await updateProfileImage(uiImage)
             data["profileImageUrl"] = user.profileImageUrl
         }
         
+        // Update these fields regardless of whether they have changed.
+        data["fullname"] = fullname
+        data["bio"] = bio
+        data["username"] = username
         
-        if !fullname.isEmpty, user.fullname ?? "" != fullname {
-            user.fullname = fullname
-            data["fullname"] = fullname
+        // Convert birthDate and birthTime to components and add them to the update data
+        let birthDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: birthDate)
+        let birthTimeComponents = Calendar.current.dateComponents([.hour, .minute], from: birthTime)
+        
+        data["birthYear"] = birthDateComponents.year
+        data["birthMonth"] = birthDateComponents.month
+        data["birthDay"] = birthDateComponents.day
+        data["birthHour"] = birthTimeComponents.hour
+        data["birthMinute"] = birthTimeComponents.minute
+        data["latitude"] = latitude
+        data["longitude"] = longitude
+        data["birthLocation"] = birthLocation
+
+        // If birth details or location have changed, possibly recalculate the chart
+        if user.birthYear != birthDateComponents.year || user.birthMonth != birthDateComponents.month || user.birthDay != birthDateComponents.day ||
+           user.birthHour != birthTimeComponents.hour || user.birthMinute != birthTimeComponents.minute ||
+           user.latitude != latitude || user.longitude != longitude || user.birthLocation != birthLocation {
+            
+            let newChart = await calculateAndCreateChart(
+                userId: user.id, birthYear: birthDateComponents.year!, birthMonth: birthDateComponents.month!, birthDay: birthDateComponents.day!,
+                birthHour: birthTimeComponents.hour!, birthMinute: birthTimeComponents.minute!, latitude: latitude, longitude: longitude
+            )
+            
+            // Update the user's chart ID if a new chart is created
+            if let chartId = newChart?.id {
+                data["chartId"] = chartId
+            }
         }
         
-        if !bio.isEmpty, user.bio ?? "" != bio {
-            user.bio = bio
-            data["bio"] = bio
-        }
-        
+        // Perform the Firestore update
         try await FirestoreConstants.UserCollection.document(user.id).updateData(data)
     }
+
+    
+    
+    private func calculateAndCreateChart(
+        userId: String, birthYear: Int, birthMonth: Int, birthDay: Int,
+        birthHour: Int, birthMinute: Int, latitude: Double, longitude: Double
+    ) async -> Chart? {
+        let astrologyModel = AstrologyModel()
+        astrologyModel.initializeEphemeris()
+
+        do {
+            try await astrologyModel.calculateAstrologicalDetails(
+                day: birthDay, month: birthMonth, year: birthYear,
+                hour: birthHour, minute: birthMinute,
+                latitude: latitude, longitude: longitude,
+                houseSystem: .placidus
+            )
+
+            var chart = astrologyModel.toChart(userId: userId)
+
+            try await ChartService.shared.saveChart(&chart)
+            return chart
+        } catch {
+            print("Failed to create and save chart: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    
 }

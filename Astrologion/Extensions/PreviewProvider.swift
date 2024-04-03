@@ -24,6 +24,7 @@ class DeveloperPreview {
         birthYear: 1970,
         birthHour: 22,
         birthMinute: 47,
+        birthLocation: "Los Angeles",
         latitude: 40.7128,
         longitude: -74.0060
     )
@@ -43,6 +44,7 @@ class DeveloperPreview {
             birthYear: 1985,
             birthHour: 3,
             birthMinute: 20,
+            birthLocation: "Los Angeles",
             latitude: 34.0522,
             longitude: -118.2437
         ),
@@ -60,6 +62,7 @@ class DeveloperPreview {
             birthYear: 1996,
             birthHour: 22,
             birthMinute: 15,
+            birthLocation: "Los Angeles",
             latitude: 40.7789,
             longitude: -73.9675
         ),
@@ -77,6 +80,7 @@ class DeveloperPreview {
             birthYear: 1977,
             birthHour: 15,
             birthMinute: 30,
+            birthLocation: "Los Angeles",
             latitude: -1.2921,
             longitude: 36.8219
         ),
@@ -94,6 +98,7 @@ class DeveloperPreview {
             birthYear: 1976,
             birthHour: 12,
             birthMinute: 0,
+            birthLocation: "Los Angeles",
             latitude: -1.2921,
             longitude: 36.8219
         ),
@@ -112,6 +117,7 @@ class DeveloperPreview {
             birthYear: 1970,
             birthHour: 14,
             birthMinute: 50,
+            birthLocation: "Los Angeles",
             latitude: 34.0522,
             longitude: -118.2437
         ),
@@ -139,6 +145,7 @@ class DeveloperPreview {
                 birthYear: 1985,
                 birthHour: 3,
                 birthMinute: 20,
+                birthLocation: "Los Angeles",
                 latitude: 34.0522,
                 longitude: -118.2437
             )
@@ -164,6 +171,7 @@ class DeveloperPreview {
                 birthYear: 1970,
                 birthHour: 22,
                 birthMinute: 47,
+                birthLocation: "Los Angeles",
                 latitude: 40.7128,
                 longitude: -74.0060
             )
@@ -189,6 +197,7 @@ class DeveloperPreview {
                 birthYear: 1970,
                 birthHour: 14,
                 birthMinute: 50,
+                birthLocation: "Los Angeles",
                 latitude: 34.0522,
                 longitude: -118.2437
             )
@@ -214,6 +223,7 @@ class DeveloperPreview {
                 birthYear: 1996,
                 birthHour: 22,
                 birthMinute: 15,
+                birthLocation: "Los Angeles",
                 latitude: 40.7789,
                 longitude: -73.9675
             )
@@ -239,6 +249,7 @@ class DeveloperPreview {
                 birthYear: 1970,
                 birthHour: 22,
                 birthMinute: 47,
+                birthLocation: "Los Angeles",
                 latitude: 40.7128,
                 longitude: -74.0060
             )

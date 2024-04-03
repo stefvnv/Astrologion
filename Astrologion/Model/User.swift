@@ -15,6 +15,7 @@ struct User: Identifiable, Codable {
     var birthYear: Int
     var birthHour: Int
     var birthMinute: Int
+    var birthLocation: String
     var latitude: Double
     var longitude: Double
     var chartId: String?

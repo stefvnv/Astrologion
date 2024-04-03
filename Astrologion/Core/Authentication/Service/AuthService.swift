@@ -28,12 +28,12 @@ class AuthService {
 
     
     @MainActor
-    func createUser(email: String, password: String, username: String, birthYear: Int, birthMonth: Int, birthDay: Int, birthHour: Int, birthMinute: Int, latitude: Double, longitude: Double) async throws -> String {
+    func createUser(email: String, password: String, username: String, birthYear: Int, birthMonth: Int, birthDay: Int, birthHour: Int, birthMinute: Int, birthLocation: String, latitude: Double, longitude: Double) async throws -> String {
         let result = try await Auth.auth().createUser(withEmail: email, password: password)
         self.userSession = result.user
 
         // create a user instance for chart creation
-        let newUser = User(uid: result.user.uid, username: username, email: email, birthDay: birthDay, birthMonth: birthMonth, birthYear: birthYear, birthHour: birthHour, birthMinute: birthMinute, latitude: latitude, longitude: longitude, chartId: nil)
+        let newUser = User(uid: result.user.uid, username: username, email: email, birthDay: birthDay, birthMonth: birthMonth, birthYear: birthYear, birthHour: birthHour, birthMinute: birthMinute, birthLocation: birthLocation, latitude: latitude, longitude: longitude, chartId: nil)
 
         // create and save chart
         let chart = try await ChartService.shared.createChart(for: newUser.uid!, with: newUser)
@@ -48,6 +48,7 @@ class AuthService {
             "birthDay": birthDay,
             "birthHour": birthHour,
             "birthMinute": birthMinute,
+            "birthLocation": birthLocation,
             "latitude": latitude,
             "longitude": longitude,
             "chartId": chart.id!

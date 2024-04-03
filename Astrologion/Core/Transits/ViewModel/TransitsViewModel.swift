@@ -108,16 +108,22 @@ class TransitsViewModel: ObservableObject {
         print("Parsed house cusps: \(cusps)")
 
         for (planet, currentLongitude) in currentPositions {
+            // Skip Ascendant, Midheaven, Lilith, and North Node
+            if planet == .Ascendant || planet == .Midheaven || planet == .Lilith || planet == .NorthNode {
+                print("Skipping \(planet.rawValue)")
+                continue
+            }
+
             // Determine the zodiac sign based on the current longitude
             let currentSign = ZodiacSign.allCases.first { $0.baseDegree <= currentLongitude && $0.baseDegree + 30 > currentLongitude } ?? .Aries
             print("Processing \(planet.rawValue) at longitude \(currentLongitude), determined sign: \(currentSign.rawValue)")
 
             // Determine the house based on the current longitude and the natal chart's house cusps
             let currentHouse = astrologyModel.determineHouse(for: currentLongitude, usingCusps: cusps)
+            print("Determined house for \(planet.rawValue): \(currentHouse)")
 
             // Find aspects between the current planet position and natal chart positions (This is a simplified example)
             let aspect = Aspect.conjunction // Placeholder for actual aspect calculation
-            print("Determined house for \(planet.rawValue): \(currentHouse)")
 
             // Create a Transit object with the determined values
             let transit = Transit(planet: planet, sign: currentSign, house: currentHouse, aspect: aspect)
@@ -128,6 +134,7 @@ class TransitsViewModel: ObservableObject {
 
         return transits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
     }
+
 
 
 

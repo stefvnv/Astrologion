@@ -1,13 +1,14 @@
 import Foundation
 import Combine
-
+import CoreLocation
 
 class RegistrationViewModel: ObservableObject {
     @Published var username: String = ""
     @Published var password: String = ""
     @Published var email: String = ""
     @Published var birthDate: Date = Date()
-    @Published var birthTime: Date = Date()
+    @Published var birthTime: Date = Date() 
+    @Published var birthLocation: String = ""
     @Published var latitude: Double = 0.0
     @Published var longitude: Double = 0.0
     @Published var emailIsValid = false
@@ -18,8 +19,9 @@ class RegistrationViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
+    private let geocoder = CLGeocoder()
     
-    ///
+    
     @MainActor
     func createUser() async throws {
         isLoading = true
@@ -32,10 +34,12 @@ class RegistrationViewModel: ObservableObject {
             throw CustomError.missingDateComponents
         }
         
+        // Now passing birthLocation to AuthService.createUser
         let userId = try await AuthService.shared.createUser(
             email: email, password: password, username: username,
             birthYear: birthYear, birthMonth: birthMonth, birthDay: birthDay,
             birthHour: birthHour, birthMinute: birthMinute,
+            birthLocation: birthLocation, // Include birthLocation here
             latitude: latitude, longitude: longitude
         )
         
@@ -51,6 +55,7 @@ class RegistrationViewModel: ObservableObject {
         }
         isLoading = false
     }
+
 
     
     private func calculateAndCreateChart(
@@ -77,9 +82,29 @@ class RegistrationViewModel: ObservableObject {
             return nil
         }
     }
+    
+    
 
+    func geocodeLocationName(_ locationName: String, completion: @escaping () -> Void) {
+        geocoder.geocodeAddressString(locationName) { (placemarks, error) in
+            DispatchQueue.main.async {
+                if let placemark = placemarks?.first, let location = placemark.location {
+                    self.latitude = location.coordinate.latitude
+                    self.longitude = location.coordinate.longitude
+                    self.birthLocation = locationName // Set the birthLocation here
+                    print("Coordinates: \(location.coordinate.latitude), \(location.coordinate.longitude)")
+                    completion() // Call the completion handler here
+                } else {
+                    // Handle error or no location found
+                    print("No location found or geocoding error for \(locationName)")
+                }
+            }
+        }
+    }
 
     
+
+
     @MainActor
     func validateEmail() async throws {
         isLoading = true

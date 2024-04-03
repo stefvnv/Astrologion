@@ -1,12 +1,9 @@
 import SwiftUI
-import CoreLocation
 
 struct SelectLocationView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
     @State private var showCreatePasswordView = false
     @State private var locationText: String = ""
-    
-    private let geocoder = CLGeocoder()
     
     var body: some View {
         VStack(spacing: 12) {
@@ -18,7 +15,10 @@ struct SelectLocationView: View {
             LocationSearchView(location: $locationText)
             
             Button(action: {
-                geocodeLocationName(locationText)
+                viewModel.geocodeLocationName(locationText) {
+                    // This completion block gets called when geocoding is done
+                    self.showCreatePasswordView = true
+                }
             }) {
                 Text("Next")
                     .modifier(IGButtonModifier())
@@ -31,22 +31,5 @@ struct SelectLocationView: View {
         .navigationDestination(isPresented: $showCreatePasswordView, destination: {
             CreatePasswordView().environmentObject(viewModel)
         })
-    }
-    
-    private func geocodeLocationName(_ locationName: String) {
-        geocoder.geocodeAddressString(locationName) { (placemarks, error) in
-            if let placemark = placemarks?.first, let location = placemark.location {
-                self.viewModel.latitude = location.coordinate.latitude
-                self.viewModel.longitude = location.coordinate.longitude
-                print("Coordinates: \(location.coordinate.latitude), \(location.coordinate.longitude)")
-                self.showCreatePasswordView = true
-            } else {
-                // If there was an error or no location found, print it to the console
-                print("No location found for \(locationName)")
-                if let error = error {
-                    print("Geocoding error: \(error.localizedDescription)")
-                }
-            }
-        }
     }
 }
