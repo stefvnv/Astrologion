@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "transits-fill.png",
+      "filename" : "transitsTab@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "transitsTab@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "transitsTab@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

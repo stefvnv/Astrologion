@@ -17,22 +17,18 @@ struct MainTabView: View {
                     .onAppear { selectedIndex = 0 }
                     .tag(0)
                 
-                // TODO: Change to LearnView()
+                // TODO: Change to LearningHubView()
 //                SearchView()
 //                    .tabItem { Image(systemName: "magnifyingglass") }
 //                    .onAppear { selectedIndex = 1 }
 //                    .tag(1)
                     
-                // TODO: Change to TransitsView()
-//                UploadMediaView(tabIndex: $selectedIndex)
-//                    .tabItem { Image(systemName: "plus") }
-//                    .onAppear { selectedIndex = 2 }
-//                    .tag(2)
-                
+                // transits
                 TransitsView(user: user)
                     .tabItem {
-                        Image(systemName: selectedIndex == 2 ? "transits-fill" : "transits") // Ensure you have correct system image names
+                        Image(selectedIndex == 2 ? "transitsTab-fill" : "transitsTab")
                             .environment(\.symbolVariants, selectedIndex == 2 ? .fill : .none)
+
                     }
                     .onAppear { selectedIndex = 2 }
                     .tag(2)
@@ -40,7 +36,7 @@ struct MainTabView: View {
                 // orbit
                 OrbitView(user: user)
                     .tabItem {
-                        Image(systemName: selectedIndex == 3 ? "heart.fill" : "heart") // TODO: Change to orbit-fill, orbit
+                        Image(selectedIndex == 3 ? "orbitTab-fill" : "orbitTab")
                             .environment(\.symbolVariants, selectedIndex == 3 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 3 }

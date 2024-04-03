@@ -152,7 +152,6 @@
 		F8B7BD9E2BBC85120014DD7A /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */; };
 		F8B7BDA02BBC8A010014DD7A /* TransitChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BD9F2BBC8A010014DD7A /* TransitChartView.swift */; };
 		F8B7BDA62BBC8B230014DD7A /* TransitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BDA52BBC8B230014DD7A /* TransitsView.swift */; };
-		F8B7BDA82BBC8B6F0014DD7A /* IconModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BDA72BBC8B6F0014DD7A /* IconModifier.swift */; };
 		F8B7BDAB2BBC91F80014DD7A /* TransitsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BDAA2BBC91F80014DD7A /* TransitsTab.swift */; };
 		F8B7BDB02BBC93270014DD7A /* TransitsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BDAF2BBC93270014DD7A /* TransitsOverviewView.swift */; };
 		F8B7BDB32BBCA6DE0014DD7A /* PlanetTransitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BDB22BBCA6DE0014DD7A /* PlanetTransitView.swift */; };
@@ -311,7 +310,6 @@
 		F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		F8B7BD9F2BBC8A010014DD7A /* TransitChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitChartView.swift; sourceTree = "<group>"; };
 		F8B7BDA52BBC8B230014DD7A /* TransitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsView.swift; sourceTree = "<group>"; };
-		F8B7BDA72BBC8B6F0014DD7A /* IconModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModifier.swift; sourceTree = "<group>"; };
 		F8B7BDAA2BBC91F80014DD7A /* TransitsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsTab.swift; sourceTree = "<group>"; };
 		F8B7BDAF2BBC93270014DD7A /* TransitsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsOverviewView.swift; sourceTree = "<group>"; };
 		F8B7BDB22BBCA6DE0014DD7A /* PlanetTransitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTransitView.swift; sourceTree = "<group>"; };
@@ -932,7 +930,6 @@
 				F819B61C2BACE570001B138A /* IGButtonModifier.swift */,
 				F819B61E2BACE579001B138A /* TextFieldModifier.swift */,
 				F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */,
-				F8B7BDA72BBC8B6F0014DD7A /* IconModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -1328,7 +1325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8B7BDA82BBC8B6F0014DD7A /* IconModifier.swift in Sources */,
 				F897519B2BB8523C00138D25 /* SearchViewModelConfig.swift in Sources */,
 				F819B5CF2BACE020001B138A /* ChatView.swift in Sources */,
 				F819B5D12BACE033001B138A /* ChatBubble.swift in Sources */,
