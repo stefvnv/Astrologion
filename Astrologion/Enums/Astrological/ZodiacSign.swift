@@ -1,5 +1,5 @@
 /// Represents the twelve signs of the Zodiac, each with associated symbols and order in the zodiacal cycle
-public enum Zodiac: String, CaseIterable {
+public enum ZodiacSign: String, CaseIterable {
     case Aries = "Aries"
     case Taurus = "Taurus"
     case Gemini = "Gemini"
@@ -15,7 +15,7 @@ public enum Zodiac: String, CaseIterable {
     
     /// ordinal position of the Zodiac sign within the zodiacal cycle, starting from Aries as 0
     var order: Int {
-        return Zodiac.allCases.firstIndex(of: self) ?? 0
+        return ZodiacSign.allCases.firstIndex(of: self) ?? 0
     }
     
     /// astrological symbol associated with the Zodiac sign

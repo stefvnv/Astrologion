@@ -13,7 +13,7 @@ struct HouseDetailView: View {
         }
         .sheet(isPresented: $showExpandedView) {
             let components = signWithDegree.split(separator: " ")
-            if let zodiacEnum = Zodiac(rawValue: String(components[0])) {
+            if let zodiacEnum = ZodiacSign(rawValue: String(components[0])) {
                 HouseExpandedView(house: house, zodiacSign: zodiacEnum)
             } else {
                 Text("Invalid Zodiac Sign")

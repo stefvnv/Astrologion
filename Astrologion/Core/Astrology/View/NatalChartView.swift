@@ -414,8 +414,8 @@ class NatalChartView: UIView {
         let signRadius = (outerRadius + innerRadius) / 2
         let font = UIFont.systemFont(ofSize: outerRadius / 7)
         
-        for i in 0..<Zodiac.allCases.count {
-            let sign = Zodiac.allCases[i]
+        for i in 0..<ZodiacSign.allCases.count {
+            let sign = ZodiacSign.allCases[i]
             let adjustedAngle = (Double(sign.order) * 30.0 + 15.0 + ascendantOffset).truncatingRemainder(dividingBy: 360.0)
             let radians = (360.0 - adjustedAngle).degreesToRadians
             

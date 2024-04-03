@@ -17,8 +17,6 @@ class NatalChartViewModel {
         }
     }
     
-    
-    ///
     private func parseAspects(from chart: Chart?) -> [AstrologicalAspectData] {
         guard let chart = chart else { return [] }
 
@@ -47,63 +45,34 @@ class NatalChartViewModel {
         }
     }
     
-    
-    ///
     func longitude(for planet: Planet) -> Double {
         guard let chart = chart, let positionString = chart.planetaryPositions[planet.rawValue] else { return 0.0 }
-        return parseLongitude(from: positionString) ?? 0.0
+        
+        return LongitudeParser.parseLongitude(from: positionString) ?? 0.0
     }
     
-    
-    ///
     func houseCusps() -> [Double] {
         guard let chart = chart else { return [] }
         return (1...12).compactMap { index -> Double? in
             guard let cuspString = chart.houseCusps["House \(index)"] else { return nil }
-            return parseLongitude(from: cuspString)
-        }
+            
+            return LongitudeParser.parseLongitude(from: cuspString)
+            }
     }
 
-    
-    ///
     func ascendant() -> Double {
         guard let chart = chart, let ascendantString = chart.houseCusps["House 1"] else { return 0.0 }
         
-        print("Ascendant Longitude: \(parseLongitude(from: ascendantString) ?? 0.0)")
-
-        return parseLongitude(from: ascendantString) ?? 0.0
+        return LongitudeParser.parseLongitude(from: ascendantString) ?? 0.0
     }
 
     
-    ///
     func midheaven() -> Double {
         guard let chart = chart, let midheavenString = chart.houseCusps["House 10"] else { return 0.0 }
         
-        print("Midheaven Longitude: \(parseLongitude(from: midheavenString) ?? 0.0)")
-        
-        return parseLongitude(from: midheavenString) ?? 0.0
-    }
-    
-    
-    ///
-    private func parseLongitude(from string: String) -> Double? {
-        let components = string.components(separatedBy: " ")
-        guard components.count == 2,
-              let zodiacSign = Zodiac(rawValue: components[0]),
-              let degreesComponent = components.last else { return nil }
-
-        let degreesMinutes = degreesComponent.components(separatedBy: "°")
-        guard degreesMinutes.count == 2,
-              let degrees = Double(degreesMinutes[0]),
-              let minutes = Double(degreesMinutes[1].trimmingCharacters(in: CharacterSet(charactersIn: "'"))) else { return nil }
-
-        let result = zodiacSign.baseDegree + degrees + minutes / 60.0
-        print("Parsed longitude from '\(string)' to \(result) degrees")
-        return result
+        return LongitudeParser.parseLongitude(from: midheavenString) ?? 0.0
     }
 
-    
-    ///
     func calculatePositionForPlanet(_ planet: Planet, at longitude: Double, usingAscendant ascendant: Double, in rect: CGRect) -> CGPoint {
         let ascendantOffset = 180.0 - ascendant
         let adjustedLongitude = longitude + ascendantOffset
@@ -120,46 +89,38 @@ class NatalChartViewModel {
         return CGPoint(x: x, y: y)
     }
 
-    
-    ///
     func getPlanetPositions(in rect: CGRect) -> [PlanetPosition] {
         guard let chart = chart else {
             print("No chart data available.")
             return []
         }
 
-        let ascendantLongitude = self.ascendant() // Confirm this method gets the correct ascendant value from the chart.
+        let ascendantLongitude = self.ascendant()
 
         return Planet.allCases.compactMap { planet in
             guard let positionString = chart.planetaryPositions[planet.rawValue],
-                  let planetLongitude = parseLongitude(from: positionString) else {
+                  let planetLongitude = LongitudeParser.parseLongitude(from: positionString) else {
                 print("Could not parse position for \(planet.rawValue)")
                 return nil
             }
-
             let position = calculatePositionForPlanet(planet, at: planetLongitude, usingAscendant: ascendantLongitude, in: rect)
             print("Calculated position for \(planet.rawValue): \(position), Longitude: \(planetLongitude)")
-            
-            
-            
             
             return PlanetPosition(planet: planet, position: position, longitude: CGFloat(planetLongitude))
         }
     }
 
-    
-    ///
     func angleForHouseCusp(houseNumber: Int) -> Double {
         guard let chart = chart else { return 0.0 }
         guard houseNumber >= 1 && houseNumber <= 12 else { return 0.0 }
 
         guard let cuspString = chart.houseCusps["House \(houseNumber)"],
-              let cuspLongitude = parseLongitude(from: cuspString) else {
+              let cuspLongitude = LongitudeParser.parseLongitude(from: cuspString) else {
             return 0.0
         }
 
         guard let ascendantString = chart.houseCusps["House 1"],
-              let ascendantLongitude = parseLongitude(from: ascendantString) else {
+              let ascendantLongitude = LongitudeParser.parseLongitude(from: ascendantString) else {
             return 0.0
         }
 

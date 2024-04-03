@@ -13,7 +13,7 @@ struct PlanetDetailView: View {
         }
         .sheet(isPresented: $showExpandedView) {
             let components = zodiacSign.split(separator: " ")
-            if let zodiacEnum = Zodiac(rawValue: String(components[0])),
+            if let zodiacEnum = ZodiacSign(rawValue: String(components[0])),
                let planetEnum = Planet(rawValue: planetName) {
                 PlanetExpandedView(planet: planetEnum, zodiacSign: zodiacEnum)
             } else {

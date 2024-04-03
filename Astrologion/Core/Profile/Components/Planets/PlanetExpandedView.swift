@@ -3,7 +3,7 @@ import SwiftUI
 // TODO: format
 struct PlanetExpandedView: View {
     let planet: Planet
-    let zodiacSign: Zodiac
+    let zodiacSign: ZodiacSign
     @Environment(\.dismiss) var dismiss
 
     var body: some View {

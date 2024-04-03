@@ -101,7 +101,7 @@ class ProfileViewModel: ObservableObject {
 
         // count each element in planetary positions
         for position in chart.planetaryPositions.values {
-            if let zodiacSign = Zodiac(rawValue: String(position.split(separator: " ").first ?? "")) {
+            if let zodiacSign = ZodiacSign(rawValue: String(position.split(separator: " ").first ?? "")) {
                 elementCounts[zodiacSign.element, default: 0] += 1
             }
         }
@@ -126,14 +126,14 @@ class ProfileViewModel: ObservableObject {
 
         // count each modality in the planetary positions
         for position in chart.planetaryPositions.values {
-            if let zodiacSign = Zodiac(rawValue: String(position.split(separator: " ").first ?? "")) {
+            if let zodiacSign = ZodiacSign(rawValue: String(position.split(separator: " ").first ?? "")) {
                 modalityCounts[zodiacSign.modality, default: 0] += 1
             }
         }
 
         // count each modality in house cusps
         for cusp in chart.houseCusps.values {
-            if let zodiacSign = Zodiac(rawValue: String(cusp.split(separator: " ").first ?? "")) {
+            if let zodiacSign = ZodiacSign(rawValue: String(cusp.split(separator: " ").first ?? "")) {
                 modalityCounts[zodiacSign.modality, default: 0] += 1
             }
         }
@@ -158,7 +158,7 @@ class ProfileViewModel: ObservableObject {
 
         // count each polarity in planetary positions
         for position in chart.planetaryPositions.values {
-            if let zodiacSign = Zodiac(rawValue: String(position.split(separator: " ").first ?? "")) {
+            if let zodiacSign = ZodiacSign(rawValue: String(position.split(separator: " ").first ?? "")) {
                 polarityCounts[zodiacSign.polarity, default: 0] += 1
             }
         }

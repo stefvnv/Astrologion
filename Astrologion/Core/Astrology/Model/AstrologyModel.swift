@@ -140,8 +140,8 @@ public class AstrologyModel: ObservableObject {
     }
     
     private func zodiacSignAndDegree(fromLongitude longitude: Double) -> String {
-        let signIndex = Int(longitude / 30) % Zodiac.allCases.count
-        let zodiacSign = Zodiac.allCases[signIndex]
+        let signIndex = Int(longitude / 30) % ZodiacSign.allCases.count
+        let zodiacSign = ZodiacSign.allCases[signIndex]
 
         let degreeComponent = longitude.truncatingRemainder(dividingBy: 30)
         let degrees = Int(degreeComponent)
@@ -226,6 +226,26 @@ public class AstrologyModel: ObservableObject {
         print("\(planetName) Position: \(position) at \(longitude) degrees")
         
     }
+    
+
+    func determineHouse(for longitude: Double, usingCusps cusps: [Double]) -> Int {
+        print("Determining house for longitude: \(longitude)")
+        print("Using cusps: \(cusps)")
+        for (index, cusp) in cusps.enumerated() {
+            if index == 0 && longitude < cusps.first! {
+                print("Longitude \(longitude) is in the 12th house")
+                return 12 // The last house
+            }
+            if index < cusps.count - 1 && longitude >= cusp && longitude < cusps[index + 1] {
+                print("Longitude \(longitude) is in house \(index + 1)")
+                return index + 1
+            }
+        }
+        print("Longitude \(longitude) is in the 12th house by default")
+        return 12 // Default to the last house if not found
+    }
+
+
     
     
     // MARK: - Chart conversion

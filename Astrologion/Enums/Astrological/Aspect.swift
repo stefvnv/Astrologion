@@ -98,4 +98,13 @@ public enum Aspect: String, CaseIterable {
             return "Description not found for \(leadingPlanet) \(self.rawValue) \(trailingPlanet)."
         }
     }
+    
+    
+    // MARK: - Transits
+    
+    func isWithinOrb(of angleDifference: Double) -> Bool {
+        let minAngle = angle - orb
+        let maxAngle = angle + orb
+        return angleDifference >= minAngle && angleDifference <= maxAngle
+    }
 }

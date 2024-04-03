@@ -29,6 +29,14 @@ struct MainTabView: View {
 //                    .onAppear { selectedIndex = 2 }
 //                    .tag(2)
                 
+                TransitsView(user: user)
+                    .tabItem {
+                        Image(systemName: selectedIndex == 2 ? "transits-fill" : "transits") // Ensure you have correct system image names
+                            .environment(\.symbolVariants, selectedIndex == 2 ? .fill : .none)
+                    }
+                    .onAppear { selectedIndex = 2 }
+                    .tag(2)
+                
                 // orbit
                 OrbitView(user: user)
                     .tabItem {

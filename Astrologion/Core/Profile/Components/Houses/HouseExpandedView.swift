@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HouseExpandedView: View {
     let house: House
-    let zodiacSign: Zodiac
+    let zodiacSign: ZodiacSign
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
