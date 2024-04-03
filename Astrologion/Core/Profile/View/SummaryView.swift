@@ -13,6 +13,9 @@ struct SummaryView: View {
                 ModalitySummaryView(profileViewModel: profileViewModel) // modalities
                 PolaritySummaryView(profileViewModel: profileViewModel) // polarity
             }
+            .onAppear {
+                profileViewModel.fetchUserChart()
+            }
         }
         .navigationTitle("Summary")
         .padding()

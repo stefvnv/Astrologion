@@ -19,5 +19,8 @@ struct PlanetsView: View {
                 Text("Loading planets or no chart available")
             }
         }
+        .onAppear {
+            profileViewModel.fetchUserChart()
+        }
     }
 }

@@ -14,6 +14,9 @@ struct HousesView: View {
             } else {
                 Text("Loading houses or no chart available")
             }
+        } 
+        .onAppear {
+            profileViewModel.fetchUserChart()
         }
     }
 }

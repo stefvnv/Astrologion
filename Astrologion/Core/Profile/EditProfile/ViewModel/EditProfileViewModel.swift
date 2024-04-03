@@ -126,7 +126,6 @@ class EditProfileViewModel: ObservableObject {
         }
     }
     
-
     func refreshView() async {
         do {
             // Assuming UserService.fetchUser(withUid:) is an existing method that fetches user data from Firestore
@@ -148,7 +147,4 @@ class EditProfileViewModel: ObservableObject {
             print("Error fetching user data: \(error)")
         }
     }
-
-    
-    
 }
