@@ -49,6 +49,12 @@ struct EditProfileView: View {
                     
                     
                     LocationSearchView(location: $viewModel.birthLocation)
+                        .onChange(of: viewModel.birthLocation) { newLocation in
+                            viewModel.geocodeLocation(newLocation) {
+                                print("Geocoding completed for new location: \(newLocation)")
+                            }
+                        }
+
                     
                     Divider()
                 }

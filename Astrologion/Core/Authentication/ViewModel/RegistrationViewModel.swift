@@ -49,8 +49,6 @@ class RegistrationViewModel: ObservableObject {
         }
         isLoading = false
     }
-
-
     
     private func calculateAndCreateChart(
         userId: String, birthYear: Int, birthMonth: Int, birthDay: Int,
@@ -75,8 +73,6 @@ class RegistrationViewModel: ObservableObject {
             return nil
         }
     }
-    
-    
 
     func geocodeLocationName(_ locationName: String, completion: @escaping () -> Void) {
         geocoder.geocodeAddressString(locationName) { (placemarks, error) in
@@ -84,19 +80,15 @@ class RegistrationViewModel: ObservableObject {
                 if let placemark = placemarks?.first, let location = placemark.location {
                     self.latitude = location.coordinate.latitude
                     self.longitude = location.coordinate.longitude
-                    self.birthLocation = locationName // Set the birthLocation here
+                    self.birthLocation = locationName
                     print("Coordinates: \(location.coordinate.latitude), \(location.coordinate.longitude)")
                     completion()
                 } else {
-                    // Handle error or no location found
                     print("No location found or geocoding error for \(locationName)")
                 }
             }
         }
     }
-
-    
-
 
     @MainActor
     func validateEmail() async throws {

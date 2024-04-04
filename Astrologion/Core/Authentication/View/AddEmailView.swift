@@ -23,6 +23,7 @@ struct AddEmailView: View {
                     .modifier(TextFieldModifier())
                     .padding(.top)
                     .autocapitalization(.none)
+                    .disableAutocorrection(true)
                 
                 if viewModel.isLoading {
                     ProgressView()

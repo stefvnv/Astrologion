@@ -12,7 +12,13 @@ struct LoginView: View {
                 Spacer()
                 
                 Text("Astrologion")
-                    .font(.custom("PlayfairDisplay-Regular", size: 60)) //TODO: Define font styles
+                    .font(.custom("PlayfairDisplay-Regular", size: 40))
+                    .foregroundColor(Color.theme.purple)
+                
+                Image("logo")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .padding(.bottom, 40)
 
                             
                 VStack(spacing: 8) {
