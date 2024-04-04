@@ -98,17 +98,26 @@ class TransitsViewModel: ObservableObject {
 
     private func determineTransits(for currentPositions: [(body: Planet, longitude: Double)], with chart: Chart) -> [Transit] {
         var transits: [Transit] = []
-        let natalPlanetaryPositions = chart.planetaryPositions.mapValues { LongitudeParser.parseLongitude(from: $0) ?? 0.0 }
+
+        let excludedPlanets: Set<Planet> = [.Lilith, .NorthNode]
+
+        let natalPlanetaryPositions = chart.planetaryPositions
+            .compactMapValues { LongitudeParser.parseLongitude(from: $0) }
+            .filter { !excludedPlanets.contains(Planet(rawValue: $0.key)!) } // Filter out excluded planets
 
         for (transitingPlanet, transitingLongitude) in currentPositions {
+            // Skip excluded planets
+            guard !excludedPlanets.contains(transitingPlanet) else { continue }
+
             for (natalPlanetName, natalLongitude) in natalPlanetaryPositions {
-                guard let natalPlanet = Planet(rawValue: natalPlanetName), natalPlanet != transitingPlanet else { continue } // Skip same planet comparison
+                guard let natalPlanet = Planet(rawValue: natalPlanetName),
+                      natalPlanet != transitingPlanet else { continue }
 
                 let angleDifference = abs(transitingLongitude - natalLongitude)
                 let normalizedAngle = min(angleDifference, 360 - angleDifference)
 
                 if let aspect = Aspect.allCases.first(where: { aspect in
-                    normalizedAngle >= aspect.angle - aspect.orb && normalizedAngle <= aspect.angle + aspect.orb
+                    normalizedAngle >= aspect.angle - aspect.transitOrb && normalizedAngle <= aspect.angle + aspect.transitOrb
                 }) {
                     let currentSign = ZodiacSign.allCases.first { $0.baseDegree <= transitingLongitude && $0.baseDegree + 30 > transitingLongitude } ?? .Aries
                     let currentHouse = astrologyModel.determineHouse(for: transitingLongitude, usingCusps: parseHouseCusps(from: chart))

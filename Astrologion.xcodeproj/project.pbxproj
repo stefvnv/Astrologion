@@ -140,6 +140,8 @@
 		F8A1F8862BBEC98200A604AF /* LearningHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8852BBEC98200A604AF /* LearningHubView.swift */; };
 		F8A1F8892BBEC99800A604AF /* LearningHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8882BBEC99800A604AF /* LearningHubViewModel.swift */; };
 		F8A1F88C2BBEEC4300A604AF /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */; };
+		F8A1F88E2BBF2FA400A604AF /* Gruppo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A1F88D2BBF2FA300A604AF /* Gruppo-Regular.ttf */; };
+		F8A1F8902BBF34A600A604AF /* TransitChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F88F2BBF34A600A604AF /* TransitChartViewModel.swift */; };
 		F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A28F522BB3589A00342AB9 /* GeocodeError.swift */; };
 		F8A620942BBAFAE200F84AFE /* PlanetExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */; };
 		F8A620972BBB0E4A00F84AFE /* PlanetaryPlacementData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */; };
@@ -308,6 +310,8 @@
 		F8A1F8852BBEC98200A604AF /* LearningHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubView.swift; sourceTree = "<group>"; };
 		F8A1F8882BBEC99800A604AF /* LearningHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubViewModel.swift; sourceTree = "<group>"; };
 		F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
+		F8A1F88D2BBF2FA300A604AF /* Gruppo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gruppo-Regular.ttf"; sourceTree = "<group>"; };
+		F8A1F88F2BBF34A600A604AF /* TransitChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitChartViewModel.swift; sourceTree = "<group>"; };
 		F8A28F522BB3589A00342AB9 /* GeocodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeError.swift; sourceTree = "<group>"; };
 		F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetExpandedView.swift; sourceTree = "<group>"; };
 		F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementData.json; sourceTree = "<group>"; };
@@ -981,6 +985,7 @@
 			isa = PBXGroup;
 			children = (
 				F8409FE42BADD9ED00D007F8 /* NatalChartViewModel.swift */,
+				F8A1F88F2BBF34A600A604AF /* TransitChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1123,8 +1128,9 @@
 		F8A6208F2BBAC1CA00F84AFE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */,
 				F8A709292BB8F3E9008599A5 /* Dosis.ttf */,
+				F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */,
+				F8A1F88D2BBF2FA300A604AF /* Gruppo-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1371,6 +1377,7 @@
 			files = (
 				F8D3C08B2BBDFB2A0075A137 /* TransitDescriptionsData.json in Resources */,
 				F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */,
+				F8A1F88E2BBF2FA400A604AF /* Gruppo-Regular.ttf in Resources */,
 				F8A620AB2BBB79E200F84AFE /* AspectDescriptionData.json in Resources */,
 				F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */,
 				F8A620972BBB0E4A00F84AFE /* PlanetaryPlacementData.json in Resources */,
@@ -1533,6 +1540,7 @@
 				F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */,
 				F840A0112BAE0E2000D007F8 /* LocationSearchCompleter.swift in Sources */,
 				F8BAA98C2BB74E37002E349C /* Polarity.swift in Sources */,
+				F8A1F8902BBF34A600A604AF /* TransitChartViewModel.swift in Sources */,
 				F8B7BD9E2BBC85120014DD7A /* PasswordInputView.swift in Sources */,
 				F819B6052BACE3F9001B138A /* ContentViewModel.swift in Sources */,
 				F819B5E12BACE0EB001B138A /* NotificationsView.swift in Sources */,

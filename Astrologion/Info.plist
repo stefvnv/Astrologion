@@ -4,8 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PlayfairDisplay-Regular.ttf</string>
 		<string>Dosis.ttf</string>
+		<string>PlayfairDisplay-Regular.ttf</string>
+		<string>Gruppo-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

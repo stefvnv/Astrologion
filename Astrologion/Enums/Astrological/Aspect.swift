@@ -28,6 +28,16 @@ public enum Aspect: String, CaseIterable {
         }
     }
     
+    var transitOrb: Double {
+        switch self {
+        case .conjunction: return 2
+        case .sextile: return 2
+        case .square: return 2
+        case .trine: return 2
+        case .opposition: return 2
+        }
+    }
+    
     var symbol: String {
         switch self {
         case .conjunction: return "☌"

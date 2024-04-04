@@ -3,6 +3,7 @@ import Foundation
 import CoreGraphics
 
 class NatalChartView: UIView {
+    var shouldDrawAspects = true
     
     ///
     var viewModel: NatalChartViewModel? {
@@ -50,7 +51,9 @@ class NatalChartView: UIView {
     /// Main draw method which calls other methods for drawing all elements onto the view
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        
         guard let context = UIGraphicsGetCurrentContext(), let viewModel = viewModel else { return }
+        
         
         // define chart size
         defineChartSize(rect, context)
@@ -297,8 +300,9 @@ class NatalChartView: UIView {
     
     ///
     private func drawAspects(context: CGContext, houseInnerRadius: CGFloat) {
-        guard let viewModel = viewModel else { return }
-        let aspects = viewModel.aspects 
+        guard shouldDrawAspects, let viewModel = viewModel else { return }
+        
+        let aspects = viewModel.aspects
         let planetPositions = viewModel.getPlanetPositions(in: bounds)
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         
