@@ -1,5 +1,4 @@
 import Foundation
-import SwiftUI
 
 struct HouseCuspDescription: Decodable {
     let house: Int
@@ -7,8 +6,6 @@ struct HouseCuspDescription: Decodable {
     let description: String
 }
 
-
-///
 func loadHouseCuspData() -> [HouseCuspDescription] {
     guard let url = Bundle.main.url(forResource: "HouseCuspData", withExtension: "json") else {
         fatalError("HouseCuspData.json not found")

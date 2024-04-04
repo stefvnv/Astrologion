@@ -28,7 +28,7 @@ struct TransitsOverviewView: View {
                 let uniqueSortedTransits = getUniqueSortedTransits(transits: transitsViewModel.currentTransits)
                 
                 ForEach(uniqueSortedTransits, id: \.planet) { transit in
-                    TransitDetailView(planet: transit.planet, sign: transit.sign, house: House(rawValue: transit.house) ?? .first)
+                    TransitOverviewDetailView(planet: transit.planet, sign: transit.sign, house: House(rawValue: transit.house) ?? .first)
                 }
                 .padding(.bottom, 20)
             }

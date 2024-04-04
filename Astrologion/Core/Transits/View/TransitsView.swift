@@ -14,15 +14,16 @@ struct TransitsView: View {
         VStack {
             TransitsTabView(selectedTab: $selectedTab)
 
-            //Divider()
-
             ScrollView {
                 switch selectedTab {
                 case .overview:
                     TransitsOverviewView(user: user, transitsViewModel: transitsViewModel)
                 default:
-                    Text("\(selectedTab.title) content view placeholder")
-                        .padding()
+                    if let planet = Planet(rawValue: selectedTab.rawValue.capitalized) {
+                        TransitsPlanetView(user: user, transitsViewModel: transitsViewModel, selectedPlanet: planet)
+                    } else {
+                        Text("Invalid planet").padding()
+                    }
                 }
             }
         }

@@ -3,7 +3,6 @@ public enum House: Int, CaseIterable {
     case first = 1, second, third, fourth, fifth, sixth,
          seventh, eighth, ninth, tenth, eleventh, twelfth
     
-    /// The name of the astrological house, with special designations for the first (ASC) and tenth (MC) houses
     var name: String {
         switch self {
         case .first: return "I ASC"
@@ -21,7 +20,6 @@ public enum House: Int, CaseIterable {
         }
     }
     
-    /// Roman numeral representation of the house number
     var romanNumeral: String {
         switch self {
         case .first: return "I"
@@ -54,6 +52,10 @@ public enum House: Int, CaseIterable {
         case .eleventh: return "Friendships"
         case .twelfth: return "Subconscious"
         }
+    }
+    
+    var shortHouseFormat: String {
+        "\(self.rawValue)H"
     }
     
     var formattedName: String {

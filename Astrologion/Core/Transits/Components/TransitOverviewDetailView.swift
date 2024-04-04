@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TransitDetailView: View {
+struct TransitOverviewDetailView: View {
     var planet: Planet
     var sign: ZodiacSign
     var house: House

@@ -2,10 +2,11 @@ import Foundation
 import Combine
 
 class TransitsViewModel: ObservableObject {
-    @Published var currentTransits: [Transit] = []
-    @Published var userChart: Chart?
     @Published var isLoadingChartData: Bool = false
-    
+    @Published var currentTransits: [Transit] = []
+    @Published var transitDescription: [TransitDescription] = []
+    @Published var userChart: Chart?
+
     private var cancellables = Set<AnyCancellable>()
     private let user: User
     private let astrologyModel: AstrologyModel
@@ -17,15 +18,19 @@ class TransitsViewModel: ObservableObject {
         self.user = user
         self.astrologyModel = astrologyModel
         fetchUserChart()
+        loadTransitDescription()
         
-        // Set up a subscriber to call getCurrentTransits when userChart is updated
         $userChart
             .receive(on: DispatchQueue.main)
-            .compactMap { $0 } // Filter out nil values
+            .compactMap { $0 }
             .sink { [weak self] _ in
                 self?.getCurrentTransits()
             }
             .store(in: &cancellables)
+    }
+    
+    func loadTransitDescription() {
+        self.transitDescription = loadTransitData()
     }
 
     func parseHouseCusps(from chart: Chart) -> [Double] {
@@ -34,7 +39,6 @@ class TransitsViewModel: ObservableObject {
         }.sorted()
     }
 
-    
     // TODO: Move to common static class since used in both here and profileviewmodel
     func fetchUserChart() {
         isLoadingChartData = true

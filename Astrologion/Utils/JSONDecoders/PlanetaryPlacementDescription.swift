@@ -1,12 +1,10 @@
 import Foundation
-import SwiftUI
 
 struct PlanetaryPlacementDescription: Decodable {
     let planet: String
     let sign: String
     let description: String
 }
-
 
 func loadAstrologicalData() -> [PlanetaryPlacementDescription] {
     guard let url = Bundle.main.url(forResource: "PlanetaryPlacementData", withExtension: "json") else {

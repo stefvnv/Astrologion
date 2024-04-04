@@ -1,5 +1,4 @@
 import Foundation
-import SwiftUI
 
 struct AspectsDescription: Decodable {
     let leadingPlanet: String
@@ -10,8 +9,8 @@ struct AspectsDescription: Decodable {
 
 
 func loadAspectDescriptions() -> [AspectsDescription] {
-    guard let url = Bundle.main.url(forResource: "AspectsData", withExtension: "json") else {
-        fatalError("AspectsData.json not found")
+    guard let url = Bundle.main.url(forResource: "AspectDescriptionData", withExtension: "json") else {
+        fatalError("AspectsDescriptionData.json not found")
     }
 
     do {
