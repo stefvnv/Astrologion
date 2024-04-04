@@ -41,7 +41,7 @@ class NatalChartView: UIView {
     fileprivate func defineChartSize(_ rect: CGRect, _ context: CGContext) {
         let scaleFactor: CGFloat = 0.80 // scales chart size
         
-        context.saveGState() 
+        context.saveGState()
         context.translateBy(x: rect.midX * (1 - scaleFactor), y: rect.midY * (1 - scaleFactor))
         context.scaleBy(x: scaleFactor, y: scaleFactor)
     }
@@ -262,10 +262,13 @@ class NatalChartView: UIView {
     
     ///
     fileprivate func drawScaleMarkings(_ context: CGContext, _ center: CGPoint, _ innerRadius: CGFloat, _ outerRadius: CGFloat, _ ascendantOffset: Double) {
-        let regularScaleLength: CGFloat = 16 // The length of the regular scale lines
-        let longScaleLength: CGFloat = 8 // The length of the longer scale lines for 3rd, 5th, and 7th markings
-        let marksPerSign = 7 // number of lines between signs
-        let totalSigns = 12 // Total number of zodiac signs
+        let regularScaleFactor: CGFloat = 0.02 // short size
+        let longScaleFactor: CGFloat = 0.04 // long size
+        
+        let regularScaleLength = innerRadius * regularScaleFactor
+        let longScaleLength = innerRadius * longScaleFactor
+        let marksPerSign = 7
+        let totalSigns = 12
         
         context.setStrokeColor(ChartColor.navy.uiColor.cgColor)
         context.setLineWidth(1) // width
@@ -275,7 +278,11 @@ class NatalChartView: UIView {
                 let angleIncrement = 30.0 / Double(marksPerSign + 1)
                 let angle = (Double(signIndex) * 30.0 + Double(markIndex) * angleIncrement + ascendantOffset).truncatingRemainder(dividingBy: 360.0).degreesToRadians
                 
-                let scaleLength = (markIndex == 3 || markIndex == 5 || markIndex == 7) ? longScaleLength : regularScaleLength
+                var scaleLength = (markIndex % 2 == 0) ? regularScaleLength : longScaleLength
+                if markIndex == 0 {
+                    scaleLength = longScaleLength
+                }
+                
                 let start = CGPoint(x: center.x + innerRadius * cos(angle), y: center.y + innerRadius * sin(angle))
                 let end = CGPoint(x: center.x + (innerRadius + scaleLength) * cos(angle), y: center.y + (innerRadius + scaleLength) * sin(angle))
                 
