@@ -139,6 +139,7 @@
 		F8A1F8812BBEA68200A604AF /* TrasitChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */; };
 		F8A1F8862BBEC98200A604AF /* LearningHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8852BBEC98200A604AF /* LearningHubView.swift */; };
 		F8A1F8892BBEC99800A604AF /* LearningHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8882BBEC99800A604AF /* LearningHubViewModel.swift */; };
+		F8A1F88C2BBEEC4300A604AF /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */; };
 		F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A28F522BB3589A00342AB9 /* GeocodeError.swift */; };
 		F8A620942BBAFAE200F84AFE /* PlanetExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */; };
 		F8A620972BBB0E4A00F84AFE /* PlanetaryPlacementData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */; };
@@ -197,7 +198,6 @@
 		F8D3C0892BBDF73A0075A137 /* TransitPlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0882BBDF73A0075A137 /* TransitPlanetDetailView.swift */; };
 		F8D3C08B2BBDFB2A0075A137 /* TransitDescriptionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8D3C08A2BBDFB2A0075A137 /* TransitDescriptionsData.json */; };
 		F8D3C08D2BBDFC2D0075A137 /* TransitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C08C2BBDFC2D0075A137 /* TransitDescription.swift */; };
-		F8D3C08F2BBE36FE0075A137 /* TransitChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C08E2BBE36FE0075A137 /* TransitChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -307,6 +307,7 @@
 		F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrasitChartViewRepresentable.swift; sourceTree = "<group>"; };
 		F8A1F8852BBEC98200A604AF /* LearningHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubView.swift; sourceTree = "<group>"; };
 		F8A1F8882BBEC99800A604AF /* LearningHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubViewModel.swift; sourceTree = "<group>"; };
+		F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
 		F8A28F522BB3589A00342AB9 /* GeocodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeError.swift; sourceTree = "<group>"; };
 		F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetExpandedView.swift; sourceTree = "<group>"; };
 		F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementData.json; sourceTree = "<group>"; };
@@ -365,7 +366,6 @@
 		F8D3C0882BBDF73A0075A137 /* TransitPlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitPlanetDetailView.swift; sourceTree = "<group>"; };
 		F8D3C08A2BBDFB2A0075A137 /* TransitDescriptionsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TransitDescriptionsData.json; sourceTree = "<group>"; };
 		F8D3C08C2BBDFC2D0075A137 /* TransitDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitDescription.swift; sourceTree = "<group>"; };
-		F8D3C08E2BBE36FE0075A137 /* TransitChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitChartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +456,7 @@
 		F819B5582BACBE82001B138A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8A1F88A2BBEEC0100A604AF /* UI */,
 				F8A6209C2BBB0EE800F84AFE /* JSONDecoders */,
 				F8BAA9952BB76F85002E349C /* Summary */,
 				F8C006F82BB5864F005741FC /* Astrological */,
@@ -980,7 +981,6 @@
 			isa = PBXGroup;
 			children = (
 				F8409FE42BADD9ED00D007F8 /* NatalChartViewModel.swift */,
-				F8D3C08E2BBE36FE0075A137 /* TransitChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1012,7 +1012,6 @@
 			isa = PBXGroup;
 			children = (
 				F8409FF82BADDBCD00D007F8 /* Color */,
-				F8409FFA2BADDBDD00D007F8 /* Font */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1041,13 +1040,6 @@
 				F8BAA9A02BB7917C002E349C /* PolarityColor.swift */,
 			);
 			path = Color;
-			sourceTree = "<group>";
-		};
-		F8409FFA2BADDBDD00D007F8 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		F840A0122BAE298F00D007F8 /* Error */ = {
@@ -1118,6 +1110,14 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F8A1F88A2BBEEC0100A604AF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		F8A6208F2BBAC1CA00F84AFE /* Fonts */ = {
@@ -1412,6 +1412,7 @@
 				F8B7BDB02BBC93270014DD7A /* TransitsOverviewView.swift in Sources */,
 				F819B5D92BACE085001B138A /* ConversationsViewModel.swift in Sources */,
 				F819B5ED2BACE18B001B138A /* ProfileHeaderView.swift in Sources */,
+				F8A1F88C2BBEEC4300A604AF /* CustomTheme.swift in Sources */,
 				F819B5992BACC1F8001B138A /* CompleteSignUpView.swift in Sources */,
 				F8B840DA2BBC0407007716EF /* AspectsDescription.swift in Sources */,
 				F819B5B52BACC4C7001B138A /* CircularProfileImageView.swift in Sources */,
@@ -1448,7 +1449,6 @@
 				F819B5CD2BACE00A001B138A /* ConversationsCell.swift in Sources */,
 				F8B7BDB72BBCAB6A0014DD7A /* TransitsViewModel.swift in Sources */,
 				F819B5F32BACE20D001B138A /* EditProfileViewModel.swift in Sources */,
-				F8D3C08F2BBE36FE0075A137 /* TransitChartViewModel.swift in Sources */,
 				F819B5FB2BACE2B8001B138A /* SettingsRowView.swift in Sources */,
 				F8BAA9A32BB7930E002E349C /* PolaritySummaryView.swift in Sources */,
 				F819B5C32BACC639001B138A /* FeedViewModel.swift in Sources */,

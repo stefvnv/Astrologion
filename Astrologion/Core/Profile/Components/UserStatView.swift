@@ -16,7 +16,7 @@ struct UserStatView: View {
         }
         .opacity(value == 0 ? 0.5 : 1.0)
         .frame(width: 80, alignment: .center)
-        .foregroundColor(Color.theme.systemBackground)
+        .foregroundColor(Color.theme.darkBlue)
     }
 }
 

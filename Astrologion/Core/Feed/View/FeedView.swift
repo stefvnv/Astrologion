@@ -3,24 +3,31 @@ import SwiftUI
 struct FeedView: View {
     @StateObject var viewModel = FeedViewModel()
     
+    init() {
+        // Set navigation bar background color
+        UINavigationBar.appearance().barTintColor = UIColor(Color.theme.darkBlue)
+    }
+    
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack(spacing: 32) {
-                    ForEach(viewModel.posts) { post in
-                        FeedCell(post: post)
-                        
+            ZStack {
+                Color.theme.darkBlue.edgesIgnoringSafeArea(.top) // Navy-colored background
+                
+                ScrollView {
+                    LazyVStack(spacing: 32) {
+                        ForEach(viewModel.posts) { post in
+                            FeedCell(post: post)
+                        }
                     }
+                    .padding(.top)
                 }
-                .padding(.top)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     
-                    // logo TODO: Import text and add
-                    AdaptiveImage(light: "instagram_logo_black",
-                                  dark: "instagram_logo_white",
-                                  width: 100, height: 50)
+                    Text("Astrologion")
+                        .font(.custom("PlayfairDisplay-Regular", size: 24))
+                        .foregroundColor(Color.theme.yellow)
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -32,7 +39,7 @@ struct FeedView: View {
                             Image(systemName: "plus")
                                 .imageScale(.large)
                                 .scaledToFit()
-                                .foregroundColor(Color.theme.systemBackground)
+                                .foregroundColor(Color.theme.lightLavender)
                         })
                 }
             }

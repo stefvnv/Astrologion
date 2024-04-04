@@ -23,7 +23,7 @@ struct OrbitView: View {
                             Image(systemName: "message")
                                 .imageScale(.large)
                                 .scaledToFit()
-                                .foregroundColor(Color.theme.systemBackground)
+                                .foregroundColor(Color.theme.darkBlue)
                         })
                 }
             }

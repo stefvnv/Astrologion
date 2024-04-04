@@ -10,10 +10,10 @@ struct ResetPasswordView: View {
 
     var body: some View {
             VStack {
-                AdaptiveImage(light: "instagram_logo_black",
-                              dark: "instagram_logo_white",
-                              width: 220, height: 100)
-                                    
+                Text("Astrologion")
+                    .font(.custom("PlayfairDisplay-Regular", size: 24))
+                    .foregroundColor(Color.theme.yellow)
+                
                 VStack(spacing: 20) {
                     TextField("Enter your email", text: $email)
                         .autocapitalization(.none)

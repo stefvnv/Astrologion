@@ -10,10 +10,8 @@ class TransitsViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private let user: User
     private let astrologyModel: AstrologyModel
-    
-    private let londonCoordinates = (latitude: 51.5074, longitude: -0.1278) // TODO: Change to take
-    
-    
+    private let londonCoordinates = (latitude: 51.5074, longitude: -0.1278) // TODO: Change to take in current location
+
     init(user: User, astrologyModel: AstrologyModel) {
         self.user = user
         self.astrologyModel = astrologyModel
@@ -81,19 +79,16 @@ class TransitsViewModel: ObservableObject {
                     minute: components.minute!,
                     latitude: londonCoordinates.latitude,
                     longitude: londonCoordinates.longitude,
-                    houseSystem: .placidus // Replace with user's preferred house system if necessary
+                    houseSystem: .placidus
                 )
-
                 let currentPlanetaryPositions = astrologyModel.astrologicalPlanetaryPositions
                 print("Current planetary positions: \(currentPlanetaryPositions)")
 
-                // Ensure the update happens on the main thread
                 DispatchQueue.main.async {
                     self.currentTransits = self.determineTransits(for: currentPlanetaryPositions, with: userChart)
                     print("Current transits count: \(self.currentTransits.count)")
                 }
             } catch {
-                // Ensure the error is printed on the main thread
                 DispatchQueue.main.async {
                     print("Error calculating current transits: \(error.localizedDescription)")
                 }
@@ -126,6 +121,5 @@ class TransitsViewModel: ObservableObject {
         }
         return transits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
     }
-
 
 } // end

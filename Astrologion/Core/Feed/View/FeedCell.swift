@@ -28,7 +28,7 @@ struct FeedCell: View {
                     NavigationLink(value: viewModel.post.user) {
                         Text(viewModel.post.user?.username ?? "")
                             .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(Color.theme.systemBackground)
+                            .foregroundColor(Color.theme.lightLavender)
                     }
                     
                     // Display Sun, Moon, and Ascendant signs
@@ -37,7 +37,7 @@ struct FeedCell: View {
                         .foregroundColor(Color.gray)
                 }
             }
-            .padding([.leading, .bottom], 8)
+            .padding([.leading, .bottom], 4)
             
             KFImage(URL(string: post.imageUrl))
                 .resizable()
@@ -64,7 +64,7 @@ struct FeedCell: View {
                         .frame(width: 20, height: 20)
                         .font(.system(size: 20))
                         .padding(4)
-                        .foregroundColor(Color.theme.systemBackground)
+                        .foregroundColor(Color.theme.lavender)
                 }
                 
 //                Button(action: {}, label: {
@@ -85,7 +85,7 @@ struct FeedCell: View {
                     .font(.system(size: 14, weight: .semibold))
                     .padding(.leading, 8)
                     .padding(.bottom, 0.5)
-                    .foregroundColor(Color.theme.systemBackground)
+                    .foregroundColor(Color.theme.lightLavender)
             }
             
             
@@ -102,5 +102,9 @@ struct FeedCell: View {
                 .padding(.leading, 8)
                 .padding(.top, -2)
         }
+        .padding(8)
+        .background(Color.white)
+        .cornerRadius(8) 
+        .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 2)
     }
 }

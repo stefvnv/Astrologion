@@ -14,7 +14,7 @@ struct ProfileActionButtonView: View {
                     Text("Edit Profile")
                         .font(.system(size: 14, weight: .semibold))
                         .frame(width: 360, height: 32)
-                        .foregroundColor(Color.theme.systemBackground)
+                        .foregroundColor(Color.theme.lavender)
                         .overlay(
                             RoundedRectangle(cornerRadius: 6)
                                 .stroke(Color.gray, lineWidth: 1)

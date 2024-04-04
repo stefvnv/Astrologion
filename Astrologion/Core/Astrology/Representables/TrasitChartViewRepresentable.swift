@@ -12,6 +12,8 @@ struct TransitChartViewRepresentable: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: TransitChartView, context: Context) {
+        uiView.transitsViewModel = transitsViewModel
         uiView.setNeedsDisplay()
     }
+
 }

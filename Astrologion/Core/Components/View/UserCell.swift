@@ -16,7 +16,8 @@ struct UserCell: View {
                     Text(fullname)
                         .font(.system(size: 14))
                 }
-            }.foregroundColor(Color.theme.systemBackground)
+            }
+            .foregroundColor(Color.theme.darkBlue)
             
             Spacer()
         }

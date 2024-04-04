@@ -53,7 +53,7 @@ struct MainTabView: View {
                     .onAppear { selectedIndex = 4 }
                     .tag(4)
             }
-            .tint(Color.theme.systemBackground)
+            .tint(Color.theme.darkBlue)
     }
     
     var messageLink: some View {
