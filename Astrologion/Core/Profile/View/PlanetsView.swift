@@ -9,10 +9,10 @@ struct PlanetsView: View {
         VStack {
             if let chart = profileViewModel.userChart {
                 ForEach(planetOrder, id: \.self) { planet in
-                    
-                    // check if planet is in chart
-                    if let zodiacSign = chart.planetaryPositions[planet] {
-                        PlanetDetailView(planetName: planet, zodiacSign: zodiacSign)
+                    if let zodiacSign = chart.planetaryPositions[planet], let houseNumber = chart.planetaryHousePositions[planet] {
+                        let housePosition = "\(houseNumber)H"
+
+                        PlanetDetailView(planetName: planet, zodiacSign: zodiacSign, housePosition: housePosition)
                     }
                 }
             } else {

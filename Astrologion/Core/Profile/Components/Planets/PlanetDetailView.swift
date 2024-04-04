@@ -3,6 +3,7 @@ import SwiftUI
 struct PlanetDetailView: View {
     var planetName: String
     var zodiacSign: String
+    var housePosition: String
     @State private var showExpandedView = false
 
     var body: some View {
@@ -22,7 +23,6 @@ struct PlanetDetailView: View {
         }
     }
     
-    
     @ViewBuilder
     var content: some View {
         ZStack(alignment: .leading) {
@@ -35,7 +35,13 @@ struct PlanetDetailView: View {
                     Text(zodiacSign)
                         .font(.subheadline)
                 }
+                
                 Spacer()
+                
+                Text(housePosition)
+                    .font(.headline)
+                    .frame(minWidth: 44) 
+                    .padding(.trailing, 20)
             }
             .padding()
             .background(Color.gray.opacity(0.2))
@@ -65,7 +71,7 @@ struct PlanetDetailView: View {
 
 struct PlanetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanetDetailView(planetName: "North Node", zodiacSign: "Leo")
+        PlanetDetailView(planetName: "North Node", zodiacSign: "Leo", housePosition: "5H")
             .previewLayout(.sizeThatFits)
     }
 }
