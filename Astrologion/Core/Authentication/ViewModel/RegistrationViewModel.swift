@@ -33,8 +33,6 @@ class RegistrationViewModel: ObservableObject {
               let birthHour = birthTimeComponents.hour, let birthMinute = birthTimeComponents.minute else {
             throw CustomError.missingDateComponents
         }
-        
-        // Now passing birthLocation to AuthService.createUser
         let userId = try await AuthService.shared.createUser(
             email: email, password: password, username: username,
             birthYear: birthYear, birthMonth: birthMonth, birthDay: birthDay,
@@ -42,14 +40,10 @@ class RegistrationViewModel: ObservableObject {
             birthLocation: birthLocation, // Include birthLocation here
             latitude: latitude, longitude: longitude
         )
-        
-        // calculate and save astrology details
         let chart = await calculateAndCreateChart(
             userId: userId, birthYear: birthYear, birthMonth: birthMonth, birthDay: birthDay,
             birthHour: birthHour, birthMinute: birthMinute, latitude: latitude, longitude: longitude
         )
-        
-        // save chart ID to the user's Firestore document
         if let chartId = chart?.id {
             await AuthService.shared.updateUserChartId(userId: userId, chartId: chartId)
         }
@@ -72,7 +66,6 @@ class RegistrationViewModel: ObservableObject {
                 latitude: latitude, longitude: longitude,
                 houseSystem: .placidus
             )
-
             var chart = astrologyModel.toChart(userId: userId)
 
             try await ChartService.shared.saveChart(&chart)
@@ -93,7 +86,7 @@ class RegistrationViewModel: ObservableObject {
                     self.longitude = location.coordinate.longitude
                     self.birthLocation = locationName // Set the birthLocation here
                     print("Coordinates: \(location.coordinate.latitude), \(location.coordinate.longitude)")
-                    completion() // Call the completion handler here
+                    completion()
                 } else {
                     // Handle error or no location found
                     print("No location found or geocoding error for \(locationName)")

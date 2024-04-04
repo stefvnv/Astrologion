@@ -6,14 +6,11 @@ class ChartService {
     static let shared = ChartService()
     private var astrologyModel: AstrologyModel
 
-    
     init() {
         astrologyModel = AstrologyModel()
         astrologyModel.initializeEphemeris()
     }
 
-    
-    ///
     func createChart(for userId: String, with user: User) async throws -> Chart {
         do {
             try await astrologyModel.calculateAstrologicalDetails(
@@ -35,16 +32,12 @@ class ChartService {
         return chart
     }
 
-
-    ///
     func saveChart(_ chart: inout Chart) async throws {
         let documentRef = Firestore.firestore().collection("charts").document()
         try documentRef.setData(from: chart)
         chart.id = documentRef.documentID
     }
 
-    
-    ///
     func fetchChart(for chartId: String) async throws -> Chart? {
         let chartDoc = try await Firestore.firestore().collection("charts").document(chartId).getDocument()
         let chart = try chartDoc.data(as: Chart.self)

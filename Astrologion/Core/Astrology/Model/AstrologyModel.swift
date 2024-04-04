@@ -234,7 +234,7 @@ public class AstrologyModel: ObservableObject {
         for (index, cusp) in cusps.enumerated() {
             if index == 0 && longitude < cusps.first! {
                 print("Longitude \(longitude) is in the 12th house")
-                return 12 // The last house
+                return 12
             }
             if index < cusps.count - 1 && longitude >= cusp && longitude < cusps[index + 1] {
                 print("Longitude \(longitude) is in house \(index + 1)")
@@ -242,10 +242,19 @@ public class AstrologyModel: ObservableObject {
             }
         }
         print("Longitude \(longitude) is in the 12th house by default")
-        return 12 // Default to the last house if not found
+        return 12
     }
-
-
+    
+    
+    public func calculateHousePositions() -> [String: Int] {
+        var housePositions = [String: Int]()
+        for planet in planetPositions.keys {
+            let longitude = planetPositions[planet]?.longitude ?? 0.0
+            let house = determineHouse(for: longitude, usingCusps: houseCusps)
+            housePositions[planet.rawValue] = house
+        }
+        return housePositions
+    }
     
     
     // MARK: - Chart conversion
@@ -264,6 +273,9 @@ public class AstrologyModel: ObservableObject {
             dict["House \(index + 1)"] = self.zodiacSignAndDegree(fromLongitude: cusp)
         }
         
+        // calculate house positions for planets
+        let housePositions = calculateHousePositions()
+
         // format aspects into strings
         let aspectDescriptions = self.calculateAspects().map { aspectData -> String in
             let planet1Name = aspectData.planet1.rawValue
@@ -278,13 +290,15 @@ public class AstrologyModel: ObservableObject {
         let chart = Chart(
             userId: userId,
             planetaryPositions: planetaryPositions,
+            planetaryHousePositions: housePositions,
             houseCusps: houseCuspsDict,
             aspects: aspectDescriptions
         )
-        
+    
         print("Converted Chart: \(chart)")
         return chart
     }
+
 
     
 } // end
