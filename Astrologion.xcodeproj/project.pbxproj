@@ -135,6 +135,10 @@
 		F897519D2BB8526F00138D25 /* OrbitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897519C2BB8526F00138D25 /* OrbitTabView.swift */; };
 		F89751A52BB8865200138D25 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A42BB8865200138D25 /* SearchViewModel.swift */; };
 		F89751A72BB89C1B00138D25 /* OrbitTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A62BB89C1B00138D25 /* OrbitTab.swift */; };
+		F8A1F87F2BBEA2D500A604AF /* AstrologicalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */; };
+		F8A1F8812BBEA68200A604AF /* TrasitChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */; };
+		F8A1F8862BBEC98200A604AF /* LearningHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8852BBEC98200A604AF /* LearningHubView.swift */; };
+		F8A1F8892BBEC99800A604AF /* LearningHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8882BBEC99800A604AF /* LearningHubViewModel.swift */; };
 		F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A28F522BB3589A00342AB9 /* GeocodeError.swift */; };
 		F8A620942BBAFAE200F84AFE /* PlanetExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */; };
 		F8A620972BBB0E4A00F84AFE /* PlanetaryPlacementData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */; };
@@ -193,6 +197,7 @@
 		F8D3C0892BBDF73A0075A137 /* TransitPlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0882BBDF73A0075A137 /* TransitPlanetDetailView.swift */; };
 		F8D3C08B2BBDFB2A0075A137 /* TransitDescriptionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8D3C08A2BBDFB2A0075A137 /* TransitDescriptionsData.json */; };
 		F8D3C08D2BBDFC2D0075A137 /* TransitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C08C2BBDFC2D0075A137 /* TransitDescription.swift */; };
+		F8D3C08F2BBE36FE0075A137 /* TransitChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C08E2BBE36FE0075A137 /* TransitChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -298,6 +303,10 @@
 		F89751A42BB8865200138D25 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F89751A62BB89C1B00138D25 /* OrbitTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTab.swift; sourceTree = "<group>"; };
 		F89751AA2BB8EDD300138D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalCalculations.swift; sourceTree = "<group>"; };
+		F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrasitChartViewRepresentable.swift; sourceTree = "<group>"; };
+		F8A1F8852BBEC98200A604AF /* LearningHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubView.swift; sourceTree = "<group>"; };
+		F8A1F8882BBEC99800A604AF /* LearningHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubViewModel.swift; sourceTree = "<group>"; };
 		F8A28F522BB3589A00342AB9 /* GeocodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeError.swift; sourceTree = "<group>"; };
 		F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetExpandedView.swift; sourceTree = "<group>"; };
 		F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementData.json; sourceTree = "<group>"; };
@@ -356,6 +365,7 @@
 		F8D3C0882BBDF73A0075A137 /* TransitPlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitPlanetDetailView.swift; sourceTree = "<group>"; };
 		F8D3C08A2BBDFB2A0075A137 /* TransitDescriptionsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TransitDescriptionsData.json; sourceTree = "<group>"; };
 		F8D3C08C2BBDFC2D0075A137 /* TransitDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitDescription.swift; sourceTree = "<group>"; };
+		F8D3C08E2BBE36FE0075A137 /* TransitChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitChartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +476,7 @@
 				F819B56D2BACBF47001B138A /* PostService.swift */,
 				F8B7BDB82BBCB5240014DD7A /* LongitudeParser.swift */,
 				F840A0102BAE0E2000D007F8 /* LocationSearchCompleter.swift */,
+				F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -498,6 +509,7 @@
 				F819B5682BACBF08001B138A /* Authentication */,
 				F8409FDC2BADD8DE00D007F8 /* Astrology */,
 				F819B5652BACBEF8001B138A /* Feed */,
+				F8A1F8822BBEC94100A604AF /* LearningHub */,
 				F8B7BDA12BBC8AF10014DD7A /* Transits */,
 				F89751952BB84E1000138D25 /* Orbit */,
 				F819B5622BACBEE4001B138A /* Profile */,
@@ -968,6 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				F8409FE42BADD9ED00D007F8 /* NatalChartViewModel.swift */,
+				F8D3C08E2BBE36FE0075A137 /* TransitChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1074,6 +1087,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F8A1F8822BBEC94100A604AF /* LearningHub */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1F8872BBEC98500A604AF /* Components */,
+				F8A1F8832BBEC95400A604AF /* View */,
+				F8A1F8842BBEC95A00A604AF /* ViewModel */,
+			);
+			path = LearningHub;
+			sourceTree = "<group>";
+		};
+		F8A1F8832BBEC95400A604AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1F8852BBEC98200A604AF /* LearningHubView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8A1F8842BBEC95A00A604AF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1F8882BBEC99800A604AF /* LearningHubViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F8A1F8872BBEC98500A604AF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F8A6208F2BBAC1CA00F84AFE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1173,6 +1219,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */,
+				F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */,
 			);
 			path = Representables;
 			sourceTree = "<group>";
@@ -1389,6 +1436,7 @@
 				F8409FEF2BADDB7D00D007F8 /* ZodiacSign.swift in Sources */,
 				F819B5F92BACE2A6001B138A /* SettingsView.swift in Sources */,
 				F840A0022BADDC1300D007F8 /* PlanetColor.swift in Sources */,
+				F8A1F8892BBEC99800A604AF /* LearningHubViewModel.swift in Sources */,
 				F8D3C08D2BBDFC2D0075A137 /* TransitDescription.swift in Sources */,
 				F8BAA9942BB7698A002E349C /* ElementColor.swift in Sources */,
 				F819B6192BACE547001B138A /* ImagePicker.swift in Sources */,
@@ -1400,6 +1448,7 @@
 				F819B5CD2BACE00A001B138A /* ConversationsCell.swift in Sources */,
 				F8B7BDB72BBCAB6A0014DD7A /* TransitsViewModel.swift in Sources */,
 				F819B5F32BACE20D001B138A /* EditProfileViewModel.swift in Sources */,
+				F8D3C08F2BBE36FE0075A137 /* TransitChartViewModel.swift in Sources */,
 				F819B5FB2BACE2B8001B138A /* SettingsRowView.swift in Sources */,
 				F8BAA9A32BB7930E002E349C /* PolaritySummaryView.swift in Sources */,
 				F819B5C32BACC639001B138A /* FeedViewModel.swift in Sources */,
@@ -1425,6 +1474,7 @@
 				F819B59D2BACC341001B138A /* AddEmailView.swift in Sources */,
 				F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */,
 				F8A620A22BBB409200F84AFE /* HouseExpandedView.swift in Sources */,
+				F8A1F8812BBEA68200A604AF /* TrasitChartViewRepresentable.swift in Sources */,
 				F819B5E32BACE0FF001B138A /* NotificationsCell.swift in Sources */,
 				F8D3C0892BBDF73A0075A137 /* TransitPlanetDetailView.swift in Sources */,
 				F819B6172BACE530001B138A /* Extensions.swift in Sources */,
@@ -1457,6 +1507,7 @@
 				F8409FE32BADD9D400D007F8 /* NatalChartView.swift in Sources */,
 				F819B5F52BACE226001B138A /* EditProfileView.swift in Sources */,
 				F819B5A32BACC3B0001B138A /* LoginView.swift in Sources */,
+				F8A1F87F2BBEA2D500A604AF /* AstrologicalCalculations.swift in Sources */,
 				F819B56C2BACBF2B001B138A /* Post.swift in Sources */,
 				F819B5EB2BACE17B001B138A /* ProfileActionButtonView.swift in Sources */,
 				F819B6132BACE4B7001B138A /* Timestamp.swift in Sources */,
@@ -1476,6 +1527,7 @@
 				F819B60F2BACE491001B138A /* PreviewProvider.swift in Sources */,
 				F8BAA9872BB74DED002E349C /* Element.swift in Sources */,
 				F89751A52BB8865200138D25 /* SearchViewModel.swift in Sources */,
+				F8A1F8862BBEC98200A604AF /* LearningHubView.swift in Sources */,
 				F819B5D52BACE05B001B138A /* NewMessageView.swift in Sources */,
 				F819B5BB2BACC522001B138A /* CommentCell.swift in Sources */,
 				F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */,

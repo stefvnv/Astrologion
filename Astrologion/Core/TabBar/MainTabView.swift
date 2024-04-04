@@ -1,6 +1,6 @@
 import SwiftUI
 
-// TODO: Refactor 
+// TODO: Update icons
 struct MainTabView: View {
     let user: User
     @Binding var selectedIndex: Int
@@ -17,18 +17,20 @@ struct MainTabView: View {
                     .onAppear { selectedIndex = 0 }
                     .tag(0)
                 
-                // TODO: Change to LearningHubView()
-//                SearchView()
-//                    .tabItem { Image(systemName: "magnifyingglass") }
-//                    .onAppear { selectedIndex = 1 }
-//                    .tag(1)
+                // learning hub
+                LearningHubView()
+                    .tabItem {
+                        Image(systemName: selectedIndex == 0 ? "lightbulb.max.fill" : "lightbulb.max")
+                            .environment(\.symbolVariants, selectedIndex == 1 ? .fill : .none)
+                    }
+                    .onAppear { selectedIndex = 1 }
+                    .tag(1)
                     
                 // transits
                 TransitsView(user: user)
                     .tabItem {
                         Image(selectedIndex == 2 ? "transitsTab-fill" : "transitsTab")
                             .environment(\.symbolVariants, selectedIndex == 2 ? .fill : .none)
-
                     }
                     .onAppear { selectedIndex = 2 }
                     .tag(2)

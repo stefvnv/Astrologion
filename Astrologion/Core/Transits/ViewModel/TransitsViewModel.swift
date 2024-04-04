@@ -105,14 +105,10 @@ class TransitsViewModel: ObservableObject {
         var transits: [Transit] = []
         let natalPlanetaryPositions = chart.planetaryPositions.mapValues { LongitudeParser.parseLongitude(from: $0) ?? 0.0 }
 
-        let transitingPlanets = currentPositions.filter { planet, _ in
-            [.Sun, .Moon, .Mercury, .Venus, .Mars, .Jupiter, .Saturn, . Uranus, .Neptune, .Pluto].contains(planet)
-        }
-
-        for (transitingPlanet, transitingLongitude) in transitingPlanets {
+        for (transitingPlanet, transitingLongitude) in currentPositions {
             for (natalPlanetName, natalLongitude) in natalPlanetaryPositions {
                 guard let natalPlanet = Planet(rawValue: natalPlanetName), natalPlanet != transitingPlanet else { continue } // Skip same planet comparison
-                
+
                 let angleDifference = abs(transitingLongitude - natalLongitude)
                 let normalizedAngle = min(angleDifference, 360 - angleDifference)
 
@@ -121,8 +117,8 @@ class TransitsViewModel: ObservableObject {
                 }) {
                     let currentSign = ZodiacSign.allCases.first { $0.baseDegree <= transitingLongitude && $0.baseDegree + 30 > transitingLongitude } ?? .Aries
                     let currentHouse = astrologyModel.determineHouse(for: transitingLongitude, usingCusps: parseHouseCusps(from: chart))
-                    
-                    let transit = Transit(planet: transitingPlanet, sign: currentSign, house: currentHouse, aspect: aspect, natalPlanet: natalPlanet)
+
+                    let transit = Transit(planet: transitingPlanet, sign: currentSign, house: currentHouse, aspect: aspect, natalPlanet: natalPlanet, longitude: transitingLongitude)
                     transits.append(transit)
                     print("Transit added: \(transit) aspecting \(natalPlanetName)")
                 }
@@ -130,5 +126,6 @@ class TransitsViewModel: ObservableObject {
         }
         return transits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
     }
+
 
 } // end

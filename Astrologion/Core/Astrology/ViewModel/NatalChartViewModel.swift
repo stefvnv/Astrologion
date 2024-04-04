@@ -4,8 +4,6 @@ class NatalChartViewModel {
     @Published var chart: Chart?
     @Published var aspects: [AstrologicalAspectData] = []
 
-    
-    ///
     init(chart: Chart?) {
         self.chart = chart
         self.aspects = parseAspects(from: chart)
@@ -40,7 +38,6 @@ class NatalChartViewModel {
                   let orb = Double(capture(5)) else {
                 return nil
             }
-            
             return AstrologicalAspectData(planet1: planet1, planet2: planet2, aspect: aspectType, exactAngle: exactAngle, orb: orb)
         }
     }
@@ -65,28 +62,11 @@ class NatalChartViewModel {
         
         return LongitudeParser.parseLongitude(from: ascendantString) ?? 0.0
     }
-
     
     func midheaven() -> Double {
         guard let chart = chart, let midheavenString = chart.houseCusps["House 10"] else { return 0.0 }
         
         return LongitudeParser.parseLongitude(from: midheavenString) ?? 0.0
-    }
-
-    func calculatePositionForPlanet(_ planet: Planet, at longitude: Double, usingAscendant ascendant: Double, in rect: CGRect) -> CGPoint {
-        let ascendantOffset = 180.0 - ascendant
-        let adjustedLongitude = longitude + ascendantOffset
-        let angle = (360 - (adjustedLongitude.truncatingRemainder(dividingBy: 360))).truncatingRemainder(dividingBy: 360)
-        let radians = angle.degreesToRadians
-        
-        let outerRadius = min(rect.size.width, rect.size.height) / 2
-        let planetRadius = (outerRadius + outerRadius * 0.8) / 2.5
-        let center = CGPoint(x: rect.midX, y: rect.midY)
-        let x = center.x + planetRadius * cos(radians)
-        let y = center.y + planetRadius * sin(radians)
-        
-        print("Calculating position for \(planet.rawValue): Longitude: \(longitude), Adjusted Longitude: \(adjustedLongitude), Radians: \(radians), Position: (\(x), \(y))")
-        return CGPoint(x: x, y: y)
     }
 
     func getPlanetPositions(in rect: CGRect) -> [PlanetPosition] {
@@ -103,7 +83,7 @@ class NatalChartViewModel {
                 print("Could not parse position for \(planet.rawValue)")
                 return nil
             }
-            let position = calculatePositionForPlanet(planet, at: planetLongitude, usingAscendant: ascendantLongitude, in: rect)
+            let position = AstrologicalCalculations.calculatePositionForPlanet(planet, at: planetLongitude, usingAscendant: ascendantLongitude, in: rect)
             print("Calculated position for \(planet.rawValue): \(position), Longitude: \(planetLongitude)")
             
             return PlanetPosition(planet: planet, position: position, longitude: CGFloat(planetLongitude))
@@ -129,6 +109,5 @@ class NatalChartViewModel {
 
         return angle
     }
-
 
 } //end

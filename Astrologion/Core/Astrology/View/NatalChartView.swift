@@ -29,7 +29,7 @@ class NatalChartView: UIView {
     
     ///
     private func initializeView() {
-        backgroundColor = ChartColor.navy.uiColor // navy
+        backgroundColor = .clear //ChartColor.navy.uiColor // navy
     }
 
     
@@ -38,12 +38,10 @@ class NatalChartView: UIView {
         return min(bounds.size.width, bounds.size.height) / 2 * 0.8 * 0.7 // innerZodiacRadius * houseInnerRadius (last 2 numbers)
     }
     
-    
-    ///
     fileprivate func defineChartSize(_ rect: CGRect, _ context: CGContext) {
-        let scaleFactor: CGFloat = 0.85 // scales chart size
+        let scaleFactor: CGFloat = 0.80 // scales chart size
         
-        context.saveGState() // Save the current graphics state
+        context.saveGState() 
         context.translateBy(x: rect.midX * (1 - scaleFactor), y: rect.midY * (1 - scaleFactor))
         context.scaleBy(x: scaleFactor, y: scaleFactor)
     }
@@ -479,7 +477,7 @@ class NatalChartView: UIView {
     fileprivate func drawPlanets(_ rect: CGRect, _ context: CGContext, _ outerZodiacRadius: CGFloat, _ innerZodiacRadius: CGFloat) {
         guard let viewModel = viewModel else { return }
         let ascendant = viewModel.ascendant()
-        let font = UIFont.systemFont(ofSize: outerZodiacRadius / 10) // size
+        let font = UIFont.systemFont(ofSize: outerZodiacRadius / 9) // font size
         let center = CGPoint(x: rect.midX, y: rect.midY)
         
         let planetPositions = viewModel.getPlanetPositions(in: rect)
@@ -517,7 +515,7 @@ class NatalChartView: UIView {
             var symbolPosition = originalPosition
             if let adjustment = adjustments[index] {
                 let adjustedLongitude = planetPosition.longitude + adjustment
-                symbolPosition = viewModel.calculatePositionForPlanet(planet, at: adjustedLongitude, usingAscendant: ascendant, in: rect)
+                symbolPosition = AstrologicalCalculations.calculatePositionForPlanet(planet, at: adjustedLongitude, usingAscendant: viewModel.ascendant(), in: rect)
             }
             let planetSymbol = NSAttributedString(string: planet.symbol ?? "", attributes: attributes)
             let textSize = planetSymbol.size()

@@ -7,7 +7,9 @@ struct Transit: Identifiable {
     let house: Int
     let aspect: Aspect
     let natalPlanet: Planet
+    let longitude: Double
 
+    
     // MARK: - Transit Planet Detail View
 
     func title(from transitDescriptions: [TransitDescription]) -> String {

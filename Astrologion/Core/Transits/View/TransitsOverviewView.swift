@@ -8,7 +8,7 @@ struct TransitsOverviewView: View {
         VStack {
             ZStack(alignment: .bottom) {
                 if let chart = transitsViewModel.userChart {
-                    NatalChartViewRepresentable(chart: chart)
+                    TransitChartViewRepresentable(user: user, transitsViewModel: transitsViewModel)
                         .frame(height: 600)
                 } else {
                     Text("Loading chart...")
@@ -40,7 +40,7 @@ struct TransitsOverviewView: View {
         var uniqueTransits: [Transit] = []
         
         for planet in Planet.allCases {
-            if let transit = transits.first(where: { $0.planet == planet }) {
+            if let transit = transits.first(where: { $0.planet == planet && uniquePlanets.contains($0.planet) }) {
                 uniqueTransits.append(transit)
             }
         }
@@ -53,11 +53,5 @@ struct TransitsOverviewView: View {
                 return false
             }
         }
-    }
-    
-    private func ordinal(number: Int) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .ordinal
-        return formatter.string(from: NSNumber(value: number)) ?? "\(number)th"
     }
 }
