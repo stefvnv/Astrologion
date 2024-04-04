@@ -9,30 +9,42 @@ class TransitChartView: UIView {
         }
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initializeView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initializeView()
+    }
+    
+    private func initializeView() {
+        backgroundColor = .clear
+        if natalChartView == nil {
+            let natalChart = NatalChartView()
+            natalChartView = natalChart
+            addSubview(natalChart)
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        natalChartView?.frame = bounds
+    }
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-        backgroundColor = .clear
         
         guard let context = UIGraphicsGetCurrentContext(),
               let viewModel = transitsViewModel,
               let userChart = viewModel.userChart,
               let ascendant = userChart.houseCusps["House 1"].flatMap(LongitudeParser.parseLongitude) else { return }
         
-        if natalChartView == nil {
-            let natalChart = NatalChartView(frame: rect)
-            natalChart.viewModel = NatalChartViewModel(chart: userChart)
-            addSubview(natalChart)
-            self.natalChartView = natalChart
-        } else {
-            natalChartView?.viewModel?.chart = userChart
-        }
-        
+        natalChartView?.viewModel = NatalChartViewModel(chart: userChart)        
         natalChartView?.setNeedsDisplay()
         
         drawTransitingPlanets(context: context, rect: rect, transits: viewModel.currentTransits, ascendant: ascendant)
-        
-        context.restoreGState()
     }
     
     

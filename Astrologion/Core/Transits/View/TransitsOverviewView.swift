@@ -8,12 +8,13 @@ struct TransitsOverviewView: View {
         VStack {
             ZStack(alignment: .bottom) {
                 if let chart = transitsViewModel.userChart {
-                    TransitChartViewRepresentable(user: user, transitsViewModel: transitsViewModel)
+                    TransitChartViewRepresentable(user: user, currentTransits: transitsViewModel.currentTransits, transitsViewModel: transitsViewModel)
                         .frame(height: 600)
                 } else {
                     Text("Loading chart...")
                         .frame(height: 600)
                 }
+
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)

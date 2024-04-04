@@ -140,6 +140,11 @@ public class AstrologyModel: ObservableObject {
     }
     
     private func zodiacSignAndDegree(fromLongitude longitude: Double) -> String {
+        guard longitude.isFinite else {
+            print("Invalid longitude: \(longitude)")
+            return "Invalid Longitude"
+        }
+        
         let signIndex = Int(longitude / 30) % ZodiacSign.allCases.count
         let zodiacSign = ZodiacSign.allCases[signIndex]
 

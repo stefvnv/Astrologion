@@ -28,5 +28,8 @@ struct TransitsView: View {
             }
         }
         .navigationTitle("Transits")
+        .onAppear {
+            transitsViewModel.fetchUserChart()
+        }
     }
 }

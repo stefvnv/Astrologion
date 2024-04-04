@@ -29,7 +29,7 @@ class NatalChartView: UIView {
     
     ///
     private func initializeView() {
-        backgroundColor = .clear //ChartColor.navy.uiColor // navy
+        backgroundColor = .clear
     }
 
     

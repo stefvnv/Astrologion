@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TransitChartViewRepresentable: UIViewRepresentable {
     var user: User
+    var currentTransits: [Transit]
     var transitsViewModel: TransitsViewModel
 
     func makeUIView(context: Context) -> TransitChartView {
