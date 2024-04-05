@@ -142,6 +142,18 @@
 		F8A1F88C2BBEEC4300A604AF /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */; };
 		F8A1F88E2BBF2FA400A604AF /* Gruppo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A1F88D2BBF2FA300A604AF /* Gruppo-Regular.ttf */; };
 		F8A1F8902BBF34A600A604AF /* TransitChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F88F2BBF34A600A604AF /* TransitChartViewModel.swift */; };
+		F8A1F8932BBF67BD00A604AF /* Lessons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8922BBF67BD00A604AF /* Lessons.swift */; };
+		F8A1F89B2BBF6A6200A604AF /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F89A2BBF6A6200A604AF /* Lesson.swift */; };
+		F8A1F89D2BBF6BB800A604AF /* LessonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F89C2BBF6BB800A604AF /* LessonItemView.swift */; };
+		F8A1F89F2BBF6F0A00A604AF /* IntroductionChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F89E2BBF6F0A00A604AF /* IntroductionChapter.swift */; };
+		F8A1F8A12BBF6F3700A604AF /* ZodiacSignChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */; };
+		F8A1F8A32BBF6F4100A604AF /* PlanetsChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A22BBF6F4100A604AF /* PlanetsChapter.swift */; };
+		F8A1F8A52BBF6F4C00A604AF /* HousesChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A42BBF6F4C00A604AF /* HousesChapter.swift */; };
+		F8A1F8A72BBF701500A604AF /* NatalChartChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A62BBF701500A604AF /* NatalChartChapter.swift */; };
+		F8A1F8A92BBF702400A604AF /* AspectsChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A82BBF702400A604AF /* AspectsChapter.swift */; };
+		F8A1F8B12BBF7B1700A604AF /* ZodiacSignChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A1F8B02BBF7B1700A604AF /* ZodiacSignChapters.json */; };
+		F8A1F8B32BBF8C0600A604AF /* ChapterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8B22BBF8C0600A604AF /* ChapterDetailView.swift */; };
+		F8A1F8B52BBF90F200A604AF /* PartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8B42BBF90F200A604AF /* PartView.swift */; };
 		F8A28F532BB3589A00342AB9 /* GeocodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A28F522BB3589A00342AB9 /* GeocodeError.swift */; };
 		F8A620942BBAFAE200F84AFE /* PlanetExpandedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */; };
 		F8A620972BBB0E4A00F84AFE /* PlanetaryPlacementData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */; };
@@ -312,6 +324,18 @@
 		F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
 		F8A1F88D2BBF2FA300A604AF /* Gruppo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gruppo-Regular.ttf"; sourceTree = "<group>"; };
 		F8A1F88F2BBF34A600A604AF /* TransitChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitChartViewModel.swift; sourceTree = "<group>"; };
+		F8A1F8922BBF67BD00A604AF /* Lessons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lessons.swift; sourceTree = "<group>"; };
+		F8A1F89A2BBF6A6200A604AF /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		F8A1F89C2BBF6BB800A604AF /* LessonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonItemView.swift; sourceTree = "<group>"; };
+		F8A1F89E2BBF6F0A00A604AF /* IntroductionChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionChapter.swift; sourceTree = "<group>"; };
+		F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignChapter.swift; sourceTree = "<group>"; };
+		F8A1F8A22BBF6F4100A604AF /* PlanetsChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsChapter.swift; sourceTree = "<group>"; };
+		F8A1F8A42BBF6F4C00A604AF /* HousesChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesChapter.swift; sourceTree = "<group>"; };
+		F8A1F8A62BBF701500A604AF /* NatalChartChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartChapter.swift; sourceTree = "<group>"; };
+		F8A1F8A82BBF702400A604AF /* AspectsChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectsChapter.swift; sourceTree = "<group>"; };
+		F8A1F8B02BBF7B1700A604AF /* ZodiacSignChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ZodiacSignChapters.json; sourceTree = "<group>"; };
+		F8A1F8B22BBF8C0600A604AF /* ChapterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailView.swift; sourceTree = "<group>"; };
+		F8A1F8B42BBF90F200A604AF /* PartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartView.swift; sourceTree = "<group>"; };
 		F8A28F522BB3589A00342AB9 /* GeocodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeError.swift; sourceTree = "<group>"; };
 		F8A620932BBAFAE200F84AFE /* PlanetExpandedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetExpandedView.swift; sourceTree = "<group>"; };
 		F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementData.json; sourceTree = "<group>"; };
@@ -460,6 +484,7 @@
 		F819B5582BACBE82001B138A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F8A1F8AA2BBF744500A604AF /* LearningHub */,
 				F8A1F88A2BBEEC0100A604AF /* UI */,
 				F8A6209C2BBB0EE800F84AFE /* JSONDecoders */,
 				F8BAA9952BB76F85002E349C /* Summary */,
@@ -468,6 +493,7 @@
 				F819B6162BACE530001B138A /* Extensions.swift */,
 				F819B6182BACE547001B138A /* ImagePicker.swift */,
 				F819B61A2BACE555001B138A /* Constants.swift */,
+				F8A1F89A2BBF6A6200A604AF /* Lesson.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1002,6 +1028,7 @@
 		F8409FEA2BADDB1B00D007F8 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				F8A1F8912BBF67AD00A604AF /* LearningHub */,
 				F8409FED2BADDB3700D007F8 /* Astrological */,
 				F840A0122BAE298F00D007F8 /* Error */,
 				F8409FEC2BADDB3200D007F8 /* UI */,
@@ -1098,6 +1125,8 @@
 			isa = PBXGroup;
 			children = (
 				F8A1F8852BBEC98200A604AF /* LearningHubView.swift */,
+				F8A1F89C2BBF6BB800A604AF /* LessonItemView.swift */,
+				F8A1F8B22BBF8C0600A604AF /* ChapterDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1113,6 +1142,7 @@
 		F8A1F8872BBEC98500A604AF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F8A1F8B42BBF90F200A604AF /* PartView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1123,6 +1153,53 @@
 				F8A1F88B2BBEEC4300A604AF /* CustomTheme.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		F8A1F8912BBF67AD00A604AF /* LearningHub */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1F8922BBF67BD00A604AF /* Lessons.swift */,
+				F8A1F89E2BBF6F0A00A604AF /* IntroductionChapter.swift */,
+				F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */,
+				F8A1F8A22BBF6F4100A604AF /* PlanetsChapter.swift */,
+				F8A1F8A42BBF6F4C00A604AF /* HousesChapter.swift */,
+				F8A1F8A62BBF701500A604AF /* NatalChartChapter.swift */,
+				F8A1F8A82BBF702400A604AF /* AspectsChapter.swift */,
+			);
+			path = LearningHub;
+			sourceTree = "<group>";
+		};
+		F8A1F8AA2BBF744500A604AF /* LearningHub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LearningHub;
+			sourceTree = "<group>";
+		};
+		F8A1F8AB2BBF7A9700A604AF /* LearningHubData */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1F8B02BBF7B1700A604AF /* ZodiacSignChapters.json */,
+			);
+			path = LearningHubData;
+			sourceTree = "<group>";
+		};
+		F8A1F8AC2BBF7AAC00A604AF /* ProfileData */ = {
+			isa = PBXGroup;
+			children = (
+				F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */,
+				F8A6209F2BBB406100F84AFE /* HouseCuspData.json */,
+				F8A620AA2BBB79E200F84AFE /* AspectDescriptionData.json */,
+			);
+			path = ProfileData;
+			sourceTree = "<group>";
+		};
+		F8A1F8AD2BBF7AC300A604AF /* TransitData */ = {
+			isa = PBXGroup;
+			children = (
+				F8D3C08A2BBDFB2A0075A137 /* TransitDescriptionsData.json */,
+			);
+			path = TransitData;
 			sourceTree = "<group>";
 		};
 		F8A6208F2BBAC1CA00F84AFE /* Fonts */ = {
@@ -1184,10 +1261,9 @@
 		F8B7BD9C2BBC24190014DD7A /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */,
-				F8A6209F2BBB406100F84AFE /* HouseCuspData.json */,
-				F8A620AA2BBB79E200F84AFE /* AspectDescriptionData.json */,
-				F8D3C08A2BBDFB2A0075A137 /* TransitDescriptionsData.json */,
+				F8A1F8AC2BBF7AAC00A604AF /* ProfileData */,
+				F8A1F8AD2BBF7AC300A604AF /* TransitData */,
+				F8A1F8AB2BBF7A9700A604AF /* LearningHubData */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -1385,6 +1461,7 @@
 				F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */,
 				F819B4E42BAC9809001B138A /* GoogleService-Info.plist in Resources */,
 				F8A620A02BBB406100F84AFE /* HouseCuspData.json in Resources */,
+				F8A1F8B12BBF7B1700A604AF /* ZodiacSignChapters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1395,6 +1472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A1F8A12BBF6F3700A604AF /* ZodiacSignChapter.swift in Sources */,
 				F897519B2BB8523C00138D25 /* SearchViewModelConfig.swift in Sources */,
 				F819B5CF2BACE020001B138A /* ChatView.swift in Sources */,
 				F819B5D12BACE033001B138A /* ChatBubble.swift in Sources */,
@@ -1417,6 +1495,7 @@
 				F819B5A72BACC3F0001B138A /* RegistrationViewModel.swift in Sources */,
 				F8C006FE2BB5C6BD005741FC /* SummaryView.swift in Sources */,
 				F8B7BDB02BBC93270014DD7A /* TransitsOverviewView.swift in Sources */,
+				F8A1F8B32BBF8C0600A604AF /* ChapterDetailView.swift in Sources */,
 				F819B5D92BACE085001B138A /* ConversationsViewModel.swift in Sources */,
 				F819B5ED2BACE18B001B138A /* ProfileHeaderView.swift in Sources */,
 				F8A1F88C2BBEEC4300A604AF /* CustomTheme.swift in Sources */,
@@ -1427,10 +1506,12 @@
 				F8C006FC2BB586A1005741FC /* PlanetPosition.swift in Sources */,
 				F8BAA99F2BB7899D002E349C /* ModalityColor.swift in Sources */,
 				F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */,
+				F8A1F8B52BBF90F200A604AF /* PartView.swift in Sources */,
 				F8B7BDB92BBCB5240014DD7A /* LongitudeParser.swift in Sources */,
 				F840A0142BAE299900D007F8 /* CustomError.swift in Sources */,
 				F819B6032BACE3CD001B138A /* ProfileViewModel.swift in Sources */,
 				F819B5DD2BACE0BA001B138A /* Notification.swift in Sources */,
+				F8A1F8A72BBF701500A604AF /* NatalChartChapter.swift in Sources */,
 				F8409FDB2BADD4E800D007F8 /* SelectTimeOfBirthView.swift in Sources */,
 				F819B56E2BACBF47001B138A /* PostService.swift in Sources */,
 				F819B5B72BACC4E2001B138A /* PostGridView.swift in Sources */,
@@ -1461,6 +1542,7 @@
 				F819B5C32BACC639001B138A /* FeedViewModel.swift in Sources */,
 				F8BAA9992BB7808B002E349C /* Summary.swift in Sources */,
 				F819B5B12BACC48F001B138A /* UserCell.swift in Sources */,
+				F8A1F8A52BBF6F4C00A604AF /* HousesChapter.swift in Sources */,
 				F819B6072BACE416001B138A /* SearchView.swift in Sources */,
 				F819B5FD2BACE2DB001B138A /* SettingsItemModel.swift in Sources */,
 				F819B5C12BACC625001B138A /* FeedCellViewModel.swift in Sources */,
@@ -1481,6 +1563,7 @@
 				F819B59D2BACC341001B138A /* AddEmailView.swift in Sources */,
 				F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */,
 				F8A620A22BBB409200F84AFE /* HouseExpandedView.swift in Sources */,
+				F8A1F8932BBF67BD00A604AF /* Lessons.swift in Sources */,
 				F8A1F8812BBEA68200A604AF /* TrasitChartViewRepresentable.swift in Sources */,
 				F819B5E32BACE0FF001B138A /* NotificationsCell.swift in Sources */,
 				F8D3C0892BBDF73A0075A137 /* TransitPlanetDetailView.swift in Sources */,
@@ -1491,6 +1574,7 @@
 				F819B5A52BACC3D8001B138A /* LoginViewModel.swift in Sources */,
 				F8B7BDAB2BBC91F80014DD7A /* TransitTab.swift in Sources */,
 				F819B59B2BACC225001B138A /* CreatePasswordView.swift in Sources */,
+				F8A1F8A92BBF702400A604AF /* AspectsChapter.swift in Sources */,
 				F819B56A2BACBF20001B138A /* User.swift in Sources */,
 				F819B5A12BACC38A001B138A /* ResetPasswordView.swift in Sources */,
 				F819B5C52BACC650001B138A /* FeedCell.swift in Sources */,
@@ -1501,6 +1585,7 @@
 				F8A620942BBAFAE200F84AFE /* PlanetExpandedView.swift in Sources */,
 				F8BAA98A2BB74E25002E349C /* Modality.swift in Sources */,
 				F819B5C92BACDFD5001B138A /* Message.swift in Sources */,
+				F8A1F89D2BBF6BB800A604AF /* LessonItemView.swift in Sources */,
 				F8409FD72BADD05A00D007F8 /* SelectDateOfBirthView.swift in Sources */,
 				F819B59F2BACC36A001B138A /* CreateUsernameView.swift in Sources */,
 				F8A620A42BBB40B300F84AFE /* HouseCuspDescription.swift in Sources */,
@@ -1519,6 +1604,7 @@
 				F819B5EB2BACE17B001B138A /* ProfileActionButtonView.swift in Sources */,
 				F819B6132BACE4B7001B138A /* Timestamp.swift in Sources */,
 				F819B5B92BACC50D001B138A /* Comment.swift in Sources */,
+				F8A1F89F2BBF6F0A00A604AF /* IntroductionChapter.swift in Sources */,
 				F819B5E92BACE14C001B138A /* NotificationService.swift in Sources */,
 				F819B5E52BACE124001B138A /* NotificationsViewModel.swift in Sources */,
 				F8BAA99B2BB780B2002E349C /* BarView.swift in Sources */,
@@ -1529,7 +1615,9 @@
 				F819B5EF2BACE1D5001B138A /* UserStatView.swift in Sources */,
 				F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */,
 				F8BAA9842BB6E71D002E349C /* HouseDetailView.swift in Sources */,
+				F8A1F89B2BBF6A6200A604AF /* Lesson.swift in Sources */,
 				F8409FD92BADD15300D007F8 /* SelectLocationView.swift in Sources */,
+				F8A1F8A32BBF6F4100A604AF /* PlanetsChapter.swift in Sources */,
 				F819B5AD2BACC450001B138A /* CustomInputView.swift in Sources */,
 				F819B60F2BACE491001B138A /* PreviewProvider.swift in Sources */,
 				F8BAA9872BB74DED002E349C /* Element.swift in Sources */,

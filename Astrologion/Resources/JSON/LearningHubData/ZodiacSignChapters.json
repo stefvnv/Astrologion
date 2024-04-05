@@ -1,0 +1,22 @@
+[
+    {
+        "chapter": "Aries",
+        "parts": [
+            {
+                "partNumber": 1,
+                "partTitle": "Introduction to Aries",
+                "description": "Aries is the first sign in the zodiac, symbolized by the Ram. Aries individuals are known for their leadership, passion, and courage."
+            },
+            {
+                "partNumber": 2,
+                "partTitle": "Personality Traits",
+                "description": "Aries are dynamic and competitive. They enjoy challenges and show remarkable bravery and resilience in face of difficulties."
+            },
+            {
+                "partNumber": 3,
+                "partTitle": "Aries in Love",
+                "description": "Aries are known to be passionate and motivated in their relationships. They value honesty and are known for their direct approach."
+            }
+        ]
+    }
+]

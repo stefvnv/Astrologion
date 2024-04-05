@@ -5,6 +5,8 @@ struct MainTabView: View {
     let user: User
     @Binding var selectedIndex: Int
     
+    let learningHubViewModel = LearningHubViewModel()
+    
     var body: some View {
             TabView(selection: $selectedIndex) {
                 
@@ -18,13 +20,14 @@ struct MainTabView: View {
                     .tag(0)
                 
                 // learning hub
-                LearningHubView()
+                LearningHubView(viewModel: learningHubViewModel)
                     .tabItem {
                         Image(systemName: selectedIndex == 0 ? "lightbulb.max.fill" : "lightbulb.max")
                             .environment(\.symbolVariants, selectedIndex == 1 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 1 }
                     .tag(1)
+                    .environmentObject(learningHubViewModel)
                     
                 // transits
                 TransitsView(user: user)
