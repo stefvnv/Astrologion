@@ -7,7 +7,7 @@ struct TransitsOverviewView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
-                if let chart = transitsViewModel.userChart {
+                if transitsViewModel.userChart != nil {
                     TransitChartViewRepresentable(user: user, currentTransits: transitsViewModel.currentTransits, transitsViewModel: transitsViewModel)
                         .frame(height: 600)
                 } else {
@@ -26,32 +26,25 @@ struct TransitsOverviewView: View {
             if transitsViewModel.isLoadingChartData {
                 ProgressView()
             } else {
-                let uniqueSortedTransits = getUniqueSortedTransits(transits: transitsViewModel.currentTransits)
-                
-                ForEach(uniqueSortedTransits, id: \.planet) { transit in
-                    TransitOverviewDetailView(planet: transit.planet, sign: transit.sign, house: House(rawValue: transit.house) ?? .first)
+                // Iterate over a fixed list of planets, ensuring all are displayed in order
+                ForEach(Planet.allCases.filter { ![Planet.Ascendant, .Midheaven, .Lilith, .NorthNode].contains($0) }, id: \.self) { planet in
+                    // Find the corresponding transit or provide a default value
+                    if let matchingTransit = transitsViewModel.currentTransits.first(where: { $0.planet == planet }) {
+                        TransitOverviewDetailView(
+                            planet: planet,
+                            sign: matchingTransit.sign,
+                            house: House(rawValue: matchingTransit.house) ?? .first
+                        )
+                    } else {
+                        // Provide default values if no matching transit is found
+                        TransitOverviewDetailView(
+                            planet: planet,
+                            sign: ZodiacSign.Aries, // Placeholder sign
+                            house: House.first // Placeholder house
+                        )
+                    }
                 }
                 .padding(.bottom, 20)
-            }
-        }
-    }
-
-    private func getUniqueSortedTransits(transits: [Transit]) -> [Transit] {
-        let uniquePlanets = Set(transits.map { $0.planet })
-        var uniqueTransits: [Transit] = []
-        
-        for planet in Planet.allCases {
-            if let transit = transits.first(where: { $0.planet == planet && uniquePlanets.contains($0.planet) }) {
-                uniqueTransits.append(transit)
-            }
-        }
-        
-        return uniqueTransits.filter { transit in
-            switch transit.planet {
-            case .Sun, .Moon, .Mercury, .Venus, .Mars, .Jupiter, .Saturn, .Uranus, .Neptune, .Pluto:
-                return true
-            default:
-                return false
             }
         }
     }

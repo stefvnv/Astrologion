@@ -7,10 +7,12 @@ class TransitsViewModel: ObservableObject {
     @Published var transitDescription: [TransitDescription] = []
     @Published var userChart: Chart?
 
+    private var tempNewTransits: [Transit] = []
+
     private var cancellables = Set<AnyCancellable>()
     private let user: User
     private let astrologyModel: AstrologyModel
-    private let londonCoordinates = (latitude: 51.5074, longitude: -0.1278) // TODO: Change to take in current location
+    private let londonCoordinates = (latitude: 51.5074, longitude: -0.1278)
 
     init(user: User, astrologyModel: AstrologyModel) {
         self.user = user
@@ -59,15 +61,16 @@ class TransitsViewModel: ObservableObject {
         }
     }
     
+
     func getCurrentTransits() {
-        guard let userChart = userChart else {
+        guard let chart = userChart else {
             print("User chart is nil, cannot calculate transits.")
             return
         }
+        
         let currentDate = Date()
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentDate)
-        print("Current date components: \(components)")
 
         Task {
             do {
@@ -81,20 +84,94 @@ class TransitsViewModel: ObservableObject {
                     longitude: londonCoordinates.longitude,
                     houseSystem: .placidus
                 )
+                
+                // Clear the temporary transits list
+                self.tempNewTransits.removeAll()
+                
                 let currentPlanetaryPositions = astrologyModel.astrologicalPlanetaryPositions
                 print("Current planetary positions: \(currentPlanetaryPositions)")
-
+                
+                for (planet, longitude) in currentPlanetaryPositions {
+                    let sign = self.sign(for: longitude)
+                    let house = self.house(for: longitude, usingCusps: parseHouseCusps(from: chart))
+                    let aspects = self.findAspects(for: planet, at: longitude, with: currentPlanetaryPositions)
+                    
+                    // Create a new Transit object
+                    let transit = Transit(
+                        planet: planet,
+                        sign: sign,
+                        house: house,
+                        aspect: aspects.first ?? .conjunction,
+                        natalPlanet: planet,
+                        longitude: longitude
+                    )
+                    
+                    // Append the new transit to the temporary list
+                    self.tempNewTransits.append(transit)
+                }
+                
                 DispatchQueue.main.async {
-                    self.currentTransits = self.determineTransits(for: currentPlanetaryPositions, with: userChart)
-                    print("Current transits count: \(self.currentTransits.count)")
+                    self.currentTransits = self.tempNewTransits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
+                    print("Transits updated: \(self.currentTransits)")
                 }
             } catch {
                 DispatchQueue.main.async {
-                    print("Error calculating current transits: \(error.localizedDescription)")
+                    print("Error calculating transits: \(error.localizedDescription)")
                 }
             }
         }
     }
+    
+    private func sign(for longitude: Double) -> ZodiacSign {
+        return ZodiacSign.allCases.first(where: { $0.baseDegree <= longitude && $0.baseDegree + 30 > longitude }) ?? .Aries
+    }
+
+    private func house(for longitude: Double, usingCusps houseCusps: [Double]) -> Int {
+        let adjustedLongitude = longitude.truncatingRemainder(dividingBy: 360)
+        let index = houseCusps.firstIndex(where: { adjustedLongitude < $0 }) ?? 11
+        return (index + 1) % 12 + 1 // This wraps the index to the house number (1-12)
+    }
+    
+    private func findAspects(for planet: Planet, at longitude: Double, with positions: [(Planet, Double)]) -> [Aspect] {
+        var aspects: [Aspect] = []
+        
+        // Define orbs for each aspect type
+        let orbs: [Aspect: Double] = [
+            .conjunction: 2,
+            .sextile: 2,
+            .square: 2,
+            .trine: 2,
+            .opposition: 2
+        ]
+
+        for (otherPlanet, otherLongitude) in positions where otherPlanet != planet {
+            let angleDifference = abs(longitude - otherLongitude).truncatingRemainder(dividingBy: 360)
+            let angle = min(angleDifference, 360 - angleDifference) // Correct for angles greater than 180
+            
+            // Check each aspect type
+            if angle <= orbs[.conjunction]! {
+                aspects.append(.conjunction)
+            } else if abs(angle - 60) <= orbs[.sextile]! {
+                aspects.append(.sextile)
+            } else if abs(angle - 90) <= orbs[.square]! {
+                aspects.append(.square)
+            } else if abs(angle - 120) <= orbs[.trine]! {
+                aspects.append(.trine)
+            } else if abs(angle - 180) <= orbs[.opposition]! {
+                aspects.append(.opposition)
+            }
+        }
+        
+        return aspects
+    }
+
+    
+    
+    ///
+    
+    
+    
+    
 
     private func determineTransits(for currentPositions: [(body: Planet, longitude: Double)], with chart: Chart) -> [Transit] {
         var transits: [Transit] = []
@@ -106,7 +183,6 @@ class TransitsViewModel: ObservableObject {
             .filter { !excludedPlanets.contains(Planet(rawValue: $0.key)!) } // Filter out excluded planets
 
         for (transitingPlanet, transitingLongitude) in currentPositions {
-            // Skip excluded planets
             guard !excludedPlanets.contains(transitingPlanet) else { continue }
 
             for (natalPlanetName, natalLongitude) in natalPlanetaryPositions {

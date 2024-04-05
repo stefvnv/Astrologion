@@ -132,6 +132,8 @@ public class AstrologyModel: ObservableObject {
         }
 
         for (index, cusp) in houseCusps.enumerated() {
+            
+            print("\n --- HOUSE CUSPS HERE ---")
             if let house = House(rawValue: index + 1) {
                 let signAndDegree = zodiacSignAndDegree(fromLongitude: cusp)
                 print("\(house.name)\t\t\(signAndDegree)")
