@@ -66,4 +66,15 @@ class LearningHubViewModel: ObservableObject {
         
         return content.parts
     }
+    
+    
+    // MARK: - Chapter completion
+
+    func markChapterAsComplete(_ chapterTitle: String, isCompleted: Bool) {
+        UserDefaults.standard.set(isCompleted, forKey: chapterTitle)
+    }
+
+    func isChapterCompleted(_ chapterTitle: String) -> Bool {
+        return UserDefaults.standard.bool(forKey: chapterTitle)
+    }
 }

@@ -6,7 +6,6 @@ struct LearningHubView: View {
     init(viewModel: LearningHubViewModel) {
         self.viewModel = viewModel
 
-        // Configure the navigation bar appearance
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(Color.theme.darkBlue)

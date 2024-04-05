@@ -3,10 +3,11 @@ import SwiftUI
 struct LessonItemView: View {
     @EnvironmentObject var viewModel: LearningHubViewModel
     let chapter: Chapter
-    @State private var isCompleted = false 
+    @State private var isCompleted = false
 
     var body: some View {
-        NavigationLink(destination: ChapterDetailView(chapterContent: viewModel.contents(for: chapter.title), chapterTitle: chapter.title, isCompleted: $isCompleted)) {
+        NavigationLink(destination: ChapterDetailView(chapterContent: viewModel.contents(for: chapter.title), chapterTitle: chapter.title, isCompleted: $isCompleted)
+                        .environmentObject(viewModel)) {
             VStack(spacing: 0) {
                 Text(chapter.title)
                     .textCase(.uppercase)
@@ -28,7 +29,11 @@ struct LessonItemView: View {
                     )
             }
         }
-        .buttonStyle(PlainButtonStyle()) // This removes the default NavigationLink styling
+        .buttonStyle(PlainButtonStyle())
         .padding(.leading)
+        .onAppear {
+            isCompleted = viewModel.isChapterCompleted(chapter.title)
+        }
+        .overlay(isCompleted ? Image("complete").resizable().scaledToFit().frame(width: 30, height: 30).padding(.top, 10).padding(.trailing, 10).alignmentGuide(.top) { d in d[.top] - 8 }.alignmentGuide(.trailing) { d in d[.trailing] - 8 } : nil, alignment: .topTrailing)
     }
 }
