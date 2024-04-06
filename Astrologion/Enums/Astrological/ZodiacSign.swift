@@ -99,8 +99,7 @@ public enum ZodiacSign: String, CaseIterable {
         return self.rawValue.lowercased()
     }
 
-    ///
-    func description(for planet: Planet) -> String {
+    func signDescription(for planet: Planet) -> String {
         let placements = loadAstrologicalData()
 
         if let placement = placements.first(where: { $0.planet == planet.rawValue && $0.sign == self.rawValue }) {
@@ -109,4 +108,16 @@ public enum ZodiacSign: String, CaseIterable {
             return "No description available for \(planet.rawValue) in \(self.rawValue)."
         }
     }
-}
+
+    func houseDescription(for planet: Planet, house: House) -> String {
+        let houseDescriptions = loadAstrologicalHouseData()
+
+        if let description = houseDescriptions.first(where: { $0.planet == planet.rawValue && $0.house == house.romanNumeral }) {
+            return description.description
+        } else {
+            return "No description available for \(planet.rawValue) in the House \(house.romanNumeral)."
+        }
+    }
+
+    
+} // end

@@ -1,9 +1,9 @@
 import SwiftUI
 
-// TODO: format
 struct PlanetExpandedView: View {
     let planet: Planet
     let zodiacSign: ZodiacSign
+    let house: House
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -30,39 +30,44 @@ struct PlanetExpandedView: View {
                         }
                     }
                 }
-                .frame(height: 300) // Adjust the height as needed
+                .frame(height: 300)
 
                 Text("\(planet.rawValue) in \(zodiacSign.rawValue)")
                     .font(.largeTitle)
                     .padding()
 
-                HStack(spacing: 16) { // Add spacing if needed
+                HStack(spacing: 16) {
                     VStack {
                         Text("Element")
                         zodiacSign.element.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 60, height: 60) // Adjust symbol size as needed
+                            .frame(width: 60, height: 60)
                     }
                     VStack {
                         Text("Modality")
                         zodiacSign.modality.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 60, height: 60) // Adjust symbol size as needed
+                            .frame(width: 60, height: 60)
                     }
                     VStack {
                         Text("Polarity")
                         zodiacSign.polarity.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 60, height: 60) // Adjust symbol size as needed
+                            .frame(width: 60, height: 60)
                     }
                 }
                 .font(.title2)
                 .padding()
 
-                Text(zodiacSign.description(for: planet))
+                // sign description
+                Text(zodiacSign.signDescription(for: planet))
+                    .padding()
+                
+                // house description
+                Text(house.description(for: planet, house: house))
                     .padding()
             }
         }

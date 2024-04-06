@@ -88,13 +88,39 @@ public enum House: Int, CaseIterable {
     
     
     
+    var numericalFormattedName: String {
+        let suffix: String
+        switch self.rawValue {
+        case 1: suffix = "st"
+        case 2: suffix = "nd"
+        case 3: suffix = "rd"
+        default: suffix = "th"
+        }
+        return "\(self.rawValue)\(suffix)"
+    }
+
+    
+    
+    
     // MARK: - House Expanded View
     
     var image: String {
         return "\(self.rawValue)-house"
     }
     
-    func description(forSign sign: String) -> String {
+    func description(for planet: Planet, house: House) -> String {
+        let houseDescriptions = loadAstrologicalHouseData()
+
+        if let description = houseDescriptions.first(where: { $0.planet == planet.rawValue && $0.house == house.numericalFormattedName }) {
+            return description.description
+        } else {
+            return "No description available for \(planet.rawValue) in the \(house.numericalFormattedName)."
+        }
+    }
+
+
+
+    func cuspDescription(forSign sign: String) -> String {
         let houseDescriptions = loadHouseCuspData()
         
         if let description = houseDescriptions.first(where: { $0.house == self.rawValue && $0.sign.caseInsensitiveCompare(sign) == .orderedSame }) {

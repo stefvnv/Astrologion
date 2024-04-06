@@ -15,14 +15,17 @@ struct PlanetDetailView: View {
         .sheet(isPresented: $showExpandedView) {
             let components = zodiacSign.split(separator: " ")
             if let zodiacEnum = ZodiacSign(rawValue: String(components[0])),
-               let planetEnum = Planet(rawValue: planetName) {
-                PlanetExpandedView(planet: planetEnum, zodiacSign: zodiacEnum)
+               let planetEnum = Planet(rawValue: planetName),
+               let houseNumber = Int(housePosition.trimmingCharacters(in: CharacterSet.decimalDigits.inverted)),
+               let houseEnum = House(rawValue: houseNumber) {
+                PlanetExpandedView(planet: planetEnum, zodiacSign: zodiacEnum, house: houseEnum)
+
             } else {
-                Text("Invalid Planet or Zodiac Sign")
+                Text("Invalid Planet, Zodiac Sign, or House")
             }
         }
     }
-    
+
     @ViewBuilder
     var content: some View {
         ZStack(alignment: .leading) {

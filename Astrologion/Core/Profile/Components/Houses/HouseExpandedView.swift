@@ -10,8 +10,8 @@ struct HouseExpandedView: View {
             VStack {
                 GeometryReader { geo in
                     ZStack(alignment: .topLeading) {
-                        Image(house.image) // Use imageName to get the correct Image
-                            .resizable() // This should now work as expected
+                        Image(house.image)
+                            .resizable() 
                             .scaledToFill()
                             .frame(width: geo.size.width, height: geo.size.height)
                             .clipped()
@@ -29,7 +29,7 @@ struct HouseExpandedView: View {
                         }
                     }
                 }
-                .frame(height: 300) // Adjust the height as needed
+                .frame(height: 300)
 
                 Text("\(house.formattedName) in \(zodiacSign.rawValue)")
                     .font(.largeTitle)
@@ -43,8 +43,7 @@ struct HouseExpandedView: View {
                 }
                 .padding()
 
-                // Fetch the description with correct parameters
-                Text(house.description(forSign: zodiacSign.rawValue)) // Make sure 'description(forSign:)' is the correct function
+                Text(house.cuspDescription(forSign: zodiacSign.rawValue))
                     .padding()
             }
         }
