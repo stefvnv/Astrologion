@@ -167,11 +167,26 @@ public class AstrologyModel: ObservableObject {
     }
 
     private func calculateJulianDay(year: Int, month: Int, day: Int, hour: Int, minute: Int, date: Date, timeZone: TimeZone) -> Double {
-        let isDST = timeZone.isDaylightSavingTime(for: date)
-        let dstOffset = isDST ? timeZone.daylightSavingTimeOffset(for: date) : 0
-        return swe_julday(Int32(year), Int32(month), Int32(day), Double(hour) + Double(minute) / 60.0 - Double(dstOffset) / 3600.0, SE_GREG_CAL)
-    }
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        dateComponents.timeZone = timeZone // local time
 
+        // convert to UTC
+        guard let localDate = Calendar.current.date(from: dateComponents),
+              let utcDate = TimeZone(identifier: "UTC")?.secondsFromGMT(for: localDate) else {
+            fatalError("Failed to convert local date to UTC.")
+        }
+
+        let utcComponents = Calendar.current.dateComponents(in: TimeZone(secondsFromGMT: 0)!, from: localDate.addingTimeInterval(TimeInterval(utcDate)))
+
+        // calculate Julian Day using UTC components
+        return swe_julday(Int32(utcComponents.year!), Int32(utcComponents.month!), Int32(utcComponents.day!), Double(utcComponents.hour!) + Double(utcComponents.minute!) / 60.0, SE_GREG_CAL)
+    }
+    
     func calculateAspects() -> [AstrologicalAspectData] {
         var aspects: [AstrologicalAspectData] = []
         

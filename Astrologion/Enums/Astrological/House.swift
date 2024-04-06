@@ -54,6 +54,23 @@ public enum House: Int, CaseIterable {
         }
     }
     
+    var imageName: String {
+        switch self {
+        case .first: return "first-house"
+        case .second: return "second-house"
+        case .third: return "third-house"
+        case .fourth: return "fourth-house"
+        case .fifth: return "fifth-house"
+        case .sixth: return "sixth-house"
+        case .seventh: return "seventh-house"
+        case .eighth: return "eighth-house"
+        case .ninth: return "ninth-house"
+        case .tenth: return "tenth-house"
+        case .eleventh: return "eleventh-house"
+        case .twelfth: return "twelfth-house"
+        }
+    }
+    
     var shortHouseFormat: String {
         "\(self.rawValue)H"
     }

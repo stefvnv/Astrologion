@@ -37,14 +37,11 @@ struct HouseDetailView: View {
             .background(Color.gray.opacity(0.2))
             .cornerRadius(10)
             .overlay(
-                ZStack {
-                    Circle()
-                        .stroke(lineWidth: 2)
-                        .frame(width: 60, height: 60)
-                    Text(house.romanNumeral)
-                        .font(.title)
-                }
-                .offset(x: 30), // Move the circle to the right
+                Image(house.imageName) // Use caseName for the image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60)
+                    .offset(x: 30), // Move the image to the right
                 alignment: .trailing
             )
         }
