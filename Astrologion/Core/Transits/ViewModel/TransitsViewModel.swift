@@ -29,6 +29,15 @@ class TransitsViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    private func house(for longitude: Double, usingCusps houseCusps: [Double]) -> Int {
+        let adjustedLongitude = longitude.truncatingRemainder(dividingBy: 360)
+        if let index = houseCusps.firstIndex(where: { adjustedLongitude < $0 }) {
+            return index % 12 + 1
+        } else {
+            return 12
+        }
+    }
+    
     func loadTransitDescription() {
         self.transitDescription = loadTransitData()
     }
@@ -61,16 +70,14 @@ class TransitsViewModel: ObservableObject {
         }
     }
     
-
     func getCurrentTransits() {
         guard let chart = userChart else {
             print("User chart is nil, cannot calculate transits.")
             return
         }
-        
+
         let currentDate = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentDate)
+        let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentDate)
 
         Task {
             do {
@@ -85,18 +92,17 @@ class TransitsViewModel: ObservableObject {
                     houseSystem: .placidus
                 )
                 
-                // Clear the temporary transits list
-                self.tempNewTransits.removeAll()
+                tempNewTransits.removeAll()
                 
-                let currentPlanetaryPositions = astrologyModel.astrologicalPlanetaryPositions
-                print("Current planetary positions: \(currentPlanetaryPositions)")
+                let filteredPlanetaryPositions = astrologyModel.astrologicalPlanetaryPositions.filter { planet, _ in
+                    Planet.primary.contains(planet)
+                }
                 
-                for (planet, longitude) in currentPlanetaryPositions {
+                for (planet, longitude) in filteredPlanetaryPositions {
                     let sign = self.sign(for: longitude)
                     let house = self.house(for: longitude, usingCusps: parseHouseCusps(from: chart))
-                    let aspects = self.findAspects(for: planet, at: longitude, with: currentPlanetaryPositions)
+                    let aspects = self.findAspects(for: planet, at: longitude, with: filteredPlanetaryPositions)
                     
-                    // Create a new Transit object
                     let transit = Transit(
                         planet: planet,
                         sign: sign,
@@ -105,9 +111,7 @@ class TransitsViewModel: ObservableObject {
                         natalPlanet: planet,
                         longitude: longitude
                     )
-                    
-                    // Append the new transit to the temporary list
-                    self.tempNewTransits.append(transit)
+                    tempNewTransits.append(transit)
                 }
                 
                 DispatchQueue.main.async {
@@ -126,16 +130,10 @@ class TransitsViewModel: ObservableObject {
         return ZodiacSign.allCases.first(where: { $0.baseDegree <= longitude && $0.baseDegree + 30 > longitude }) ?? .Aries
     }
 
-    private func house(for longitude: Double, usingCusps houseCusps: [Double]) -> Int {
-        let adjustedLongitude = longitude.truncatingRemainder(dividingBy: 360)
-        let index = houseCusps.firstIndex(where: { adjustedLongitude < $0 }) ?? 11
-        return (index + 1) % 12 + 1 // This wraps the index to the house number (1-12)
-    }
-    
+
     private func findAspects(for planet: Planet, at longitude: Double, with positions: [(Planet, Double)]) -> [Aspect] {
         var aspects: [Aspect] = []
         
-        // Define orbs for each aspect type
         let orbs: [Aspect: Double] = [
             .conjunction: 2,
             .sextile: 2,
@@ -146,7 +144,7 @@ class TransitsViewModel: ObservableObject {
 
         for (otherPlanet, otherLongitude) in positions where otherPlanet != planet {
             let angleDifference = abs(longitude - otherLongitude).truncatingRemainder(dividingBy: 360)
-            let angle = min(angleDifference, 360 - angleDifference) // Correct for angles greater than 180
+            let angle = min(angleDifference, 360 - angleDifference)
             
             // Check each aspect type
             if angle <= orbs[.conjunction]! {
@@ -164,13 +162,11 @@ class TransitsViewModel: ObservableObject {
         
         return aspects
     }
-
     
     
     ///
     
-    
-    
+
     
 
     private func determineTransits(for currentPositions: [(body: Planet, longitude: Double)], with chart: Chart) -> [Transit] {

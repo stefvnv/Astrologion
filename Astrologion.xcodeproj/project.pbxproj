@@ -206,6 +206,7 @@
 		F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007092BB5D14E005741FC /* ProfileTabView.swift */; };
 		F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0070B2BB61495005741FC /* PlanetDetailView.swift */; };
 		F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C0070E2BB62F90005741FC /* Assets.xcassets */; };
+		F8CBE0662BC0D8990013A867 /* PlanetaryPlacementHouseData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */; };
 		F8D3C0832BBDDD520075A137 /* TransitsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */; };
 		F8D3C0852BBDE2E80075A137 /* TransitOverviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */; };
 		F8D3C0872BBDF3210075A137 /* TransitsPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0862BBDF3210075A137 /* TransitsPlanetView.swift */; };
@@ -388,6 +389,7 @@
 		F8C007092BB5D14E005741FC /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 		F8C0070B2BB61495005741FC /* PlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailView.swift; sourceTree = "<group>"; };
 		F8C0070E2BB62F90005741FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementHouseData.json; sourceTree = "<group>"; };
 		F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsTabView.swift; sourceTree = "<group>"; };
 		F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitOverviewDetailView.swift; sourceTree = "<group>"; };
 		F8D3C0862BBDF3210075A137 /* TransitsPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsPlanetView.swift; sourceTree = "<group>"; };
@@ -1188,6 +1190,7 @@
 			isa = PBXGroup;
 			children = (
 				F8A620962BBB0E4A00F84AFE /* PlanetaryPlacementData.json */,
+				F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */,
 				F8A6209F2BBB406100F84AFE /* HouseCuspData.json */,
 				F8A620AA2BBB79E200F84AFE /* AspectDescriptionData.json */,
 			);
@@ -1457,6 +1460,7 @@
 				F8A620AB2BBB79E200F84AFE /* AspectDescriptionData.json in Resources */,
 				F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */,
 				F8A620972BBB0E4A00F84AFE /* PlanetaryPlacementData.json in Resources */,
+				F8CBE0662BC0D8990013A867 /* PlanetaryPlacementHouseData.json in Resources */,
 				F819B4DD2BAC970C001B138A /* Preview Assets.xcassets in Resources */,
 				F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */,
 				F819B4E42BAC9809001B138A /* GoogleService-Info.plist in Resources */,

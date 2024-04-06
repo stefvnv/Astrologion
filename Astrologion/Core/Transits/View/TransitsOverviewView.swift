@@ -3,6 +3,7 @@ import SwiftUI
 struct TransitsOverviewView: View {
     let user: User
     @ObservedObject var transitsViewModel: TransitsViewModel
+    @State private var selectedPlanet: Planet?
 
     var body: some View {
         VStack {
@@ -26,22 +27,11 @@ struct TransitsOverviewView: View {
             if transitsViewModel.isLoadingChartData {
                 ProgressView()
             } else {
-                // Iterate over a fixed list of planets, ensuring all are displayed in order
-                ForEach(Planet.allCases.filter { ![Planet.Ascendant, .Midheaven, .Lilith, .NorthNode].contains($0) }, id: \.self) { planet in
-                    // Find the corresponding transit or provide a default value
+                ForEach(Planet.allCases.filter { ![.Ascendant, .Midheaven, .Lilith, .NorthNode].contains($0) }, id: \.self) { planet in
                     if let matchingTransit = transitsViewModel.currentTransits.first(where: { $0.planet == planet }) {
-                        TransitOverviewDetailView(
-                            planet: planet,
-                            sign: matchingTransit.sign,
-                            house: House(rawValue: matchingTransit.house) ?? .first
-                        )
+                        TransitOverviewDetailView(planet: planet, sign: matchingTransit.sign, house: House(rawValue: matchingTransit.house) ?? .first)
                     } else {
-                        // Provide default values if no matching transit is found
-                        TransitOverviewDetailView(
-                            planet: planet,
-                            sign: ZodiacSign.Aries, // Placeholder sign
-                            house: House.first // Placeholder house
-                        )
+                        TransitOverviewDetailView(planet: planet, sign: ZodiacSign.Aries, house: House.first)
                     }
                 }
                 .padding(.bottom, 20)
