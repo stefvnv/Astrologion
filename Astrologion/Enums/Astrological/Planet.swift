@@ -93,4 +93,5 @@ public enum Planet: String, CaseIterable {
     static let primary: [Planet] = [
         .Sun, .Moon, .Mercury, .Venus, .Mars, .Jupiter, .Saturn, .Uranus, .Neptune, .Pluto
     ]
+
 }

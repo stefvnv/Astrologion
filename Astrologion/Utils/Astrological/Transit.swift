@@ -5,15 +5,12 @@ struct Transit: Identifiable {
     let planet: Planet
     let sign: ZodiacSign
     let house: Int
-    let aspect: Aspect
+    let aspects: [Aspect]
     let natalPlanet: Planet
     let longitude: Double
 
-    
-    // MARK: - Transit Planet Detail View
-
-    func title(from transitDescriptions: [TransitDescription]) -> String {
-        let transitKey = descriptionKey()
+    func title(from transitDescriptions: [TransitDescription], for aspect: Aspect) -> String {
+        let transitKey = descriptionKey(for: aspect)
         if let descriptionData = transitDescriptions.first(where: {
             $0.transit.compare(transitKey, options: .caseInsensitive) == .orderedSame
         }) {
@@ -23,8 +20,8 @@ struct Transit: Identifiable {
         }
     }
 
-    func description(from transitDescriptions: [TransitDescription]) -> String {
-        let transitKey = descriptionKey()
+    func description(from transitDescriptions: [TransitDescription], for aspect: Aspect) -> String {
+        let transitKey = descriptionKey(for: aspect)
         if let descriptionData = transitDescriptions.first(where: {
             $0.transit.compare(transitKey, options: .caseInsensitive) == .orderedSame
         }) {
@@ -34,13 +31,7 @@ struct Transit: Identifiable {
         }
     }
 
-    func descriptionKey() -> String {
-        let components = [
-            planet.rawValue,
-            aspect.rawValue,
-            natalPlanet.rawValue
-        ]
-        let transitKey = components.joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
-        return transitKey
+    func descriptionKey(for aspect: Aspect) -> String {
+        "\(planet.rawValue) \(aspect.rawValue) \(natalPlanet.rawValue)"
     }
 }

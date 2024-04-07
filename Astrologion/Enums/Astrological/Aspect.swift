@@ -112,10 +112,9 @@ public enum Aspect: String, CaseIterable {
     
     
     // MARK: - Transits
-    
-    func isWithinOrb(of angleDifference: Double) -> Bool {
-        let minAngle = angle - orb
-        let maxAngle = angle + orb
-        return angleDifference >= minAngle && angleDifference <= maxAngle
+
+    func isWithinOrb(of angle: Double) -> Bool {
+        return abs(self.angle - angle) <= self.transitOrb
     }
-}
+
+} // end
