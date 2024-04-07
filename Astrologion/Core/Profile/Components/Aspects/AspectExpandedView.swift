@@ -5,21 +5,18 @@ struct AspectExpandedView: View {
     let trailingPlanet: String
     let aspectType: Aspect
     @Environment(\.dismiss) var dismiss
-    
+
     var body: some View {
         ScrollView {
             VStack {
-                // Image at the top
                 GeometryReader { geo in
                     ZStack(alignment: .topLeading) {
-                        // Aspect image
                         Image(aspectType.image)
                             .resizable()
                             .scaledToFill()
                             .frame(width: geo.size.width, height: geo.size.height)
                             .clipped()
 
-                        // Back button
                         Button(action: {
                             dismiss()
                         }) {
@@ -33,25 +30,23 @@ struct AspectExpandedView: View {
                         }
                     }
                 }
-                .frame(height: 300) // Adjust height as needed
+                .frame(height: 300)
 
-                // Title
                 Text("\(leadingPlanet) \(aspectType.relationship) \(trailingPlanet)")
                     .font(.largeTitle)
                     .padding()
 
-                // Aspect symbol
                 Text(aspectType.symbol)
                     .font(.title)
                     .padding()
 
-                // Keyword
-                Text(aspectType.keyword)
+                let aspectDetails = aspectType.description(forLeadingPlanet: leadingPlanet, trailingPlanet: trailingPlanet)
+                
+                Text(aspectDetails.title)
                     .font(.title2)
                     .padding()
 
-                // Description
-                Text(aspectType.description(forLeadingPlanet: leadingPlanet, trailingPlanet: trailingPlanet))
+                Text(aspectDetails.description)
                     .padding()
             }
         }

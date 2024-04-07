@@ -4,6 +4,7 @@ struct AspectsDescription: Decodable {
     let leadingPlanet: String
     let trailingPlanet: String
     let aspectType: String
+    let title: String
     let description: String
 }
 

@@ -100,14 +100,15 @@ public enum Aspect: String, CaseIterable {
         return self.rawValue.lowercased()
     }
     
-    func description(forLeadingPlanet leadingPlanet: String, trailingPlanet: String) -> String {
+    func description(forLeadingPlanet leadingPlanet: String, trailingPlanet: String) -> (description: String, title: String) {
         let aspectDescriptions = loadAspectDescriptions()
-        if let description = aspectDescriptions.first(where: { $0.leadingPlanet == leadingPlanet && $0.trailingPlanet == trailingPlanet && $0.aspectType == self.rawValue })?.description {
-            return description
+        if let aspectData = aspectDescriptions.first(where: { $0.leadingPlanet == leadingPlanet && $0.trailingPlanet == trailingPlanet && $0.aspectType == self.rawValue }) {
+            return (aspectData.description, aspectData.title)
         } else {
-            return "Description not found for \(leadingPlanet) \(self.rawValue) \(trailingPlanet)."
+            return ("Description not found for \(leadingPlanet) \(self.rawValue) \(trailingPlanet).", "Title not found")
         }
     }
+
     
     
     // MARK: - Transits
