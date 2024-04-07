@@ -3,6 +3,7 @@ import SwiftUI
 struct TransitsOverviewView: View {
     let user: User
     @ObservedObject var transitsViewModel: TransitsViewModel
+    @Binding var selectedTab: TransitTab 
     @State private var selectedPlanet: Planet?
 
     var body: some View {
@@ -29,12 +30,17 @@ struct TransitsOverviewView: View {
             } else {
                 ForEach(Planet.allCases.filter { ![.Ascendant, .Midheaven, .Lilith, .NorthNode].contains($0) }, id: \.self) { planet in
                     if let matchingTransit = transitsViewModel.currentTransits.first(where: { $0.planet == planet }) {
-                        TransitOverviewDetailView(planet: planet, sign: matchingTransit.sign, house: House(rawValue: matchingTransit.house) ?? .first)
+                        TransitOverviewDetailView(planet: planet, sign: matchingTransit.sign, house: House(rawValue: matchingTransit.house) ?? .first) {
+                            self.selectedTab = TransitTab(rawValue: planet.rawValue.lowercased()) ?? .overview
+                        }
                     } else {
-                        TransitOverviewDetailView(planet: planet, sign: ZodiacSign.Aries, house: House.first)
+                        TransitOverviewDetailView(planet: planet, sign: ZodiacSign.Aries, house: House.first) {
+                            self.selectedTab = TransitTab(rawValue: planet.rawValue.lowercased()) ?? .overview
+                        }
                     }
                 }
                 .padding(.bottom, 20)
+
             }
         }
     }

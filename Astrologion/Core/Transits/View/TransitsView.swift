@@ -17,7 +17,7 @@ struct TransitsView: View {
             ScrollView {
                 switch selectedTab {
                 case .overview:
-                    TransitsOverviewView(user: user, transitsViewModel: transitsViewModel)
+                    TransitsOverviewView(user: user, transitsViewModel: transitsViewModel, selectedTab: $selectedTab)
                 default:
                     if let planet = Planet(rawValue: selectedTab.rawValue.capitalized) {
                         TransitsPlanetView(user: user, transitsViewModel: transitsViewModel, selectedPlanet: planet)

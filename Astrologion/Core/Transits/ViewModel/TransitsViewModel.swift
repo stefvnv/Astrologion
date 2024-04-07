@@ -91,18 +91,19 @@ class TransitsViewModel: ObservableObject {
                     longitude: londonCoordinates.longitude,
                     houseSystem: .placidus
                 )
-                
-                tempNewTransits.removeAll()
-                
+
+                var newTransits = [Transit]()  // Temporary storage for new transit data
+
+                // Populate newTransits with transit data
                 let filteredPlanetaryPositions = astrologyModel.astrologicalPlanetaryPositions.filter { planet, _ in
                     Planet.primary.contains(planet)
                 }
-                
+
                 for (planet, longitude) in filteredPlanetaryPositions {
                     let sign = self.sign(for: longitude)
                     let house = self.house(for: longitude, usingCusps: parseHouseCusps(from: chart))
                     let aspects = self.findAspects(for: planet, at: longitude, with: filteredPlanetaryPositions)
-                    
+
                     let transit = Transit(
                         planet: planet,
                         sign: sign,
@@ -111,20 +112,27 @@ class TransitsViewModel: ObservableObject {
                         natalPlanet: planet,
                         longitude: longitude
                     )
-                    tempNewTransits.append(transit)
+                    newTransits.append(transit)
                 }
-                
-                DispatchQueue.main.async {
-                    self.currentTransits = self.tempNewTransits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
+
+                // Define a closure that captures newTransits safely before it's used on the main thread
+                let updateTransits: @Sendable () -> Void = { [newTransits] in
+                    self.currentTransits = newTransits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
                     print("Transits updated: \(self.currentTransits)")
                 }
+
+                // Execute the closure on the main thread
+                DispatchQueue.main.async(execute: updateTransits)
             } catch {
+                // Handle errors on the main thread
                 DispatchQueue.main.async {
                     print("Error calculating transits: \(error.localizedDescription)")
                 }
             }
         }
     }
+
+
     
     private func sign(for longitude: Double) -> ZodiacSign {
         return ZodiacSign.allCases.first(where: { $0.baseDegree <= longitude && $0.baseDegree + 30 > longitude }) ?? .Aries
