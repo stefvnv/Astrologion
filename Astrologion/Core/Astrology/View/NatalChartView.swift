@@ -298,34 +298,52 @@ class NatalChartView: UIView {
     }
     
     
-    ///
     private func drawAspects(context: CGContext, houseInnerRadius: CGFloat) {
         guard shouldDrawAspects, let viewModel = viewModel else { return }
-        
+
         let aspects = viewModel.aspects
         let planetPositions = viewModel.getPlanetPositions(in: bounds)
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         
+        let conjunctionCircleRadius: CGFloat = 8.0
+
         for aspectData in aspects {
-            guard let startPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet1 })?.position,
-                  let endPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet2 })?.position else {
+            guard let startPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet1 })?.position else {
                 continue
             }
-            
-            // Calculate the intersection points for both planets
-            let startIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: startPlanetPosition)
-            let endIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: endPlanetPosition)
-            
-            // Draw the aspect line between the two intersection points
-            context.setStrokeColor(aspectData.aspect.uiColor.cgColor)
-            context.setLineWidth(2)
-            context.beginPath()
-            context.move(to: startIntersection)
-            context.addLine(to: endIntersection)
-            context.strokePath()
+
+            if aspectData.aspect == .conjunction {
+                   let intersectionPoint = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: startPlanetPosition)
+                   
+                   let direction = CGVector(dx: intersectionPoint.x - center.x, dy: intersectionPoint.y - center.y).normalized()
+                   
+                   let circleCenter = CGPoint(
+                       x: intersectionPoint.x - conjunctionCircleRadius * direction.dx,
+                       y: intersectionPoint.y - conjunctionCircleRadius * direction.dy
+                   )
+
+                   context.setStrokeColor(aspectData.aspect.uiColor.cgColor)
+                   context.setLineWidth(1)
+                   context.addArc(center: circleCenter, radius: conjunctionCircleRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
+                   context.strokePath()
+            } else {
+                guard let endPlanetPosition = planetPositions.first(where: { $0.planet == aspectData.planet2 })?.position else {
+                    continue
+                }
+                
+                let startIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: startPlanetPosition)
+                let endIntersection = intersectionPointOnCircle(circleCenter: center, circleRadius: houseInnerRadius, externalPoint: endPlanetPosition)
+                
+                context.setStrokeColor(aspectData.aspect.uiColor.cgColor)
+                context.setLineWidth(2)
+                context.beginPath()
+                context.move(to: startIntersection)
+                context.addLine(to: endIntersection)
+                context.strokePath()
+            }
         }
     }
-    
+
     
     ///
     private func intersectionPointOnCircle(circleCenter: CGPoint, circleRadius: CGFloat, externalPoint: CGPoint) -> CGPoint {

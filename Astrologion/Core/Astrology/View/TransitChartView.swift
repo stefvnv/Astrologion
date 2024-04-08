@@ -57,10 +57,14 @@ class TransitChartView: UIView {
 
         drawTransitingPlanets(context: context, rect: rect, transits: viewModel.transits, ascendant: viewModel.ascendant ?? 0.0)
 
+        // draw transit lines
         let transitAspectPositions = viewModel.calculateTransitAspectPositions(in: rect)
         for transitAspectPosition in transitAspectPositions {
             drawTransitAspect(context: context, position: transitAspectPosition.position, natalPosition: transitAspectPosition.natalPosition, houseInnerRadius: natalChartView.houseInnerRadius, aspect: transitAspectPosition.aspect)
         }
+        
+        // draw conjunction circles
+        drawConjunctionCircles(context: context, viewModel: viewModel, rect: rect)
 
         context.restoreGState()
     }
@@ -100,17 +104,43 @@ class TransitChartView: UIView {
         context.addLine(to: scaledNatalIntersection)
         context.strokePath()
     }
+    
+    
+    private func drawConjunctionCircles(context: CGContext, viewModel: TransitChartViewModel, rect: CGRect) {
+        let conjunctions = viewModel.transits.filter { transit in
+            transit.aspects.contains { $0 == .conjunction }
+        }
+        let radius = natalChartView?.houseInnerRadius ?? 0
+        let center = CGPoint(x: rect.midX, y: rect.midY)
+        
+        let adjustedRadius = radius * 0.74
+        
+        context.setStrokeColor(Aspect.conjunction.uiColor.cgColor)
+        context.setLineWidth(1)
+        
+        for conjunction in conjunctions {
+            let planetPosition = AstrologicalCalculations.calculatePositionForPlanet(conjunction.planet, at: conjunction.longitude, usingAscendant: viewModel.ascendant ?? 0.0, in: rect)
+            let intersectionPoint = intersectionPointOnCircle(circleCenter: center, circleRadius: adjustedRadius, externalPoint: planetPosition)
+            
+            context.addArc(center: intersectionPoint, radius: 8, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
+            
+            context.strokePath()
+        }
+    }
 
+    private func intersectionPointOnCircle(circleCenter: CGPoint, circleRadius: CGFloat, externalPoint: CGPoint) -> CGPoint {
+        let dx = externalPoint.x - circleCenter.x
+        let dy = externalPoint.y - circleCenter.y
+        let distance = sqrt(dx * dx + dy * dy)
+        let scale = circleRadius / distance
+        return CGPoint(x: circleCenter.x + scale * dx, y: circleCenter.y + scale * dy)
+    }
+    
     private func scalePoint(point: CGPoint, center: CGPoint, scale: CGFloat) -> CGPoint {
         let dx = point.x - center.x
         let dy = point.y - center.y
         return CGPoint(x: center.x + scale * dx, y: center.y + scale * dy)
     }
 
-    private func intersectionPointOnCircle(circleCenter: CGPoint, circleRadius: CGFloat, externalPoint: CGPoint) -> CGPoint {
-        let dx = externalPoint.x - circleCenter.x
-        let dy = externalPoint.y - circleCenter.y
-        let scale = circleRadius / sqrt(dx * dx + dy * dy)
-        return CGPoint(x: circleCenter.x + scale * dx, y: circleCenter.y + scale * dy)
-    }
-}
+    
+} // end

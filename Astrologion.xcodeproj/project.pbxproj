@@ -135,6 +135,7 @@
 		F897519D2BB8526F00138D25 /* OrbitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897519C2BB8526F00138D25 /* OrbitTabView.swift */; };
 		F89751A52BB8865200138D25 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A42BB8865200138D25 /* SearchViewModel.swift */; };
 		F89751A72BB89C1B00138D25 /* OrbitTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A62BB89C1B00138D25 /* OrbitTab.swift */; };
+		F897CB2D2BC356BC00A804F7 /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897CB2C2BC356BC00A804F7 /* CGVector.swift */; };
 		F8A1F87F2BBEA2D500A604AF /* AstrologicalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */; };
 		F8A1F8812BBEA68200A604AF /* TrasitChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */; };
 		F8A1F8862BBEC98200A604AF /* LearningHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8852BBEC98200A604AF /* LearningHubView.swift */; };
@@ -319,6 +320,7 @@
 		F89751A42BB8865200138D25 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F89751A62BB89C1B00138D25 /* OrbitTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTab.swift; sourceTree = "<group>"; };
 		F89751AA2BB8EDD300138D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F897CB2C2BC356BC00A804F7 /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
 		F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalCalculations.swift; sourceTree = "<group>"; };
 		F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrasitChartViewRepresentable.swift; sourceTree = "<group>"; };
 		F8A1F8852BBEC98200A604AF /* LearningHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubView.swift; sourceTree = "<group>"; };
@@ -529,11 +531,12 @@
 		F819B55B2BACBE97001B138A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F8C006F42BB5832F005741FC /* CGFloat.swift */,
 				F819B6102BACE4A4001B138A /* Color.swift */,
+				F8C006F42BB5832F005741FC /* CGFloat.swift */,
+				F897CB2C2BC356BC00A804F7 /* CGVector.swift */,
+				F8C006F62BB58391005741FC /* Double.swift */,
 				F819B60E2BACE491001B138A /* PreviewProvider.swift */,
 				F819B6122BACE4B7001B138A /* Timestamp.swift */,
-				F8C006F62BB58391005741FC /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1543,6 +1546,7 @@
 				F819B5AB2BACC425001B138A /* UserListViewModel.swift in Sources */,
 				F819B5CD2BACE00A001B138A /* ConversationsCell.swift in Sources */,
 				F8B7BDB72BBCAB6A0014DD7A /* TransitsViewModel.swift in Sources */,
+				F897CB2D2BC356BC00A804F7 /* CGVector.swift in Sources */,
 				F819B5F32BACE20D001B138A /* EditProfileViewModel.swift in Sources */,
 				F819B5FB2BACE2B8001B138A /* SettingsRowView.swift in Sources */,
 				F8BAA9A32BB7930E002E349C /* PolaritySummaryView.swift in Sources */,
