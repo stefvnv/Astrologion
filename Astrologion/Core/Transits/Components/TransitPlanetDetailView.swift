@@ -5,11 +5,11 @@ struct TransitsPlanetDetailView: View {
     var transit: Transit
 
     var body: some View {
-        ScrollView { // Encapsulate in ScrollView for multiple items
+        ScrollView {
             VStack {
-                ForEach(Array(transit.aspects.enumerated()), id: \.offset) { _, aspect in
+                ForEach(Array(transit.aspects.enumerated()), id: \.offset) { index, aspect in
                     VStack {
-                        Text("\(transit.planet.rawValue) \(aspect.rawValue) \(transit.natalPlanet.rawValue)")
+                        Text("\(transit.planet.rawValue) \(aspect.relationship) \(transit.natalPlanet?.rawValue ?? "Transit")")
                             .font(.headline)
                             .multilineTextAlignment(.center)
                             .padding(.top, 5)
@@ -30,14 +30,19 @@ struct TransitsPlanetDetailView: View {
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                                 .padding(.bottom, 5)
+                        } else {
+                            Text("No description available.")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .padding(.bottom, 5)
                         }
                     }
                     .padding()
-                    .frame(maxWidth: .infinity) // Ensure it takes up full width
+                    .frame(maxWidth: .infinity)
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
-                    .padding(.horizontal) // Adjust horizontal padding if needed
-                    .padding(.vertical, 5) // Add vertical padding for spacing between items
+                    .padding(.horizontal)
+                    .padding(.vertical, 5)
                 }
             }
         }

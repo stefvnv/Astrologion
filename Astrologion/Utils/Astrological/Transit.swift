@@ -1,12 +1,12 @@
 import Foundation
 
-struct Transit: Identifiable {
+struct Transit: Identifiable, Equatable {
     let id = UUID()
     let planet: Planet
     let sign: ZodiacSign
     let house: Int
     let aspects: [Aspect]
-    let natalPlanet: Planet
+    let natalPlanet: Planet?
     let longitude: Double
 
     func title(from transitDescriptions: [TransitDescription], for aspect: Aspect) -> String {
@@ -32,6 +32,14 @@ struct Transit: Identifiable {
     }
 
     func descriptionKey(for aspect: Aspect) -> String {
-        "\(planet.rawValue) \(aspect.rawValue) \(natalPlanet.rawValue)"
+        let natalOrTransitingPlanetName = natalPlanet?.rawValue ?? planet.rawValue
+        return "\(planet.rawValue) \(aspect.rawValue) \(natalOrTransitingPlanetName)"
+    }
+
+
+// MARK: - Equitable Conformance
+    
+    static func ==(lhs: Transit, rhs: Transit) -> Bool {
+        lhs.id == rhs.id
     }
 }

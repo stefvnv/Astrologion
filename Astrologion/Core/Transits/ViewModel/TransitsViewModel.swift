@@ -36,24 +36,19 @@ class TransitsViewModel: ObservableObject {
     }
 
     private func house(for longitude: Double, usingCusps houseCusps: [Double]) -> Int {
-        // Adjust longitudes to ensure they fall within the 0° to 360° range.
         let adjustedLongitude = longitude.truncatingRemainder(dividingBy: 360)
         let adjustedCusps = houseCusps.map { $0.truncatingRemainder(dividingBy: 360) }
 
-        // Find the house cusp that just precedes the planet's longitude.
         let precedingCuspIndex = adjustedCusps.enumerated().first { index, cusp in
-            // Special handling for the transition from Pisces to Aries.
             if cusp < adjustedCusps[0] {
                 return adjustedLongitude >= 0 && adjustedLongitude < cusp
             }
             return adjustedLongitude < cusp
         }?.offset
 
-        // Determine the house based on the preceding cusp index.
         if let index = precedingCuspIndex {
-            return index == 0 ? 12 : index // Handle the transition between the last and first houses.
+            return index == 0 ? 12 : index
         } else {
-            // If no preceding cusp is found, the planet is in the last house.
             return 12
         }
     }
@@ -114,42 +109,57 @@ class TransitsViewModel: ObservableObject {
 
                 var newTransits: [Transit] = []
 
-                let transitingPlanetsDict = astrologyModel.astrologicalPlanetaryPositions
-                    .filter { primaryTransitingPlanets.contains($0.body) }
-                    .reduce(into: [Planet: Double]()) { dict, entry in
-                        dict[entry.body] = entry.longitude
+                let ascendantLongitude = chart.houseCusps["House 1"].flatMap(LongitudeParser.parseLongitude)
+                let midheavenLongitude = chart.houseCusps["House 10"].flatMap(LongitudeParser.parseLongitude)
+
+                for transitingPlanetEntry in astrologyModel.astrologicalPlanetaryPositions {
+                    guard let transitingPlanet = Planet(rawValue: transitingPlanetEntry.body.rawValue),
+                          primaryTransitingPlanets.contains(transitingPlanet) else {
+                        continue
                     }
 
-                let natalPositionsDict = inclusiveNatalPoints.compactMap { planet -> (Planet, Double)? in
-                    guard let value = chart.planetaryPositions[planet.rawValue],
-                          let longitude = LongitudeParser.parseLongitude(from: value) else {
-                        return nil
-                    }
-                    return (planet, longitude)
-                }.reduce(into: [Planet: Double]()) { dict, entry in
-                    dict[entry.0] = entry.1
-                }
-
-                for (transitingPlanet, transitingLongitude) in transitingPlanetsDict {
+                    let transitingLongitude = transitingPlanetEntry.longitude
                     let sign = self.sign(for: transitingLongitude)
                     let house = self.house(for: transitingLongitude, usingCusps: parseHouseCusps(from: chart))
-                    
-                    if transitingPlanet == .Pluto {
-                        print("Pluto's House: \(house)")
+
+                    var aspects: [Aspect] = []
+                    var aspectNatalPlanets: [Planet] = []
+
+                    for (natalPlanetName, natalValue) in chart.planetaryPositions {
+                        guard let natalLongitude = LongitudeParser.parseLongitude(from: natalValue),
+                              let natalPlanet = Planet(rawValue: natalPlanetName) else {
+                            continue
+                        }
+
+                        let foundAspects = self.findAspects(between: transitingLongitude, and: natalLongitude)
+                        if !foundAspects.isEmpty {
+                            aspects.append(contentsOf: foundAspects)
+                            aspectNatalPlanets.append(natalPlanet)
+                        }
                     }
 
-                    for (natalPlanet, natalLongitude) in natalPositionsDict {
-                        let aspects = self.findAspects(between: transitingLongitude, and: natalLongitude)
+                    if let ascendantLongitude = ascendantLongitude {
+                        let foundAspects = self.findAspects(between: transitingLongitude, and: ascendantLongitude)
+                        if !foundAspects.isEmpty {
+                            aspects.append(contentsOf: foundAspects)
+                            aspectNatalPlanets.append(.Ascendant)
+                        }
+                    }
 
-                        aspects.forEach { aspect in
-                            let transit = Transit(
-                                planet: transitingPlanet,
-                                sign: sign,
-                                house: house,
-                                aspects: [aspect],
-                                natalPlanet: natalPlanet,
-                                longitude: transitingLongitude
-                            )
+                    if let midheavenLongitude = midheavenLongitude {
+                        let foundAspects = self.findAspects(between: transitingLongitude, and: midheavenLongitude)
+                        if !foundAspects.isEmpty {
+                            aspects.append(contentsOf: foundAspects)
+                            aspectNatalPlanets.append(.Midheaven)
+                        }
+                    }
+
+                    if aspects.isEmpty {
+                        let transit = Transit(planet: transitingPlanet, sign: sign, house: house, aspects: [], natalPlanet: nil, longitude: transitingLongitude)
+                        newTransits.append(transit)
+                    } else {
+                        for (index, aspect) in aspects.enumerated() {
+                            let transit = Transit(planet: transitingPlanet, sign: sign, house: house, aspects: [aspect], natalPlanet: aspectNatalPlanets[index], longitude: transitingLongitude)
                             newTransits.append(transit)
                         }
                     }
@@ -158,6 +168,7 @@ class TransitsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.currentTransits = newTransits.sorted(by: { $0.planet.rawValue < $1.planet.rawValue })
                     print("Transits updated: \(self.currentTransits)")
+                    self.objectWillChange.send()
                 }
             } catch {
                 DispatchQueue.main.async {

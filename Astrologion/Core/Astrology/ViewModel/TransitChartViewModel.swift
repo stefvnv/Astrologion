@@ -13,10 +13,6 @@ class TransitChartViewModel {
         self.houseCusps = houseCusps
     }
 
-    func updateTransits(newTransits: [Transit]) {
-        self.transits = newTransits
-    }
-
     func calculateTransitAspectPositions(in rect: CGRect) -> [(position: CGPoint, natalPosition: CGPoint, aspect: Aspect)] {
         guard let ascendant = ascendant, let natalChart = self.natalChart else { return [] }
         
@@ -30,12 +26,13 @@ class TransitChartViewModel {
                 in: rect
             )
             
-            guard let natalLongitude = natalChart.planetaryPositions[transit.natalPlanet.rawValue].flatMap(LongitudeParser.parseLongitude) else {
-                continue
+            guard let natalPlanet = transit.natalPlanet,
+                  let natalLongitude = natalChart.planetaryPositions[natalPlanet.rawValue].flatMap(LongitudeParser.parseLongitude) else {
+                continue 
             }
             
             let natalPosition = AstrologicalCalculations.calculatePositionForPlanet(
-                transit.natalPlanet,
+                natalPlanet,
                 at: natalLongitude,
                 usingAscendant: ascendant,
                 in: rect
@@ -47,12 +44,5 @@ class TransitChartViewModel {
         }
         return transitAspectPositions
     }
-
     
 } // end
-
-struct TransitPosition {
-    let transit: Transit
-    let position: CGPoint
-    let natalPosition: CGPoint 
-}

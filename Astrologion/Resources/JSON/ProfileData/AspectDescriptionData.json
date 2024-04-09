@@ -1196,6 +1196,13 @@
     {
         "leadingPlanet": "Mercury",
         "trailingPlanet": "Venus",
+        "aspectType": "Square",
+        "title": "Communicative Dissonance",
+        "description": "The Mercury square Venus aspect introduces tension between the realms of communication and harmony, potentially leading to challenges in expressing affection or navigating social interactions smoothly. This aspect may manifest as difficulty in aligning intellectual pursuits with personal values or artistic interests, occasionally resulting in misunderstandings or perceived insensitivity in relationships. The challenge lies in finding constructive ways to blend logical thinking with the appreciation of beauty and grace, fostering a balanced approach to both intellectual and aesthetic expressions. Positively, addressing this tension can lead to a more nuanced understanding of the interplay between thought and emotion, enhancing both personal and social dynamics."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Venus",
         "aspectType": "Trine",
         "title": "Eloquent Charm",
         "description": "The Mercury trine Venus aspect denotes a fluid and beneficial relationship between the realms of mind and heart, promoting eloquence, artistic expression, and a knack for creating harmony in relationships. This trine enhances the ability to communicate with grace and aesthetic sensitivity, often resulting in a well-liked individual known for their diplomatic skills and artistic talents. Challenges are rare but may include taking this natural communicative harmony for granted. Positively, this aspect suggests a person who excels in artistic, literary, or social fields, using their charm and wit to foster positive connections.",
@@ -1227,6 +1234,13 @@
         "aspectType": "Sextile",
         "title": "Assertive Reasoning",
         "description": "The Mercury sextile Mars aspect provides a supportive link that enhances the ability to think and communicate assertively, combining mental sharpness with action-oriented energy. This aspect encourages forthright communication and quick decision-making, facilitating productive discussions and initiatives. Challenges are minimal but may include balancing assertiveness with sensitivity. Positively, it suggests an individual adept at translating thoughts into action, using their intellectual prowess to navigate and resolve challenges effectively.",
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Mars",
+        "aspectType": "Square",
+        "title": "Impulsive Words",
+        "description": "The Mercury square Mars aspect signifies a dynamic tension between thought and action, often leading to hasty communication and impulsive decisions. This aspect can manifest as a sharp tongue or a tendency to engage in debates and arguments, stemming from a quick mind and a strong desire to assert one's opinions. The challenge lies in moderating the impulse to react immediately, cultivating patience, and employing strategic thinking in communication. Positively, when harnessed constructively, this aspect can endow one with the ability to think and act swiftly in situations that require immediate responses, turning potential conflicts into opportunities for dynamic problem-solving and growth.",
     },
     {
         "leadingPlanet": "Mercury",
@@ -1265,6 +1279,13 @@
         "aspectType": "Sextile",
         "title": "Curious Optimism",
         "description": "The Mercury sextile Jupiter aspect offers a harmonious connection that enhances intellectual curiosity and the capacity for positive thinking, blending mental acuity with a forward-looking perspective. This aspect fosters growth in understanding and communication, making it easier to grasp complex subjects and to express oneself with clarity and moral integrity. Challenges are minimal but may include maintaining focus amidst a broad range of interests. Positively, it suggests an individual who navigates life with an open mind and an eager spirit, often excelling in educational or cultural pursuits."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Jupiter",
+        "aspectType": "Square",
+        "title": "Overstretched Ideas",
+        "description": "The Mercury square Jupiter aspect indicates a tension between the details and the broader perspective, often leading to overly optimistic thinking or grandiose plans without attention to practicalities. This aspect can manifest as a tendency to make promises that are difficult to keep or to overlook important details in the pursuit of big ideas. The challenge lies in finding a balance between expansive thinking and practical implementation, ensuring that ideas are grounded in reality. Positively, when this aspect is navigated successfully, it can result in the ability to blend visionary thinking with effective communication, leading to innovative solutions that are both ambitious and achievable.",
     },
     {
         "leadingPlanet": "Mercury",
@@ -1310,6 +1331,13 @@
     {
         "leadingPlanet": "Mercury",
         "trailingPlanet": "Saturn",
+        "aspectType": "Square",
+        "title": "Rigorous Thought",
+        "description": "The Mercury square Saturn aspect presents a challenge between the flow of ideas and the rigidity of structures, often leading to communication hurdles or negative thinking. This aspect can manifest as a tendency towards skepticism, critical speech, or difficulty in expressing thoughts freely due to fear of judgment or failure. The challenge lies in overcoming mental barriers and restrictive patterns, encouraging a more open yet disciplined approach to communication and thought processes. Positively, mastering this aspect can lead to a meticulous and structured way of thinking, where ideas are carefully considered and communicated with precision and authority.",
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Saturn",
         "aspectType": "Trine",
         "title": "Structured Communication",
         "description": "The Mercury trine Saturn aspect denotes a harmonious and productive relationship between intellect and discipline, promoting a structured and responsible approach to thinking and communicating. This trine enhances organizational skills, attention to detail, and a respect for tradition and learning. Challenges are rare but may include a tendency towards conventional thinking. Positively, this aspect indicates an individual who combines analytical precision with practical wisdom, often excelling in academic, professional, or technical fields where thoroughness and clarity are valued."
@@ -1345,6 +1373,13 @@
         "aspectType": "Sextile",
         "title": "Creative Intellect",
         "description": "The Mercury sextile Uranus aspect provides a supportive link that encourages creative and inventive thinking, blending Mercury's mental dexterity with Uranus's flair for innovation and originality. This aspect stimulates intellectual curiosity and a knack for problem-solving in unique ways. Challenges are minimal but may include harnessing this inventive energy constructively. Positively, it suggests an individual who approaches life with a refreshing perspective, often contributing novel ideas and solutions in both personal and professional contexts."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Uranus",
+        "aspectType": "Square",
+        "title": "Disruptive Insights",
+        "description": "The Mercury square Uranus aspect signifies a clash between conventional thought processes and the urge for radical innovation, often resulting in sudden insights or disruptive communication styles. This aspect can manifest as restlessness, impatience with routine thinking, or a propensity for controversial ideas. The challenge lies in channeling the electric mental energy into constructive changes without causing unnecessary discord. Positively, when navigated with awareness, this aspect can foster groundbreaking ideas and a unique way of problem-solving, encouraging the individual to pioneer new ways of thinking and communicating.",
     },
     {
         "leadingPlanet": "Mercury",
@@ -1388,6 +1423,13 @@
     {
         "leadingPlanet": "Mercury",
         "trailingPlanet": "Neptune",
+        "aspectType": "Square",
+        "title": "Foggy Perceptions",
+        "description": "The Mercury square Neptune aspect introduces a layer of confusion or misinterpretation to communication and thinking, blurring the lines between reality and fantasy. This aspect can manifest as a tendency towards daydreaming, difficulty in concentrating, or susceptibility to deception. The challenge lies in discerning truth from illusion and applying a more grounded approach to ideas and perceptions. Positively, when navigated carefully, this aspect can enhance creative thinking and the ability to communicate with empathy and artistic flair, turning imaginative ideas into inspired expressions.",
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Neptune",
         "aspectType": "Trine",
         "title": "Fluid Imagination",
         "description": "The Mercury trine Neptune aspect denotes a seamless and beneficial flow between the cognitive functions and the boundless imagination of Neptune, promoting a communication style that is both poetic and insightful. This trine enhances creative expression, spiritual communication, and an affinity for symbolic or metaphorical understanding. Challenges are rare but may include a tendency towards daydreaming. Positively, this aspect indicates an individual with a natural talent for artistic or spiritual endeavors, capable of inspiring others through their visionary ideas and empathetic communication."
@@ -1421,6 +1463,13 @@
         "aspectType": "Sextile",
         "title": "Strategic Communication",
         "description": "The Mercury sextile Pluto aspect provides a supportive link that enhances strategic thinking and the effective communication of profound insights, blending Mercury's mental agility with Pluto's depth. This aspect encourages a perceptive and transformative approach to information and dialogue, facilitating growth and understanding. Challenges are minimal but may include the need to wield this communicative power responsibly. Positively, it suggests an individual skilled in influencing and navigating complex situations with intelligence and subtlety, often excelling in areas requiring negotiation or psychological insight."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Pluto",
+        "aspectType": "Square",
+        "title": "Intense Dialogues",
+        "description": "The Mercury square Pluto aspect denotes a powerful tension between communication and deep transformative forces, leading to intense discussions or confrontational exchanges. This aspect can manifest as a penchant for probing into the core of matters, sometimes resulting in power struggles or manipulative tactics in communication. The challenge lies in harnessing this depth for constructive transformation rather than conflict, promoting honest and transformative dialogue. Positively, it can endow one with the ability to effect change through words and ideas, cutting through superficialities to uncover deeper truths.",
     },
     {
         "leadingPlanet": "Mercury",
@@ -1461,6 +1510,13 @@
         "aspectType": "Sextile",
         "title": "Pathway of Ideas",
         "description": "The Mercury sextile North Node aspect provides a supportive link that enhances the individual's journey towards their destiny through intellectual pursuits, communication, and networking. This aspect encourages the pursuit of knowledge and connections that align with one’s life path, facilitating growth and progress. Challenges are minimal, potentially involving the active seeking of these growth-oriented opportunities. Positively, it suggests an individual adept at using their intellectual and communicative skills to navigate towards their future."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "North Node",
+        "aspectType": "Square",
+        "title": "Challenging Growth",
+        "description": "The Mercury square North Node aspect signifies a pivotal point where intellectual growth and life direction may seem at odds, potentially causing friction in the pursuit of one's destiny. This aspect can manifest as difficulties in aligning thoughts and communication with the soul's larger purpose, often leading to important learning experiences. The challenge lies in embracing these lessons to foster personal development and align more closely with one's karmic path. Positively, it encourages the integration of diverse experiences and ideas into one's journey towards fulfilling their destiny."
     },
     {
         "leadingPlanet": "Mercury",
@@ -1512,6 +1568,13 @@
     {
         "leadingPlanet": "Mercury",
         "trailingPlanet": "Lilith",
+        "aspectType": "Square",
+        "title": "Rebellious Expressions",
+        "description": "The Mercury square Lilith aspect brings to light the tension between conventional thinking and the raw, untamed voice of the self, challenging societal norms and personal inhibitions in communication. This aspect may lead to provocative ideas or a defiant way of expressing oneself, urging the exploration of deeper truths hidden beneath the surface. The challenge lies in finding a balance between authentic self-expression and the consideration of others, turning rebellious energy into a catalyst for meaningful conversations and insights."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Lilith",
         "aspectType": "Trine",
         "title": "Uninhibited Insights",
         "description": "The Mercury trine Lilith aspect denotes a fluid and beneficial relationship between the mind's faculties and the untamed essence of Lilith, promoting a fearless and insightful communication style. This trine supports the expression of unconventional ideas and truths, often with a magnetic charm. Challenges are rare but may include a tendency to overlook the impact of one's words. Positively, this aspect indicates an individual capable of articulating profound insights and taboo subjects with ease and charisma, often leading to transformative dialogues and revelations."
@@ -1553,6 +1616,13 @@
     {
         "leadingPlanet": "Mercury",
         "trailingPlanet": "Ascendant",
+        "aspectType": "Square",
+        "title": "Expressive Friction",
+        "description": "The Mercury square Ascendant aspect highlights a discord between one's inner thoughts and the way they are projected outwardly, potentially leading to misunderstandings or a misalignment between intended and perceived communication. This aspect calls for self-awareness in expression and the conscious alignment of internal dialogue with external persona. Positively, it can stimulate personal growth by encouraging a more deliberate and authentic mode of self-expression, enhancing interpersonal dynamics."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Ascendant",
         "aspectType": "Trine",
         "title": "Articulate Expression",
         "description": "The Mercury trine Ascendant aspect denotes a harmonious flow between the realms of thought and self-expression, promoting articulate and effective communication as a key facet of one's identity. This trine enhances the ability to convey ideas with clarity and confidence, making it an asset in both personal and professional interactions. Challenges are rare but may include a tendency towards complacency in relying on natural communicative skills. Positively, this aspect indicates an individual whose intellectual and expressive capabilities are seamlessly integrated, facilitating successful and meaningful connections."
@@ -1590,6 +1660,13 @@
         "aspectType": "Sextile",
         "title": "Strategic Career Moves",
         "description": "The Mercury sextile Midheaven aspect provides a supportive link between one's mental faculties and professional aspirations, facilitating strategic thinking and planning in career matters. This aspect encourages the effective use of communication skills and intellectual insights to advance professional goals, aiding in decision-making and networking. Challenges are minimal but may include the need to actively apply these mental strategies to achieve career objectives. Positively, it suggests an individual adept at navigating their career path with intelligence and adaptability, often finding success in roles that require analytical and communicative prowess."
+    },
+    {
+        "leadingPlanet": "Mercury",
+        "trailingPlanet": "Midheaven",
+        "aspectType": "Square",
+        "title": "Career Communication Challenges",
+        "description": "The Mercury square Midheaven aspect indicates potential conflicts between one's thought processes and professional aspirations or public image, possibly causing tension in career-related communications or decisions. This aspect may manifest as difficulties in conveying one's ideas in the professional realm or challenges in aligning personal intellect with career goals. The key to leveraging this aspect lies in finding constructive ways to express and integrate personal ideas into one's professional life, using clear and effective communication to navigate and advance career objectives."
     },
     {
         "leadingPlanet": "Mercury",

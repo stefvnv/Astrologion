@@ -50,12 +50,21 @@ class TransitChartView: UIView {
         guard let context = UIGraphicsGetCurrentContext(),
               let viewModel = viewModel,
               let natalChartView = natalChartView else { return }
+        
+        // Setup for drawing
+        context.saveGState()
+        defer { context.restoreGState() }
 
+        // natal chart model drawing
         natalChartView.viewModel = NatalChartViewModel(chart: viewModel.natalChart)
         natalChartView.shouldDrawAspects = false
         natalChartView.setNeedsDisplay()
-
-        drawTransitingPlanets(context: context, rect: rect, transits: viewModel.transits, ascendant: viewModel.ascendant ?? 0.0)
+        
+        // draw transiting planets
+        for transit in viewModel.transits {
+            drawTransitPlanet(context: context, transit: transit, rect: rect, ascendant: viewModel.ascendant ?? 0.0)
+            print("Drawing \(transit.planet.rawValue) at \(transit.longitude)°")
+        }
 
         // draw transit lines
         let transitAspectPositions = viewModel.calculateTransitAspectPositions(in: rect)
@@ -69,25 +78,31 @@ class TransitChartView: UIView {
         context.restoreGState()
     }
 
-    private func drawTransitingPlanets(context: CGContext, rect: CGRect, transits: [Transit], ascendant: Double) {
-        let natalChartRadius = natalChartView?.bounds.width ?? rect.width / 2
-        let transitingPlanetOffset: CGFloat = 60
-        let transitingPlanetRadius = natalChartRadius + transitingPlanetOffset
-        let fontSize = transitingPlanetRadius / 12
+    
+    private func drawTransitPlanet(context: CGContext, transit: Transit, rect: CGRect, ascendant: Double) {
+        let baseRadius = natalChartView?.houseInnerRadius ?? (min(bounds.size.width, bounds.size.height) / 2 * 0.8 * 0.7)
+        let transitingPlanetOffset: CGFloat = baseRadius + 70
+        let fontSize: CGFloat = 20
+
+        var position = AstrologicalCalculations.calculatePositionForPlanet(transit.planet, at: transit.longitude, usingAscendant: ascendant, in: rect)
         
-        for transit in transits {
-            let position = AstrologicalCalculations.calculatePositionForPlanet(transit.planet, at: transit.longitude, usingAscendant: ascendant, in: rect)
-            let planetColor = transit.planet.color
-            let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: fontSize), .foregroundColor: planetColor]
-            
-            if let symbol = transit.planet.symbol {
-                let planetSymbol = NSAttributedString(string: symbol, attributes: attributes)
-                let textSize = planetSymbol.size()
-                let adjustedPosition = CGPoint(x: position.x - textSize.width / 2, y: position.y - textSize.height / 2)
-                planetSymbol.draw(at: adjustedPosition)
-            }
+        let angle = atan2(position.y - rect.midY, position.x - rect.midX)
+        position.x = rect.midX + (transitingPlanetOffset * cos(angle))
+        position.y = rect.midY + (transitingPlanetOffset * sin(angle))
+
+        let planetColor = transit.planet.color
+        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: fontSize), .foregroundColor: planetColor]
+        
+        if let symbol = transit.planet.symbol {
+            let planetSymbol = NSAttributedString(string: symbol, attributes: attributes)
+            let textSize = planetSymbol.size()
+            let adjustedPosition = CGPoint(x: position.x - textSize.width / 2, y: position.y - textSize.height / 2)
+            planetSymbol.draw(at: adjustedPosition)
+        } else {
+            print("No symbol found for \(transit.planet.rawValue)")
         }
     }
+
     
     private func drawTransitAspect(context: CGContext, position: CGPoint, natalPosition: CGPoint, houseInnerRadius: CGFloat, aspect: Aspect) {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)

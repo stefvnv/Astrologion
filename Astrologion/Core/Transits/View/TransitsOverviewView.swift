@@ -3,13 +3,13 @@ import SwiftUI
 struct TransitsOverviewView: View {
     let user: User
     @ObservedObject var transitsViewModel: TransitsViewModel
-    @Binding var selectedTab: TransitTab 
+    @Binding var selectedTab: TransitTab
     @State private var selectedPlanet: Planet?
 
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
-                if transitsViewModel.userChart != nil {
+                if let chart = transitsViewModel.userChart {
                     TransitChartViewRepresentable(user: user, currentTransits: transitsViewModel.currentTransits, transitsViewModel: transitsViewModel)
                         .frame(height: 600)
                 } else {
@@ -40,7 +40,6 @@ struct TransitsOverviewView: View {
                     }
                 }
                 .padding(.bottom, 20)
-
             }
         }
     }
