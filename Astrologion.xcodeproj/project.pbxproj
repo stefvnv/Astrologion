@@ -139,6 +139,10 @@
 		F8A102DD2BC6BDF200841BB3 /* TopRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */; };
 		F8A102DF2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102DE2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift */; };
 		F8A102E22BC6E56E00841BB3 /* TabViewStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102E12BC6E56E00841BB3 /* TabViewStyleModifier.swift */; };
+		F8A102E42BC6FA7600841BB3 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102E32BC6FA7600841BB3 /* Chapter.swift */; };
+		F8A102E62BC6FA9400841BB3 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102E52BC6FA9400841BB3 /* Lesson.swift */; };
+		F8A102E82BC6FAB200841BB3 /* ChapterContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102E72BC6FAB200841BB3 /* ChapterContent.swift */; };
+		F8A102EA2BC6FAD700841BB3 /* LessonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102E92BC6FAD700841BB3 /* LessonContent.swift */; };
 		F8A1F87F2BBEA2D500A604AF /* AstrologicalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */; };
 		F8A1F8812BBEA68200A604AF /* TrasitChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */; };
 		F8A1F8862BBEC98200A604AF /* LearningHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8852BBEC98200A604AF /* LearningHubView.swift */; };
@@ -147,7 +151,6 @@
 		F8A1F88E2BBF2FA400A604AF /* Gruppo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A1F88D2BBF2FA300A604AF /* Gruppo-Regular.ttf */; };
 		F8A1F8902BBF34A600A604AF /* TransitChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F88F2BBF34A600A604AF /* TransitChartViewModel.swift */; };
 		F8A1F8932BBF67BD00A604AF /* Lessons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8922BBF67BD00A604AF /* Lessons.swift */; };
-		F8A1F89B2BBF6A6200A604AF /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F89A2BBF6A6200A604AF /* Lesson.swift */; };
 		F8A1F89D2BBF6BB800A604AF /* LessonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F89C2BBF6BB800A604AF /* LessonItemView.swift */; };
 		F8A1F89F2BBF6F0A00A604AF /* IntroductionChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F89E2BBF6F0A00A604AF /* IntroductionChapter.swift */; };
 		F8A1F8A12BBF6F3700A604AF /* ZodiacSignChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */; };
@@ -329,6 +332,10 @@
 		F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundedRectangle.swift; sourceTree = "<group>"; };
 		F8A102DE2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedRectangle.swift; sourceTree = "<group>"; };
 		F8A102E12BC6E56E00841BB3 /* TabViewStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewStyleModifier.swift; sourceTree = "<group>"; };
+		F8A102E32BC6FA7600841BB3 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		F8A102E52BC6FA9400841BB3 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		F8A102E72BC6FAB200841BB3 /* ChapterContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterContent.swift; sourceTree = "<group>"; };
+		F8A102E92BC6FAD700841BB3 /* LessonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonContent.swift; sourceTree = "<group>"; };
 		F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalCalculations.swift; sourceTree = "<group>"; };
 		F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrasitChartViewRepresentable.swift; sourceTree = "<group>"; };
 		F8A1F8852BBEC98200A604AF /* LearningHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubView.swift; sourceTree = "<group>"; };
@@ -337,7 +344,6 @@
 		F8A1F88D2BBF2FA300A604AF /* Gruppo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gruppo-Regular.ttf"; sourceTree = "<group>"; };
 		F8A1F88F2BBF34A600A604AF /* TransitChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitChartViewModel.swift; sourceTree = "<group>"; };
 		F8A1F8922BBF67BD00A604AF /* Lessons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lessons.swift; sourceTree = "<group>"; };
-		F8A1F89A2BBF6A6200A604AF /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		F8A1F89C2BBF6BB800A604AF /* LessonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonItemView.swift; sourceTree = "<group>"; };
 		F8A1F89E2BBF6F0A00A604AF /* IntroductionChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionChapter.swift; sourceTree = "<group>"; };
 		F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignChapter.swift; sourceTree = "<group>"; };
@@ -509,7 +515,6 @@
 				F819B6162BACE530001B138A /* Extensions.swift */,
 				F819B6182BACE547001B138A /* ImagePicker.swift */,
 				F819B61A2BACE555001B138A /* Constants.swift */,
-				F8A1F89A2BBF6A6200A604AF /* Lesson.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1109,7 +1114,6 @@
 			children = (
 				F819B5642BACBEF2001B138A /* Messages */,
 				F819B5602BACBECB001B138A /* Search */,
-				F89751A32BB85ED400138D25 /* ViewModel */,
 				F89751A22BB85EC700138D25 /* Views */,
 			);
 			path = Orbit;
@@ -1123,13 +1127,6 @@
 				F819B5AE2BACC473001B138A /* UserListView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F89751A32BB85ED400138D25 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F8A1F8822BBEC94100A604AF /* LearningHub */ = {
@@ -1193,6 +1190,10 @@
 		F8A1F8AA2BBF744500A604AF /* LearningHub */ = {
 			isa = PBXGroup;
 			children = (
+				F8A102E32BC6FA7600841BB3 /* Chapter.swift */,
+				F8A102E72BC6FAB200841BB3 /* ChapterContent.swift */,
+				F8A102E52BC6FA9400841BB3 /* Lesson.swift */,
+				F8A102E92BC6FAD700841BB3 /* LessonContent.swift */,
 			);
 			path = LearningHub;
 			sourceTree = "<group>";
@@ -1548,6 +1549,7 @@
 				F819B5AF2BACC473001B138A /* UserListView.swift in Sources */,
 				F840A00A2BAE09B300D007F8 /* LocationSearchView.swift in Sources */,
 				F819B61F2BACE579001B138A /* TextFieldModifier.swift in Sources */,
+				F8A102E82BC6FAB200841BB3 /* ChapterContent.swift in Sources */,
 				F8409FEF2BADDB7D00D007F8 /* ZodiacSign.swift in Sources */,
 				F819B5F92BACE2A6001B138A /* SettingsView.swift in Sources */,
 				F840A0022BADDC1300D007F8 /* PlanetColor.swift in Sources */,
@@ -1590,6 +1592,7 @@
 				F8409FF72BADDBB000D007F8 /* Planet.swift in Sources */,
 				F819B5972BACC1D1001B138A /* AuthService.swift in Sources */,
 				F819B59D2BACC341001B138A /* AddEmailView.swift in Sources */,
+				F8A102E62BC6FA9400841BB3 /* Lesson.swift in Sources */,
 				F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */,
 				F8A620A22BBB409200F84AFE /* HouseExpandedView.swift in Sources */,
 				F8A1F8932BBF67BD00A604AF /* Lessons.swift in Sources */,
@@ -1604,6 +1607,7 @@
 				F8B7BDAB2BBC91F80014DD7A /* TransitTab.swift in Sources */,
 				F819B59B2BACC225001B138A /* CreatePasswordView.swift in Sources */,
 				F8A1F8A92BBF702400A604AF /* AspectsChapter.swift in Sources */,
+				F8A102EA2BC6FAD700841BB3 /* LessonContent.swift in Sources */,
 				F819B56A2BACBF20001B138A /* User.swift in Sources */,
 				F819B5A12BACC38A001B138A /* ResetPasswordView.swift in Sources */,
 				F819B5C52BACC650001B138A /* FeedCell.swift in Sources */,
@@ -1639,6 +1643,7 @@
 				F819B5E92BACE14C001B138A /* NotificationService.swift in Sources */,
 				F819B5E52BACE124001B138A /* NotificationsViewModel.swift in Sources */,
 				F8BAA99B2BB780B2002E349C /* BarView.swift in Sources */,
+				F8A102E42BC6FA7600841BB3 /* Chapter.swift in Sources */,
 				F89751972BB84F1000138D25 /* OrbitView.swift in Sources */,
 				F8409FFC2BADDBEA00D007F8 /* AspectColor.swift in Sources */,
 				F8A102DF2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift in Sources */,
@@ -1647,7 +1652,6 @@
 				F819B5EF2BACE1D5001B138A /* UserStatView.swift in Sources */,
 				F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */,
 				F8BAA9842BB6E71D002E349C /* HouseDetailView.swift in Sources */,
-				F8A1F89B2BBF6A6200A604AF /* Lesson.swift in Sources */,
 				F8409FD92BADD15300D007F8 /* SelectLocationView.swift in Sources */,
 				F8A1F8A32BBF6F4100A604AF /* PlanetsChapter.swift in Sources */,
 				F819B5AD2BACC450001B138A /* CustomInputView.swift in Sources */,

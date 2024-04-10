@@ -7,13 +7,38 @@ class ProfileViewModel: ObservableObject {
     @Published var isLoadingChartData: Bool = false
     
     
-    ///
     init(user: User) {
         self.user = user
         fetchUserChart()
+        loadUserData()
     }
     
     
+    func fetchUserChart() {
+        isLoadingChartData = true
+
+        Task {
+            do {
+                let fetchedChart = try await UserService.fetchUserChart(uid: user.uid ?? "")
+                self.userChart = fetchedChart
+                print("Successfully fetched chart: \(String(describing: fetchedChart))")
+            } catch {
+                print("Failed to fetch user chart: \(error.localizedDescription)")
+            }
+            self.isLoadingChartData = false
+        }
+    }
+    
+    func loadUserData() {
+        Task {
+            async let stats = try await UserService.fetchUserStats(uid: user.id)
+            self.user.stats = try await stats
+            
+            async let isFollowed = await checkIfUserIsFollowed()
+            self.user.isFollowed = await isFollowed
+        }
+    }
+
     /// Extracts sun property
     var sunSign: String {
         signFromPosition(userChart?.planetaryPositions["Sun"])
@@ -43,23 +68,6 @@ class ProfileViewModel: ObservableObject {
     public func signFromPosition(_ position: String?) -> String {
         guard let positionString = position, let sign = positionString.split(separator: " ").first else { return "Unknown" }
         return String(sign)
-    }
-
-    
-    ///
-    func fetchUserChart() {
-        isLoadingChartData = true
-
-        Task {
-            do {
-                let fetchedChart = try await UserService.fetchUserChart(uid: user.uid ?? "")
-                self.userChart = fetchedChart
-                print("Successfully fetched chart: \(String(describing: fetchedChart))")
-            } catch {
-                print("Failed to fetch user chart: \(error.localizedDescription)")
-            }
-            self.isLoadingChartData = false
-        }
     }
     
     
