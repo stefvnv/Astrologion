@@ -7,51 +7,52 @@ struct TransitsPlanetView: View {
     
     var body: some View {
         VStack {
-            ZStack(alignment: .bottom) {
-                TransitChartViewRepresentable(
-                    user: user,
-                    currentTransits: transitsViewModel.currentTransits,
-                    transitsViewModel: transitsViewModel,
-                    selectedPlanet: selectedPlanet
-                )
-                .frame(height: 600)
-
-                Image(self.imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-                    .padding(.bottom, -50)
-            }
-            .padding(.bottom, 60)
+            transitChartSection
             
-            if let transit = transitsViewModel.currentTransits.first(where: { $0.planet == selectedPlanet }) {
-                HStack {
-                    Text(transit.sign.symbol)
-                        .font(.title3)
-                    Text(selectedPlanet.rawValue.uppercased())
-                        .font(.title3)
-                        .fontWeight(.bold)
-                    if let houseEnum = House(rawValue: transit.house) {
-                        Text("\(houseEnum.shortHouseFormat)")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                    } else {
-                        Text("Invalid House")
-                    }
-                }
-                .padding()
-            } else {
-                Text("No transiting data for \(selectedPlanet.rawValue)").padding()
-            }
+            transitSummaryView()
             
-            DividerWithTitle(title: "Transits")
-            
-            ForEach(transitsViewModel.currentTransits.filter { $0.planet == selectedPlanet }, id: \.id) { transit in
-                TransitsPlanetDetailView(transitsViewModel: transitsViewModel, transit: transit)
-            }
-            .padding(.bottom, 20)
+            transitsDetailSection
         }
         .navigationTitle("\(selectedPlanet.rawValue) Transits")
+    }
+    
+    private var transitChartSection: some View {
+        ZStack(alignment: .bottom) {
+            TransitChartViewRepresentable(
+                user: user,
+                currentTransits: transitsViewModel.currentTransits,
+                transitsViewModel: transitsViewModel,
+                selectedPlanet: selectedPlanet
+            )
+            .frame(height: 600)
+
+            Image(self.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
+                .padding(.bottom, -50)
+        }
+        .padding(.bottom, 60)
+    }
+    
+    private func transitSummaryView() -> some View {
+        guard let transit = transitsViewModel.currentTransits.first(where: { $0.planet == selectedPlanet }) else {
+            return AnyView(Text("No transiting data for \(selectedPlanet.rawValue)").padding())
+        }
+
+        let summaryDescription = transit.transitSummaryDescription(
+            descriptions: transitsViewModel.transitSummaryDescriptions
+        )
+
+        return AnyView(TransitsPlanetSummaryView(transit: transit, summaryDescription: summaryDescription))
+    }
+
+    
+    private var transitsDetailSection: some View {
+        ForEach(transitsViewModel.currentTransits.filter { $0.planet == selectedPlanet }, id: \.id) { transit in
+            TransitsPlanetDetailView(transitsViewModel: transitsViewModel, transit: transit)
+        }
+        .padding(.bottom, 20)
     }
     
     private var imageName: String {
@@ -59,23 +60,5 @@ struct TransitsPlanetView: View {
         case .NorthNode: return "northnode"
         default: return selectedPlanet.rawValue.lowercased().replacingOccurrences(of: " ", with: "")
         }
-    }
-}
-
-struct DividerWithTitle: View {
-    let title: String
-    
-    var body: some View {
-        Text(title)
-            .font(.headline)
-            .padding(.horizontal)
-            .overlay(
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(.gray)
-                    .padding(.horizontal)
-                    .offset(y: 8),
-                alignment: .bottom
-            )
     }
 }

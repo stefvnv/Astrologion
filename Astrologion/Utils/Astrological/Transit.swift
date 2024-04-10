@@ -35,6 +35,17 @@ struct Transit: Identifiable, Equatable {
         let natalOrTransitingPlanetName = natalPlanet?.rawValue ?? planet.rawValue
         return "\(planet.rawValue) \(aspect.rawValue) \(natalOrTransitingPlanetName)"
     }
+    
+    
+    func transitSummaryDescription(descriptions: [TransitSummaryDescription]) -> String {
+        let matchingDescription = descriptions.first { description in
+            description.planet.lowercased() == planet.rawValue.lowercased() &&
+            description.sign.lowercased() == sign.rawValue.lowercased() &&
+            description.house == house
+        }
+        
+        return matchingDescription?.description ?? "No description available for this transit."
+    }
 
 
 // MARK: - Equitable Conformance

@@ -5,6 +5,7 @@ class TransitsViewModel: ObservableObject {
     @Published var isLoadingChartData: Bool = false
     @Published var currentTransits: [Transit] = []
     @Published var transitDescription: [TransitDescription] = []
+    @Published var transitSummaryDescriptions: [TransitSummaryDescription] = []
     @Published var userChart: Chart?
 
     private var cancellables = Set<AnyCancellable>()
@@ -25,6 +26,7 @@ class TransitsViewModel: ObservableObject {
         self.astrologyModel = astrologyModel
         fetchUserChart()
         loadTransitDescription()
+        loadTransitSummaryDescriptions()
 
         $userChart
             .receive(on: DispatchQueue.main)
@@ -56,6 +58,10 @@ class TransitsViewModel: ObservableObject {
 
     func loadTransitDescription() {
         self.transitDescription = loadTransitData()
+    }
+    
+    func loadTransitSummaryDescriptions() {
+        self.transitSummaryDescriptions = loadTransitSummaryData()
     }
 
     func parseHouseCusps(from chart: Chart) -> [Double] {

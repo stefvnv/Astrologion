@@ -1,6 +1,6 @@
 import Foundation
 
-struct AspectsDescription: Decodable {
+struct AspectDescription: Decodable {
     let leadingPlanet: String
     let trailingPlanet: String
     let aspectType: String
@@ -9,7 +9,7 @@ struct AspectsDescription: Decodable {
 }
 
 
-func loadAspectDescriptions() -> [AspectsDescription] {
+func loadAspectDescriptions() -> [AspectDescription] {
     guard let url = Bundle.main.url(forResource: "AspectDescriptionData", withExtension: "json") else {
         fatalError("AspectsDescriptionData.json not found")
     }
@@ -17,7 +17,7 @@ func loadAspectDescriptions() -> [AspectsDescription] {
     do {
         let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
-        let jsonData = try decoder.decode([AspectsDescription].self, from: data)
+        let jsonData = try decoder.decode([AspectDescription].self, from: data)
         return jsonData
     } catch {
         fatalError("Failed to decode AspectsData.json: \(error)")
