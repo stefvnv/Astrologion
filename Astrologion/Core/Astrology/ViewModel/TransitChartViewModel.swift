@@ -5,6 +5,7 @@ class TransitChartViewModel {
     var ascendant: Double?
     var natalChart: Chart?
     var houseCusps: [Double]?
+    var selectedPlanet: Planet?
 
     init(transits: [Transit], natalChart: Chart?, ascendant: Double?, houseCusps: [Double]?) {
         self.transits = transits
@@ -13,36 +14,42 @@ class TransitChartViewModel {
         self.houseCusps = houseCusps
     }
 
-    func calculateTransitAspectPositions(in rect: CGRect) -> [(position: CGPoint, natalPosition: CGPoint, aspect: Aspect)] {
-        guard let ascendant = ascendant, let natalChart = self.natalChart else { return [] }
+    func calculateAllTransitAspectPositions(in rect: CGRect) -> [(position: CGPoint, natalPosition: CGPoint, aspect: Aspect)] {
+        guard let ascendant = ascendant, let natalChart = natalChart else { return [] }
         
         var transitAspectPositions: [(position: CGPoint, natalPosition: CGPoint, aspect: Aspect)] = []
 
         for transit in transits {
+            if let selectedPlanet = selectedPlanet, transit.planet != selectedPlanet {
+                continue
+            }
+
             let transitingPosition = AstrologicalCalculations.calculatePositionForPlanet(
                 transit.planet,
                 at: transit.longitude,
                 usingAscendant: ascendant,
                 in: rect
             )
-            
-            guard let natalPlanet = transit.natalPlanet,
-                  let natalLongitude = natalChart.planetaryPositions[natalPlanet.rawValue].flatMap(LongitudeParser.parseLongitude) else {
-                continue 
-            }
-            
-            let natalPosition = AstrologicalCalculations.calculatePositionForPlanet(
-                natalPlanet,
-                at: natalLongitude,
-                usingAscendant: ascendant,
-                in: rect
-            )
 
-            for aspect in transit.aspects {
-                transitAspectPositions.append((position: transitingPosition, natalPosition: natalPosition, aspect: aspect))
+            for natalAspect in transit.aspects {
+                guard let natalPlanet = transit.natalPlanet,
+                      let natalLongitudeString = natalChart.planetaryPositions[natalPlanet.rawValue],
+                      let natalLongitude = LongitudeParser.parseLongitude(from: natalLongitudeString) else {
+                    continue
+                }
+                
+                let natalPosition = AstrologicalCalculations.calculatePositionForPlanet(
+                    natalPlanet,
+                    at: natalLongitude,
+                    usingAscendant: ascendant,
+                    in: rect
+                )
+                
+                transitAspectPositions.append((position: transitingPosition, natalPosition: natalPosition, aspect: natalAspect))
             }
         }
         return transitAspectPositions
     }
+
     
 } // end

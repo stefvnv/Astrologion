@@ -4,14 +4,18 @@ struct TransitsOverviewView: View {
     let user: User
     @ObservedObject var transitsViewModel: TransitsViewModel
     @Binding var selectedTab: TransitTab
-    @State private var selectedPlanet: Planet?
 
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
                 if let chart = transitsViewModel.userChart {
-                    TransitChartViewRepresentable(user: user, currentTransits: transitsViewModel.currentTransits, transitsViewModel: transitsViewModel)
-                        .frame(height: 600)
+                    TransitChartViewRepresentable(
+                        user: user,
+                        currentTransits: transitsViewModel.currentTransits,
+                        transitsViewModel: transitsViewModel,
+                        selectedPlanet: nil 
+                    )
+                    .frame(height: 600)
                 } else {
                     Text("Loading chart...")
                         .frame(height: 600)

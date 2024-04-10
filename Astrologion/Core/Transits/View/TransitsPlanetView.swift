@@ -8,13 +8,14 @@ struct TransitsPlanetView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
-                if let chart = transitsViewModel.userChart {
-                    NatalChartViewRepresentable(chart: chart)
-                        .frame(height: 600)
-                } else {
-                    Text("Loading chart...")
-                        .frame(height: 600)
-                }
+                TransitChartViewRepresentable(
+                    user: user,
+                    currentTransits: transitsViewModel.currentTransits,
+                    transitsViewModel: transitsViewModel,
+                    selectedPlanet: selectedPlanet
+                )
+                .frame(height: 600)
+
                 Image(self.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)

@@ -6,7 +6,7 @@ struct TransitOverviewDetailView: View {
     var house: House
     var onTap: () -> Void
 
-    var body: some View { // TODO: Make clickable and bring to relavant tab based on planet
+    var body: some View {
         Button(action: onTap) {
             HStack {
                 Image(imageName)

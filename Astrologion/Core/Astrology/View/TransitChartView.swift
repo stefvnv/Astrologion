@@ -3,6 +3,8 @@ import UIKit
 class TransitChartView: UIView {
     private var natalChartView: NatalChartView?
     private var viewModel: TransitChartViewModel?
+    
+    var selectedPlanet: Planet?
 
     var transitsViewModel: TransitsViewModel? {
         didSet {
@@ -51,29 +53,35 @@ class TransitChartView: UIView {
               let viewModel = viewModel,
               let natalChartView = natalChartView else { return }
         
-        // Setup for drawing
         context.saveGState()
         defer { context.restoreGState() }
 
-        // natal chart model drawing
         natalChartView.viewModel = NatalChartViewModel(chart: viewModel.natalChart)
         natalChartView.shouldDrawAspects = false
         natalChartView.setNeedsDisplay()
         
-        // draw transiting planets
-        for transit in viewModel.transits {
-            drawTransitPlanet(context: context, transit: transit, rect: rect, ascendant: viewModel.ascendant ?? 0.0)
-            print("Drawing \(transit.planet.rawValue) at \(transit.longitude)°")
-        }
+        if let selectedPlanet = selectedPlanet {
+            if let transit = viewModel.transits.first(where: { $0.planet == selectedPlanet }) {
+                drawTransitPlanet(context: context, transit: transit, rect: rect, ascendant: viewModel.ascendant ?? 0.0)
+            }
+            
+            let transitAspectPositions = viewModel.calculateAllTransitAspectPositions(in: rect)
+            for transitAspectPosition in transitAspectPositions {
+                drawTransitAspect(context: context, position: transitAspectPosition.position, natalPosition: transitAspectPosition.natalPosition, houseInnerRadius: natalChartView.houseInnerRadius, aspect: transitAspectPosition.aspect)
+            }
+        } else {
+            for transit in viewModel.transits {
+                drawTransitPlanet(context: context, transit: transit, rect: rect, ascendant: viewModel.ascendant ?? 0.0)
+            }
 
-        // draw transit lines
-        let transitAspectPositions = viewModel.calculateTransitAspectPositions(in: rect)
-        for transitAspectPosition in transitAspectPositions {
-            drawTransitAspect(context: context, position: transitAspectPosition.position, natalPosition: transitAspectPosition.natalPosition, houseInnerRadius: natalChartView.houseInnerRadius, aspect: transitAspectPosition.aspect)
+            let transitAspectPositions = viewModel.calculateAllTransitAspectPositions(in: rect)
+            for transitAspectPosition in transitAspectPositions {
+                drawTransitAspect(context: context, position: transitAspectPosition.position, natalPosition: transitAspectPosition.natalPosition, houseInnerRadius: natalChartView.houseInnerRadius, aspect: transitAspectPosition.aspect)
+            }
         }
-        
-        // draw conjunction circles
-        drawConjunctionCircles(context: context, viewModel: viewModel, rect: rect)
+        if selectedPlanet == nil || viewModel.transits.contains(where: { $0.planet == selectedPlanet && $0.aspects.contains(.conjunction) }) {
+            drawConjunctionCircles(context: context, viewModel: viewModel, rect: rect)
+        }
 
         context.restoreGState()
     }
