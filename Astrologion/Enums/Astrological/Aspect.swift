@@ -116,5 +116,10 @@ public enum Aspect: String, CaseIterable {
     func isWithinOrb(of angle: Double) -> Bool {
         return abs(self.angle - angle) <= self.transitOrb
     }
+    
+    
+    func involves(_ planet: Planet) -> Bool {
+        return self == .conjunction && (planet == .Ascendant || planet == .Midheaven)
+    }
 
 } // end

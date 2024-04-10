@@ -16,8 +16,8 @@ struct ProfileTabView: View {
                             }
                         }) {
                             Text(tab.text)
-                                .font(.system(size: 13))
-                                .foregroundColor(self.selectedTab == tab ? .black : .gray)
+                                .font(.custom("Dosis", size: 14))
+                                .foregroundColor(self.selectedTab == tab ? Color.theme.yellow : .gray)
                                 .fontWeight(self.selectedTab == tab ? .bold : .regular)
                         }
                         .padding(.vertical, 6) // tap area
@@ -26,15 +26,15 @@ struct ProfileTabView: View {
                         if selectedTab == tab {
                             Rectangle()
                                 .frame(height: 1)
-                                .foregroundColor(.black)
+                                .foregroundColor(Color.theme.yellow)
                                 .transition(.opacity)
                         }
                     }
                     .frame(maxWidth: .infinity)
                 }
             }
-            .background(Color.white)
-            
+            .background(Color.theme.darkBlue)
+
             switch selectedTab {
             case .chart:
                 ChartView(user: user, profileViewModel: profileViewModel)

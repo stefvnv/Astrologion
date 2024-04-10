@@ -84,7 +84,7 @@ class TransitsViewModel: ObservableObject {
             }
         }
     }
-
+    
     func getCurrentTransits() {
         guard let chart = userChart else {
             print("User chart is nil, cannot calculate transits.")
@@ -109,59 +109,11 @@ class TransitsViewModel: ObservableObject {
 
                 var newTransits: [Transit] = []
 
-                let ascendantLongitude = chart.houseCusps["House 1"].flatMap(LongitudeParser.parseLongitude)
-                let midheavenLongitude = chart.houseCusps["House 10"].flatMap(LongitudeParser.parseLongitude)
-
                 for transitingPlanetEntry in astrologyModel.astrologicalPlanetaryPositions {
-                    guard let transitingPlanet = Planet(rawValue: transitingPlanetEntry.body.rawValue),
-                          primaryTransitingPlanets.contains(transitingPlanet) else {
-                        continue
-                    }
-
-                    let transitingLongitude = transitingPlanetEntry.longitude
-                    let sign = self.sign(for: transitingLongitude)
-                    let house = self.house(for: transitingLongitude, usingCusps: parseHouseCusps(from: chart))
-
-                    var aspects: [Aspect] = []
-                    var aspectNatalPlanets: [Planet] = []
-
-                    for (natalPlanetName, natalValue) in chart.planetaryPositions {
-                        guard let natalLongitude = LongitudeParser.parseLongitude(from: natalValue),
-                              let natalPlanet = Planet(rawValue: natalPlanetName) else {
-                            continue
-                        }
-
-                        let foundAspects = self.findAspects(between: transitingLongitude, and: natalLongitude)
-                        if !foundAspects.isEmpty {
-                            aspects.append(contentsOf: foundAspects)
-                            aspectNatalPlanets.append(natalPlanet)
-                        }
-                    }
-
-                    if let ascendantLongitude = ascendantLongitude {
-                        let foundAspects = self.findAspects(between: transitingLongitude, and: ascendantLongitude)
-                        if !foundAspects.isEmpty {
-                            aspects.append(contentsOf: foundAspects)
-                            aspectNatalPlanets.append(.Ascendant)
-                        }
-                    }
-
-                    if let midheavenLongitude = midheavenLongitude {
-                        let foundAspects = self.findAspects(between: transitingLongitude, and: midheavenLongitude)
-                        if !foundAspects.isEmpty {
-                            aspects.append(contentsOf: foundAspects)
-                            aspectNatalPlanets.append(.Midheaven)
-                        }
-                    }
-
-                    if aspects.isEmpty {
-                        let transit = Transit(planet: transitingPlanet, sign: sign, house: house, aspects: [], natalPlanet: nil, longitude: transitingLongitude)
-                        newTransits.append(transit)
-                    } else {
-                        for (index, aspect) in aspects.enumerated() {
-                            let transit = Transit(planet: transitingPlanet, sign: sign, house: house, aspects: [aspect], natalPlanet: aspectNatalPlanets[index], longitude: transitingLongitude)
-                            newTransits.append(transit)
-                        }
+                    if let transitingPlanet = Planet(rawValue: transitingPlanetEntry.body.rawValue),
+                       primaryTransitingPlanets.contains(transitingPlanet) {
+                        let transit = createTransit(for: transitingPlanet, with: transitingPlanetEntry.longitude, using: chart)
+                        newTransits.append(contentsOf: transit)
                     }
                 }
 
@@ -177,6 +129,62 @@ class TransitsViewModel: ObservableObject {
             }
         }
     }
+    
+    
+    private func createTransit(for planet: Planet, with longitude: Double, using chart: Chart) -> [Transit] {
+        let sign = sign(for: longitude)
+        let house = house(for: longitude, usingCusps: parseHouseCusps(from: chart))
+        var transits: [Transit] = []
+
+        let aspectsAndPlanets = findAspectsForTransitingPlanet(planet, with: longitude, in: chart)
+        
+        for (aspect, natalPlanet) in aspectsAndPlanets {
+            let transit = Transit(planet: planet, sign: sign, house: house, aspects: [aspect], natalPlanet: natalPlanet, longitude: longitude)
+            transits.append(transit)
+        }
+        
+        if transits.isEmpty {
+            let transit = Transit(planet: planet, sign: sign, house: house, aspects: [], natalPlanet: nil, longitude: longitude)
+            transits.append(transit)
+        }
+        
+        return transits
+    }
+    
+    
+    private func findAspectsForTransitingPlanet(_ transitingPlanet: Planet, with transitingLongitude: Double, in chart: Chart) -> [(Aspect, Planet)] {
+        var aspectsAndPlanets: [(Aspect, Planet)] = []
+
+        for (natalPlanetName, natalValue) in chart.planetaryPositions {
+            if let natalLongitude = LongitudeParser.parseLongitude(from: natalValue),
+               let natalPlanet = Planet(rawValue: natalPlanetName),
+               natalPlanet != .Ascendant, // Exclude Ascendant and Midheaven from planetaryPositions
+               natalPlanet != .Midheaven {
+                let foundAspects = findAspects(between: transitingLongitude, and: natalLongitude)
+                for aspect in foundAspects {
+                    aspectsAndPlanets.append((aspect, natalPlanet))
+                }
+            }
+        }
+
+        // Handle aspects with Ascendant and Midheaven separately
+        if let ascendantLongitude = chart.houseCusps["House 1"].flatMap(LongitudeParser.parseLongitude) {
+            let foundAspects = findAspects(between: transitingLongitude, and: ascendantLongitude)
+            for aspect in foundAspects {
+                aspectsAndPlanets.append((aspect, .Ascendant))
+            }
+        }
+
+        if let midheavenLongitude = chart.houseCusps["House 10"].flatMap(LongitudeParser.parseLongitude) {
+            let foundAspects = findAspects(between: transitingLongitude, and: midheavenLongitude)
+            for aspect in foundAspects {
+                aspectsAndPlanets.append((aspect, .Midheaven))
+            }
+        }
+
+        return aspectsAndPlanets
+    }
+
 
     private func sign(for longitude: Double) -> ZodiacSign {
         return ZodiacSign.allCases.first { $0.baseDegree <= longitude && $0.baseDegree + 30 > longitude } ?? .Aries

@@ -136,6 +136,9 @@
 		F89751A52BB8865200138D25 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A42BB8865200138D25 /* SearchViewModel.swift */; };
 		F89751A72BB89C1B00138D25 /* OrbitTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89751A62BB89C1B00138D25 /* OrbitTab.swift */; };
 		F897CB2D2BC356BC00A804F7 /* CGVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F897CB2C2BC356BC00A804F7 /* CGVector.swift */; };
+		F8A102DD2BC6BDF200841BB3 /* TopRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */; };
+		F8A102DF2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102DE2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift */; };
+		F8A102E22BC6E56E00841BB3 /* TabViewStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A102E12BC6E56E00841BB3 /* TabViewStyleModifier.swift */; };
 		F8A1F87F2BBEA2D500A604AF /* AstrologicalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */; };
 		F8A1F8812BBEA68200A604AF /* TrasitChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */; };
 		F8A1F8862BBEC98200A604AF /* LearningHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8852BBEC98200A604AF /* LearningHubView.swift */; };
@@ -323,6 +326,9 @@
 		F89751A62BB89C1B00138D25 /* OrbitTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTab.swift; sourceTree = "<group>"; };
 		F89751AA2BB8EDD300138D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F897CB2C2BC356BC00A804F7 /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
+		F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundedRectangle.swift; sourceTree = "<group>"; };
+		F8A102DE2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedRectangle.swift; sourceTree = "<group>"; };
+		F8A102E12BC6E56E00841BB3 /* TabViewStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewStyleModifier.swift; sourceTree = "<group>"; };
 		F8A1F87E2BBEA2D500A604AF /* AstrologicalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalCalculations.swift; sourceTree = "<group>"; };
 		F8A1F8802BBEA68200A604AF /* TrasitChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrasitChartViewRepresentable.swift; sourceTree = "<group>"; };
 		F8A1F8852BBEC98200A604AF /* LearningHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHubView.swift; sourceTree = "<group>"; };
@@ -996,6 +1002,9 @@
 				F819B61C2BACE570001B138A /* IGButtonModifier.swift */,
 				F819B61E2BACE579001B138A /* TextFieldModifier.swift */,
 				F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */,
+				F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */,
+				F8A102DE2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift */,
+				F8A102E12BC6E56E00841BB3 /* TabViewStyleModifier.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -1493,6 +1502,7 @@
 				F819B5CF2BACE020001B138A /* ChatView.swift in Sources */,
 				F819B5D12BACE033001B138A /* ChatBubble.swift in Sources */,
 				F819B6112BACE4A4001B138A /* Color.swift in Sources */,
+				F8A102DD2BC6BDF200841BB3 /* TopRoundedRectangle.swift in Sources */,
 				F8409FF12BADDB8900D007F8 /* House.swift in Sources */,
 				F8BAA99D2BB78395002E349C /* ModalitySummaryView.swift in Sources */,
 				F819B5BF2BACC54F001B138A /* CommentsViewModel.swift in Sources */,
@@ -1618,6 +1628,7 @@
 				F819B60D2BACE474001B138A /* UploadPostViewModel.swift in Sources */,
 				F8409FE32BADD9D400D007F8 /* NatalChartView.swift in Sources */,
 				F819B5F52BACE226001B138A /* EditProfileView.swift in Sources */,
+				F8A102E22BC6E56E00841BB3 /* TabViewStyleModifier.swift in Sources */,
 				F819B5A32BACC3B0001B138A /* LoginView.swift in Sources */,
 				F8A1F87F2BBEA2D500A604AF /* AstrologicalCalculations.swift in Sources */,
 				F819B56C2BACBF2B001B138A /* Post.swift in Sources */,
@@ -1630,6 +1641,7 @@
 				F8BAA99B2BB780B2002E349C /* BarView.swift in Sources */,
 				F89751972BB84F1000138D25 /* OrbitView.swift in Sources */,
 				F8409FFC2BADDBEA00D007F8 /* AspectColor.swift in Sources */,
+				F8A102DF2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift in Sources */,
 				F819B5FF2BACE300001B138A /* ProfileView.swift in Sources */,
 				F8A6209B2BBB0EDE00F84AFE /* PlanetaryPlacementDescription.swift in Sources */,
 				F819B5EF2BACE1D5001B138A /* UserStatView.swift in Sources */,

@@ -7,40 +7,39 @@ struct ChapterDetailView: View {
     var chapterTitle: String
     @Binding var isCompleted: Bool
     @State private var selectedPartNumber = 1
-
+    
     var body: some View {
         VStack {
             if let selectedPart = chapterContent.first(where: { $0.partNumber == selectedPartNumber }) {
                 PartView(lessonContent: selectedPart)
             }
-
+            
             HStack {
                 if selectedPartNumber > 1 {
                     Button(action: {
                         selectedPartNumber -= 1
                     }) {
-                        Image("previous") // Replace with your previous icon asset
+                        Image("previous") 
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 30) // Adjust the size as needed
+                            .frame(height: 30)
                     }
                 }
-
+                
                 Spacer()
-
+                
                 if selectedPartNumber < chapterContent.count {
                     Button(action: {
                         if selectedPartNumber == chapterContent.count - 1 {
-                            // Automatically mark as complete when moving to the last part
                             isCompleted = true
                             viewModel.markChapterAsComplete(chapterTitle, isCompleted: isCompleted)
                         }
                         selectedPartNumber += 1
                     }) {
-                        Image("next") // Replace with your next icon asset
+                        Image("next")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 30) // Adjust the size as needed
+                            .frame(height: 30)
                     }
                 }
             }
@@ -61,7 +60,7 @@ struct ChapterDetailView: View {
             }
         )
     }
-
+    
     var backButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()

@@ -6,7 +6,7 @@ struct TransitsTabView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader { scrollViewProxy in
-                HStack(spacing: 20) {
+                HStack(spacing: 1) {
                     ForEach(TransitTab.allCases, id: \.self) { tab in
                         VStack {
                             Button(action: {
@@ -15,23 +15,24 @@ struct TransitsTabView: View {
                                 }
                             }) {
                                 Text(tab.title)
-                                    .font(.system(size: 16))
-                                    .foregroundColor(self.selectedTab == tab ? .black : .gray)
+                                    .font(.custom("Dosis", size: 14))
+                                    .foregroundColor(self.selectedTab == tab ? Color.theme.yellow : .gray)
                                     .fontWeight(self.selectedTab == tab ? .bold : .regular)
-                                    .padding(.vertical, 8)
+                                    .padding(.vertical, 8) // tap area
                             }
                             .id(tab)
 
                             if selectedTab == tab {
                                 Rectangle()
-                                    .frame(height: 2)
-                                    .foregroundColor(.black)
+                                    .frame(height: 1)
+                                    .foregroundColor(Color.theme.yellow)
                                     .transition(.opacity)
                             }
                         }
                         .frame(minWidth: 100, maxWidth: .infinity)
                     }
                 }
+                .background(Color.theme.darkBlue)
                 .padding(.horizontal)
                 .onChange(of: selectedTab) { newValue in
                     withAnimation {
@@ -40,6 +41,6 @@ struct TransitsTabView: View {
                 }
             }
         }
-        .background(Color.white)
+        .background(Color.theme.darkBlue)
     }
 }

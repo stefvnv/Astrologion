@@ -2,10 +2,10 @@ import SwiftUI
 
 struct LearningHubView: View {
     @ObservedObject var viewModel: LearningHubViewModel
-
+    
     init(viewModel: LearningHubViewModel) {
         self.viewModel = viewModel
-
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(Color.theme.darkBlue)
@@ -15,15 +15,16 @@ struct LearningHubView: View {
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 ForEach(Lessons.allCases, id: \.self) { lesson in
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         Text(lesson.rawValue)
-                            .font(.title)
-                            .padding(.leading)
+                            .font(.custom("Dosis", size: 26))
+                            .foregroundColor(Color.theme.lightLavender)
+                            .padding(.top, 50)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
