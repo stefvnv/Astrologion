@@ -626,10 +626,11 @@
 		F819B5622BACBEE4001B138A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				F819B5632BACBEEB001B138A /* Notifications */,
 				F819B5812BACC0AB001B138A /* Components */,
-				F819B5802BACC0A2001B138A /* EditProfile */,
+				F819B5632BACBEEB001B138A /* Notifications */,
 				F819B57F2BACC09C001B138A /* Settings */,
+				F819B5802BACC0A2001B138A /* EditProfile */,
+				F8A102F12BC74E1000841BB3 /* Posts */,
 				F819B57E2BACC097001B138A /* View */,
 				F819B57D2BACC091001B138A /* ViewModel */,
 			);
@@ -913,7 +914,6 @@
 		F819B58E2BACC12D001B138A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F819B5A82BACC413001B138A /* PostGridViewModel.swift */,
 				F819B5AA2BACC425001B138A /* UserListViewModel.swift */,
 			);
 			path = ViewModel;
@@ -924,7 +924,6 @@
 			children = (
 				F819B5B22BACC4AC001B138A /* AdaptiveImage.swift */,
 				F819B5B42BACC4C7001B138A /* CircularProfileImageView.swift */,
-				F819B5B62BACC4E2001B138A /* PostGridView.swift */,
 				F819B5B02BACC48F001B138A /* UserCell.swift */,
 				F819B5AC2BACC450001B138A /* CustomInputView.swift */,
 				F840A0092BAE09B300D007F8 /* LocationSearchView.swift */,
@@ -1133,6 +1132,31 @@
 				F819B5AE2BACC473001B138A /* UserListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F8A102F12BC74E1000841BB3 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				F8A102F22BC74E1D00841BB3 /* View */,
+				F8A102F32BC74E2100841BB3 /* ViewModel */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		F8A102F22BC74E1D00841BB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F819B5B62BACC4E2001B138A /* PostGridView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8A102F32BC74E2100841BB3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F819B5A82BACC413001B138A /* PostGridViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F8A1F8822BBEC94100A604AF /* LearningHub */ = {

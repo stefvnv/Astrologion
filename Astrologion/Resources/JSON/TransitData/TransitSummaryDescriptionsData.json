@@ -1088,29 +1088,1601 @@
         "sign": "Taurus",
         "house": 12,
         "description": "With the Moon in Taurus transiting the twelfth house, focus shifts inward, exploring emotional stability and comfort in solitude and spiritual practices. This period invites reflection on material attachments and the pursuit of inner peace through sensory experiences and connections with nature, finding solace in the simplicity and grounding aspects of the physical world."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 1,
+        "description": "The Moon in Gemini transiting the first house brings a flurry of intellectual curiosity and a need for variety in personal expression. This period emphasizes adaptability, quick-wittedness, and a desire for social interaction. Emotional fulfillment is linked to communication, learning, and the exploration of diverse interests."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 2,
+        "description": "When the Moon in Gemini moves through the second house, the focus shifts to intellectual assets and versatility in financial matters. This period encourages adaptability in managing resources, with an emphasis on communication skills and information as valuable assets. It's a time for exploring multiple avenues for income, driven by curiosity and the exchange of ideas."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 3,
+        "description": "The Moon in Gemini transiting the third house heightens the need for mental stimulation and variety in daily interactions. This period favors lively conversations, short trips, and the consumption of diverse information. Emotional well-being is closely tied to the freedom to express ideas and engage in stimulating intellectual exchanges."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 4,
+        "description": "With the Moon in Gemini in the fourth house, the home environment becomes a hub of communication and learning. This transit fosters a need for mental stimulation at home, encouraging discussions, reading, and intellectual pursuits within the family. Emotional security is connected to the exchange of ideas and maintaining an open, dynamic home life."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 5,
+        "description": "The Moon in Gemini moving through the fifth house illuminates creativity, romance, and leisure activities with a playful and intellectual light. This period encourages creative expression through language and thought, enjoying flirtatious and lighthearted romantic interactions, and engaging in hobbies that stimulate the mind."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 6,
+        "description": "When the Moon in Gemini transits the sixth house, it brings a communicative and adaptable approach to work and health routines. This period supports flexibility in daily tasks, fostering an environment of learning and variety at work. Health matters might take on a more intellectual focus, with an interest in gathering information for wellness."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 7,
+        "description": "The Moon in Gemini transiting the seventh house places an emphasis on communication and intellectual connections in partnerships and close relationships. This period favors dialogue, mutual learning, and sharing ideas within relationships, with emotional fulfillment coming from intellectual rapport and lively exchanges."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 8,
+        "description": "With the Moon in Gemini in the eighth house, focus shifts to communication within intimate and transformative contexts. This transit encourages discussing deep emotional matters with a rational approach, exploring the psychological underpinnings of relationships, and a curiosity about life's mysteries. Emotional security may be found in understanding the intellectual dimensions of change and intimacy."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 9,
+        "description": "The Moon in Gemini moving through the ninth house highlights a thirst for knowledge, variety, and exploration in philosophical and cultural pursuits. This period supports expanding one's horizons through travel, study, and the exploration of diverse beliefs, with emotional fulfillment derived from the pursuit of intellectual and cultural diversity."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 10,
+        "description": "When the Moon in Gemini transits the tenth house, it brings an adaptable and communicative approach to career and public roles. This period favors professions involving communication, information exchange, and multitasking. Emotional satisfaction in one's career may be closely linked to intellectual stimulation and variety in professional tasks."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 11,
+        "description": "The Moon in Gemini in the eleventh house energizes social circles and community involvement with a focus on intellectual engagement and variety. This transit fosters connections based on shared ideas and interests, encouraging participation in group activities that stimulate the mind and promote lively discussions."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Gemini",
+        "house": 12,
+        "description": "With the Moon in Gemini transiting the twelfth house, focus shifts to the inner world, where the need for mental stimulation meets introspection and solitude. This period invites reflection on communication patterns, the processing of subconscious thoughts, and the exploration of hidden information. It's a time for quiet study, mental rest, and understanding the emotional underpinnings of thoughts."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 1,
+        "description": "The Moon in Cancer transiting the first house heightens emotional sensitivity and the need for nurturing self-expression. This period emphasizes a strong connection to one's roots and an intuitive approach to life. Emotional well-being is closely tied to personal security and comfort, leading to a caring and protective demeanor towards oneself and others."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 2,
+        "description": "When the Moon in Cancer moves through the second house, emotional security becomes intertwined with financial and material stability. This period fosters a desire to create a secure and comfortable environment through the accumulation of possessions that offer emotional comfort. It's a time for nurturing personal resources and valuing those things that provide a sense of safety."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 3,
+        "description": "The Moon in Cancer transiting the third house deepens emotional connections in communication, influencing interactions with siblings and the immediate environment. This period emphasizes the expression of feelings through words, fostering a nurturing approach in exchanges and a need for understanding and empathy in daily conversations."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 4,
+        "description": "With the Moon in Cancer in the fourth house, the focus on home and family life intensifies, emphasizing emotional bonds and the importance of a nurturing domestic environment. This transit heightens the need for comfort and security within the home, fostering strong connections to family and a deep sense of belonging."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 5,
+        "description": "The Moon in Cancer moving through the fifth house illuminates the pleasures of emotional expression in creativity, romance, and relationships with children. This period encourages heartfelt creative pursuits, nurturing romantic connections, and a protective, caring approach to interactions with children, emphasizing the importance of emotional security in these areas."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 6,
+        "description": "When the Moon in Cancer transits the sixth house, it brings a nurturing quality to daily routines, work, and health practices. This period supports caring for others and oneself with sensitivity, integrating emotional well-being into the tasks of daily life, and fostering a compassionate and intuitive approach to service and health."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 7,
+        "description": "The Moon in Cancer transiting the seventh house places an emphasis on emotional security and nurturing in partnerships and close relationships. This period fosters deep emotional bonds, a need for caring interactions, and a desire for mutual support and understanding in relationships, valuing empathy and emotional connection."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 8,
+        "description": "With the Moon in Cancer in the eighth house, emotional intensity and the need for deep connections are highlighted, especially in matters of intimacy and shared resources. This transit encourages exploring emotional depths and vulnerabilities within close relationships, seeking transformative emotional experiences that lead to healing and regeneration."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 9,
+        "description": "The Moon in Cancer moving through the ninth house inspires a nurturing approach to higher learning, travel, and philosophical exploration. This period supports seeking emotional growth through experiences that expand one's understanding of family, home, and cultural roots, fostering a sense of emotional connection to the broader world."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 10,
+        "description": "When the Moon in Cancer transits the tenth house, it emphasizes the importance of emotional connections in career and public roles. This period highlights a nurturing approach to professional endeavors, valuing empathy and care in leadership positions, and fostering a sense of community and support in one's vocational path."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 11,
+        "description": "The Moon in Cancer in the eleventh house energizes social networks and community involvement with a focus on emotional bonds and collective care. This transit encourages forming connections based on shared feelings and mutual support, participating in groups that feel like family, and fostering a sense of belonging through empathetic and nurturing interactions."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Cancer",
+        "house": 12,
+        "description": "With the Moon in Cancer transiting the twelfth house, focus shifts inward, exploring the depths of emotions, intuition, and subconscious patterns. This period invites reflection on past emotional experiences, fostering healing and understanding through solitude and introspection, and connecting with the collective on an emotional and intuitive level."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 1,
+        "description": "The Moon in Leo transiting the first house infuses one's personality with warmth, charisma, and a flair for drama. This period encourages expressing oneself boldly and creatively, with an emphasis on authenticity and passion. Emotional fulfillment comes from being seen and appreciated for one's unique qualities."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 2,
+        "description": "When the Moon in Leo moves through the second house, focus shifts to securing material stability in ways that affirm one's identity and personal worth. This period supports investing in assets that not only provide security but also reflect one's creative and expressive nature, emphasizing the joy and pride in possessions."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 3,
+        "description": "The Moon in Leo transiting the third house enhances communication with creativity and confidence. This period favors heartfelt and generous exchanges, where expressing one's ideas and thoughts becomes an extension of one's identity. It's a time for lively conversations, storytelling, and making everyday interactions more colorful and engaging."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 4,
+        "description": "With the Moon in Leo in the fourth house, the home environment becomes a stage for self-expression and the nurturing of one's inner child. This transit fosters a warm, generous atmosphere in family dynamics, emphasizing pride in one's heritage and creating a space that celebrates individuality and creativity."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 5,
+        "description": "The Moon in Leo moving through the fifth house illuminates the pleasures of romance, creativity, and playful self-expression. This period encourages embracing love and creative projects with open-hearted enthusiasm and a touch of drama, finding emotional fulfillment in pursuits that allow for personal shine and authentic expression."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 6,
+        "description": "When the Moon in Leo transits the sixth house, it brings a desire to infuse daily routines and work with creativity and pride. This period supports finding joy in the details of tasks and serving others with a generous spirit, emphasizing the importance of recognition and appreciation in work environments."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 7,
+        "description": "The Moon in Leo transiting the seventh house highlights the need for warmth, loyalty, and recognition in partnerships and close relationships. Emotional satisfaction is derived from mutual admiration and respect, fostering relationships that celebrate individual strengths and encourage creative collaboration."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 8,
+        "description": "With the Moon in Leo in the eighth house, emotional depth and intensity are experienced with a sense of drama and passion. This transit encourages exploring intimacy and shared resources with boldness and generosity, seeking transformative experiences that honor personal creativity and expression."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 9,
+        "description": "The Moon in Leo moving through the ninth house inspires a quest for grand adventures and philosophical exploration with enthusiasm and confidence. This period supports expanding one's horizons through travel, study, or creative endeavors that reflect one's personal ideals and quest for meaning."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 10,
+        "description": "When the Moon in Leo transits the tenth house, it accentuates career and public roles with a sense of pride and the desire for recognition. This period favors leadership positions that allow for creative input and expression, seeking professional paths that resonate with one's personal identity and offer opportunities for acclaim."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 11,
+        "description": "The Moon in Leo in the eleventh house energizes social networks and community involvement with charisma and a desire to stand out. This transit fosters forming connections based on shared creative interests and aspirations, encouraging leadership within groups and participation in collective efforts that showcase individual talents."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Leo",
+        "house": 12,
+        "description": "With the Moon in Leo transiting the twelfth house, focus shifts inward, exploring the need for recognition and the role of creativity in the subconscious. This period invites reflection on hidden desires for acclaim and the expression of one's inner drama through artistic or spiritual channels, finding solace in private creative endeavors."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 1,
+        "description": "The Moon in Virgo transiting the first house emphasizes a period of practicality and attention to detail in personal demeanor. This transit fosters a critical and analytical approach to life, with an increased focus on health, routines, and efficiency. Emotional fulfillment comes from feeling useful and productive, as well as from maintaining physical and mental well-being."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 2,
+        "description": "When the Moon in Virgo moves through the second house, it highlights a meticulous approach to managing finances and possessions. This period supports careful budgeting, organizing resources, and valuing items that serve a practical purpose. Emotional security is closely tied to financial stability and the sensible use of material resources."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 3,
+        "description": "The Moon in Virgo transiting the third house enhances communication with precision and clarity. This period favors analytical thinking, detail-oriented learning, and practical discussions. Emotional connections are strengthened through helpful advice and sharing useful information, with a preference for conversations that have tangible outcomes."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 4,
+        "description": "With the Moon in Virgo in the fourth house, the emphasis is on creating an orderly and functional home environment. This transit fosters a desire for cleanliness, organization, and a practical approach to family matters. Emotional comfort is derived from a well-structured domestic life and taking care of loved ones in practical ways."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 5,
+        "description": "The Moon in Virgo moving through the fifth house brings a careful and thoughtful approach to creativity, romance, and interactions with children. This period encourages expressing affection through acts of service and engaging in hobbies that require attention to detail. Emotional fulfillment comes from applying skills and craftsmanship to creative projects."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 6,
+        "description": "When the Moon in Virgo transits the sixth house, it highlights a strong focus on efficiency and health in daily routines. This period supports meticulous work habits, a methodical approach to tasks, and a keen interest in maintaining physical health. Emotional well-being is closely tied to productivity and the sense of accomplishment that comes from a job well done."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 7,
+        "description": "The Moon in Virgo transiting the seventh house places an emphasis on practicality and service in partnerships. This period favors relationships grounded in mutual assistance and shared daily routines, with an appreciation for the small, everyday gestures that demonstrate care and commitment. Emotional connections are deepened through practical support and understanding."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 8,
+        "description": "With the Moon in Virgo in the eighth house, focus shifts to analyzing and organizing shared resources and navigating intimate relationships with discernment. This transit encourages a practical approach to managing joint finances and emotional transformations, seeking clarity and efficiency in matters of intimacy and shared assets."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 9,
+        "description": "The Moon in Virgo moving through the ninth house inspires a quest for knowledge that is practical and applicable. This period supports detailed study, critical analysis of beliefs, and a preference for structured learning experiences. Emotional growth is achieved through understanding the practical implications of philosophical or cultural explorations."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 10,
+        "description": "When the Moon in Virgo transits the tenth house, it emphasizes career and public responsibilities with a focus on diligence, detail, and service. This period favors professions that require analytical skills, precision, and a practical approach to problem-solving, with emotional fulfillment derived from recognition of one's efficiency and utility."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 11,
+        "description": "The Moon in Virgo in the eleventh house energizes social networks and community involvement with an emphasis on helpfulness and practical contributions. This transit fosters forming connections based on shared interests in health, work, or service, encouraging participation in groups that aim for improvement and practical outcomes."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Virgo",
+        "house": 12,
+        "description": "With the Moon in Virgo transiting the twelfth house, focus shifts inward to introspection and analysis of the subconscious mind. This period invites a detailed examination of hidden fears, desires, and the pursuit of emotional purity. It's a time for solitary reflection, refining the inner self, and engaging in service-oriented or healing practices in private."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 1,
+        "description": "The Moon in Libra transiting the first house enhances a sense of harmony, balance, and aesthetic awareness in personal expression. This period encourages diplomacy and a desire for peaceful interactions, with emotional well-being closely tied to the quality of relationships and the surrounding environment's beauty."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 2,
+        "description": "When the Moon in Libra moves through the second house, the focus is on achieving balance and fairness in financial matters and personal values. Emotional security is found in stable relationships and possessions that bring beauty and comfort, reflecting a need for equilibrium in material pursuits."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 3,
+        "description": "The Moon in Libra transiting the third house fosters harmonious communication and a desire for intellectual connections. This period supports engaging in social interactions that encourage sharing ideas and promotes diplomacy and fairness in exchanges, with an appreciation for art, culture, and beauty in everyday conversations."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 4,
+        "description": "With the Moon in Libra in the fourth house, there's a focus on creating a serene and beautiful domestic environment, fostering peaceful family relations. Emotional security is linked to harmony at home, where diplomatic resolution of conflicts and an appreciation for aesthetics contribute to a sense of inner balance."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 5,
+        "description": "The Moon in Libra moving through the fifth house illuminates the pleasures of romance, creativity, and social interactions with grace and charm. This period encourages artistic expression, balanced and equitable romantic relationships, and enjoying social activities that involve beauty and cultural appreciation."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 6,
+        "description": "When the Moon in Libra transits the sixth house, it highlights the importance of harmony and cooperation in daily routines, work, and health. Emotional well-being is enhanced by balanced work relationships, aesthetic work environments, and health practices that promote inner peace and equilibrium."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 7,
+        "description": "The Moon in Libra transiting the seventh house emphasizes the need for partnership and harmony in close relationships. Emotional fulfillment comes from fair and balanced interactions, with a focus on mutual respect, understanding, and the aesthetic aspects of shared experiences."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 8,
+        "description": "With the Moon in Libra in the eighth house, focus shifts to maintaining balance and fairness in intimate relationships and shared resources. This transit encourages a diplomatic approach to emotional depth and transformation, seeking harmony in the midst of change and mutual respect in financial matters."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 9,
+        "description": "The Moon in Libra moving through the ninth house inspires a quest for balance and justice in higher learning, travel, and philosophical exploration. This period supports engaging in cultural experiences that promote understanding and peace, with an appreciation for diverse perspectives and the beauty found in different cultures."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 10,
+        "description": "When the Moon in Libra transits the tenth house, it accentuates career goals and public image through the lens of diplomacy, aesthetics, and partnerships. This period favors professions that involve art, justice, or mediation, highlighting the importance of cooperation and aesthetic sensibility in achieving professional success."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 11,
+        "description": "The Moon in Libra in the eleventh house energizes social networks and community involvement with an emphasis on harmony, equality, and aesthetic shared goals. Emotional fulfillment is found in forming connections based on mutual interests in art, culture, and social justice, fostering a sense of belonging through balanced and equitable group dynamics."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Libra",
+        "house": 12,
+        "description": "With the Moon in Libra transiting the twelfth house, focus shifts inward to exploring the balance between solitude and social interactions, and the pursuit of peace and harmony in the subconscious. This period invites reflection on past relationships and the role of harmony in personal growth, encouraging a balanced approach to spirituality and inner peace."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 1,
+        "description": "The Moon in Scorpio transiting the first house brings an intensity and depth to one's emotional expression and personal demeanor. This period fosters a powerful presence and a magnetic allure, with emotions running deep. Emotional fulfillment is tied to experiences that challenge and transform, emphasizing personal authenticity and the exploration of life's deeper truths."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 2,
+        "description": "When the Moon in Scorpio moves through the second house, it highlights a deep connection to material and financial security, with a focus on control and transformation. This period encourages a probing approach to managing resources, possibly uncovering hidden assets or talents. Emotional security is closely linked to stability and the power that comes from self-sufficiency."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 3,
+        "description": "The Moon in Scorpio transiting the third house intensifies communication, driving conversations to explore profound subjects and uncover hidden truths. This period favors deep thinking and the exchange of secrets, with an emphasis on transformative ideas and discussions that delve beneath the surface, seeking emotional depth in daily interactions."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 4,
+        "description": "With the Moon in Scorpio in the fourth house, the focus is on creating a private sanctuary that serves as a refuge for deep emotional processing and transformation. This transit fosters intense family connections and may unearth hidden family secrets or unresolved issues, offering opportunities for deep emotional healing within the home."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 5,
+        "description": "The Moon in Scorpio moving through the fifth house illuminates the realms of creativity, romance, and pleasure with passion and depth. This period encourages exploring emotional depths through creative expression, experiencing intense romantic encounters, and engaging in activities that stir the soul, offering a transformative experience of joy and self-expression."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 6,
+        "description": "When the Moon in Scorpio transits the sixth house, it brings a profound intensity to daily routines, work, and health matters. This period supports a transformative approach to tasks and an investigative interest in health and well-being, emphasizing the elimination of what no longer serves in favor of deep renewal and healing."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 7,
+        "description": "The Moon in Scorpio transiting the seventh house places an emphasis on deep, transformative partnerships and close relationships. Emotional fulfillment is derived from intense bonds, loyalty, and shared experiences of change and rebirth. This period fosters a desire for connections that go beyond the superficial, seeking emotional depth and mutual empowerment."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 8,
+        "description": "With the Moon in Scorpio in the eighth house, focus deepens on emotional and financial intimacy, shared resources, and transformative experiences. This transit encourages exploring the depths of intimacy and shared values, with a keen interest in understanding the mysteries of life, death, and rebirth, fostering profound emotional connections and transformations."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 9,
+        "description": "The Moon in Scorpio moving through the ninth house inspires a passionate quest for truth, deeper meaning, and transformative philosophies. This period supports exploring belief systems with intensity, seeking emotional and spiritual growth through profound learning experiences, and potentially undergoing significant changes in worldview."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 10,
+        "description": "When the Moon in Scorpio transits the tenth house, it emphasizes career and public roles with a focus on depth, power, and transformation. This period favors professions that involve investigation, healing, or managing resources, with emotional fulfillment coming from achieving influence and making impactful changes in the public sphere or professional field."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 11,
+        "description": "The Moon in Scorpio in the eleventh house energizes social networks and community involvement with intensity and a desire for profound connections. Emotional fulfillment is found in forming bonds based on shared transformative goals, engaging in collective efforts that address deeper issues, and fostering a sense of emotional depth and authenticity within groups."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Scorpio",
+        "house": 12,
+        "description": "With the Moon in Scorpio transiting the twelfth house, focus shifts inward to explore the subconscious, emotional depths, and hidden aspects of the self. This period invites introspection and the release of past emotional wounds through deep psychological work, fostering healing and transformation on a soul level, often in solitude or through spiritual practices."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 1,
+        "description": "The Moon in Sagittarius transiting the first house ignites a spirit of adventure and a thirst for freedom in personal expression. This period encourages optimism, exploration, and the pursuit of new experiences, with emotional fulfillment tied to personal growth and the freedom to explore life's many paths. It's a time for embracing spontaneity and expressing one's philosophical outlook."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 2,
+        "description": "When the Moon in Sagittarius moves through the second house, it highlights a desire for financial freedom and the exploration of values that reflect a love for adventure and learning. This period supports expanding one's resources in innovative ways and investing in experiences that broaden the mind and spirit, valuing possessions that hold personal or philosophical significance."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 3,
+        "description": "The Moon in Sagittarius transiting the third house brings a buoyant and open-minded approach to communication, short journeys, and learning. This period favors lively discussions, a variety of interests, and the exchange of ideas rooted in optimism and the quest for meaning. Emotional connections are strengthened through shared adventures and exploratory conversations."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 4,
+        "description": "With the Moon in Sagittarius in the fourth house, the home environment becomes a place for exploration and expansion of one's cultural or philosophical boundaries. This transit fosters a love for freedom within the family, encouraging open-mindedness and the pursuit of collective adventures or learning experiences that enrich the emotional foundation."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 5,
+        "description": "The Moon in Sagittarius moving through the fifth house illuminates creative expression, romance, and leisure with an adventurous and optimistic spirit. This period encourages pursuing passions with enthusiasm, engaging in playful and expansive romantic encounters, and finding joy in activities that stimulate the mind and spirit."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 6,
+        "description": "When the Moon in Sagittarius transits the sixth house, it brings a need for variety and expansion to daily routines, work, and health practices. This period supports an adventurous approach to tasks, exploring new methods for improvement, and a philosophical attitude towards service and well-being, finding emotional fulfillment in meaningful work that aligns with one's beliefs."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 7,
+        "description": "The Moon in Sagittarius transiting the seventh house places an emphasis on freedom, exploration, and shared adventures in partnerships and close relationships. Emotional fulfillment is derived from connections that allow for personal growth, philosophical exchanges, and the mutual pursuit of broader horizons."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 8,
+        "description": "With the Moon in Sagittarius in the eighth house, focus shifts to exploring emotional depths and shared resources with a sense of adventure and optimism. This transit encourages a philosophical approach to intimacy and transformation, seeking meaning and growth through deep emotional experiences and the exploration of life's mysteries."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 9,
+        "description": "The Moon in Sagittarius moving through the ninth house inspires a quest for emotional expansion through travel, education, and the exploration of diverse philosophies. This period supports seeking emotional understanding through broadening one's horizons, engaging with different cultures, and embracing a variety of belief systems."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 10,
+        "description": "When the Moon in Sagittarius transits the tenth house, it accentuates career aspirations and public roles with a focus on adventure, ethics, and the pursuit of truth. This period favors professions that involve teaching, travel, or exploration, encouraging a career path that aligns with one's philosophical beliefs and desire for meaningful impact."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 11,
+        "description": "The Moon in Sagittarius in the eleventh house energizes social networks and community involvement with an emphasis on shared ideals, freedom, and collective exploration. Emotional fulfillment is found in forming connections based on shared adventures and aspirations, fostering a sense of belonging through the pursuit of common goals and ideals."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Sagittarius",
+        "house": 12,
+        "description": "With the Moon in Sagittarius transiting the twelfth house, focus shifts inward to explore the subconscious, seeking emotional freedom and expansion through solitude and introspection. This period invites reflection on philosophical beliefs and the quest for meaning, encouraging spiritual growth and the release of limiting emotional patterns through higher understanding."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 1,
+        "description": "The Moon in Capricorn transiting the first house brings a period of serious reflection on personal goals and responsibilities. This time fosters a disciplined and pragmatic approach to life, emphasizing self-reliance and a steadfast demeanor. Emotional fulfillment comes from achieving ambitions and maintaining integrity and structure in personal affairs."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 2,
+        "description": "When the Moon in Capricorn moves through the second house, it emphasizes financial prudence and the strategic management of resources. This period supports a conservative approach to material possessions, valuing items that signify status or long-term value. Emotional security is closely linked to stability and the practical use of assets."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 3,
+        "description": "The Moon in Capricorn transiting the third house brings a methodical and calculated approach to communication and learning. This period favors structured thinking, careful planning, and communicating with authority. Emotional connections may be expressed through a sense of duty and shared responsibilities, valuing reliability in exchanges."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 4,
+        "description": "With the Moon in Capricorn in the fourth house, the focus is on creating a stable and secure home environment, often through traditional structures and clear boundaries. This transit fosters a disciplined approach to family matters, emphasizing the importance of legacy and the foundational role of home in achieving personal and professional goals."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 5,
+        "description": "The Moon in Capricorn moving through the fifth house highlights a reserved and responsible approach to creativity, romance, and interactions with children. This period encourages a focus on enduring expressions of love and affection, as well as the pursuit of creative projects that have tangible outcomes or professional merit."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 6,
+        "description": "When the Moon in Capricorn transits the sixth house, it underlines the significance of diligence and accountability in work and health routines. This period supports a disciplined approach to tasks and an emphasis on efficiency and practicality, finding emotional satisfaction in competency and the meticulous execution of duties."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 7,
+        "description": "The Moon in Capricorn transiting the seventh house places an emphasis on commitment, structure, and traditional values in partnerships and close relationships. Emotional fulfillment is derived from relationships that are built on mutual respect, shared ambitions, and a serious approach to joint responsibilities and goals."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 8,
+        "description": "With the Moon in Capricorn in the eighth house, focus intensifies on emotional resilience and mastery over change and shared resources. This transit encourages a pragmatic approach to intimacy and transformation, seeking stability and control in the midst of emotional and financial entanglements, with a preference for strategic and long-term planning."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 9,
+        "description": "The Moon in Capricorn moving through the ninth house inspires a disciplined quest for knowledge and a pragmatic exploration of beliefs and higher learning. This period supports the pursuit of education and experiences that have practical applications, with an emphasis on structure, ethics, and the responsible use of wisdom."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 10,
+        "description": "When the Moon in Capricorn transits the tenth house, it accentuates career ambitions and public image with a focus on discipline, reputation, and long-term achievements. This period favors professions that require dedication, leadership, and an authoritative presence, with emotional fulfillment coming from recognition and success in one's chosen field."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 11,
+        "description": "The Moon in Capricorn in the eleventh house energizes social networks and community involvement with an emphasis on structure, leadership, and collective goals. Emotional fulfillment is found in forming connections based on shared ambitions and contributions to group efforts that are built on responsibility, integrity, and practical outcomes."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Capricorn",
+        "house": 12,
+        "description": "With the Moon in Capricorn transiting the twelfth house, focus shifts inward to discipline and responsibility in the realm of the subconscious and spiritual growth. This period invites reflection on personal limitations, the release of outdated structures, and the cultivation of inner authority, encouraging a grounded approach to spirituality and emotional healing."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 1,
+        "description": "The Moon in Aquarius transiting the first house invigorates an individual with a sense of independence, originality, and a humanitarian outlook. This period fosters a unique and somewhat unconventional approach to personal expression, with emotional fulfillment coming from engaging in social causes, innovation, and cultivating friendships that respect one's need for freedom."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 2,
+        "description": "When the Moon in Aquarius moves through the second house, it highlights a desire for financial and material stability that allows for personal freedom and social contribution. This period encourages inventive approaches to generating resources and values possessions that reflect individuality and technological advancement, emphasizing the importance of community and shared ideals."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 3,
+        "description": "The Moon in Aquarius transiting the third house energizes communication with originality and an open-minded approach. This period supports engaging in intellectual exchanges that advocate for social change, foster community connections, and promote futuristic ideas. Emotional connections are enhanced by shared ideals and the pursuit of knowledge that benefits the collective."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 4,
+        "description": "With the Moon in Aquarius in the fourth house, the home environment becomes a space for intellectual exploration and the expression of individuality. This transit fosters a need for freedom and uniqueness in family dynamics and domestic life, emphasizing unconventional living arrangements or a home that serves as a gathering place for diverse social groups."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 5,
+        "description": "The Moon in Aquarius moving through the fifth house illuminates creative expression and romance with innovation and a focus on collective enjoyment. This period encourages engaging in hobbies and romantic pursuits that are intellectually stimulating and socially inclusive, finding emotional fulfillment in connections that respect autonomy and shared humanitarian values."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 6,
+        "description": "When the Moon in Aquarius transits the sixth house, it brings a progressive approach to daily routines, work, and health. This period supports incorporating technology and innovative methods into everyday tasks, with an emphasis on improving efficiency and serving the greater good through one's contributions, valuing independence and originality in problem-solving."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 7,
+        "description": "The Moon in Aquarius transiting the seventh house emphasizes the importance of intellectual compatibility, freedom, and equality in partnerships and close relationships. Emotional fulfillment is derived from relationships that allow for individuality, foster mutual respect for independence, and share a commitment to social or humanitarian causes."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 8,
+        "description": "With the Moon in Aquarius in the eighth house, focus shifts to exploring emotional depths and shared resources with an innovative and detached perspective. This transit encourages a rational approach to intimacy and transformation, seeking emotional connections that transcend traditional boundaries and foster mutual growth and freedom."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 9,
+        "description": "The Moon in Aquarius moving through the ninth house inspires a quest for freedom and expansion through unconventional wisdom and the exploration of future possibilities. This period supports a broad-minded approach to philosophy, education, and cultural experiences, valuing diversity and the exchange of progressive ideas that challenge the status quo."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 10,
+        "description": "When the Moon in Aquarius transits the tenth house, it accentuates career aspirations and public roles with a focus on innovation, social awareness, and the collective good. This period favors professions that involve technology, social reform, or community engagement, encouraging a visionary approach to professional achievements and public contributions."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 11,
+        "description": "The Moon in Aquarius in the eleventh house energizes social circles and community involvement with an emphasis on shared ideals, collaboration, and the pursuit of social justice. Emotional fulfillment is found in forming connections based on intellectual affinity and the collective vision for a better future, fostering a sense of belonging in groups that value innovation and equality."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Aquarius",
+        "house": 12,
+        "description": "With the Moon in Aquarius transiting the twelfth house, focus shifts inward to the exploration of individuality within the collective consciousness and the role of innovation in spiritual growth. This period invites reflection on humanitarian ideals, personal freedom, and the pursuit of enlightenment through unconventional paths, finding solace in the interconnectedness of all beings and the shared human experience."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 1,
+        "description": "The Moon in Pisces transiting the first house imbues the self with heightened empathy, intuition, and a dreamy, reflective nature. This period fosters a strong connection to the emotional undercurrents around, leading to a compassionate and understanding demeanor. Emotional expression may be fluid and imaginative, seeking harmony and often avoiding confrontation."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 2,
+        "description": "When the Moon in Pisces moves through the second house, it highlights a sensitivity toward financial security and personal values, often tying them to emotional or spiritual well-being. This period encourages finding value in non-materialistic pursuits and may manifest as fluctuating financial circumstances that test one's adaptability and faith in the universe's abundance."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 3,
+        "description": "The Moon in Pisces transiting the third house brings a poetic and intuitive quality to communication and thought processes. This period favors expressing ideas creatively and empathetically, with a preference for listening and understanding over debating. Emotional connections with siblings and close acquaintances may deepen, influenced by shared imaginative or spiritual interests."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 4,
+        "description": "With the Moon in Pisces in the fourth house, the focus is on nurturing a peaceful and spiritually enriching home environment. Emotional security is closely tied to having a sacred space for retreat and reflection, fostering deep emotional bonds within the family that are based on unconditional love and understanding."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 5,
+        "description": "The Moon in Pisces moving through the fifth house illuminates creative expression, romance, and leisure with a touch of whimsy and a deep well of emotional inspiration. This period encourages following one's heart in love and art, often blurring the lines between fantasy and reality, and finding joy in creative outlets that offer emotional catharsis."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 6,
+        "description": "When the Moon in Pisces transits the sixth house, it brings a compassionate and intuitive approach to daily routines, work, and health matters. This period supports healing practices that address both the emotional and physical aspects of well-being, with a focus on service that uplifts others and a workplace environment that nurtures creativity and empathy."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 7,
+        "description": "The Moon in Pisces transiting the seventh house emphasizes empathy, compassion, and a desire for spiritual connection in partnerships. Emotional fulfillment in relationships may involve shared creative or mystical pursuits, with an emphasis on mutual understanding and the unconditional support of each other's dreams and sensitivities."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 8,
+        "description": "With the Moon in Pisces in the eighth house, focus deepens on emotional and spiritual transformations within intimate relationships and shared resources. This transit encourages exploring the depths of emotional bonds with sensitivity and intuition, often leading to profound insights and healing through the merging of souls."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 9,
+        "description": "The Moon in Pisces moving through the ninth house inspires a journey for emotional and spiritual growth through exploration of higher knowledge, travel, and philosophical inquiry. This period supports connecting with diverse cultures and belief systems in a quest for universal truths, with a tendency to idealize far-off places or spiritual teachings."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 10,
+        "description": "When the Moon in Pisces transits the tenth house, it emphasizes career and public roles that involve caregiving, artistic, or spiritual dimensions. Emotional fulfillment in the professional sphere may come from engaging in work that allows for creative expression and serves a higher purpose, often blurring the boundaries between personal vocation and public service."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 11,
+        "description": "The Moon in Pisces in the eleventh house energizes social networks and community involvement with a sense of empathy and universal connection. Emotional fulfillment is found in forming bonds within groups that share artistic, spiritual, or humanitarian goals, fostering a sense of unity and shared dreams. This period encourages compassionate action towards collective aspirations and finding solace in the interconnectedness of all beings."
+    },
+    {
+        "planet": "Moon",
+        "sign": "Pisces",
+        "house": 12,
+        "description": "With the Moon in Pisces transiting the twelfth house, focus shifts inward, exploring the depths of the subconscious, intuition, and spiritual insights. This period invites a retreat from the worldly to connect with the inner self and the collective unconscious, often through meditation, art, or service. Emotional healing comes from releasing past wounds and embracing the flow of universal love and compassion."
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 1,
+        "description": "Mercury in Aries transiting the first house sparks a period of assertive and enthusiastic communication. Ideas and thoughts are expressed with confidence and directness, leading to a straightforward and pioneering way of thinking. This transit encourages quick decision-making and a bold approach to initiating conversations and projects."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 2,
+        "description": "When Mercury in Aries moves through the second house, it highlights innovative ideas and strategies related to financial matters and personal possessions. This period supports a proactive approach to creating and acting on financial plans, with a tendency towards impulsive investments or purchases that promise immediate returns."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 3,
+        "description": "Mercury in Aries transiting the third house energizes all forms of communication with dynamism and a competitive edge. Conversations may become lively debates, and the mind is quick and sharp. This transit favors assertive interactions, quick learning, and the courage to speak one's mind."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 4,
+        "description": "With Mercury in Aries in the fourth house, discussions within the home and with family members may become more animated and direct. This period encourages open and honest dialogue about personal needs and family dynamics, possibly leading to innovative solutions for domestic matters."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 5,
+        "description": "Mercury in Aries moving through the fifth house illuminates creative thinking and bold expression in artistic pursuits, romance, and interactions with children. Communication in love and creative projects is marked by enthusiasm and spontaneity, favoring activities that allow for original thought and playful exchange."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 6,
+        "description": "When Mercury in Aries transits the sixth house, it brings a direct and efficient approach to dealing with tasks and health matters. Workplace communication may become more assertive, and there's an increased capacity for tackling problems head-on, leading to innovative solutions in daily routines and health regimes."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 7,
+        "description": "Mercury in Aries transiting the seventh house sharpens negotiation skills and direct dialogue in partnerships and close relationships. This period encourages speaking up about one's needs and desires within relationships, fostering clear and straightforward communication that cuts through ambiguity."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 8,
+        "description": "With Mercury in Aries in the eighth house, conversations may delve into deeper subjects with a fearless approach to taboo or hidden topics. This transit stimulates an investigative mind, encouraging direct and probing communication in matters of intimacy, shared resources, and transformation."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 9,
+        "description": "Mercury in Aries moving through the ninth house inspires bold and expansive thinking, questioning, and learning. Philosophical debates and the exploration of new ideologies are favored, with a tendency towards assertive and sometimes dogmatic expression of beliefs and opinions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 10,
+        "description": "When Mercury in Aries transits the tenth house, it emphasizes assertive communication and quick thinking in career and public roles. Professional discussions may become more dynamic, with innovative ideas and a competitive approach shaping one's public image and professional strategies."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 11,
+        "description": "Mercury in Aries in the eleventh house energizes group discussions and communal projects with a pioneering spirit. This transit supports assertive communication within social networks and the pursuit of innovative ideas that challenge the status quo, promoting reform and new beginnings in collaborative efforts."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aries",
+        "house": 12,
+        "description": "With Mercury in Aries transiting the twelfth house, the mind turns inward, contemplating bold ideas and plans in solitude. This period may bring about assertive self-reflection and the courage to confront one's inner fears and secrets, possibly leading to decisive insights that clear the way for new beginnings."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 1,
+        "description": "Mercury in Taurus transiting the first house brings a period of deliberate thought and communication, emphasizing practicality and sensibility in self-expression. This transit fosters a methodical approach to problem-solving, preferring discussions and decisions that are well-considered and grounded in reality. There's a focus on reliability and the tangible application of ideas."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 2,
+        "description": "When Mercury in Taurus moves through the second house, it highlights thoughtful considerations regarding finances and personal values. This period supports a cautious approach to financial planning, favoring investments in long-term stability. Communication about material resources is pragmatic, reflecting a desire for security and comfort."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 3,
+        "description": "Mercury in Taurus transiting the third house encourages slow, deliberate thinking and communication, with an emphasis on clarity and thoroughness. This period favors learning that involves the senses and hands-on experience, enhancing retention and understanding. Conversations may revolve around practical matters, valuing substance over speed or wit."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 4,
+        "description": "With Mercury in Taurus in the fourth house, discussions within the family and about the home are grounded and practical, focusing on creating stability and comfort. This transit supports planning home improvements and making decisions that enhance the long-term security of the domestic environment, emphasizing the importance of a solid foundation."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 5,
+        "description": "Mercury in Taurus moving through the fifth house illuminates creative expression and communication in romance and leisure activities with a focus on consistency and simplicity. This period encourages patience in artistic endeavors and romantic expressions, finding beauty in the enduring and tangible aspects of love and creativity."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 6,
+        "description": "When Mercury in Taurus transits the sixth house, it brings a practical and methodical approach to daily tasks and health matters. Communication in the workplace is straightforward and reliable, and there's a focus on implementing routines that are sustainable and contribute to overall well-being. Attention to detail is heightened, favoring thoroughness over haste."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 7,
+        "description": "Mercury in Taurus transiting the seventh house places an emphasis on steady and reliable communication in partnerships and close relationships. This period supports building trust through consistent and clear expressions of thought and intent, valuing loyalty and straightforward dialogue that strengthens bonds and ensures mutual understanding."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 8,
+        "description": "With Mercury in Taurus in the eighth house, discussions and thoughts delve into matters of security, shared resources, and transformation with a practical mindset. This transit encourages a thorough analysis of joint finances and emotional bonds, seeking stability and reliability in intimate connections and shared assets."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 9,
+        "description": "Mercury in Taurus moving through the ninth house inspires a pragmatic approach to higher learning, travel, and philosophical exploration. This period favors education and experiences that have clear, practical applications, valuing knowledge that can be applied to enhance the stability and quality of life."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 10,
+        "description": "When Mercury in Taurus transits the tenth house, it emphasizes a grounded and realistic approach to career and public image. Professional communication is dependable and methodical, with an emphasis on ideas and plans that offer tangible results. This period supports building a reputation for thoroughness and reliability in professional endeavors."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 11,
+        "description": "Mercury in Taurus in the eleventh house energizes social networks and community involvement with a focus on practical solutions and enduring values. This transit fosters discussions and plans within groups that are centered on sustainability, loyalty, and the gradual achievement of long-term goals, emphasizing the importance of patience and perseverance in collaborative efforts."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Taurus",
+        "house": 12,
+        "description": "With Mercury in Taurus transiting the twelfth house, the focus shifts inward to contemplation and reflection on material values and the practical aspects of spirituality. This period invites a reevaluation of subconscious patterns related to security and possessions, encouraging a mindful approach to letting go of unnecessary attachments and embracing simplicity."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 1,
+        "description": "Mercury in Gemini transiting the first house infuses the self with a lively intellect and a curiosity about the world. This period enhances communication skills, making interactions spark with wit and agility. The thirst for knowledge is insatiable, driving a variety of interests and the pursuit of new experiences."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 2,
+        "description": "When Mercury in Gemini moves through the second house, it highlights versatility in financial matters and a keen interest in diversifying resources. This period encourages adaptability in managing assets, favoring intellectual pursuits or investments that stimulate the mind. Communication about values and possessions may become a central theme."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 3,
+        "description": "Mercury in Gemini transiting the third house amplifies the natural inclinations for communication, learning, and networking. This period is marked by an increase in social interactions, a desire for gathering information, and a capacity for multitasking, enhancing the flow of ideas and the enjoyment of lively exchanges."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 4,
+        "description": "With Mercury in Gemini in the fourth house, the home environment becomes a hub of communication and intellectual activity. Discussions within the family may revolve around a variety of topics, fostering a learning atmosphere. This transit may also encourage thinking about or planning changes in the home."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 5,
+        "description": "Mercury in Gemini moving through the fifth house lights up creative expression, romance, and leisure with intellectual vibrancy and playful communication. This period encourages flirtatious exchanges, creative writing, and engaging in hobbies that stimulate the mind, valuing novelty and variety in pleasures."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 6,
+        "description": "When Mercury in Gemini transits the sixth house, it brings a lively approach to daily routines, work, and health matters. This period supports analytical thinking in problem-solving, versatility in tasks, and an interest in health topics that engage the mind, possibly exploring new techniques for efficiency."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 7,
+        "description": "Mercury in Gemini transiting the seventh house enhances dialogue and mental connections in partnerships and close relationships. This period favors negotiations, debates, and the mutual exchange of ideas, with a focus on maintaining lively and stimulating interactions that respect individual perspectives."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 8,
+        "description": "With Mercury in Gemini in the eighth house, conversations and thoughts delve into the mysteries of life with curiosity and a desire to uncover hidden truths. This transit encourages a logical approach to deep subjects, fostering communication in intimate relationships that is both probing and informative."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 9,
+        "description": "Mercury in Gemini moving through the ninth house broadens the intellectual horizon, encouraging the pursuit of knowledge through diverse experiences. This period supports exploring a wide range of philosophies, engaging in higher education, and a keen interest in cultures different from one's own, favoring a versatile and open-minded approach."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 10,
+        "description": "When Mercury in Gemini transits the tenth house, it accentuates career goals and public image with articulate communication and intellectual prowess. Professional interactions are marked by clarity and adaptability, with an emphasis on leveraging information and networking skills to advance career objectives."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 11,
+        "description": "Mercury in Gemini in the eleventh house energizes social circles and community involvement with dynamic communication and the sharing of innovative ideas. This period fosters intellectual connections with peers, collaborative projects, and an interest in collective goals that stimulate mental growth and social change."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Gemini",
+        "house": 12,
+        "description": "With Mercury in Gemini transiting the twelfth house, the focus shifts inward, engaging the mind in introspection and the exploration of subconscious patterns. This period may reveal hidden thoughts through journaling or private discussions, encouraging a mental release of secrets and the use of intellect to navigate inner landscapes."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 1,
+        "description": "Mercury in Cancer transiting the first house heightens emotional intelligence and sensitivity in communication. Personal interactions are infused with empathy, allowing for intuitive understanding of others' feelings. This period encourages expressing thoughts and ideas through a nurturing lens, often prioritizing emotional connections over pure logic."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 2,
+        "description": "When Mercury in Cancer moves through the second house, financial decisions and discussions about personal values are deeply influenced by emotional considerations. This period supports a thoughtful approach to managing resources, where security and comfort take precedence, and financial plans are often connected to family or home life."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 3,
+        "description": "Mercury in Cancer transiting the third house brings a reflective and intuitive quality to communication, learning, and short journeys. Conversations may carry an emotional depth, enhancing connections with siblings and close acquaintances. This period favors sharing and receiving information in a way that nurtures and comforts."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 4,
+        "description": "With Mercury in Cancer in the fourth house, communication within the home and family is characterized by emotional depth and a focus on comfort and security. Discussions may revolve around past experiences and family history, fostering a deeper understanding of roots and a supportive domestic environment."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 5,
+        "description": "Mercury in Cancer moving through the fifth house illuminates creative expression and communication in romance and with children with sensitivity and intuition. This period encourages heartfelt conversations and imaginative thinking, where emotional connections enhance creative pursuits and romantic interactions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 6,
+        "description": "When Mercury in Cancer transits the sixth house, it brings a compassionate approach to daily tasks, work, and health matters. Communication in the workplace and with colleagues may become more empathetic, and there's an increased focus on caregiving and nurturing in service-related tasks or health routines."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 7,
+        "description": "Mercury in Cancer transiting the seventh house deepens conversations and mental connections in partnerships, emphasizing emotional understanding and shared memories. This period supports open-hearted dialogues that foster emotional security and mutual care, strengthening bonds through empathetic communication."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 8,
+        "description": "With Mercury in Cancer in the eighth house, discussions and thoughts delve into emotional and intimate realms with care and sensitivity. This transit encourages exploring shared resources, secrets, and transformative topics with a nurturing approach, valuing emotional bonds and mutual support in facing life's deeper challenges."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 9,
+        "description": "Mercury in Cancer moving through the ninth house inspires a reflective and intuitive exploration of higher knowledge, beliefs, and distant cultures. Communication and learning are influenced by emotional experiences, and philosophical or spiritual inquiries are approached with empathy and a desire to connect on a heart level."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 10,
+        "description": "When Mercury in Cancer transits the tenth house, it highlights a nurturing approach to career and public image, where communication is characterized by emotional depth and a protective instinct. Professional interactions may emphasize care for colleagues and clients, and career decisions are influenced by the desire for emotional fulfillment."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 11,
+        "description": "Mercury in Cancer in the eleventh house enriches social networks and community involvement with emotional insights and a caring approach to group dynamics. This period fosters deep connections within friendships and organizations, where shared feelings and mutual support drive collaborative efforts and communal goals."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Cancer",
+        "house": 12,
+        "description": "With Mercury in Cancer transiting the twelfth house, the focus shifts to introspection, emotional reflection, and the exploration of subconscious thoughts. Communication may become more private, as this period supports expressing thoughts and ideas through creative or therapeutic outlets, processing emotions through journaling, or confidential conversations."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 1,
+        "description": "Mercury in Leo transiting the first house infuses personal expression with confidence and flair. Communication becomes more dramatic and persuasive, reflecting a creative and authoritative way of thinking. This period encourages bold ideas and speaking with conviction, often attracting attention and admiration for one's intellectual creativity."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 2,
+        "description": "When Mercury in Leo moves through the second house, it highlights a confident approach to financial matters and personal values. This period supports expressing ideas about wealth and resources with authority and a touch of drama, favoring investments that not only promise returns but also reflect personal creativity and pride."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 3,
+        "description": "Mercury in Leo transiting the third house amplifies the desire for expressive and vibrant communication. Conversations may be filled with storytelling and grand ideas, and there's a tendency to dominate discussions. This period favors learning and sharing knowledge in creative ways, enhancing the intellectual connection with siblings and close acquaintances."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 4,
+        "description": "With Mercury in Leo in the fourth house, communication within the home and family takes on a more expressive and perhaps authoritative tone. Discussions may revolve around personal achievements or creative projects, fostering a sense of pride and loyalty among family members and emphasizing the importance of a supportive and loving home environment."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 5,
+        "description": "Mercury in Leo moving through the fifth house lights up creative expression and communication in romance and with children with charisma and warmth. This period encourages sharing ideas with a playful and theatrical flair, engaging in romantic dialogues that are both heartfelt and dramatic, and fostering creativity that reflects personal identity and pride."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 6,
+        "description": "When Mercury in Leo transits the sixth house, it brings a dynamic and creative approach to daily routines, work, and health matters. Communication in the workplace may become more confident, and there's a focus on organizing tasks in a way that allows for personal expression and leadership, enhancing enjoyment in the execution of duties."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 7,
+        "description": "Mercury in Leo transiting the seventh house emphasizes bold and dramatic communication in partnerships and close relationships. This period supports discussions that are both creative and heartfelt, with a tendency towards grand gestures in expressing thoughts and ideas, seeking admiration and understanding from partners."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 8,
+        "description": "With Mercury in Leo in the eighth house, conversations and thoughts delve into deeper subjects with confidence and a flair for the dramatic. This transit encourages expressing ideas about transformation, intimacy, and shared resources with authority, bringing creativity and passion to discussions that probe beneath the surface."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 9,
+        "description": "Mercury in Leo moving through the ninth house inspires grand thinking and a confident approach to higher learning, travel, and exploration of beliefs. Communication is marked by optimism and a persuasive quality, favoring the expression of philosophies and ideologies with enthusiasm and a sense of authority."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 10,
+        "description": "When Mercury in Leo transits the tenth house, it highlights a commanding and creative approach to career and public roles. Professional communication may be characterized by leadership and creativity, with an emphasis on ideas and strategies that showcase personal expertise and command respect."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 11,
+        "description": "Mercury in Leo in the eleventh house energizes social networks and community involvement with creative ideas and a leadership style that commands attention. This period supports bold communication within groups, advocating for causes with passion, and inspiring others through visionary and creative group projects."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Leo",
+        "house": 12,
+        "description": "With Mercury in Leo transiting the twelfth house, the focus shifts inward, reflecting on personal creativity and the drama of the subconscious. This period may reveal hidden desires for recognition and the need to express oneself creatively in private, encouraging introspection on how personal pride and creative expression influence inner thoughts and spirituality."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 1,
+        "description": "Mercury in Virgo transiting the first house sharpens analytical skills and attention to detail in personal expression. This period encourages precise communication and a pragmatic approach to problem-solving. A focus on efficiency and practicality may dominate one's mindset, fostering a desire for continuous improvement and refinement in personal habits and interactions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 2,
+        "description": "When Mercury in Virgo moves through the second house, it highlights meticulous planning and organization in financial matters. This period supports careful budgeting, attention to detail in managing resources, and a practical approach to increasing material security, valuing investments that offer tangible and useful outcomes."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 3,
+        "description": "Mercury in Virgo transiting the third house enhances communication with clarity, precision, and a focus on useful information. This period favors analytical thinking and the efficient exchange of ideas, enhancing learning and understanding through methodical study and the practical application of knowledge in daily life."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 4,
+        "description": "With Mercury in Virgo in the fourth house, discussions within the family and about the home are characterized by practicality and a focus on organization. This transit encourages creating a systematic approach to household tasks and nurturing a sense of duty and service within the family dynamic, emphasizing the importance of functionality in the domestic environment."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 5,
+        "description": "Mercury in Virgo moving through the fifth house illuminates creative expression and communication in romance and with children with an analytical and discerning eye. This period encourages expressing love and creativity in thoughtful and useful ways, finding joy in hobbies and activities that engage the mind and require attention to detail."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 6,
+        "description": "When Mercury in Virgo transits the sixth house, it brings an acute focus on efficiency and precision in work and health routines. This period supports a critical approach to tasks, striving for perfection in daily duties, and a keen interest in health matters that prioritize practical and effective solutions for well-being."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 7,
+        "description": "Mercury in Virgo transiting the seventh house emphasizes clear, detailed, and practical communication in partnerships and close relationships. This period favors discussions that revolve around problem-solving and mutual improvement, with an emphasis on rationality and a shared commitment to practical goals and duties within relationships."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 8,
+        "description": "With Mercury in Virgo in the eighth house, conversations and thoughts delve into the practical aspects of intimacy, shared resources, and transformation. This transit encourages a logical and detailed examination of joint finances, emotional bonds, and the mysteries of life, favoring a pragmatic approach to deep and complex subjects."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 9,
+        "description": "Mercury in Virgo moving through the ninth house inspires a meticulous and analytical exploration of higher knowledge, beliefs, and distant cultures. This period supports a critical examination of philosophical ideas and educational pursuits, valuing precision in thought and a practical application of learned concepts to improve daily life."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 10,
+        "description": "When Mercury in Virgo transits the tenth house, it accentuates career goals and public roles with a focus on detail, organization, and analytical skills. Professional communication may be characterized by clarity and precision, with an emphasis on practical strategies and solutions that enhance productivity and efficiency."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 11,
+        "description": "Mercury in Virgo in the eleventh house energizes social networks and community involvement with a focus on practical solutions and improvement. This period fosters intellectual connections with peers, collaborative projects that require attention to detail, and a commitment to shared goals that benefit from methodical planning and analysis."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Virgo",
+        "house": 12,
+        "description": "With Mercury in Virgo transiting the twelfth house, the focus shifts inward, engaging the mind in introspection and analysis of subconscious patterns. This period may reveal insights into daily habits, health, and service through reflection, encouraging a practical approach to spiritual growth and the healing of mental and emotional health."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 1,
+        "description": "Mercury in Libra transiting the first house enhances diplomatic skills and the ability to see multiple perspectives in personal interactions. Communication is characterized by fairness and grace, and there's a tendency to weigh decisions carefully. This period fosters a harmonious approach to discussions and a strong desire for balance in personal expression."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 2,
+        "description": "When Mercury in Libra moves through the second house, it highlights a balanced approach to financial matters and personal values. Decision-making regarding resources involves careful consideration of all options, aiming for fairness and equilibrium. Discussions about finances may focus on achieving harmony and justice in material transactions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 3,
+        "description": "Mercury in Libra transiting the third house brings a diplomatic and sociable quality to communication, enhancing interactions within one's immediate environment. This period supports engaging in intellectual debates with tact and seeking common ground in discussions, valuing polite exchanges and the art of negotiation in daily conversations."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 4,
+        "description": "With Mercury in Libra in the fourth house, discussions within the family and about the home aim for fairness and understanding, fostering a peaceful domestic environment. Communication may focus on creating harmony and balance at home, and decisions about family matters involve weighing all sides to ensure equity."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 5,
+        "description": "Mercury in Libra moving through the fifth house illuminates creative expression and communication in romance and with children with charm and elegance. This period encourages artistic pursuits that involve collaboration and balance, and romantic dialogues seek mutual understanding, emphasizing fairness and respect in expressions of affection."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 6,
+        "description": "When Mercury in Libra transits the sixth house, it brings a need for balance and harmony in daily routines, work, and health matters. Communication in the workplace is characterized by diplomacy, and there's a focus on fostering cooperative relationships with colleagues, aiming for efficiency and fairness in task distribution and work environments."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 7,
+        "description": "Mercury in Libra transiting the seventh house enhances the capacity for negotiation and fair dialogue in partnerships and close relationships. This period supports clear and balanced communication, striving for equality and mutual understanding in personal and professional relationships, valuing harmony and partnership dynamics."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 8,
+        "description": "With Mercury in Libra in the eighth house, discussions about intimacy, shared resources, and transformation are approached with fairness and a desire for balance. This transit encourages diplomatic communication in delicate matters, aiming for mutual understanding and equitable solutions in emotional and financial entanglements."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 9,
+        "description": "Mercury in Libra moving through the ninth house inspires a balanced and fair-minded approach to higher learning, travel, and philosophical exploration. This period supports engaging with diverse perspectives, fostering a diplomatic exploration of beliefs and cultures, and striving for justice and ethics in intellectual pursuits."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 10,
+        "description": "When Mercury in Libra transits the tenth house, it emphasizes the importance of diplomatic communication and balanced decision-making in career and public roles. Professional interactions may be characterized by a cooperative and aesthetic approach, with an emphasis on maintaining harmony and equity in professional relationships and public image."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 11,
+        "description": "Mercury in Libra in the eleventh house energizes social networks and community involvement with a focus on creating harmony and building equitable relationships within groups. This period fosters intellectual connections based on shared ideals of justice and equality, encouraging collaboration and diplomacy in collective endeavors."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Libra",
+        "house": 12,
+        "description": "With Mercury in Libra transiting the twelfth house, the focus shifts inward to contemplation on balance, relationships, and harmony within the subconscious mind. This period may reveal insights into how the quest for fairness and peace influences one's inner dialogue, encouraging reflection on personal biases and the pursuit of inner equilibrium."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 1,
+        "description": "Mercury in Scorpio transiting the first house sharpens the mind with a penetrating and investigative quality. Communication becomes intense and probing, often seeking to uncover hidden truths. This period fosters a desire to understand the deeper layers of any situation or conversation, leading to powerful insights and transformative ideas."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 2,
+        "description": "When Mercury in Scorpio moves through the second house, it highlights a keen interest in uncovering the true value of possessions and resources. Financial planning and discussions may take on a strategic and investigative approach, focusing on security and uncovering hidden opportunities or threats to stability."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 3,
+        "description": "Mercury in Scorpio transiting the third house deepens communication, making conversations more profound and intense. This period favors research, solving mysteries, and engaging in dialogues that explore complex subjects. The mind becomes a detective, seeking truth and understanding beyond the surface."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 4,
+        "description": "With Mercury in Scorpio in the fourth house, communication within the home and family can become more investigative and revealing, delving into emotional depths and past experiences. This transit encourages deep discussions about family secrets or hidden matters, fostering a transformative understanding of one's roots and private life."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 5,
+        "description": "Mercury in Scorpio moving through the fifth house brings intensity and passion to creative expression, romance, and interactions with children. Communication in these areas is marked by depth and a desire to explore the heart of matters, potentially leading to transformative experiences in love and artistic pursuits."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 6,
+        "description": "When Mercury in Scorpio transits the sixth house, it introduces a meticulous and investigative approach to work, health, and daily routines. This period supports diagnosing problems with precision, uncovering hidden issues, and communicating in a way that promotes healing and transformation in practical matters."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 7,
+        "description": "Mercury in Scorpio transiting the seventh house intensifies communication in partnerships, driving conversations to explore underlying truths and emotional undercurrents. This period favors deep and meaningful exchanges, seeking honesty and transparency in close relationships and possibly uncovering hidden dynamics."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 8,
+        "description": "With Mercury in Scorpio in the eighth house, focus deepens on the mysteries of life, including topics of intimacy, shared resources, and transformation. Communication becomes a tool for psychological investigation, fostering a candid and profound dialogue about change, rebirth, and the unseen forces that drive our connections."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 9,
+        "description": "Mercury in Scorpio moving through the ninth house ignites a passionate quest for truth, urging a deep dive into philosophy, higher learning, and long-distance travel. This period supports exploring the world and ideas with intensity, seeking transformative experiences and knowledge that challenge conventional beliefs."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 10,
+        "description": "When Mercury in Scorpio transits the tenth house, it brings a strategic and investigative approach to career and public image. Communication in professional settings is marked by depth and the ability to uncover secrets or solve complex problems, enhancing one's reputation as a person of insight and power."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 11,
+        "description": "Mercury in Scorpio in the eleventh house energizes social circles and community involvement with a focus on shared goals that involve change and transformation. This period fosters deep discussions within groups, shared research, and the pursuit of truths that can lead to collective evolution and the shedding of outdated societal norms."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Scorpio",
+        "house": 12,
+        "description": "With Mercury in Scorpio transiting the twelfth house, the focus shifts inward to the exploration of subconscious patterns and hidden truths. This period invites private reflection and investigation into the mysteries of the self and the universe, encouraging the use of intuition and psychological insight to uncover deep personal and collective insights."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 1,
+        "description": "Mercury in Sagittarius transiting the first house ignites a thirst for knowledge and a penchant for philosophical thinking. Communication becomes expansive and straightforward, often marked by a quest for truth and a love for sharing ideas and experiences. This period fosters a broad-minded approach to life, where freedom of thought and expression is highly valued."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 2,
+        "description": "When Mercury in Sagittarius moves through the second house, it highlights an optimistic approach to financial matters and a desire for material security that allows for freedom and adventure. This period encourages exploring financial opportunities that align with personal beliefs and ethical values, possibly attracting resources through educational or travel experiences."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 3,
+        "description": "Mercury in Sagittarius transiting the third house enhances the desire for learning and broadening one's mental horizons. Communication with siblings and close acquaintances may take on a more philosophical tone, favoring open and honest exchanges of ideas. This period supports expanding the mind through diverse interests and engaging conversations."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 4,
+        "description": "With Mercury in Sagittarius in the fourth house, discussions within the home and family may revolve around themes of adventure, education, and exploring life's big questions. This transit encourages creating a home environment that is open to learning and cultural exchange, fostering a sense of wanderlust and philosophical inquiry within the domestic sphere."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 5,
+        "description": "Mercury in Sagittarius moving through the fifth house lights up creative expression, romance, and interactions with children with a sense of adventure and a quest for meaning. Communication in these areas is imbued with optimism and a love for storytelling, making this a fertile period for artistic pursuits that convey a message or explore different cultures."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 6,
+        "description": "When Mercury in Sagittarius transits the sixth house, it brings an enthusiastic and expansive approach to work, daily routines, and health matters. This period encourages exploring new methods for efficiency and well-being, infusing daily tasks with a sense of adventure and a desire for growth and improvement."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 7,
+        "description": "Mercury in Sagittarius transiting the seventh house enhances communication in partnerships with honesty, humor, and a philosophical outlook. This period fosters open dialogues about beliefs, ethics, and future aspirations, encouraging mutual learning and growth in personal and professional relationships."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 8,
+        "description": "With Mercury in Sagittarius in the eighth house, discussions and thoughts delve into profound subjects with optimism and a desire for deeper understanding. This transit encourages exploring the mysteries of life, including intimacy and shared resources, with a philosophical approach, seeking truth and wisdom in transformational experiences."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 9,
+        "description": "Mercury in Sagittarius moving through the ninth house inspires a quest for knowledge, adventure, and the exploration of diverse philosophies and cultures. This period supports expansive thinking, engaging in higher education or travel, and communicating one's findings with enthusiasm and a broad-minded perspective."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 10,
+        "description": "When Mercury in Sagittarius transits the tenth house, it accentuates career goals and public image with a focus on vision, ethics, and exploration. Professional communication may be characterized by frankness and a desire to inspire or educate others, leveraging knowledge and beliefs to advance one's career and public standing."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 11,
+        "description": "Mercury in Sagittarius in the eleventh house energizes social networks and community involvement with a focus on shared ideals, adventure, and collective exploration. This period fosters intellectual connections based on mutual interests in growth, learning, and making a positive impact on society through visionary projects."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Sagittarius",
+        "house": 12,
+        "description": "With Mercury in Sagittarius transiting the twelfth house, the focus shifts inward to philosophical reflection and the exploration of subconscious beliefs. This period may reveal insights through introspection or spiritual study, encouraging a broad-minded approach to understanding the deeper, more abstract aspects of the self and the universe."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 1,
+        "description": "Mercury in Capricorn transiting the first house instills a serious and structured approach to communication and thought processes. This period favors pragmatic thinking and expressing ideas with authority and discipline. Conversations tend to be goal-oriented, reflecting a focus on efficiency and tangible outcomes in personal interactions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 2,
+        "description": "When Mercury in Capricorn moves through the second house, it highlights a methodical and cautious approach to financial planning and resource management. This period encourages deliberate decision-making in material matters, favoring strategies that build long-term security and value meticulous budgeting and investment analysis."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 3,
+        "description": "Mercury in Capricorn transiting the third house enhances communication with a focus on clarity, responsibility, and practicality. This period supports logical thinking and effective information exchange, where ideas are conveyed with precision. Conversations may revolve around planning and the practical application of knowledge."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 4,
+        "description": "With Mercury in Capricorn in the fourth house, discussions within the home and family may take a more disciplined and structured tone, focusing on responsibilities and practical matters. This transit fosters an environment where planning for the future and organizing domestic affairs are prioritized, aiming for stability and security at home."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 5,
+        "description": "Mercury in Capricorn moving through the fifth house brings a serious approach to creative expression, romance, and interactions with children. Communication in these areas is marked by ambition and a desire for lasting achievements, encouraging practical creativity and discussions about long-term goals in romantic and familial relationships."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 6,
+        "description": "When Mercury in Capricorn transits the sixth house, it introduces a disciplined and efficient approach to work, health, and daily routines. This period supports analytical problem-solving in the workplace and a focus on implementing practical solutions that enhance productivity and well-being, favoring a meticulous and responsible attitude toward tasks."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 7,
+        "description": "Mercury in Capricorn transiting the seventh house emphasizes clear, structured, and responsible communication in partnerships and close relationships. This period encourages discussions that focus on commitments, duties, and the practical aspects of relationships, aiming to build trust and mutual respect through reliability and straightforward dialogue."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 8,
+        "description": "With Mercury in Capricorn in the eighth house, conversations about intimacy, shared resources, and transformation are approached with seriousness and a desire for control. This transit encourages strategic thinking in managing joint finances and a pragmatic approach to emotional and psychological exploration, valuing depth and reliability in discussions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 9,
+        "description": "Mercury in Capricorn moving through the ninth house fosters a disciplined approach to higher learning, philosophy, and long-distance travel. This period supports structured thinking and the practical application of knowledge, encouraging a focus on education and experiences that yield tangible benefits and contribute to long-term goals."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 10,
+        "description": "When Mercury in Capricorn transits the tenth house, it accentuates career goals and public image with strategic communication and a focus on achievement. Professional interactions are characterized by ambition and authority, with an emphasis on planning and organizing work in a way that ensures success and recognition."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 11,
+        "description": "Mercury in Capricorn in the eleventh house energizes social networks and community involvement with a focus on goals, structure, and collective achievements. This period fosters intellectual connections based on shared ambitions and practical solutions to group endeavors, valuing discipline and responsibility in collaborative projects."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Capricorn",
+        "house": 12,
+        "description": "With Mercury in Capricorn transiting the twelfth house, the focus shifts inward to contemplation on discipline, responsibilities, and the structures that shape one's subconscious mind. This period may reveal insights into how career ambitions and societal expectations influence inner thoughts and spiritual well-being, encouraging a structured approach to introspection and the resolution of past issues."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 1,
+        "description": "Mercury in Aquarius transiting the first house energizes the intellect with innovative and forward-thinking ideas. Communication becomes original and often unconventional, reflecting a keen interest in the future and social progress. This period fosters a mindset that values freedom of thought, intellectual independence, and connecting with like-minded individuals."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 2,
+        "description": "When Mercury in Aquarius moves through the second house, it highlights inventive approaches to managing finances and resources. This period encourages thinking outside the box in financial matters, favoring investments in technology, social causes, or other areas that promise progress and innovation. Discussions about values may lean towards the unconventional."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 3,
+        "description": "Mercury in Aquarius transiting the third house sparks lively and intellectually stimulating conversations within one's immediate environment. Communication is marked by originality and a tendency to challenge the status quo. This period supports networking, community involvement, and engaging with new technologies or ideas."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 4,
+        "description": "With Mercury in Aquarius in the fourth house, discussions within the home and family may center around innovative ideas or plans for the future. This transit encourages creating a living environment that reflects advancements and comfort through technology, fostering an atmosphere of intellectual stimulation and open-mindedness within the domestic sphere."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 5,
+        "description": "Mercury in Aquarius moving through the fifth house brings a creative and inventive spark to expressions of love, art, and interactions with children. Communication in romantic endeavors and creative projects is imbued with originality, and there's a focus on enjoying activities that stimulate the mind and foster social connections."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 6,
+        "description": "When Mercury in Aquarius transits the sixth house, it introduces innovative ideas and methods to work routines, health practices, and daily tasks. This period supports utilizing technology to improve efficiency and adopting unconventional approaches to solving practical problems, favoring collaboration and intellectual analysis in the pursuit of improvement."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 7,
+        "description": "Mercury in Aquarius transiting the seventh house enhances communication in partnerships with a focus on intellectual rapport and shared visions for the future. This period encourages discussions that revolve around social issues, innovative projects, and collaborative efforts that reflect mutual humanitarian interests and a desire for progress."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 8,
+        "description": "With Mercury in Aquarius in the eighth house, conversations and thought processes delve into topics of change, innovation, and the unconventional aspects of intimacy and shared resources. This transit encourages a detached and analytical approach to deep emotional connections and transformative experiences, seeking intellectual understanding and progress."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 9,
+        "description": "Mercury in Aquarius moving through the ninth house broadens the intellectual horizon, inspiring a pursuit of knowledge that challenges traditional beliefs and explores future possibilities. This period supports engaging in philosophical debates, higher education, and travel that expand one's understanding of different cultures and innovative ideas."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 10,
+        "description": "When Mercury in Aquarius transits the tenth house, it focuses on career and public roles with an innovative and visionary approach. Professional communication may be characterized by original ideas and a desire to implement progressive changes, favoring careers that involve technology, science, or social reform."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 11,
+        "description": "Mercury in Aquarius in the eleventh house energizes group activities and social networks with dynamic and inventive communication. This period fosters intellectual connections based on shared ideals and collaborative projects that aim for social progress, valuing diversity of thought and collective brainstorming."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Aquarius",
+        "house": 12,
+        "description": "With Mercury in Aquarius transiting the twelfth house, the focus shifts to introspection on humanitarian ideals, innovation, and the role of the individual within the collective. This period may reveal insights into unconscious patterns related to independence and social connections, encouraging a forward-thinking approach to spirituality and the greater good."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 1,
+        "description": "Mercury in Pisces transiting the first house imbues personal expression with empathy, intuition, and a dreamlike quality. Communication may become more reflective and less direct, often infused with imaginative and artistic elements. This period fosters a deepened understanding of the unspoken, emotional undercurrents in interactions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 2,
+        "description": "When Mercury in Pisces moves through the second house, it influences financial matters with intuition and a tendency towards idealism. Decision-making regarding resources might be guided by feelings rather than logic, highlighting a need for grounding. This period encourages finding value in intangible assets, like creativity and spiritual well-being."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 3,
+        "description": "Mercury in Pisces transiting the third house brings a softening to communication, making interactions more empathetic and less defined by clear boundaries. Learning and information exchange may favor creative and spiritual subjects, valuing the imaginative over the factual, and fostering connections through shared feelings."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 4,
+        "description": "With Mercury in Pisces in the fourth house, discussions within the home and family may center around emotional and spiritual topics, creating a sense of shared empathy. This transit encourages deep, intuitive connections with family members, often leading to conversations that transcend ordinary communication and touch on the mystical or healing."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 5,
+        "description": "Mercury in Pisces moving through the fifth house enhances creative expression and communication in romance and with children through a sensitive and imaginative lens. This period supports artistic endeavors that tap into the collective unconscious, and romantic interactions are characterized by empathy, compassion, and a meeting of souls."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 6,
+        "description": "When Mercury in Pisces transits the sixth house, it introduces a compassionate approach to daily routines, work, and health matters. Communication in these areas may become more intuitive and less structured, emphasizing healing and caring rather than efficiency. This period supports holistic approaches to health and service."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 7,
+        "description": "Mercury in Pisces transiting the seventh house deepens emotional and intuitive communication in partnerships. Discussions may focus on shared dreams and spiritual connections, valuing empathy and understanding. This period may also bring a sense of fluidity to agreements, relying more on mutual feelings than concrete terms."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 8,
+        "description": "With Mercury in Pisces in the eighth house, conversations about intimacy, shared resources, and transformation are imbued with emotional depth and a touch of mysticism. This transit encourages exploring the psychological underpinnings of relationships and financial matters, favoring a compassionate and empathetic approach to deep discussions."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 9,
+        "description": "Mercury in Pisces moving through the ninth house inspires a quest for spiritual and philosophical understanding that transcends traditional boundaries. This period supports learning through intuitive insights and imaginative exploration, valuing wisdom that connects with the soul and broadens one's perspective on the universe."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 10,
+        "description": "When Mercury in Pisces transits the tenth house, it brings a visionary and intuitive quality to career goals and public image. Professional communication may be characterized by empathy and creativity, with an emphasis on roles that allow for artistic expression or healing, blending professional ambitions with spiritual or artistic ideals."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 11,
+        "description": "Mercury in Pisces in the eleventh house energizes social networks and community involvement with a focus on shared dreams and spiritual connections. This period fosters group activities that are inspired by collective ideals, humanitarian goals, or creative collaborations, emphasizing unity and compassionate communication within social circles."
+    },
+    {
+        "planet": "Mercury",
+        "sign": "Pisces",
+        "house": 12,
+        "description": "With Mercury in Pisces transiting the twelfth house, the focus shifts inward to the exploration of the subconscious, dreams, and the connection between the mind and the spiritual realm. This period may reveal profound insights through introspection, meditation, or artistic pursuits, encouraging a gentle and intuitive approach to self-expression and understanding."
     }
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-    
-    
-
-
-
-    
-    
 
 
     

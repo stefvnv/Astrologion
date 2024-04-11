@@ -1,5 +1,3 @@
-// TO BE DELETED
-
 import SwiftUI
 import Kingfisher
 
