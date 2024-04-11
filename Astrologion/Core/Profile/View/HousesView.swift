@@ -4,17 +4,25 @@ struct HousesView: View {
     @ObservedObject var profileViewModel: ProfileViewModel
 
     var body: some View {
-        VStack {
-            if let chart = profileViewModel.userChart {
-                ForEach(House.allCases, id: \.self) { house in
-                    if let signWithDegree = chart.houseCusps["House \(house.rawValue)"] {
-                        HouseDetailView(house: house, signWithDegree: signWithDegree)
+        ZStack {
+            Image("profile-background")
+                .resizable()
+                .scaledToFit()
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                if let chart = profileViewModel.userChart {
+                    ForEach(House.allCases, id: \.self) { house in
+                        if let signWithDegree = chart.houseCusps["House \(house.rawValue)"] {
+                            HouseDetailView(house: house, signWithDegree: signWithDegree)
+                        }
                     }
+                    .padding(.top, 10)
+                } else {
+                    Text("Loading houses or no chart available.")
                 }
-            } else {
-                Text("Loading houses or no chart available")
             }
-        } 
+        }
         .onAppear {
             profileViewModel.fetchUserChart()
         }

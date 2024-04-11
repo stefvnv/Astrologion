@@ -34,20 +34,26 @@ struct PlanetDetailView: View {
                 
                 VStack(alignment: .leading) {
                     Text(planetName)
-                        .font(.headline)
+                        .font(.custom("PlayfairDisplay-Regular", size: 18))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.theme.purple)
                     Text(zodiacSign)
-                        .font(.subheadline)
+                        .font(.custom("Dosis", size: 16))
+                        .fontWeight(.regular)
+                        .foregroundColor(Color.theme.darkBlue)
                 }
                 
                 Spacer()
                 
                 Text(housePosition)
-                    .font(.headline)
-                    .frame(minWidth: 44) 
+                    .font(.custom("Dosis", size: 18))
+                    .fontWeight(.regular)
+                    .frame(minWidth: 44)
                     .padding(.trailing, 20)
+                    .foregroundColor(Color.theme.darkBlue)
             }
             .padding()
-            .background(Color.gray.opacity(0.2))
+            .background(Color.theme.purple.opacity(0.15))
             .cornerRadius(10)
             .overlay(
                 Image(imageName)

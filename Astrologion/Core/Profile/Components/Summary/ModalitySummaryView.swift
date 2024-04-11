@@ -15,10 +15,15 @@ struct ModalitySummaryView: View {
             )
         }
         
-        VStack(alignment: .leading) {
-            Text("Modality").font(.headline)
+        VStack(alignment: .center) {
+            Text("Modality")
+                .font(.custom("PlayfairDisplay-Regular", size: 20))
+                .fontWeight(.bold)
+                .foregroundColor(Color.theme.purple)
+                .padding(.bottom)
             BarView(summaries: modalitySummaries)
         }
         .padding()
+        .padding(.bottom, 30)
     }
 }

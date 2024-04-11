@@ -25,16 +25,17 @@ struct BarView: View {
                 ForEach(summaries, id: \.type) { summary in
                     VStack {
                         Text(summary.type)
-                            .font(.caption2)
+                            .font(.custom("Dosis", size: 12))
+                            .foregroundColor(Color.theme.darkBlue)
                             .frame(width: totalWidth * summary.percentage, alignment: .center)
-                        Text("\(Int(summary.percentage * 100))%") // percentage
-                            .font(.caption2)
+                        Text("\(Int(summary.percentage * 100))%")
+                            .font(.custom("Dosis", size: 12))
+                            .foregroundColor(Color.theme.darkBlue)
                             .frame(width: totalWidth * summary.percentage, alignment: .center)
                     }
                     .background(Color.clear)
                 }
             }
         }
-        .frame(height: 60)
     }
 }

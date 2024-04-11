@@ -11,14 +11,19 @@ struct ElementSummaryView: View {
                 type: element.rawValue,
                 symbol: element.symbol,
                 percentage: percentage,
-                color: element.color.color 
+                color: element.color.color
             )
         }
         
-        VStack(alignment: .leading) {
-            Text("Elements").font(.headline)
+        VStack {
+            Text("Element")
+                .font(.custom("PlayfairDisplay-Regular", size: 20))
+                .fontWeight(.bold)
+                .foregroundColor(Color.theme.purple)
+                .padding(.bottom)
             BarView(summaries: elementSummaries)
         }
         .padding()
+        .padding(.bottom, 30)
     }
 }

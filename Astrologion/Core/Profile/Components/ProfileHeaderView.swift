@@ -13,7 +13,7 @@ struct ProfileHeaderView: View {
                 Path { path in
                     let width = UIScreen.main.bounds.width
                     let radius = width / 2 + 50
-                    let yOffset = -radius / 3
+                    let yOffset = -radius / 2
                     let arcCenter = CGPoint(x: width / 2, y: yOffset)
                     
                     path.addArc(center: arcCenter,
@@ -27,8 +27,8 @@ struct ProfileHeaderView: View {
                 
                 // profile picture
                 CircularProfileImageView(user: viewModel.user, size: .large)
-                    .frame(width: 200, height: 200)
-                    .offset(y: UIScreen.main.bounds.width / 4 - 40)
+                    .frame(width: 250, height: 250)
+                    .offset(y: UIScreen.main.bounds.width / 4 - 90)
             }
             
             // profile info
@@ -66,6 +66,7 @@ struct ProfileHeaderView: View {
                 // edit profile button
                 ProfileActionButtonView(viewModel: viewModel)
             }
+            .padding(.top, -80)
         }
         .background(Color.theme.lightLavender)
         .edgesIgnoringSafeArea(.all)

@@ -33,30 +33,31 @@ struct PlanetExpandedView: View {
                 .frame(height: 300)
 
                 Text("\(planet.rawValue) in \(zodiacSign.rawValue)")
-                    .font(.largeTitle)
+                    .font(Font.custom("PlayfairDisplay-Regular", size: 28))
+                    .foregroundColor(.purple)
                     .padding()
 
                 HStack(spacing: 16) {
                     VStack {
-                        Text("Element")
+                        //Text("Element")
                         zodiacSign.element.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 60, height: 60)
+                            .frame(width: 30, height: 30)
                     }
                     VStack {
-                        Text("Modality")
+                        //Text("Modality")
                         zodiacSign.modality.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 60, height: 60)
+                            .frame(width: 30, height: 30)
                     }
                     VStack {
-                        Text("Polarity")
+                        //Text("Polarity")
                         zodiacSign.polarity.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 60, height: 60)
+                            .frame(width: 30, height: 30)
                     }
                 }
                 .font(.title2)
@@ -64,13 +65,18 @@ struct PlanetExpandedView: View {
 
                 // sign description
                 Text(zodiacSign.signDescription(for: planet))
-                    .padding()
-                
+                    .font(.custom("Dosis", size: 18))
+                    .foregroundColor(Color.theme.darkBlue)
+                    .padding(20)
+
                 // house description
                 Text(house.description(for: planet, house: house))
-                    .padding()
+                    .font(.custom("Dosis", size: 18))
+                    .foregroundColor(Color.theme.darkBlue)
+                    .padding(20)
             }
         }
         .ignoresSafeArea(edges: .top)
+        .background(Color.theme.lightLavender)
     }
 }

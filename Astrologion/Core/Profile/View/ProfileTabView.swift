@@ -6,7 +6,7 @@ struct ProfileTabView: View {
     let profileViewModel: ProfileViewModel
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HStack(spacing: 1) {
                 ForEach(ProfileTab.allCases, id: \.self) { tab in
                     VStack {
@@ -17,23 +17,22 @@ struct ProfileTabView: View {
                         }) {
                             Text(tab.text)
                                 .font(.custom("Dosis", size: 14))
-                                .foregroundColor(self.selectedTab == tab ? Color.theme.yellow : .gray)
+                                .foregroundColor(self.selectedTab == tab ? Color.theme.purple: .gray)
                                 .fontWeight(self.selectedTab == tab ? .bold : .regular)
                         }
                         .padding(.vertical, 6) // tap area
                         
                         // underline selected tab
-                        if selectedTab == tab {
-                            Rectangle()
-                                .frame(height: 1)
-                                .foregroundColor(Color.theme.yellow)
-                                .transition(.opacity)
-                        }
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(self.selectedTab == tab ? Color.theme.purple : Color.theme.lightLavender)
+                            .transition(.opacity)
                     }
                     .frame(maxWidth: .infinity)
                 }
             }
-            .background(Color.theme.darkBlue)
+            .background(Color.theme.lightLavender)
+            .padding(.bottom, 1)
 
             switch selectedTab {
             case .chart:
@@ -48,10 +47,10 @@ struct ProfileTabView: View {
                 SummaryView(profileViewModel: profileViewModel)
             }
         }
+        .background(Color.theme.lightLavender)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-
 
 struct ProfileTabView_Previews: PreviewProvider {
     static var previews: some View {

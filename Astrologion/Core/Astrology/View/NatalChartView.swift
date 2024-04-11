@@ -70,8 +70,8 @@ class NatalChartView: UIView {
         // outer zodiac circle
         drawZodiacOuterCircle(context, center, outerZodiacRadius)
 
-        // fill the area between the outer and inner zodiac circles with gold
-        context.setFillColor(ChartColor.gold.uiColor.cgColor)
+        // fill the area between the outer and inner zodiac circles with gold with opacity
+        context.setFillColor(ChartColor.gold.uiColor.withAlphaComponent(0.5).cgColor)
         context.addArc(center: center, radius: outerZodiacRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         context.addArc(center: center, radius: innerZodiacRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: false)
         context.fillPath()

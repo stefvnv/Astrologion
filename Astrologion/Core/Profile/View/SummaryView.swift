@@ -4,21 +4,29 @@ struct SummaryView: View {
     @ObservedObject var profileViewModel: ProfileViewModel
 
     var body: some View {
-        ScrollView {
-            VStack {
-                
-                // TODO: Add ruler
-                
-                ElementSummaryView(profileViewModel: profileViewModel) // elements
-                ModalitySummaryView(profileViewModel: profileViewModel) // modalities
-                PolaritySummaryView(profileViewModel: profileViewModel) // polarity
-            }
-            .onAppear {
-                profileViewModel.fetchUserChart()
+        ZStack {
+            Image("profile-background")
+                .resizable()
+                .scaledToFit()
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView {
+                VStack {
+                    
+                    // TODO: Add ruler
+                    
+                    ElementSummaryView(profileViewModel: profileViewModel) // elements
+                    ModalitySummaryView(profileViewModel: profileViewModel) // modalities
+                    PolaritySummaryView(profileViewModel: profileViewModel) // polarity
+                    
+                    Spacer()
+                }
+                .padding()
             }
         }
-        .navigationTitle("Summary")
-        .padding()
+        .onAppear {
+            profileViewModel.fetchUserChart()
+        }
     }
 }
 

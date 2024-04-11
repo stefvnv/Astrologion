@@ -27,26 +27,30 @@ struct HouseDetailView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(house.formattedName)
-                        .font(.headline)
+                        .font(.custom("PlayfairDisplay-Regular", size: 18))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.theme.purple)
                     Text(signWithDegree)
-                        .font(.subheadline)
+                        .font(.custom("Dosis", size: 16))
+                        .fontWeight(.regular)
+                        .foregroundColor(Color.theme.darkBlue)
                 }
                 Spacer()
             }
             .padding()
-            .background(Color.gray.opacity(0.2))
+            .background(Color.theme.purple.opacity(0.15))
             .cornerRadius(10)
             .overlay(
-                Image(house.imageName) // Use caseName for the image
+                Image(house.imageName)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 60, height: 60)
-                    .offset(x: 30), // Move the image to the right
+                    .offset(x: 30),
                 alignment: .trailing
             )
         }
         .frame(maxWidth: .infinity)
-        .padding(.trailing, 30) // Offset for alignment
+        .padding(.trailing, 30)
         .padding(.horizontal)
         .padding(.vertical, 10)
     }

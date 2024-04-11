@@ -24,18 +24,27 @@ struct AspectDetailView: View {
             VStack { // planet1
                 PlanetImage(name: leadingPlanetName)
                 Text(leadingPlanetName)
+                    .font(.custom("Dosis", size: 16))
+                    .fontWeight(.regular)
+                    .foregroundColor(Color.theme.darkBlue)
             }
             .padding(.vertical, 5)
 
             Spacer()
             
             VStack { // aspect, symbol, orb
+
+                Text(aspectType.description)
+                    .font(.custom("PlayfairDisplay-Regular", size: 18))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.theme.purple)
                 Text(aspectType.symbol)
                     .font(.title3)
-                Text(aspectType.description)
-                    .font(.headline)
+                    .foregroundColor(Color(uiColor: aspectType.darkerColor))
                 Text(String(format: "%.2f° orb", orb))
-                    .font(.subheadline)
+                    .font(.custom("Dosis", size: 12))
+                    .fontWeight(.regular)
+                    .foregroundColor(Color.theme.darkBlue)
             }
             .padding(.vertical, 5)
 
@@ -44,10 +53,13 @@ struct AspectDetailView: View {
             VStack { // planet2
                 PlanetImage(name: trailingPlanetName)
                 Text(trailingPlanetName)
+                    .font(.custom("Dosis", size: 16))
+                    .fontWeight(.regular)
+                    .foregroundColor(Color.theme.darkBlue)
             }
             .padding(.vertical, 5)
         }
-        .background(Color(uiColor: aspectType.uiColor).opacity(0.2))
+        .background(Color(uiColor: aspectType.uiColor).opacity(0.35))
         .cornerRadius(10)
         .padding(.horizontal)
         .padding(.vertical, 10)

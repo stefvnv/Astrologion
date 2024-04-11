@@ -88,6 +88,16 @@ public enum Aspect: String, CaseIterable {
         case .opposition: return .orange
         }
     }
+    
+    var darkerColor: UIColor {
+        switch self {
+        case .conjunction: return AspectColor.darkGold.uiColor
+        case .sextile: return AspectColor.darkBlue.uiColor
+        case .square: return AspectColor.darkRed.uiColor
+        case .trine: return AspectColor.darkGreen.uiColor
+        case .opposition: return AspectColor.darkOrange.uiColor
+        }
+    }
 
     var uiColor: UIColor {
         return self.color.uiColor

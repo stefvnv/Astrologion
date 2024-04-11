@@ -33,23 +33,29 @@ struct AspectExpandedView: View {
                 .frame(height: 300)
 
                 Text("\(leadingPlanet) \(aspectType.relationship) \(trailingPlanet)")
-                    .font(.largeTitle)
+                    .font(Font.custom("PlayfairDisplay-Regular", size: 28))
+                    .foregroundColor(.purple)
                     .padding()
 
                 Text(aspectType.symbol)
-                    .font(.title)
-                    .padding()
+                    .font(.title3)
+                    .foregroundColor(Color(uiColor: aspectType.darkerColor))
 
                 let aspectDetails = aspectType.description(forLeadingPlanet: leadingPlanet, trailingPlanet: trailingPlanet)
                 
                 Text(aspectDetails.title)
-                    .font(.title2)
+                    .font(.custom("Dosis", size: 22))
+                    .foregroundColor(Color.theme.darkBlue)
                     .padding()
 
+
                 Text(aspectDetails.description)
-                    .padding()
+                    .font(.custom("Dosis", size: 18))
+                    .foregroundColor(Color.theme.darkBlue)
+                    .padding(20)
             }
         }
+        .background(Color(aspectType.uiColor).opacity(0.2))
         .ignoresSafeArea(edges: .top)
     }
 }

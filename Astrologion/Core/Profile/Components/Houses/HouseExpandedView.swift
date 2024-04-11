@@ -11,7 +11,7 @@ struct HouseExpandedView: View {
                 GeometryReader { geo in
                     ZStack(alignment: .topLeading) {
                         Image(house.image)
-                            .resizable() 
+                            .resizable()
                             .scaledToFill()
                             .frame(width: geo.size.width, height: geo.size.height)
                             .clipped()
@@ -32,21 +32,25 @@ struct HouseExpandedView: View {
                 .frame(height: 300)
 
                 Text("\(house.formattedName) in \(zodiacSign.rawValue)")
-                    .font(.largeTitle)
+                    .font(Font.custom("PlayfairDisplay-Regular", size: 28))
+                    .foregroundColor(.purple)
                     .padding()
 
                 VStack {
-                    Text("Keyword")
-                        .font(.title2)
                     Text(house.keyword)
-                        .font(.title)
+                        .font(.custom("Dosis", size: 22))
+                        .foregroundColor(Color.theme.darkBlue)
+                        .padding()
                 }
                 .padding()
 
                 Text(house.cuspDescription(forSign: zodiacSign.rawValue))
-                    .padding()
+                    .font(.custom("Dosis", size: 18))
+                    .foregroundColor(Color.theme.darkBlue)
+                    .padding(20)
             }
         }
+        .background(Color.theme.lightLavender)
         .ignoresSafeArea(edges: .top)
     }
 }
