@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "orbitTab-fill@1x.png",
+      "filename" : "orbit@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "orbitTab-fill@2x.png",
+      "filename" : "orbit@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "orbitTab-fill@3x.png",
+      "filename" : "orbit@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

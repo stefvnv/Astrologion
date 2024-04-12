@@ -9,37 +9,49 @@ struct TransitsPlanetDetailView: View {
             VStack {
                 ForEach(Array(transit.aspects.enumerated()), id: \.offset) { index, aspect in
                     VStack {
+                        
+                        // aspect title
                         Text("\(transit.planet.rawValue) \(aspect.relationship) \(transit.natalPlanet?.rawValue ?? "Transit")")
-                            .font(.headline)
-                            .multilineTextAlignment(.center)
-                            .padding(.top, 5)
+                            .font(Font.custom("PlayfairDisplay-Regular", size: 22))
+                            .foregroundColor(Color.theme.lavender)
+                            .padding()
 
+                        // aspect symbol
                         Text(aspect.symbol)
-                            .font(.largeTitle)
-                            .padding(.vertical, 2)
+                            .font(.system(size: 30))
+                            .foregroundColor(Color(uiColor: aspect.darkerColor))
+                            .padding(.bottom, 20)
 
+                        // aspect description
                         if let descriptionData = transitsViewModel.transitDescription.first(where: {
                             $0.transit.compare(transit.descriptionKey(for: aspect), options: .caseInsensitive) == .orderedSame
                         }) {
+                            
+                            // description title
                             Text(descriptionData.title)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .padding(.bottom, 2)
-
+                                .font(.custom("Dosis", size: 18))
+                                .foregroundColor(Color.theme.darkBlue)
+                                .padding(.horizontal)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 26)
+                                        .foregroundColor(Color(uiColor: aspect.uiColor))
+                                )
+                            
+                            // description
                             Text(descriptionData.description)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                                .padding(.bottom, 5)
+                                .font(.custom("Dosis", size: 18))
+                                .foregroundColor(Color.theme.lightLavender)
+                                .padding()
                         } else {
                             Text("No description available.")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                                .padding(.bottom, 5)
+                                .font(.custom("Dosis", size: 18))
+                                .foregroundColor(Color.theme.lightLavender)
+                                .padding()
                         }
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.gray.opacity(0.2))
+                    .background(Color(uiColor: aspect.uiColor).opacity(0.3))
                     .cornerRadius(10)
                     .padding(.horizontal)
                     .padding(.vertical, 5)

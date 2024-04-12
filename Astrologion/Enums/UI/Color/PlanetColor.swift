@@ -18,7 +18,7 @@ public enum PlanetColor {
     var uiColor: UIColor {
         let color: UIColor? = {
             switch self {
-            case .sun: return UIColor(hex: "#FFD700")
+            case .sun: return UIColor(hex: "#b59a04")
             case .moon: return UIColor(hex: "#C0BDB6")
             case .mercury: return UIColor(hex: "#808080")
             case .venus: return UIColor(hex: "#D87093")

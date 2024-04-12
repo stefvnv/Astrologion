@@ -1,11 +1,19 @@
 import SwiftUI
 
-// TODO: Update icons
 struct MainTabView: View {
     let user: User
     @Binding var selectedIndex: Int
     
     let learningHubViewModel = LearningHubViewModel()
+    
+    
+    init(user: User, selectedIndex: Binding<Int>) {
+        self.user = user
+        self._selectedIndex = selectedIndex
+        
+        UITabBar.appearance().barTintColor = UIColor(Color.theme.darkBlue)
+     }
+    
     
     var body: some View {
             TabView(selection: $selectedIndex) {
@@ -13,7 +21,7 @@ struct MainTabView: View {
                 // feed
                 FeedView()
                     .tabItem {
-                        Image(systemName: selectedIndex == 0 ? "house.fill" : "house")
+                        Image(selectedIndex == 0 ? "home-fill" : "home")
                             .environment(\.symbolVariants, selectedIndex == 0 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 0 }
@@ -22,7 +30,7 @@ struct MainTabView: View {
                 // learning hub
                 LearningHubView(viewModel: learningHubViewModel)
                     .tabItem {
-                        Image(systemName: selectedIndex == 0 ? "lightbulb.max.fill" : "lightbulb.max")
+                        Image(selectedIndex == 1 ? "learn-fill" : "learn")
                             .environment(\.symbolVariants, selectedIndex == 1 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 1 }
@@ -32,7 +40,7 @@ struct MainTabView: View {
                 // transits
                 TransitsView(user: user)
                     .tabItem {
-                        Image(selectedIndex == 2 ? "transitsTab-fill" : "transitsTab")
+                        Image(selectedIndex == 2 ? "transits-fill" : "transits")
                             .environment(\.symbolVariants, selectedIndex == 2 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 2 }
@@ -41,7 +49,7 @@ struct MainTabView: View {
                 // orbit
                 OrbitView(user: user)
                     .tabItem {
-                        Image(selectedIndex == 3 ? "orbitTab-fill" : "orbitTab")
+                        Image(selectedIndex == 3 ? "orbit-fill" : "orbit")
                             .environment(\.symbolVariants, selectedIndex == 3 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 3 }
@@ -50,13 +58,13 @@ struct MainTabView: View {
                 // profile
                 CurrentUserProfileView(user: user)
                     .tabItem {
-                        Image(systemName: selectedIndex == 4 ? "person.fill" : "person")
+                        Image(selectedIndex == 4 ? "profile-fill" : "profile")
                             .environment(\.symbolVariants, selectedIndex == 4 ? .fill : .none)
                     }
                     .onAppear { selectedIndex = 4 }
                     .tag(4)
             }
-            .tint(Color.theme.darkBlue)
+            //.accentColor(Color.theme.darkBlue)
     }
     
     var messageLink: some View {

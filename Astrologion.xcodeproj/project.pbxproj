@@ -1355,9 +1355,9 @@
 			isa = PBXGroup;
 			children = (
 				F8B7BDA52BBC8B230014DD7A /* TransitsView.swift */,
-				F8D3C0862BBDF3210075A137 /* TransitsPlanetView.swift */,
-				F8B7BDAF2BBC93270014DD7A /* TransitsOverviewView.swift */,
 				F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */,
+				F8B7BDAF2BBC93270014DD7A /* TransitsOverviewView.swift */,
+				F8D3C0862BBDF3210075A137 /* TransitsPlanetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1375,8 +1375,8 @@
 			isa = PBXGroup;
 			children = (
 				F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */,
-				F8D3C0882BBDF73A0075A137 /* TransitPlanetDetailView.swift */,
 				F8A102EF2BC712B300841BB3 /* TransitPlanetSummaryView.swift */,
+				F8D3C0882BBDF73A0075A137 /* TransitPlanetDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";

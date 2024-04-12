@@ -42,6 +42,24 @@ struct TransitsPlanetSummaryView: View {
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
             }
+            
+            
+            VStack {
+                // title format
+                Text("\(transit.planet.rawValue) is transiting \(transit.sign.rawValue) in your \(House(rawValue: transit.house)?.formattedName ?? "unknown house")")
+                    .font(.custom("Dosis", size: 18))
+                    .foregroundColor(Color.theme.lightLavender)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 26)
+                            .foregroundColor(Color(transit.planet.color))
+                    )
+                    .padding()
+            }
+
+            
 
             Text(summaryDescription)
                 .font(.custom("Dosis", size: 16))

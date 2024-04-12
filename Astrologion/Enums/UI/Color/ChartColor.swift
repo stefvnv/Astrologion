@@ -21,7 +21,7 @@ public enum ChartColor {
         case .lilac:
             return UIColor(hex: "#E3DDF7") ?? .black
         case .gold:
-            return UIColor(hex: "#F0D770") ?? .black
+            return UIColor(hex: "#B8A65F") ?? .black
         case .roseQuartz:
             return UIColor(hex: "#F7CAC9") ?? .black
         case .aquamarine:
