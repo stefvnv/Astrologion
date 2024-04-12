@@ -71,7 +71,7 @@ class NatalChartView: UIView {
         drawZodiacOuterCircle(context, center, outerZodiacRadius)
 
         // fill the area between the outer and inner zodiac circles with gold with opacity
-        context.setFillColor(ChartColor.gold.uiColor.withAlphaComponent(0.5).cgColor)
+        context.setFillColor(ChartColor.gold.uiColor.withAlphaComponent(0.8).cgColor)
         context.addArc(center: center, radius: outerZodiacRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         context.addArc(center: center, radius: innerZodiacRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: false)
         context.fillPath()
@@ -472,7 +472,7 @@ class NatalChartView: UIView {
     ///
     fileprivate func drawZodiacInnerCircle(_ context: CGContext, _ center: CGPoint, _ innerRadius: CGFloat) {
         context.addArc(center: center, radius: innerRadius, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
-        context.setStrokeColor(UIColor.lightGray.cgColor)
+        context.setStrokeColor(UIColor.darkGray.cgColor)
         context.setLineWidth(3)
         context.strokePath()
     }
@@ -481,7 +481,7 @@ class NatalChartView: UIView {
     ///
     fileprivate func drawMidpointLines(_ context: CGContext, _ innerRadius: CGFloat, _ outerRadius: CGFloat, _ ascendant: Double) {
         let ascendantOffset = 180.0 - ascendant
-        context.setStrokeColor(UIColor.gray.cgColor)
+        context.setStrokeColor(UIColor.darkGray.cgColor)
         context.setLineWidth(1)
         
         for i in 0..<12 {

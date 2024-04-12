@@ -22,7 +22,7 @@ struct TransitOverviewDetailView: View {
                         .foregroundColor(Color(planet.color))
                     Text(planet.rawValue)
                         .font(.custom("Dosis", size: 14))
-                        .foregroundColor(Color.theme.darkBlue)
+                        .foregroundColor(Color.theme.lightLavender)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 
@@ -33,7 +33,7 @@ struct TransitOverviewDetailView: View {
                         .foregroundColor(sign.element.color.color)
                     Text(sign.rawValue)
                         .font(.custom("Dosis", size: 14))
-                        .foregroundColor(Color.theme.darkBlue)
+                        .foregroundColor(Color.theme.lightLavender)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 
@@ -41,16 +41,16 @@ struct TransitOverviewDetailView: View {
                 VStack {
                     Text(house.shortHouseFormat)
                         .font(.custom("Dosis", size: 24))
-                        .foregroundColor(Color.theme.purple)
+                        .foregroundColor(Color.theme.lavender)
                         .padding(.vertical, 6)
                     Text(house.keyword)
                         .font(.custom("Dosis", size: 14))
-                        .foregroundColor(Color.theme.darkBlue)
+                        .foregroundColor(Color.theme.lightLavender)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
             }
             .padding()
-            .background(Color(planet.color).opacity(0.2))
+            .background(Color(planet.color).opacity(0.5))
             .cornerRadius(10)
             .padding(.horizontal)
             .padding(.vertical, 5)

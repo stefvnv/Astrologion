@@ -10,6 +10,8 @@ class LearningHubViewModel: ObservableObject {
         loadChapterContents(forLesson: "Introduction")
         loadChapterContents(forLesson: "ZodiacSigns")
         loadChapterContents(forLesson: "Planets")
+        loadChapterContents(forLesson: "Houses")
+        loadChapterContents(forLesson: "Aspects")
     }
 
     func loadChapters() {
@@ -29,10 +31,6 @@ class LearningHubViewModel: ObservableObject {
                 }
             case .houses:
                 return HousesChapter.allCases.map {
-                    Chapter(title: $0.title, subtitle: $0.subtitle, imageName: $0.imageName, lessonCategory: lesson)
-                }
-            case .natalChart:
-                return NatalChartChapter.allCases.map {
                     Chapter(title: $0.title, subtitle: $0.subtitle, imageName: $0.imageName, lessonCategory: lesson)
                 }
             case .aspects:

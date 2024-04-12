@@ -11,18 +11,26 @@ struct TransitsView: View {
     }
 
     var body: some View {
-        VStack {
-            TransitsTabView(selectedTab: $selectedTab)
+        ZStack {
+            // Background image
+            Image("transits-background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
 
-            ScrollView {
-                switch selectedTab {
-                case .overview:
-                    TransitsOverviewView(user: user, transitsViewModel: transitsViewModel, selectedTab: $selectedTab)
-                default:
-                    if let planet = Planet(rawValue: selectedTab.rawValue.capitalized) {
-                        TransitsPlanetView(user: user, transitsViewModel: transitsViewModel, selectedPlanet: planet)
-                    } else {
-                        Text("Invalid planet").padding()
+            VStack {
+                TransitsTabView(selectedTab: $selectedTab)
+
+                ScrollView {
+                    switch selectedTab {
+                    case .overview:
+                        TransitsOverviewView(user: user, transitsViewModel: transitsViewModel, selectedTab: $selectedTab)
+                    default:
+                        if let planet = Planet(rawValue: selectedTab.rawValue.capitalized) {
+                            TransitsPlanetView(user: user, transitsViewModel: transitsViewModel, selectedPlanet: planet)
+                        } else {
+                            Text("Invalid planet").padding()
+                        }
                     }
                 }
             }

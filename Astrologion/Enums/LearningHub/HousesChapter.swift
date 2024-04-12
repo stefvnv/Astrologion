@@ -1,16 +1,17 @@
 enum HousesChapter: String, CaseIterable {
-    case first = "First House"
-    case second = "Second House"
-    case third = "Third House"
-    case fourth = "Fourth House"
-    case fifth = "Fifth House"
-    case sixth = "Sixth House"
-    case seventh = "Seventh House"
-    case eighth = "Eighth House"
-    case ninth = "Ninth House"
-    case tenth = "Tenth House"
-    case eleventh = "Eleventh House"
-    case twelfth = "Twelfth House"
+    case housesOverview = "The Houses"
+    case first = "First"
+    case second = "Second"
+    case third = "Third"
+    case fourth = "Fourth"
+    case fifth = "Fifth"
+    case sixth = "Sixth"
+    case seventh = "Seventh"
+    case eighth = "Eighth"
+    case ninth = "Ninth"
+    case tenth = "Tenth"
+    case eleventh = "Eleventh"
+    case twelfth = "Twelfth"
 
     var title: String {
         return self.rawValue
@@ -18,6 +19,8 @@ enum HousesChapter: String, CaseIterable {
 
     var subtitle: String {
         switch self {
+        case .housesOverview:
+            return "The Houses"
         case .first:
             return "Self"
         case .second:
@@ -44,8 +47,13 @@ enum HousesChapter: String, CaseIterable {
             return "Subconscious"
         }
     }
-
+    
     var imageName: String {
-        return "\(self.rawValue)-thumbnail".lowercased()
+        switch self {
+        case .housesOverview:
+            return "housesoverview-thumbnail"
+        default:
+            return "\(self.rawValue)-thumbnail".lowercased()
+        }
     }
 }

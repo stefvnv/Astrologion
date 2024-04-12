@@ -1,4 +1,5 @@
 enum AspectsChapter: String, CaseIterable {
+    case aspectsOverview = "The Aspects"
     case conjunction = "Conjunction"
     case sextile = "Sextile"
     case square = "Square"
@@ -8,6 +9,8 @@ enum AspectsChapter: String, CaseIterable {
 
     var title: String {
         switch self {
+        case .aspectsOverview:
+            return "The Aspects"
         case .conjunction:
             return "Conjunction"
         case .sextile:
@@ -25,6 +28,8 @@ enum AspectsChapter: String, CaseIterable {
 
     var subtitle: String {
         switch self {
+        case .aspectsOverview:
+            return "Astrological Aspects"
         case .conjunction:
             return "Understand the conjunction aspect in astrology."
         case .sextile:
@@ -42,6 +47,8 @@ enum AspectsChapter: String, CaseIterable {
     
     var imageName: String {
         switch self {
+        case .aspectsOverview:
+            return "aspectsoverview-thumbnail"
         case .minorAspects:
             return "minor"
         default:

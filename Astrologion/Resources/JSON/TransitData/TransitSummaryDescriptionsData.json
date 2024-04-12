@@ -4443,7 +4443,78 @@
     
     
     
-    
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 1,
+        "description": "Jupiter in Aries transiting the first house marks a period of self-expansion and personal growth. This transit encourages boldness, initiative, and new beginnings. Individuals may feel a heightened sense of confidence and optimism, driving them to take risks and assert themselves more aggressively in pursuit of their goals."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 2,
+        "description": "When Jupiter in Aries moves through the second house, it brings opportunities for financial growth and an increase in material resources. This period favors bold financial actions, such as starting new ventures or investing in risky but potentially profitable projects. It's a time to leverage personal talents for material gain, though caution against impulsiveness is advised."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 3,
+        "description": "Jupiter in Aries transiting the third house expands communication and learning. This transit stimulates the mind, making it a great time for learning new skills, especially those that require physical or dynamic action. Communication style may become more direct and assertive. Short trips and interactions with siblings or neighbors could prove especially rewarding and fruitful during this time."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 4,
+        "description": "With Jupiter in Aries in the fourth house, there's an expansion in the realm of home and family. This could manifest as buying a new home, expanding the current residence, or adding to the family. It's a period that fosters a sense of adventure and renewal within one's private life, often bringing a new or renewed sense of enthusiasm to family dynamics."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 5,
+        "description": "Jupiter in Aries moving through the fifth house enhances creativity, romance, and pleasure. This transit encourages taking risks in love and creative expression, leading to significant personal growth and joy. It's an excellent time for artistic endeavors, starting new romantic relationships, or rekindling existing ones with renewed passion and excitement."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 6,
+        "description": "When Jupiter in Aries transits the sixth house, it brings expansion and growth to work and health routines. This period may inspire new approaches to managing health and daily duties, emphasizing independence and leadership in the workplace. It's a good time for starting new health regimens or diets that require discipline and active participation."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 7,
+        "description": "Jupiter in Aries transiting the seventh house promotes growth through partnerships. This transit can bring new business partnerships or personal relationships that are characterized by enthusiasm and a spirit of adventure. Existing relationships may be reinvigorated by shared interests in new and exciting ventures."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 8,
+        "description": "With Jupiter in Aries in the eighth house, the focus is on transformation and personal growth through deep emotional experiences and shared resources. This could be a time of gaining investments or benefiting from a partner's wealth. It encourages boldness in facing inner fears and psychological growth through overcoming challenges."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 9,
+        "description": "Jupiter in Aries moving through the ninth house fosters growth through exploration, travel, and higher education. This transit encourages philosophical learning and physical journeys. It's a favorable time for expanding one's horizons both literally and figuratively, through travel or the pursuit of knowledge."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 10,
+        "description": "When Jupiter in Aries transits the tenth house, it highlights growth and expansion in career and public status. This transit can bring opportunities for leadership roles, starting new business ventures, or any activity that puts the individual in the public eye. Success during this period often comes through initiative and courage."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 11,
+        "description": "Jupiter in Aries in the eleventh house expands social circles and connections through community involvement and networking. This period favors making new friends and forging connections with groups aligned with one's interests, particularly those that involve competition or innovation."
+    },
+    {
+        "planet": "Jupiter",
+        "sign": "Aries",
+        "house": 12,
+        "description": "With Jupiter in Aries transiting the twelfth house, there's a focus on growth through introspection and solitary activities. This transit encourages finding strength and expansion through quiet reflection, perhaps rekindling old dreams or discovering new personal aspirations that require independent pursuit."
+    },
     {
         "planet": "Jupiter",
         "sign": "Taurus",

@@ -10,7 +10,6 @@
 		F80536C32BC939FC008E030C /* IntroductionChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F80536C22BC939FC008E030C /* IntroductionChapters.json */; };
 		F80536C72BC96883008E030C /* PlanetsChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F80536C62BC96883008E030C /* PlanetsChapters.json */; };
 		F80536CB2BC968AB008E030C /* HousesChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F80536CA2BC968AB008E030C /* HousesChapters.json */; };
-		F80536CD2BC968E5008E030C /* NatalChartChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F80536CC2BC968E5008E030C /* NatalChartChapters.json */; };
 		F80536CF2BC96928008E030C /* AspectsChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F80536CE2BC96928008E030C /* AspectsChapters.json */; };
 		F819B4D62BAC970A001B138A /* AstrologionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B4D52BAC970A001B138A /* AstrologionApp.swift */; };
 		F819B4D82BAC970A001B138A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B4D72BAC970A001B138A /* ContentView.swift */; };
@@ -164,7 +163,6 @@
 		F8A1F8A12BBF6F3700A604AF /* ZodiacSignChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */; };
 		F8A1F8A32BBF6F4100A604AF /* PlanetsChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A22BBF6F4100A604AF /* PlanetsChapter.swift */; };
 		F8A1F8A52BBF6F4C00A604AF /* HousesChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A42BBF6F4C00A604AF /* HousesChapter.swift */; };
-		F8A1F8A72BBF701500A604AF /* NatalChartChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A62BBF701500A604AF /* NatalChartChapter.swift */; };
 		F8A1F8A92BBF702400A604AF /* AspectsChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8A82BBF702400A604AF /* AspectsChapter.swift */; };
 		F8A1F8B12BBF7B1700A604AF /* ZodiacSignsChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A1F8B02BBF7B1700A604AF /* ZodiacSignsChapters.json */; };
 		F8A1F8B32BBF8C0600A604AF /* ChapterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1F8B22BBF8C0600A604AF /* ChapterDetailView.swift */; };
@@ -237,7 +235,6 @@
 		F80536C22BC939FC008E030C /* IntroductionChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = IntroductionChapters.json; sourceTree = "<group>"; };
 		F80536C62BC96883008E030C /* PlanetsChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetsChapters.json; sourceTree = "<group>"; };
 		F80536CA2BC968AB008E030C /* HousesChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HousesChapters.json; sourceTree = "<group>"; };
-		F80536CC2BC968E5008E030C /* NatalChartChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NatalChartChapters.json; sourceTree = "<group>"; };
 		F80536CE2BC96928008E030C /* AspectsChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AspectsChapters.json; sourceTree = "<group>"; };
 		F819B4D22BAC970A001B138A /* Astrologion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrologion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F819B4D52BAC970A001B138A /* AstrologionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologionApp.swift; sourceTree = "<group>"; };
@@ -365,7 +362,6 @@
 		F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignChapter.swift; sourceTree = "<group>"; };
 		F8A1F8A22BBF6F4100A604AF /* PlanetsChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsChapter.swift; sourceTree = "<group>"; };
 		F8A1F8A42BBF6F4C00A604AF /* HousesChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesChapter.swift; sourceTree = "<group>"; };
-		F8A1F8A62BBF701500A604AF /* NatalChartChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartChapter.swift; sourceTree = "<group>"; };
 		F8A1F8A82BBF702400A604AF /* AspectsChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectsChapter.swift; sourceTree = "<group>"; };
 		F8A1F8B02BBF7B1700A604AF /* ZodiacSignsChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ZodiacSignsChapters.json; sourceTree = "<group>"; };
 		F8A1F8B22BBF8C0600A604AF /* ChapterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailView.swift; sourceTree = "<group>"; };
@@ -1221,7 +1217,6 @@
 				F8A1F8A02BBF6F3700A604AF /* ZodiacSignChapter.swift */,
 				F8A1F8A22BBF6F4100A604AF /* PlanetsChapter.swift */,
 				F8A1F8A42BBF6F4C00A604AF /* HousesChapter.swift */,
-				F8A1F8A62BBF701500A604AF /* NatalChartChapter.swift */,
 				F8A1F8A82BBF702400A604AF /* AspectsChapter.swift */,
 			);
 			path = LearningHub;
@@ -1245,7 +1240,6 @@
 				F8A1F8B02BBF7B1700A604AF /* ZodiacSignsChapters.json */,
 				F80536C62BC96883008E030C /* PlanetsChapters.json */,
 				F80536CA2BC968AB008E030C /* HousesChapters.json */,
-				F80536CC2BC968E5008E030C /* NatalChartChapters.json */,
 				F80536CE2BC96928008E030C /* AspectsChapters.json */,
 			);
 			path = LearningHubData;
@@ -1361,8 +1355,8 @@
 			isa = PBXGroup;
 			children = (
 				F8B7BDA52BBC8B230014DD7A /* TransitsView.swift */,
-				F8B7BDAF2BBC93270014DD7A /* TransitsOverviewView.swift */,
 				F8D3C0862BBDF3210075A137 /* TransitsPlanetView.swift */,
+				F8B7BDAF2BBC93270014DD7A /* TransitsOverviewView.swift */,
 				F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */,
 			);
 			path = View;
@@ -1537,7 +1531,6 @@
 				F80536C72BC96883008E030C /* PlanetsChapters.json in Resources */,
 				F819B4DD2BAC970C001B138A /* Preview Assets.xcassets in Resources */,
 				F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */,
-				F80536CD2BC968E5008E030C /* NatalChartChapters.json in Resources */,
 				F80536CB2BC968AB008E030C /* HousesChapters.json in Resources */,
 				F819B4E42BAC9809001B138A /* GoogleService-Info.plist in Resources */,
 				F8A620A02BBB406100F84AFE /* HouseCuspData.json in Resources */,
@@ -1592,7 +1585,6 @@
 				F840A0142BAE299900D007F8 /* CustomError.swift in Sources */,
 				F819B6032BACE3CD001B138A /* ProfileViewModel.swift in Sources */,
 				F819B5DD2BACE0BA001B138A /* Notification.swift in Sources */,
-				F8A1F8A72BBF701500A604AF /* NatalChartChapter.swift in Sources */,
 				F8409FDB2BADD4E800D007F8 /* SelectTimeOfBirthView.swift in Sources */,
 				F819B56E2BACBF47001B138A /* PostService.swift in Sources */,
 				F819B5B72BACC4E2001B138A /* PostGridView.swift in Sources */,
