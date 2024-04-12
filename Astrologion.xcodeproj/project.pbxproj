@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80536C32BC939FC008E030C /* IntroductionChapters.json in Resources */ = {isa = PBXBuildFile; fileRef = F80536C22BC939FC008E030C /* IntroductionChapters.json */; };
 		F819B4D62BAC970A001B138A /* AstrologionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B4D52BAC970A001B138A /* AstrologionApp.swift */; };
 		F819B4D82BAC970A001B138A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B4D72BAC970A001B138A /* ContentView.swift */; };
 		F819B4DD2BAC970C001B138A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F819B4DC2BAC970C001B138A /* Preview Assets.xcassets */; };
@@ -229,6 +230,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F80536C22BC939FC008E030C /* IntroductionChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = IntroductionChapters.json; sourceTree = "<group>"; };
 		F819B4D22BAC970A001B138A /* Astrologion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astrologion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F819B4D52BAC970A001B138A /* AstrologionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologionApp.swift; sourceTree = "<group>"; };
 		F819B4D72BAC970A001B138A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -1231,6 +1233,7 @@
 		F8A1F8AB2BBF7A9700A604AF /* LearningHubData */ = {
 			isa = PBXGroup;
 			children = (
+				F80536C22BC939FC008E030C /* IntroductionChapters.json */,
 				F8A1F8B02BBF7B1700A604AF /* ZodiacSignChapters.json */,
 			);
 			path = LearningHubData;
@@ -1512,6 +1515,7 @@
 				F8D3C08B2BBDFB2A0075A137 /* TransitDescriptionsData.json in Resources */,
 				F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */,
 				F8A1F88E2BBF2FA400A604AF /* Gruppo-Regular.ttf in Resources */,
+				F80536C32BC939FC008E030C /* IntroductionChapters.json in Resources */,
 				F8A620AB2BBB79E200F84AFE /* AspectDescriptionData.json in Resources */,
 				F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */,
 				F8A102EE2BC70CF100841BB3 /* TransitSummaryDescriptionsData.json in Resources */,
