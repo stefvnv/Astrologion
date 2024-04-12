@@ -7867,7 +7867,7 @@
     
     
     
-
+    
     
     
     {
@@ -8229,21 +8229,509 @@
         "sign": "Leo",
         "house": 12,
         "description": "With Pluto in Leo transiting the twelfth house, the subconscious is charged with the transformative energy of self-expression and the quest for personal significance. This period encourages a deep dive into the psychological underpinnings of creativity and ego, leading to potential revelations and a rebirth of the expressive self."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 1,
+        "description": "Pluto's transit through Virgo in the first house marks a period of intense transformation focused on self-improvement, health, and service. This phase compels a deep reassessment of personal habits and routines, driving significant changes in self-care and daily activities."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 2,
+        "description": "With Pluto in Virgo in the second house, there's a powerful focus on transforming personal resources and values, particularly those related to health and efficiency. This transit may catalyze a redefinition of what is truly valuable, encouraging more practical and service-oriented financial strategies."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 3,
+        "description": "Pluto in Virgo transiting the third house brings a transformative energy to communication and information processing, infusing day-to-day interactions with intensity and a quest for truth. This period may lead to profound changes in how ideas are conveyed and understood, with a strong focus on precision and utility."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 4,
+        "description": "With Pluto in Virgo in the fourth house, the foundation of home and family life is subject to deep scrutiny and transformation. This transit may uncover hidden issues related to health and functionality within the home, leading to significant changes that aim to improve domestic efficiency and well-being."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 5,
+        "description": "Pluto in Virgo moving through the fifth house impacts creative expression, romance, and relationships with children, emphasizing precision, detail, and practicality. This period may inspire a transformation in how one approaches leisure activities and artistic endeavors, pushing for innovation within traditional boundaries."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 6,
+        "description": "When Pluto in Virgo transits the sixth house, it introduces a period of significant overhaul in work and health routines. This transformative influence drives a reevaluation of work ethics and health practices, emphasizing efficiency, practicality, and thoroughness."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 7,
+        "description": "Pluto in Virgo transiting the seventh house brings an intensity to partnerships, focusing on themes of practicality, service, and health. Relationships may undergo profound changes, demanding a reassessment of mutual duties and everyday interactions to build a more efficient and supportive connection."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 8,
+        "description": "With Pluto in Virgo in the eighth house, matters of intimacy, shared resources, and personal transformation are infused with a pragmatic and analytical approach. This transit encourages a deep and often critical examination of emotional and financial entanglements, aiming for transformation through practical improvements."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 9,
+        "description": "Pluto in Virgo moving through the ninth house expands the horizons of knowledge and ethics, urging a transformation in belief systems through meticulous study and practical application. This period may provoke a thorough reassessment of philosophical and educational frameworks, emphasizing their practical impact on daily life."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 10,
+        "description": "When Pluto in Virgo transits the tenth house, it signals a time of significant change in career and public status, driven by a demand for efficiency, practicality, and utility. This transit challenges existing professional structures, urging the development of more functional and service-oriented career paths."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 11,
+        "description": "Pluto in Virgo in the eleventh house reshapes social circles and collective goals, emphasizing the need for practical solutions and efficient teamwork. This period fosters a reevaluation of communal activities and group affiliations, pushing for reforms that enhance collective productivity and utility."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Virgo",
+        "house": 12,
+        "description": "With Pluto in Virgo transiting the twelfth house, the subconscious is charged with themes of service, health, and analysis. This period invites a deep dive into psychological patterns that affect physical and mental health, urging a transformation that aligns daily habits with deeper emotional and spiritual needs."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 1,
+        "description": "Pluto's transit through Libra in the first house signifies a profound transformation in how relationships and partnerships are approached, emphasizing a rebalancing of power dynamics and a deeper understanding of justice and fairness. This period demands a redefinition of self-identity through the lens of interpersonal connections."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 2,
+        "description": "With Pluto in Libra in the second house, there is an intense focus on transforming values and resources, particularly in relation to partnerships and fairness. This transit may provoke a deep reassessment of what is truly valuable, potentially leading to significant changes in how resources are managed within relationships."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 3,
+        "description": "Pluto in Libra transiting the third house brings a transformative energy to communication and social interactions, emphasizing the importance of dialogue in achieving balance and understanding. This period may lead to profound changes in how ideas are shared and understood, with a strong focus on diplomacy and fairness."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 4,
+        "description": "With Pluto in Libra in the fourth house, the foundations of home and family life are subject to intense scrutiny and transformation. Issues related to harmony, fairness, and relationships within the family may surface, leading to significant changes that aim to establish a more balanced home environment."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 5,
+        "description": "Pluto in Libra moving through the fifth house affects creative expression, romance, and relationships with children, with a focus on fairness, aesthetics, and balance. This period may inspire a profound transformation in how one engages in pleasure and creative pursuits, urging a deeper understanding of relational dynamics."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 6,
+        "description": "When Pluto in Libra transits the sixth house, it brings a period of significant change in work ethics, routines, and health practices, emphasizing relationships and fairness within these areas. This transformative phase may challenge existing practices, urging a more harmonious and balanced approach to daily tasks and health."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 7,
+        "description": "Pluto in Libra transiting the seventh house deeply transforms partnerships, focusing on the themes of justice, equality, and mutual respect. Relationships may undergo intense changes, demanding a reassessment of how equality and balance are maintained, with potential power struggles coming to the fore."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 8,
+        "description": "With Pluto in Libra in the eighth house, matters of intimacy, shared resources, and personal transformation are infused with a focus on fairness and balance. This transit encourages a deep reevaluation of joint financial arrangements and emotional commitments, aiming for transformative yet equitable changes."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 9,
+        "description": "Pluto in Libra moving through the ninth house expands the horizons of knowledge and ethics, urging a transformation in belief systems through a lens of justice and fairness. This period may provoke a thorough reassessment of philosophical, legal, and educational systems, emphasizing their impact on societal balance."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 10,
+        "description": "When Pluto in Libra transits the tenth house, it signals a time of significant change in career and public roles, with a focus on diplomacy, justice, and the balancing of power. This transit challenges established structures, urging innovative approaches to leadership that reflect modern relational dynamics."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 11,
+        "description": "Pluto in Libra in the eleventh house reshapes social networks and collective goals, emphasizing the need for fairness and balanced dynamics within groups. This period fosters a reevaluation of how collective actions can reflect principles of justice, potentially leading to transformative social movements."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Libra",
+        "house": 12,
+        "description": "With Pluto in Libra transiting the twelfth house, the subconscious is imbued with themes of justice, balance, and hidden relational dynamics. This period encourages a deep exploration of unconscious patterns related to relationships, urging transformations that foster greater psychological balance and fairness."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 1,
+        "description": "Pluto's transit through Scorpio in the first house marks a period of intense self-transformation, probing the deepest aspects of identity and personal power. This phase often brings about a profound rebirth, challenging individuals to confront and embrace their truest, most hidden selves."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 2,
+        "description": "With Pluto in Scorpio in the second house, the focus is on transforming personal values and resources, delving deep into matters of security, survival, and financial independence. This transit might provoke crises that lead to a reevaluation of what is truly valuable, emphasizing the need for psychological and financial resilience."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 3,
+        "description": "Pluto in Scorpio transiting the third house intensifies communication, bringing depth, power, and transformative energy to the way ideas are expressed and received. This period may trigger profound changes in thinking and communicating, often through crisis or deep psychological insights."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 4,
+        "description": "With Pluto in Scorpio in the fourth house, the foundations of home and family life are subject to deep, transformative forces. Emotional and psychological undercurrents may surface, potentially leading to intense family dynamics and powerful shifts in the domestic environment."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 5,
+        "description": "Pluto in Scorpio moving through the fifth house affects creative expression, romance, and relationships with children, imbuing these areas with intense emotional experiences and the potential for psychological transformation. This period may inspire profound creative works and deep, transformative romantic encounters."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 6,
+        "description": "When Pluto in Scorpio transits the sixth house, it brings a period of profound change in daily routines and health practices, often through crisis or the uncovering of hidden issues. This transformative influence can lead to a radical rethinking of work habits and personal health, emphasizing purification and regeneration."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 7,
+        "description": "Pluto in Scorpio transiting the seventh house brings intensity and power struggles to partnerships, demanding transformations that involve confronting deep-seated issues and shared secrets. This transit challenges relationships to evolve through crises, leading to stronger, more authentic bonds or significant endings."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 8,
+        "description": "With Pluto in Scorpio in the eighth house, themes of intimacy, shared resources, and personal transformation are explored with unprecedented depth, often through psychological and financial entanglements. This period demands a profound engagement with the taboo, the hidden, and the transformative power of the psyche."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 9,
+        "description": "Pluto in Scorpio moving through the ninth house expands the quest for deeper knowledge and truth, often through intense and transformative experiences that challenge existing beliefs. This period can provoke a powerful reevaluation of philosophical and ethical frameworks, driven by a desire for deeper understanding."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 10,
+        "description": "When Pluto in Scorpio transits the tenth house, it signals a time of profound change in career and public status, often through crises that expose power dynamics and hidden agendas. This transit demands a rebirth in professional life, urging individuals to wield power responsibly and transform their public roles."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 11,
+        "description": "Pluto in Scorpio in the eleventh house reshapes social networks and collective goals, infusing group dynamics with intensity and the potential for power struggles. This period fosters deep transformations within communities, often through confronting collective shadows and hidden truths."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Scorpio",
+        "house": 12,
+        "description": "With Pluto in Scorpio transiting the twelfth house, the subconscious is imbued with deep psychological currents, uncovering hidden fears, desires, and motivations. This period invites a profound exploration of the psyche, leading to significant spiritual and psychological transformations through confronting the shadow self."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 1,
+        "description": "Pluto's transit through Sagittarius in the first house marks a period of profound personal transformation, focusing on expanding personal freedom and exploring philosophical or cultural boundaries. This phase often challenges individuals to reconsider their beliefs and life philosophies, leading to significant changes in identity and worldview."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 2,
+        "description": "With Pluto in Sagittarius in the second house, there's an intense focus on transforming personal values and resources, particularly those tied to knowledge and travel. This transit might provoke deep changes in how wealth is perceived and used, urging a reevaluation of what is truly valuable on a global scale."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 3,
+        "description": "Pluto in Sagittarius transiting the third house brings transformative energy to communication and intellectual pursuits, infusing everyday interactions with profound insights and a quest for truth. This period may trigger deep changes in thinking and communicating, often through exposure to new cultures and ideas."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 4,
+        "description": "With Pluto in Sagittarius in the fourth house, the foundations of home and family life are subject to intense scrutiny and transformation. Issues related to freedom, adventure, and belief systems within the family may surface, leading to significant shifts in the domestic environment and emotional security."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 5,
+        "description": "Pluto in Sagittarius moving through the fifth house affects creative expression, romance, and relationships with children, imbuing these areas with a desire for exploration and the expression of personal freedom. This period may inspire profound shifts in how creativity and pleasure are experienced, urging a broader perspective on love and art."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 6,
+        "description": "When Pluto in Sagittarius transits the sixth house, it introduces a period of significant change in work and health routines, emphasizing expansion and exploration. This transformative influence can lead to a radical rethinking of work habits and health practices, often incorporating new philosophies or techniques from different cultures."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 7,
+        "description": "Pluto in Sagittarius transiting the seventh house brings intensity and a quest for deeper truth to partnerships, demanding transformations that involve shared adventures and philosophical growth. This transit challenges relationships to evolve through shared explorations and a deeper understanding of freedom and truth."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 8,
+        "description": "With Pluto in Sagittarius in the eighth house, matters of intimacy, shared resources, and personal transformation are infused with a desire for freedom and exploration. This transit encourages a profound reevaluation of joint financial and emotional arrangements, aiming for transformative growth and expanded awareness."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 9,
+        "description": "Pluto in Sagittarius moving through the ninth house expands the quest for knowledge and truth, urging a transformative exploration of philosophical and ethical boundaries. This period may provoke powerful changes in belief systems, often driven by experiences with different cultures or spiritual practices."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 10,
+        "description": "When Pluto in Sagittarius transits the tenth house, it signals a time of profound transformation in career and public status, driven by a demand for freedom, exploration, and truth. This transit challenges established professional paths, urging innovative and expansive approaches to leadership and societal roles."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 11,
+        "description": "Pluto in Sagittarius in the eleventh house reshapes social networks and collective goals, emphasizing the need for expansion and the exploration of new horizons within groups. This period fosters a reevaluation of communal objectives, urging movements towards greater freedom and collective exploration."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Sagittarius",
+        "house": 12,
+        "description": "With Pluto in Sagittarius transiting the twelfth house, the subconscious is imbued with themes of exploration, freedom, and the breaking of boundaries. This period encourages a deep psychological exploration of beliefs and the unconscious mind, leading to transformative insights and spiritual growth."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 1,
+        "description": "Pluto's transit through Capricorn in the first house marks a period of profound personal transformation, focusing on ambition, responsibility, and authority. This phase compels individuals to redefine their goals and methods, often through confronting and overcoming significant challenges related to their public and professional identities."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 2,
+        "description": "With Pluto in Capricorn in the second house, there is a powerful focus on redefining material security and financial stability. This transit can provoke deep changes in how wealth is accumulated and managed, emphasizing the importance of resilience, practicality, and strategic planning in resource management."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 3,
+        "description": "Pluto in Capricorn transiting the third house brings a transformative energy to communication, affecting how thoughts and ideas are structured and delivered. This period may lead to significant changes in communication style, often driven by a need for greater control and efficiency."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 4,
+        "description": "With Pluto in Capricorn in the fourth house, deep-seated issues related to foundations, home, and family undergo significant transformations. This transit may challenge traditional structures and authority within the family, prompting a reevaluation of roots and security."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 5,
+        "description": "Pluto in Capricorn moving through the fifth house impacts creative expression, romance, and relationships with children, infusing these areas with seriousness and a focus on achievement and legacy. This period may inspire a transformation in how creativity and pleasure are approached, often leading to a more disciplined and structured expression."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 6,
+        "description": "When Pluto in Capricorn transits the sixth house, it introduces a period of transformation in work and health routines, emphasizing discipline, organization, and control. This transformative influence can lead to radical changes in professional environments and health practices, focusing on efficiency and long-term sustainability."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 7,
+        "description": "Pluto in Capricorn transiting the seventh house brings intensity and a focus on power dynamics to partnerships, challenging traditional roles and structures within relationships. This transit demands a reassessment of commitments and responsibilities, leading to deeper or more formalized bonds."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 8,
+        "description": "With Pluto in Capricorn in the eighth house, themes of intimacy, shared resources, and transformation are explored with a serious and strategic approach. This period invites a deep and often difficult reassessment of joint finances and emotional investments, aiming for transformative yet practical outcomes."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 9,
+        "description": "Pluto in Capricorn moving through the ninth house expands the horizons of knowledge and ethics, grounding philosophical pursuits in practical reality. This period may provoke powerful changes in legal, educational, and ethical systems, emphasizing their practical applications and long-term impacts."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 10,
+        "description": "When Pluto in Capricorn transits the tenth house, it signals a time of profound transformation in career and public status, driven by a quest for power, authority, and recognition. This transit challenges established professional paths, urging a reconstruction of career goals that align with true ambitions."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 11,
+        "description": "Pluto in Capricorn in the eleventh house reshapes social networks and collective goals, emphasizing the need for structure, leadership, and long-term planning within communities. This period fosters a reevaluation of communal objectives, urging movements towards more structured and sustainable social contributions."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Capricorn",
+        "house": 12,
+        "description": "With Pluto in Capricorn transiting the twelfth house, the subconscious is imbued with themes of control, power, and hidden structures. This period encourages a deep exploration of unconscious patterns related to authority and discipline, leading to transformative insights and the potential for significant psychological restructuring."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 1,
+        "description": "Pluto's transit through Aquarius in the first house marks a period of profound personal transformation, focusing on innovation, individuality, and breaking traditional boundaries. This phase often challenges individuals to redefine their identity in the context of broader social changes, fostering a revolutionary approach to self-expression."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 2,
+        "description": "With Pluto in Aquarius in the second house, there is a deep focus on transforming personal values and resources, particularly those linked to technology and collective resources. This transit might provoke radical changes in how wealth is perceived and managed, urging a reevaluation of material dependencies and innovations in financial independence."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 3,
+        "description": "Pluto in Aquarius transiting the third house brings a transformative energy to communication and intellectual processes, infusing them with originality and a quest for truth. This period may lead to significant changes in how ideas are expressed and shared, often through new technologies or unconventional methods."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 4,
+        "description": "With Pluto in Aquarius in the fourth house, the foundations of home and family life are subject to intense scrutiny and transformation. Issues related to individuality within the family, and the integration of innovative practices into personal life may surface, leading to profound shifts in domestic structures."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 5,
+        "description": "Pluto in Aquarius moving through the fifth house affects creative expression, romance, and relationships with children, emphasizing originality and experimentation. This period may inspire profound shifts in creative pursuits and romantic relationships, pushing boundaries and exploring new ways of self-expression."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 6,
+        "description": "When Pluto in Aquarius transits the sixth house, it introduces a period of significant change in work and health routines, emphasizing innovation and the restructuring of daily practices. This transformative influence can lead to radical new approaches in both professional environments and personal health, often through the adoption of new technologies."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 7,
+        "description": "Pluto in Aquarius transiting the seventh house brings a dynamic shift in partnerships, focusing on freedom, equality, and innovation. Relationships may undergo intense transformations, requiring a reevaluation of traditional roles and an embrace of new, more progressive ways of mutual interaction."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 8,
+        "description": "With Pluto in Aquarius in the eighth house, matters of intimacy, shared resources, and personal transformation are infused with a spirit of rebellion and the need for freedom. This transit encourages a deep reevaluation of bonds and shared assets, urging transformative changes that reflect future-oriented goals."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 9,
+        "description": "Pluto in Aquarius moving through the ninth house expands the quest for knowledge and ethical understanding, encouraging a radical questioning of established educational and philosophical systems. This period may provoke profound changes in worldview, often through the integration of new technologies or ideas that challenge the status quo."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 10,
+        "description": "When Pluto in Aquarius transits the tenth house, it signals a time of profound transformation in career and public roles, driven by a desire for innovation and social reform. This transit challenges existing power structures, urging a reconstruction of professional life that aligns with futuristic visions and collective well-being."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 11,
+        "description": "Pluto in Aquarius in the eleventh house reshapes social networks and collective goals, emphasizing the need for autonomy, technological advancement, and revolutionary thinking within communities. This period fosters a reevaluation of social ideals, urging movements towards more inclusive and technologically integrated systems."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Aquarius",
+        "house": 12,
+        "description": "With Pluto in Aquarius transiting the twelfth house, the subconscious is charged with themes of liberation, innovation, and the breaking down of traditional boundaries. This period encourages a deep psychological exploration of freedom and detachment, leading to transformative insights and the potential for spiritual renewal through social change."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 1,
+        "description": "Pluto's transit through Pisces in the first house signifies a profound transformation in self-identity, emphasizing empathy, spirituality, and the dissolution of boundaries. This period often involves a deep introspection and psychological change, reshaping the individual's core essence and connection to the collective."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 2,
+        "description": "With Pluto in Pisces in the second house, there's an intense focus on transforming personal values and material resources, often through experiences that challenge the understanding of material possession versus spiritual wealth. This transit may provoke deep reflections on what truly constitutes security and value."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 3,
+        "description": "Pluto in Pisces transiting the third house brings a transformative energy to communication and intellectual processes, infusing them with depth, intuition, and a connection to the subconscious. This period may lead to profound changes in how thoughts and words are expressed, often revealing hidden truths."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 4,
+        "description": "With Pluto in Pisces in the fourth house, the emotional foundation and home life undergo significant transformations, often related to issues of abandonment, secrets, or mystical experiences. Emotional depth and healing are key themes, with potential for major shifts in family dynamics and personal roots."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 5,
+        "description": "Pluto in Pisces moving through the fifth house affects creative expression, romance, and interactions with children, imbuing these areas with emotional depth and a psychic or spiritual connection. This period may inspire profound artistic creativity and transformative experiences in love and pleasure."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 6,
+        "description": "When Pluto in Pisces transits the sixth house, it introduces a period of significant change in work and health routines, emphasizing healing, compassion, and service. This transformative influence can lead to profound insights into health and wellness, often incorporating spiritual or holistic practices."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 7,
+        "description": "Pluto in Pisces transiting the seventh house brings intensity and transformation to partnerships, focusing on empathy, psychic connections, and spiritual bonds. Relationships may undergo deep, transformative experiences, requiring a dissolution of ego and a merging of souls for true intimacy."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 8,
+        "description": "With Pluto in Pisces in the eighth house, themes of intimacy, shared resources, and personal transformation are explored with a profound emotional and spiritual depth. This transit encourages a deep exploration of the metaphysical aspects of relationships and finances, aiming for transformative healing and rebirth."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 9,
+        "description": "Pluto in Pisces moving through the ninth house expands the quest for spiritual and philosophical growth, urging a deep exploration of life's mysteries. This period can provoke a powerful reevaluation of belief systems and life philosophy, often driven by psychic or mystical experiences."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 10,
+        "description": "When Pluto in Pisces transits the tenth house, it signals a time of profound transformation in career and public roles, driven by a desire for spiritual purpose and healing. This transit challenges existing professional structures, urging a path that aligns with deeper, spiritual or humanitarian goals."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 11,
+        "description": "Pluto in Pisces in the eleventh house reshapes social networks and collective goals, emphasizing empathy, spirituality, and communal healing. This period fosters a reevaluation of group dynamics and collective objectives, urging movements towards more inclusive and spiritually oriented communities."
+    },
+    {
+        "planet": "Pluto",
+        "sign": "Pisces",
+        "house": 12,
+        "description": "With Pluto in Pisces transiting the twelfth house, the subconscious is charged with deep spiritual and mystical themes, exploring the boundaries between reality and the ethereal. This period encourages a deep psychological exploration of hidden fears, leading to transformative insights and potential spiritual awakening."
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
 ]

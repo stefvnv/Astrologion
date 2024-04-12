@@ -15,13 +15,42 @@ struct TransitOverviewDetailView: View {
                     .frame(width: 80, height: 80)
                     .padding(.trailing, 20)
                 
-                Text("\(planet.descriptionPrefix) is in \(sign.rawValue) in your \(house.formattedName.lowercased()) of \(house.keyword.lowercased()).")
-                    .foregroundColor(.black)
+                // planet symbol and name
+                VStack {
+                    Text(planet.symbol ?? "")
+                        .font(.system(size: 40))
+                        .foregroundColor(Color(planet.color))
+                    Text(planet.rawValue)
+                        .font(.custom("Dosis", size: 14))
+                        .foregroundColor(Color.theme.darkBlue)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
                 
-                Spacer()
+                // zodiac sign symbol and name
+                VStack {
+                    Text(sign.symbol)
+                        .font(.system(size: 40))
+                        .foregroundColor(sign.element.color.color)
+                    Text(sign.rawValue)
+                        .font(.custom("Dosis", size: 14))
+                        .foregroundColor(Color.theme.darkBlue)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                
+                // house information
+                VStack {
+                    Text(house.shortHouseFormat)
+                        .font(.custom("Dosis", size: 24))
+                        .foregroundColor(Color.theme.purple)
+                        .padding(.vertical, 6)
+                    Text(house.keyword)
+                        .font(.custom("Dosis", size: 14))
+                        .foregroundColor(Color.theme.darkBlue)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity)
             }
             .padding()
-            .background(Color.gray.opacity(0.2))
+            .background(Color(planet.color).opacity(0.2))
             .cornerRadius(10)
             .padding(.horizontal)
             .padding(.vertical, 5)

@@ -34,7 +34,11 @@ struct CurrentUserProfileView: View {
                     Button(action: {
                         showNotificationsView.toggle()
                     }) {
-                        Image(systemName: "bell")
+                        Image("notifications")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                            .scaledToFit()
                     }
                 }
 
@@ -43,7 +47,11 @@ struct CurrentUserProfileView: View {
                         selectedSettingsOption = nil
                         showSettingsSheet.toggle()
                     }) {
-                        Image(systemName: "line.3.horizontal")
+                        Image("settings")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                            .scaledToFit()
                     }
                 }
             }
@@ -73,7 +81,7 @@ struct CurrentUserProfileView: View {
                 case .logout:
                     AuthService.shared.signout()
                 case .deleteAccount:
-                    showPasswordInputSheet = true // Show password input view when deleting account
+                    showPasswordInputSheet = true
                 default:
                     break
                 }
@@ -81,9 +89,6 @@ struct CurrentUserProfileView: View {
         }
     }
 }
-
-// Define the PasswordInputView here or use the previously defined one
-
 
 struct CurrentUserProfileView_Previews: PreviewProvider {
     static var previews: some View {

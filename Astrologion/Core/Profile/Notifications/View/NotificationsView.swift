@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel = NotificationsViewModel()
     
     var body: some View {
@@ -26,11 +27,16 @@ struct NotificationsView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
     }
-}
-
-struct NotificationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotificationsView()
+    
+    var backButton: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "arrow.left")
+                .foregroundColor(Color.theme.lightLavender)
+        }
     }
 }

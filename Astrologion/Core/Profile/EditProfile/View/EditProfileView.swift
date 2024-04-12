@@ -33,6 +33,7 @@ struct EditProfileView: View {
                             Text("Edit profile picture")
                                 .font(.footnote)
                                 .fontWeight(.semibold)
+                                .font(.custom("Dosis", size: 14)) 
                         }
                     }
                     .padding(.vertical, 8)
@@ -69,21 +70,21 @@ struct EditProfileView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                    .font(.subheadline)
+                    backButton
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
+                    Button(action: {
                         Task {
                             try await viewModel.updateUserData()
                             dismiss()
                         }
+                    }) {
+                        Image("confirm")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24, height: 24)
                     }
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
                 }
             }
             .onReceive(viewModel.$user, perform: { updatedUser in
@@ -91,6 +92,16 @@ struct EditProfileView: View {
             })
             .navigationTitle("Edit Profile")
             .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+
+    
+    var backButton: some View {
+        Button(action: {
+            dismiss()
+        }) {
+            Image(systemName: "arrow.left")
+                .foregroundColor(Color.theme.lightLavender)
         }
     }
 }
@@ -113,7 +124,7 @@ struct EditProfileRowView: View {
                 Divider()
             }
         }
-        .font(.subheadline)
+        .font(.custom("Dosis", size: 14))
         .frame(height: 36)
     }
 }
@@ -139,7 +150,7 @@ struct EditProfileDatePickerView: View {
             .datePickerStyle(CompactDatePickerStyle())
             .labelsHidden()
         }
-        .font(.subheadline)
+        .font(.custom("Dosis", size: 14))
         .padding(.vertical, 8)
     }
 }

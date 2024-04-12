@@ -3,6 +3,8 @@ import SwiftUI
 struct ProfileView: View {
     @State private var selectedTab: ProfileTab = .chart
     @StateObject var profileViewModel: ProfileViewModel
+    @Environment(\.presentationMode) var presentationMode
+
     let user: User
 
     init(user: User) {
@@ -20,6 +22,17 @@ struct ProfileView: View {
         }
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
+    }
+    
+    var backButton: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "arrow.left")
+                .foregroundColor(Color.theme.lightLavender)
+        }
     }
 }
 

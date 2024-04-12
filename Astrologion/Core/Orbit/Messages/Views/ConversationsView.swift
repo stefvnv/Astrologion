@@ -5,44 +5,59 @@ struct ConversationsView: View {
     @State var showChat = false
     @State var user: User?
     @StateObject var viewModel = ConversationsViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(viewModel.recentMessages) { message in
-                    NavigationLink {
-                        if let user = message.user {
-                            ChatView(user: user)
+        NavigationStack {
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.recentMessages) { message in
+                        NavigationLink {
+                            if let user = message.user {
+                                ChatView(user: user)
+                            }
+                        } label: {
+                            ConversationCell(message: message)
                         }
-                    } label: {
-                        ConversationCell(message: message)
                     }
+                }.padding()
+            }
+            .toolbar(.hidden, for: .tabBar)
+            .navigationTitle("Messages")
+            .navigationBarTitleDisplayMode(.inline)
+            .fullScreenCover(isPresented: $isShowingNewMessageView, content: {
+                NewMessageView(startChat: $showChat, user: $user)
+            })
+            .toolbar(content: {
+                Button {
+                    isShowingNewMessageView.toggle()
+                } label: {
+                    Image("write")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                        .scaledToFit()
                 }
-            }.padding()
-        }
-        .toolbar(.hidden, for: .tabBar)
-        .navigationTitle("Messages")
-        .navigationBarTitleDisplayMode(.inline)
-        .fullScreenCover(isPresented: $isShowingNewMessageView, content: {
-            NewMessageView(startChat: $showChat, user: $user)
-        })
-        .toolbar(content: {
-            Button {
-                isShowingNewMessageView.toggle()
-            } label: {
-                Image("write")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 28)
+            })
+            .onAppear {
+                viewModel.loadData()
             }
-        })
-        .onAppear {
-            viewModel.loadData()
-        }
-        .navigationDestination(isPresented: $showChat) {
-            if let user = user {
-                ChatView(user: user)
+            .navigationDestination(isPresented: $showChat) {
+                if let user = user {
+                    ChatView(user: user)
+                }
             }
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
+    }
+    
+    var backButton: some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "arrow.left")
+                .foregroundColor(Color.theme.lightLavender)
         }
     }
 }

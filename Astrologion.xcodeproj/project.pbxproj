@@ -1084,10 +1084,10 @@
 			children = (
 				F8BAA9882BB74E14002E349C /* Summary */,
 				F8409FEE2BADDB7D00D007F8 /* ZodiacSign.swift */,
+				F8409FF62BADDBB000D007F8 /* Planet.swift */,
 				F8409FF02BADDB8900D007F8 /* House.swift */,
 				F8409FF22BADDB9800D007F8 /* AngularHouse.swift */,
 				F8409FF42BADDBA400D007F8 /* Aspect.swift */,
-				F8409FF62BADDBB000D007F8 /* Planet.swift */,
 			);
 			path = Astrological;
 			sourceTree = "<group>";

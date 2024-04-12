@@ -20,8 +20,10 @@ struct OrbitView: View {
                     NavigationLink(
                         destination: ConversationsView(),
                         label: {
-                            Image(systemName: "message")
-                                .imageScale(.large)
+                            Image("messages")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 24, height: 24)
                                 .scaledToFit()
                                 .foregroundColor(Color.theme.darkBlue)
                         })
