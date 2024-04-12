@@ -1,5 +1,5 @@
 enum ZodiacSignsChapter: String, CaseIterable {
-    case overview = "Overview"
+    case zodiacOverview = "The Zodiac"
     case aries = "Aries"
     case taurus = "Taurus"
     case gemini = "Gemini"
@@ -19,7 +19,7 @@ enum ZodiacSignsChapter: String, CaseIterable {
 
     var subtitle: String {
         switch self {
-        case .overview:
+        case .zodiacOverview:
             return "What is the Zodiac?"
         case .aries:
             return "The Ram"
@@ -49,6 +49,11 @@ enum ZodiacSignsChapter: String, CaseIterable {
     }
 
     var imageName: String {
-        return "\(self.rawValue)-thumbnail".lowercased()
+        switch self {
+        case .zodiacOverview:
+            return "zodiacoverview-thumbnail"
+        default:
+            return "\(self.rawValue.lowercased())-thumbnail"
+        }
     }
 }

@@ -1,6 +1,7 @@
 enum PlanetsChapter: String, CaseIterable {
-    case sun = "Sun"
-    case moon = "Moon"
+    case planetsOverview = "The Planets"
+    case sun = "The Sun"
+    case moon = "The Moon"
     case mercury = "Mercury"
     case venus = "Venus"
     case mars = "Mars"
@@ -16,6 +17,8 @@ enum PlanetsChapter: String, CaseIterable {
 
     var subtitle: String {
         switch self {
+        case .planetsOverview:
+            return "Overview of Planetary Influences"
         case .sun:
             return "Vitality"
         case .moon:
@@ -40,6 +43,15 @@ enum PlanetsChapter: String, CaseIterable {
     }
 
     var imageName: String {
-        return "\(self.rawValue)-thumbnail".lowercased()
+        switch self {
+        case .sun:
+            return "sun-thumbnail"
+        case .moon:
+            return "moon-thumbnail"
+        case .planetsOverview:
+            return "planetsoverview-thumbnail"
+        default:
+            return "\(self.rawValue.lowercased())-thumbnail"
+        }
     }
 }

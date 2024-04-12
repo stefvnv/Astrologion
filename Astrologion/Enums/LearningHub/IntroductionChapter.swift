@@ -17,11 +17,11 @@ enum IntroductionChapter: String, CaseIterable {
     var subtitle: String {
         switch self {
         case .history:
-            return "Explore the roots of astrology."
+            return "The Roots of Astrology"
         case .basics:
-            return "Understand the fundamental concepts."
+            return "Fundamental Concepts"
         case .importance:
-            return "Discover why astrology matters."
+            return "Why Astrology Matters"
         }
     }
 

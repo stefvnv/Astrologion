@@ -39,8 +39,13 @@ enum AspectsChapter: String, CaseIterable {
             return "Explore various minor aspects in astrology."
         }
     }
-
+    
     var imageName: String {
-        return "\(self.rawValue)-thumbnail".lowercased()
+        switch self {
+        case .minorAspects:
+            return "minor"
+        default:
+            return "\(self.rawValue)".lowercased()
+        }
     }
 }

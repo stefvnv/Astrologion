@@ -6,11 +6,13 @@ class LearningHubViewModel: ObservableObject {
 
     init() {
         loadChapters()
-        loadChapterContents()
+        
+        loadChapterContents(forLesson: "Introduction")
+        loadChapterContents(forLesson: "ZodiacSigns")
+        loadChapterContents(forLesson: "Planets")
     }
 
     func loadChapters() {
-
         chapters = Lessons.allCases.flatMap { lesson -> [Chapter] in
             switch lesson {
             case .introduction:
@@ -45,17 +47,18 @@ class LearningHubViewModel: ObservableObject {
         return chapters.filter { $0.lessonCategory == lesson }
     }
 
-    private func loadChapterContents() {
-        guard let url = Bundle.main.url(forResource: "ZodiacSignChapters", withExtension: "json") else {
-            fatalError("ZodiacSignChapters.json not found.")
+    private func loadChapterContents(forLesson lesson: String) {
+        guard let url = Bundle.main.url(forResource: "\(lesson)Chapters", withExtension: "json") else {
+            fatalError("\(lesson)Chapters.json not found.")
         }
         
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-            chapterContents = try decoder.decode([ChapterContent].self, from: data)
+            let decodedContents = try decoder.decode([ChapterContent].self, from: data)
+            chapterContents.append(contentsOf: decodedContents)
         } catch {
-            fatalError("Failed to decode ZodiacSignChapters.json: \(error)")
+            fatalError("Failed to decode \(lesson)Chapters.json: \(error)")
         }
     }
 
@@ -63,10 +66,8 @@ class LearningHubViewModel: ObservableObject {
         guard let content = chapterContents.first(where: { $0.chapter == chapterTitle }) else {
             return []
         }
-        
         return content.parts
     }
-    
     
     // MARK: - Chapter completion
 
