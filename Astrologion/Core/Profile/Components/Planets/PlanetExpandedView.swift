@@ -33,35 +33,49 @@ struct PlanetExpandedView: View {
                 .frame(height: 300)
 
                 Text("\(planet.rawValue) in \(zodiacSign.rawValue)")
-                    .font(Font.custom("PlayfairDisplay-Regular", size: 28))
-                    .foregroundColor(.purple)
+                    .font(Font.custom("PlayfairDisplay-Regular", size: 26))
+                    .foregroundColor(Color.theme.purple)
                     .padding()
+                
+                
+                Text(house.shortHouseFormat)
+                    .font(.custom("Dosis", size: 18))
+                    .foregroundColor(Color.theme.darkBlue)
+                    .padding(10)
+                    .background(
+                        Circle()
+                            .foregroundColor(Color.theme.darkBlue.opacity(0.2))
+                    )
 
                 HStack(spacing: 16) {
                     VStack {
-                        //Text("Element")
                         zodiacSign.element.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 26, height: 26)
                     }
                     VStack {
-                        //Text("Modality")
                         zodiacSign.modality.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 26, height: 26)
                     }
                     VStack {
-                        //Text("Polarity")
                         zodiacSign.polarity.symbol
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 26, height: 26)
                     }
                 }
-                .font(.title2)
-                .padding()
+                .font(.custom("Dosis", size: 20))
+                .foregroundColor(.white)
+                .padding(.horizontal)
+                .padding(.vertical, 4)
+                .background(
+                    RoundedRectangle(cornerRadius: 26)
+                        .foregroundColor(zodiacSign.element.color.color)
+                )
+                .padding(.vertical, 20)
 
                 // sign description
                 Text(zodiacSign.signDescription(for: planet))
@@ -77,6 +91,6 @@ struct PlanetExpandedView: View {
             }
         }
         .ignoresSafeArea(edges: .top)
-        .background(Color.theme.lightLavender)
+        .background(zodiacSign.element.color.color.opacity(0.6))
     }
 }

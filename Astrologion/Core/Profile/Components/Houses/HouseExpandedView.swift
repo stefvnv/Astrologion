@@ -32,15 +32,28 @@ struct HouseExpandedView: View {
                 .frame(height: 300)
 
                 Text("\(house.formattedName) in \(zodiacSign.rawValue)")
-                    .font(Font.custom("PlayfairDisplay-Regular", size: 28))
-                    .foregroundColor(.purple)
+                    .font(Font.custom("PlayfairDisplay-Regular", size: 26))
+                    .foregroundColor(Color.theme.purple)
                     .padding()
 
+                Text(zodiacSign.symbol)
+                    .font(.custom("PlayfairDisplay-Regular", size: 26))
+                    .foregroundColor(Color.theme.darkBlue)
+                    .padding(14)
+                    .background(
+                        Circle()
+                            .foregroundColor(Color.theme.yellow)
+                    )
+
                 VStack {
-                    Text(house.keyword)
-                        .font(.custom("Dosis", size: 22))
-                        .foregroundColor(Color.theme.darkBlue)
-                        .padding()
+                    Text("House of \(house.keyword)")
+                        .font(.custom("Dosis", size: 20))
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                        .background(
+                            RoundedRectangle(cornerRadius: 26)
+                                .foregroundColor(Color.theme.lavender)
+                        )
                 }
                 .padding()
 
