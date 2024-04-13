@@ -39,5 +39,6 @@ struct NewMessageView: View {
                 }
             }
         }
+        .background(Color.theme.darkBlue)
     }
 }

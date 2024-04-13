@@ -27,7 +27,7 @@ struct ResetPasswordView: View {
                     }
                 }, label: {
                     Text("Send Reset Link")
-                        .modifier(IGButtonModifier())
+                        .modifier(ButtonModifier())
                 })
                 
                 Spacer()

@@ -27,13 +27,13 @@ struct FeedCell: View {
                 VStack(alignment: .leading) {
                     NavigationLink(value: viewModel.post.user) {
                         Text(viewModel.post.user?.username ?? "")
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(Font.custom("PlayfairDisplay-Regular", size: 14).weight(.semibold))
                             .foregroundColor(Color.theme.lightLavender)
                     }
                     
-                    // Display Sun, Moon, and Ascendant signs
+                    // sun, moon, asc
                     Text("☉ \(viewModel.sunSign) ☾ \(viewModel.moonSign) ↑ \(viewModel.ascendantSign)")
-                        .font(.system(size: 12))
+                        .font(Font.custom("Dosis", size: 12))
                         .foregroundColor(Color.gray)
                 }
             }
@@ -66,16 +66,6 @@ struct FeedCell: View {
                         .padding(4)
                         .foregroundColor(Color.theme.lavender)
                 }
-                
-//                Button(action: {}, label: {
-//                    Image(systemName: "paperplane")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .frame(width: 20, height: 20)
-//                        .font(.system(size: 20))
-//                        .padding(4)
-//                        .foregroundColor(Color.theme.systemBackground)
-//                })
             }
             .padding(.leading, 4)
             

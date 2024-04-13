@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct IGButtonModifier: ViewModifier {
+struct ButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.subheadline)
+            .font(.custom("Dosis", size: 16))
             .fontWeight(.semibold)
             .foregroundColor(.white)
             .frame(width: 360, height: 44)
-            .background(Color(.systemBlue))
+            .background(Color.theme.lavender)
             .cornerRadius(8)
             .padding()
     }

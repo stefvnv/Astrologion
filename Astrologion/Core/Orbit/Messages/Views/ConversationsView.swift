@@ -23,7 +23,7 @@ struct ConversationsView: View {
                 }.padding()
             }
             .toolbar(.hidden, for: .tabBar)
-            .navigationTitle("Messages")
+            .navigationTitle("Conversations")
             .navigationBarTitleDisplayMode(.inline)
             .fullScreenCover(isPresented: $isShowingNewMessageView, content: {
                 NewMessageView(startChat: $showChat, user: $user)
@@ -50,6 +50,7 @@ struct ConversationsView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
+        .background(Color.theme.darkBlue)
     }
     
     var backButton: some View {

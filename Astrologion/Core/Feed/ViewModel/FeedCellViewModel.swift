@@ -30,7 +30,6 @@ class FeedCellViewModel: ObservableObject {
             do {
                 let fetchedChart = try await UserService.fetchUserChart(uid: post.ownerUid)
                 DispatchQueue.main.async {
-                    // Safely unwrap fetchedChart
                     if let fetchedChart = fetchedChart {
                         self.userChart = fetchedChart
                         self.sunSign = self.signFromPosition(fetchedChart.planetaryPositions["Sun"])

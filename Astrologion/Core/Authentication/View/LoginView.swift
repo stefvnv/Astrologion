@@ -13,20 +13,26 @@ struct LoginView: View {
                 
                 Text("Astrologion")
                     .font(.custom("PlayfairDisplay-Regular", size: 40))
-                    .foregroundColor(Color.theme.purple)
+                    .foregroundColor(Color.theme.yellow)
+                
+                Spacer()
                 
                 Image("logo")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .padding(.bottom, 40)
+                
+                Spacer()
 
                             
                 VStack(spacing: 8) {
                     TextField("Enter your email", text: $email)
+                        .foregroundColor(Color.theme.lightLavender)
                         .autocapitalization(.none)
                         .modifier(TextFieldModifier())
                     
                     SecureField("Password", text: $password)
+                        .foregroundColor(Color.theme.lightLavender)
                         .modifier(TextFieldModifier())
                 }
                 
@@ -37,18 +43,18 @@ struct LoginView: View {
                         destination: ResetPasswordView(email: $email),
                         label: {
                             Text("Forgot Password?")
-                                .font(.system(size: 13, weight: .semibold))
+                                .font(.custom("Dosis", size: 14))
                                 .padding(.top)
                                 .padding(.trailing, 28)
+                                .foregroundColor(Color.theme.yellow)
                         })
                 }
-                
-                
+                                
                 Button(action: {
                     Task { try await viewModel.login(withEmail: email, password: password) }
                 }, label: {
                     Text("Log In")
-                        .modifier(IGButtonModifier())
+                        .modifier(ButtonModifier())
                 })
                 .disabled(!formIsValid)
                 .opacity(formIsValid ? 1.0 : 0.5)
@@ -57,6 +63,7 @@ struct LoginView: View {
                 Spacer()
                 
                 Divider()
+                    .background(Color.theme.lavender)
                 
                 NavigationLink {
                     AddEmailView()
@@ -64,14 +71,18 @@ struct LoginView: View {
                 } label: {
                     HStack(spacing: 3) {
                         Text("Don't have an account?")
-                            .font(.system(size: 14))
+                            .font(.custom("Dosis", size: 14))
+                            .foregroundColor(Color.theme.yellow)
                         
                         Text("Sign Up")
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(.custom("Dosis", size: 14).weight(.semibold))
+                            .foregroundColor(Color.theme.yellow)
                     }
+                    .foregroundColor(Color.theme.darkBlue)
                 }
                 .padding(.vertical, 16)
             }
+            .background(Color.theme.darkBlue) 
         }
     }
 }

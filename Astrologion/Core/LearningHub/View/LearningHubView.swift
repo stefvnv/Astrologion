@@ -22,9 +22,9 @@ struct LearningHubView: View {
                 ForEach(Lessons.allCases, id: \.self) { lesson in
                     VStack(alignment: .center) {
                         Text(lesson.rawValue)
-                            .font(.custom("Dosis", size: 26))
-                            .foregroundColor(Color.theme.lightLavender)
-                            .padding(.top, 50)
+                            .font(.custom("PlayfairDisplay-Regular", size: 24))
+                            .foregroundColor(Color.theme.yellow)
+                            .padding(.top, 46)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
@@ -37,14 +37,8 @@ struct LearningHubView: View {
                     .padding(.bottom)
                 }
             }
+            .navigationTitle("Learning Hub")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("Astrologion")
-                        .font(.custom("PlayfairDisplay-Regular", size: 24))
-                        .foregroundColor(Color.theme.yellow)
-                }
-            }
             .background(Color.theme.darkBlue)
         }
         .navigationViewStyle(StackNavigationViewStyle())

@@ -17,6 +17,7 @@ struct SettingsView: View {
                         showPasswordInputSheet = true
                     }
                 }
+                .listRowBackground(Color.theme.darkBlue)
         }
         .sheet(isPresented: $showPasswordInputSheet) {
             PasswordInputView { password in
@@ -41,5 +42,6 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .listStyle(PlainListStyle())
         .padding(.vertical)
+        .background(Color.theme.darkBlue)
     }
 }

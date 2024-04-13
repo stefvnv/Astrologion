@@ -28,6 +28,7 @@ struct ChatView: View {
         }
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
+        .background(Color.theme.darkBlue)
         .toolbar(.hidden, for: .tabBar)
     }
     

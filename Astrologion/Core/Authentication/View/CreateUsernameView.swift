@@ -37,7 +37,7 @@ struct CreateUsernameView: View {
                 }
             } label: {
                 Text("Next")
-                    .modifier(IGButtonModifier())
+                    .modifier(ButtonModifier())
             }
             .disabled(!formIsValid)
             .opacity(formIsValid ? 1.0 : 0.5)

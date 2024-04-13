@@ -29,6 +29,7 @@ struct OrbitView: View {
                         })
                 }
             }
+            .background(Color.theme.darkBlue)
             .navigationTitle("Orbit")
             .navigationBarTitleDisplayMode(.inline)
         }

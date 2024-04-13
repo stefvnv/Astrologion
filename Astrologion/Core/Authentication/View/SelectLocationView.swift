@@ -20,7 +20,7 @@ struct SelectLocationView: View {
                 }
             }) {
                 Text("Next")
-                    .modifier(IGButtonModifier())
+                    .modifier(ButtonModifier())
             }
             .disabled(locationText.isEmpty)
             .opacity(locationText.isEmpty ? 0.5 : 1.0)

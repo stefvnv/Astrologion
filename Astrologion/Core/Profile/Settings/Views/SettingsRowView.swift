@@ -6,12 +6,13 @@ struct SettingsRowView: View {
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: model.imageName)
-                .foregroundColor(model == .deleteAccount ? .red : .primary)
+                .foregroundColor(model == .deleteAccount ? .red : Color.theme.lightLavender)
                 .imageScale(.medium)
             
             Text(model.title)
-                .foregroundColor(model == .deleteAccount ? .red : .primary)
-                .font(.subheadline)
+                .foregroundColor(model == .deleteAccount ? .red : Color.theme.lightLavender)
+                .font(Font.custom("Dosis", size: 16))
         }
     }
+    
 }

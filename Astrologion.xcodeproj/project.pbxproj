@@ -113,7 +113,7 @@
 		F819B6172BACE530001B138A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B6162BACE530001B138A /* Extensions.swift */; };
 		F819B6192BACE547001B138A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B6182BACE547001B138A /* ImagePicker.swift */; };
 		F819B61B2BACE555001B138A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B61A2BACE555001B138A /* Constants.swift */; };
-		F819B61D2BACE570001B138A /* IGButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B61C2BACE570001B138A /* IGButtonModifier.swift */; };
+		F819B61D2BACE570001B138A /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B61C2BACE570001B138A /* ButtonModifier.swift */; };
 		F819B61F2BACE579001B138A /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819B61E2BACE579001B138A /* TextFieldModifier.swift */; };
 		F819B6222BACEE3F001B138A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F819B6212BACEE3F001B138A /* Kingfisher */; };
 		F8409FD72BADD05A00D007F8 /* SelectDateOfBirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8409FD62BADD05A00D007F8 /* SelectDateOfBirthView.swift */; };
@@ -311,7 +311,7 @@
 		F819B6162BACE530001B138A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F819B6182BACE547001B138A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F819B61A2BACE555001B138A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F819B61C2BACE570001B138A /* IGButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGButtonModifier.swift; sourceTree = "<group>"; };
+		F819B61C2BACE570001B138A /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		F819B61E2BACE579001B138A /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		F819B6232BACFBCB001B138A /* Astrologion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astrologion-Bridging-Header.h"; sourceTree = "<group>"; };
 		F8409FD62BADD05A00D007F8 /* SelectDateOfBirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateOfBirthView.swift; sourceTree = "<group>"; };
@@ -1015,7 +1015,7 @@
 		F819B6142BACE50C001B138A /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				F819B61C2BACE570001B138A /* IGButtonModifier.swift */,
+				F819B61C2BACE570001B138A /* ButtonModifier.swift */,
 				F819B61E2BACE579001B138A /* TextFieldModifier.swift */,
 				F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */,
 				F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */,
@@ -1657,7 +1657,7 @@
 				F819B56A2BACBF20001B138A /* User.swift in Sources */,
 				F819B5A12BACC38A001B138A /* ResetPasswordView.swift in Sources */,
 				F819B5C52BACC650001B138A /* FeedCell.swift in Sources */,
-				F819B61D2BACE570001B138A /* IGButtonModifier.swift in Sources */,
+				F819B61D2BACE570001B138A /* ButtonModifier.swift in Sources */,
 				F819B5DF2BACE0CD001B138A /* NotificationType.swift in Sources */,
 				F819B5E72BACE136001B138A /* NotificationsCellViewModel.swift in Sources */,
 				F8C007022BB5C6E4005741FC /* PlanetsView.swift in Sources */,

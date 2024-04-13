@@ -12,11 +12,13 @@ struct ConversationCell: View {
                 VStack(alignment: .leading, spacing: 4) {
                     if let user = message.user {
                         Text(user.username)
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(Font.custom("PlayfairDisplay-Regular", size: 17).weight(.semibold))
+                            .foregroundColor(Color.theme.lightLavender)
                     }
                     
                     Text(message.text)
-                        .font(.system(size: 15))
+                        .font(Font.custom("Dosis", size: 16))
+                        .foregroundColor(Color.theme.lightLavender)
                         .lineLimit(2)
                 }
                 .foregroundColor(.black)
@@ -24,8 +26,9 @@ struct ConversationCell: View {
                 
                 Spacer()
             }
-            
-            Divider()
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(Color.theme.lavender)
         }
         
     }

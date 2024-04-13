@@ -22,7 +22,7 @@ struct SelectTimeOfBirthView: View {
                 self.showLocationPickerView = true
             } label: {
                 Text("Next")
-                    .modifier(IGButtonModifier())
+                    .modifier(ButtonModifier())
             }
             
             Spacer()

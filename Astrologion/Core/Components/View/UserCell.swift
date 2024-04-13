@@ -10,12 +10,9 @@ struct UserCell: View {
             
             VStack(alignment: .leading) {
                 Text(user.username)
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(Font.custom("PlayfairDisplay-Regular", size: 14).weight(.semibold))
+                    .foregroundColor(Color.theme.lightLavender)
                 
-                if let fullname = user.fullname {
-                    Text(fullname)
-                        .font(.system(size: 14))
-                }
             }
             .foregroundColor(Color.theme.darkBlue)
             

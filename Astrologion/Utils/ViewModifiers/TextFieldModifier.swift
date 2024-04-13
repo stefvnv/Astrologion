@@ -3,9 +3,10 @@ import SwiftUI
 struct TextFieldModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.subheadline)
+            .font(.custom("Dosis", size: 16))
             .padding(12)
-            .background(Color(.systemGray6))
+            .background(Color.theme.lavender).opacity(0.3)
+            .foregroundColor(.black)
             .cornerRadius(10)
             .padding(.horizontal, 24)
     }

@@ -9,11 +9,11 @@ struct MessageView: View {
             if viewModel.isFromCurrentUser {
                 Spacer()
                 Text(viewModel.message.text)
-                    .font(.system(size: 15))
+                    .font(Font.custom("Dosis", size: 16))
                     .padding(10)
-                    .background(Color.blue)
+                    .background(Color.theme.yellow)
                     .clipShape(ChatBubble(isFromCurrentUser: true))
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.theme.darkBlue)
                     .padding(.leading, 100)
                     .padding(.trailing)
             } else {
@@ -21,11 +21,11 @@ struct MessageView: View {
                     CircularProfileImageView(user: viewModel.message.user, size: .xSmall)
                     
                     Text(viewModel.message.text)
-                        .font(.system(size: 15))
+                        .font(Font.custom("Dosis", size: 16))
                         .padding(10)
-                        .background(Color(.systemGray5))
+                        .background(Color.theme.lightLavender)
                         .clipShape(ChatBubble(isFromCurrentUser: false))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.theme.darkBlue)
                 }
                 .padding(.trailing, 100)
                 .padding(.leading)

@@ -17,7 +17,7 @@ struct SelectDateOfBirthView: View {
                 self.showTimeOfBirthView = true
             } label: {
                 Text("Next")
-                    .modifier(IGButtonModifier())
+                    .modifier(ButtonModifier())
             }
             Spacer()
         }

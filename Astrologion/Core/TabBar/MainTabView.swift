@@ -64,7 +64,6 @@ struct MainTabView: View {
                     .onAppear { selectedIndex = 4 }
                     .tag(4)
             }
-            //.accentColor(Color.theme.darkBlue)
     }
     
     var messageLink: some View {
