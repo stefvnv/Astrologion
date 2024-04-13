@@ -4,8 +4,7 @@ struct FeedView: View {
     @StateObject var viewModel = FeedViewModel()
     
     init() {
-        // Set navigation bar background color
-        UINavigationBar.appearance().barTintColor = UIColor(Color.theme.darkBlue)
+        configureGlobalAppearances()
     }
     
     var body: some View {
@@ -53,6 +52,25 @@ struct FeedView: View {
             .navigationDestination(for: SearchViewModelConfig.self) { config in
                 UserListView(config: config)
             }
+        }
+    }
+    
+    private func configureGlobalAppearances() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(Color.theme.darkBlue)
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.theme.yellow)]
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+
+        // Tab Bar Appearance
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor(Color.theme.darkBlue)
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         }
     }
 }

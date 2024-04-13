@@ -6,14 +6,15 @@ class CompleteSignUpViewModel: ObservableObject {
     @Published var sunPosition: String = "Calculating..."
     @Published var moonPosition: String = "Calculating..."
     @Published var ascendant: String = "Calculating..."
-
+    @Published var isDataReady = false
+    
     private var astrologyModel = AstrologyModel()
     private var cancellables: Set<AnyCancellable> = []
-
+    
     init() {
         astrologyModel.initializeEphemeris()
     }
-
+    
     func performAstrologicalCalculations(with details: BirthDetails) {
         Task {
             await calculateAstrologicalDetails(
@@ -27,7 +28,7 @@ class CompleteSignUpViewModel: ObservableObject {
             )
         }
     }
-
+    
     private func calculateAstrologicalDetails(day: Int, month: Int, year: Int, hour: Int, minute: Int, latitude: Double, longitude: Double) async {
         do {
             try await astrologyModel.calculateAstrologicalDetails(
@@ -50,21 +51,26 @@ class CompleteSignUpViewModel: ObservableObject {
     }
     
     private func updateUIWithAstrologicalData() {
-        if let sunPosition = astrologyModel.planetPositions[.Sun]?.position {
-            self.sunPosition = extractZodiacSign(from: sunPosition)
+        if let sun = astrologyModel.planetPositions[.Sun]?.position,
+           let moon = astrologyModel.planetPositions[.Moon]?.position {
+            let asc = astrologyModel.ascendant
+            DispatchQueue.main.async {
+                self.sunPosition = self.extractZodiacSign(from: sun)
+                self.moonPosition = self.extractZodiacSign(from: moon)
+                self.ascendant = self.extractZodiacSign(from: self.astrologyModel.zodiacSignAndDegree(fromLongitude: asc))
+                self.isDataReady = true
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.sunPosition = "Error"
+                self.moonPosition = "Error"
+                self.ascendant = "Error"
+            }
         }
-        if let moonPosition = astrologyModel.planetPositions[.Moon]?.position {
-            self.moonPosition = extractZodiacSign(from: moonPosition)
-        }
-
-        let ascendantPosition = astrologyModel.zodiacSignAndDegree(fromLongitude: astrologyModel.ascendant)
-        self.ascendant = extractZodiacSign(from: ascendantPosition)
     }
-
     
     private func extractZodiacSign(from position: String) -> String {
-        let components = position.split(separator: " ")
-        return components.first.map(String.init) ?? "Unknown"
+        let components = position.components(separatedBy: " ")
+        return components.first ?? "Unknown"
     }
-
 }

@@ -63,15 +63,14 @@ struct CurrentUserProfileView: View {
                     .presentationDetents([.height(360)])
                     .presentationDragIndicator(.visible)
             }
-            .sheet(isPresented: $showPasswordInputSheet) { // Present password input view
-                PasswordInputView { password in
+            .sheet(isPresented: $showPasswordInputSheet) {
+                DeleteAccountView { password in
                     Task {
                         do {
                             try await AuthService.shared.deleteUser(currentPassword: password)
                             presentationMode.wrappedValue.dismiss()
                         } catch {
                             errorMessage = error.localizedDescription
-                            // Show error message, if needed
                         }
                     }
                 }

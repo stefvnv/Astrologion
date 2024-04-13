@@ -184,7 +184,7 @@
 		F8B2745B2BC4682D00E52936 /* TransitPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2745A2BC4682D00E52936 /* TransitPosition.swift */; };
 		F8B2745D2BC48F9C00E52936 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2745C2BC48F9C00E52936 /* CGPoint.swift */; };
 		F8B2BF242BC1570000BE7A52 /* PlanetaryPlacementHouseDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2BF232BC1570000BE7A52 /* PlanetaryPlacementHouseDescription.swift */; };
-		F8B7BD9E2BBC85120014DD7A /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */; };
+		F8B7BD9E2BBC85120014DD7A /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BD9D2BBC85120014DD7A /* DeleteAccountView.swift */; };
 		F8B7BDA02BBC8A010014DD7A /* TransitChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BD9F2BBC8A010014DD7A /* TransitChartView.swift */; };
 		F8B7BDA62BBC8B230014DD7A /* TransitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BDA52BBC8B230014DD7A /* TransitsView.swift */; };
 		F8B7BDAB2BBC91F80014DD7A /* TransitTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7BDAA2BBC91F80014DD7A /* TransitTab.swift */; };
@@ -223,6 +223,7 @@
 		F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0070B2BB61495005741FC /* PlanetDetailView.swift */; };
 		F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C0070E2BB62F90005741FC /* Assets.xcassets */; };
 		F8C594652BCAD0210003CB26 /* BirthDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C594642BCAD0210003CB26 /* BirthDetails.swift */; };
+		F8C594672BCAE6F60003CB26 /* DeleteButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C594662BCAE6F60003CB26 /* DeleteButtonModifier.swift */; };
 		F8CBE0662BC0D8990013A867 /* PlanetaryPlacementHouseData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */; };
 		F8D3C0832BBDDD520075A137 /* TransitsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */; };
 		F8D3C0852BBDE2E80075A137 /* TransitOverviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */; };
@@ -384,7 +385,7 @@
 		F8B2745A2BC4682D00E52936 /* TransitPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitPosition.swift; sourceTree = "<group>"; };
 		F8B2745C2BC48F9C00E52936 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		F8B2BF232BC1570000BE7A52 /* PlanetaryPlacementHouseDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetaryPlacementHouseDescription.swift; sourceTree = "<group>"; };
-		F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
+		F8B7BD9D2BBC85120014DD7A /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		F8B7BD9F2BBC8A010014DD7A /* TransitChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitChartView.swift; sourceTree = "<group>"; };
 		F8B7BDA52BBC8B230014DD7A /* TransitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsView.swift; sourceTree = "<group>"; };
 		F8B7BDAA2BBC91F80014DD7A /* TransitTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitTab.swift; sourceTree = "<group>"; };
@@ -423,6 +424,7 @@
 		F8C0070B2BB61495005741FC /* PlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailView.swift; sourceTree = "<group>"; };
 		F8C0070E2BB62F90005741FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8C594642BCAD0210003CB26 /* BirthDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDetails.swift; sourceTree = "<group>"; };
+		F8C594662BCAE6F60003CB26 /* DeleteButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonModifier.swift; sourceTree = "<group>"; };
 		F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementHouseData.json; sourceTree = "<group>"; };
 		F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsTabView.swift; sourceTree = "<group>"; };
 		F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitOverviewDetailView.swift; sourceTree = "<group>"; };
@@ -1018,8 +1020,9 @@
 			isa = PBXGroup;
 			children = (
 				F819B61C2BACE570001B138A /* ButtonModifier.swift */,
+				F8C594662BCAE6F60003CB26 /* DeleteButtonModifier.swift */,
 				F819B61E2BACE579001B138A /* TextFieldModifier.swift */,
-				F8B7BD9D2BBC85120014DD7A /* PasswordInputView.swift */,
+				F8B7BD9D2BBC85120014DD7A /* DeleteAccountView.swift */,
 				F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */,
 				F8A102DE2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift */,
 				F8A102E12BC6E56E00841BB3 /* TabViewStyleModifier.swift */,
@@ -1597,6 +1600,7 @@
 				F819B5782BACC024001B138A /* MainTabView.swift in Sources */,
 				F819B5AF2BACC473001B138A /* UserListView.swift in Sources */,
 				F840A00A2BAE09B300D007F8 /* LocationSearchView.swift in Sources */,
+				F8C594672BCAE6F60003CB26 /* DeleteButtonModifier.swift in Sources */,
 				F819B61F2BACE579001B138A /* TextFieldModifier.swift in Sources */,
 				F8A102E82BC6FAB200841BB3 /* ChapterContent.swift in Sources */,
 				F8409FEF2BADDB7D00D007F8 /* ZodiacSign.swift in Sources */,
@@ -1717,7 +1721,7 @@
 				F840A0112BAE0E2000D007F8 /* LocationSearchCompleter.swift in Sources */,
 				F8BAA98C2BB74E37002E349C /* Polarity.swift in Sources */,
 				F8A1F8902BBF34A600A604AF /* TransitChartViewModel.swift in Sources */,
-				F8B7BD9E2BBC85120014DD7A /* PasswordInputView.swift in Sources */,
+				F8B7BD9E2BBC85120014DD7A /* DeleteAccountView.swift in Sources */,
 				F819B6052BACE3F9001B138A /* ContentViewModel.swift in Sources */,
 				F819B5E12BACE0EB001B138A /* NotificationsView.swift in Sources */,
 				F8A620A72BBB79A200F84AFE /* AspectExpandedView.swift in Sources */,

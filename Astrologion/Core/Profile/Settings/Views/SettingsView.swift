@@ -20,7 +20,7 @@ struct SettingsView: View {
                 .listRowBackground(Color.theme.darkBlue)
         }
         .sheet(isPresented: $showPasswordInputSheet) {
-            PasswordInputView { password in
+            DeleteAccountView { password in
                 Task {
                     do {
                         try await AuthService.shared.deleteUser(currentPassword: password)
