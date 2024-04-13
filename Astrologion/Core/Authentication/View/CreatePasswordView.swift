@@ -2,34 +2,46 @@ import SwiftUI
 
 struct CreatePasswordView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
-
+    
     var body: some View {
-        VStack(spacing: 12) {
-            Text("Create a password")
-                .font(.title2)
-                .fontWeight(.bold)
-                .padding(.top)
+        ZStack {
+            Color.theme.darkBlue.edgesIgnoringSafeArea(.all)
             
-            Text("Your password must be at least 6 characters in length.")
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 24)
-            
-            SecureField("Password", text: $viewModel.password)
-                .modifier(TextFieldModifier())
-                .padding(.top)
-            
-            NavigationLink {
-                CompleteSignUpView()
-            } label: {
-                Text("Next")
-                    .modifier(ButtonModifier())
+            VStack() {
+                
+                Image("logo")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .padding(.vertical, 80)
+                
+                Text("Create a password")
+                    .font(.custom("Dosis", size: 24))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.theme.lavender)
+                
+                Text("Your password must be at least 6 characters in length.")
+                    .font(.custom("Dosis", size: 14))
+                    .foregroundColor(Color.theme.lightLavender)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 20)
+                
+                SecureField("Password", text: $viewModel.password)
+                    .modifier(TextFieldModifier())
+                    .padding(.top)
+                
+                Spacer()
+                
+                NavigationLink {
+                    CompleteSignUpView()
+                } label: {
+                    Text("Next")
+                        .modifier(ButtonModifier())
+                }
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
             }
-            .disabled(!formIsValid)
-            .opacity(formIsValid ? 1.0 : 0.5)
-            
-            Spacer()
+            .padding()
         }
     }
 }
@@ -44,8 +56,9 @@ extension CreatePasswordView: AuthenticationFormProtocol {
 
 struct CreatePasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePasswordView()
-            .environmentObject(RegistrationViewModel())
-
+        NavigationStack {
+            CreatePasswordView()
+                .environmentObject(RegistrationViewModel())
+        }
     }
 }

@@ -9,30 +9,23 @@ struct LoginView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                Spacer()
-                
-                Text("Astrologion")
-                    .font(.custom("PlayfairDisplay-Regular", size: 40))
-                    .foregroundColor(Color.theme.yellow)
-                
-                Spacer()
                 
                 Image("logo")
                     .resizable()
                     .frame(width: 100, height: 100)
-                    .padding(.bottom, 40)
+                    .padding(.vertical, 140)
                 
-                Spacer()
-
-                            
+                Text("Astrologion")
+                    .font(.custom("PlayfairDisplay-Regular", size: 32))
+                    .foregroundColor(Color.theme.yellow)
+                    .padding(.top, -80)
+                                
                 VStack(spacing: 8) {
                     TextField("Enter your email", text: $email)
-                        .foregroundColor(Color.theme.lightLavender)
                         .autocapitalization(.none)
                         .modifier(TextFieldModifier())
                     
                     SecureField("Password", text: $password)
-                        .foregroundColor(Color.theme.lightLavender)
                         .modifier(TextFieldModifier())
                 }
                 
@@ -49,7 +42,9 @@ struct LoginView: View {
                                 .foregroundColor(Color.theme.yellow)
                         })
                 }
-                                
+                
+                Spacer()
+                
                 Button(action: {
                     Task { try await viewModel.login(withEmail: email, password: password) }
                 }, label: {
@@ -59,8 +54,6 @@ struct LoginView: View {
                 .disabled(!formIsValid)
                 .opacity(formIsValid ? 1.0 : 0.5)
                 .padding(.top, 4)
-                
-                Spacer()
                 
                 Divider()
                     .background(Color.theme.lavender)
@@ -82,7 +75,7 @@ struct LoginView: View {
                 }
                 .padding(.vertical, 16)
             }
-            .background(Color.theme.darkBlue) 
+            .background(Color.theme.darkBlue)
         }
     }
 }

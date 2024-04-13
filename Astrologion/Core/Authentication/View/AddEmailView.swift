@@ -4,12 +4,17 @@ struct AddEmailView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var showCreateUsernameView = false
-
+    
     var body: some View {
         ZStack {
             Color.theme.darkBlue.edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 24) {
+            VStack() {
+                
+                Image("logo")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .padding(.vertical, 80)
                 
                 Text("Enter your email")
                     .font(.custom("Dosis", size: 24))
@@ -21,6 +26,7 @@ struct AddEmailView: View {
                     .foregroundColor(Color.theme.lightLavender)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 24)
+                    .padding(.bottom, 20)
                 
                 ZStack(alignment: .trailing) {
                     TextField("Email", text: $viewModel.email)
@@ -52,6 +58,8 @@ struct AddEmailView: View {
                         .padding(.horizontal, 28)
                 }
                 
+                Spacer()
+                
                 Button {
                     Task {
                         try await viewModel.validateEmail()
@@ -62,8 +70,6 @@ struct AddEmailView: View {
                 }
                 .disabled(!formIsValid)
                 .opacity(formIsValid ? 1.0 : 0.5)
-                
-                Spacer()
             }
             .padding()
             
@@ -97,8 +103,8 @@ struct AddEmailView: View {
 extension AddEmailView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         return !viewModel.email.isEmpty
-            && viewModel.email.contains("@")
-            && viewModel.email.contains(".")
+        && viewModel.email.contains("@")
+        && viewModel.email.contains(".")
     }
 }
 

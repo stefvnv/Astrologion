@@ -8,48 +8,57 @@ class CompleteSignUpViewModel: ObservableObject {
     @Published var ascendant: String = ""
     
     private var astrologyModel = AstrologyModel()
+    private var cancellables: Set<AnyCancellable> = []
     
-    
-    ///
     init() {
         astrologyModel.initializeEphemeris()
+        setupBindings()
     }
     
+    private func setupBindings() {
+        astrologyModel.$planetPositions
+            .receive(on: RunLoop.main)
+            .sink { [weak self] positions in
+                self?.updatePositions(positions: positions)
+            }
+            .store(in: &cancellables)
+        
+        astrologyModel.$ascendant
+            .receive(on: RunLoop.main)
+            .map { $0 }
+            .sink { [weak self] ascendant in
+                self?.updateAscendant(ascendant: ascendant)
+            }
+            .store(in: &cancellables)
+    }
     
-    ///
-//    func calculateAstrologicalDetails(day: Int, month: Int, year: Int, hour: Int, minute: Int, latitude: Double, longitude: Double) {
-//        Task {
-//            do {
-//                try await self.astrologyModel.calculateAstrologicalDetails(
-//                    day: day, month: month, year: year,
-//                    hour: hour, minute: minute,
-//                    latitude: latitude, longitude: longitude,
-//                    houseSystem: .placidus
-//                )
-//                
-//                DispatchQueue.main.async { [weak self] in
-//                    guard let self = self else { return }
-//                    
-//                    // Access positions using the planetaryPositions dictionary
-//                    if let sunLongitude = self.astrologyModel.planetaryPositions[.Sun],
-//                       let moonLongitude = self.astrologyModel.planetaryPositions[.Moon] {
-//                        
-//                        let sunPosition = self.astrologyModel.zodiacSignAndDegree(fromLongitude: sunLongitude)
-//                        let moonPosition = self.astrologyModel.zodiacSignAndDegree(fromLongitude: moonLongitude)
-//                        
-//                        // Directly use ascendantLongitude since it's not optional
-//                        let ascendantLongitude = self.astrologyModel.ascendant
-//                        let ascendantSign = self.astrologyModel.zodiacSignAndDegree(fromLongitude: ascendantLongitude)
-//                        
-//                        // Extract the zodiac sign from the position string
-//                        self.sunPosition = self.astrologyModel.extractZodiacSign(from: sunPosition)
-//                        self.moonPosition = self.astrologyModel.extractZodiacSign(from: moonPosition)
-//                        self.ascendant = self.astrologyModel.extractZodiacSign(from: ascendantSign)
-//                    }
-//                }
-//            } catch {
-//                print("An error occurred while calculating astrological details: \(error)")
-//            }
-//        }
-//    }
+    private func updatePositions(positions: [Planet: (position: String, longitude: Double)]) {
+        if let sun = positions[.Sun]?.position {
+            sunPosition = extractZodiacSign(from: sun)
+        }
+        if let moon = positions[.Moon]?.position {
+            moonPosition = extractZodiacSign(from: moon)
+        }
+    }
+    
+    private func updateAscendant(ascendant: Double) {
+        let ascendantPosition = astrologyModel.zodiacSignAndDegree(fromLongitude: ascendant)
+        self.ascendant = extractZodiacSign(from: ascendantPosition)
+    }
+    
+    private func extractZodiacSign(from position: String) -> String {
+        let components = position.components(separatedBy: " ")
+        return components.first ?? "Unknown"
+    }
+    
+    func calculateAstrologicalDetails(day: Int, month: Int, year: Int, hour: Int, minute: Int, latitude: Double, longitude: Double) {
+        Task {
+            try await astrologyModel.calculateAstrologicalDetails(
+                day: day, month: month, year: year,
+                hour: hour, minute: minute,
+                latitude: latitude, longitude: longitude,
+                houseSystem: .placidus
+            )
+        }
+    }
 }

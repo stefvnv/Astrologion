@@ -952,13 +952,13 @@
 			children = (
 				F819B5A22BACC3B0001B138A /* LoginView.swift */,
 				F819B5A02BACC38A001B138A /* ResetPasswordView.swift */,
-				F819B59E2BACC36A001B138A /* CreateUsernameView.swift */,
 				F819B59C2BACC341001B138A /* AddEmailView.swift */,
+				F819B59E2BACC36A001B138A /* CreateUsernameView.swift */,
+				F8409FD62BADD05A00D007F8 /* SelectDateOfBirthView.swift */,
+				F8409FDA2BADD4E800D007F8 /* SelectTimeOfBirthView.swift */,
+				F8409FD82BADD15300D007F8 /* SelectLocationView.swift */,
 				F819B59A2BACC225001B138A /* CreatePasswordView.swift */,
 				F819B5982BACC1F8001B138A /* CompleteSignUpView.swift */,
-				F8409FD62BADD05A00D007F8 /* SelectDateOfBirthView.swift */,
-				F8409FD82BADD15300D007F8 /* SelectLocationView.swift */,
-				F8409FDA2BADD4E800D007F8 /* SelectTimeOfBirthView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
