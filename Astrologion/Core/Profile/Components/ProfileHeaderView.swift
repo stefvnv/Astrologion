@@ -62,9 +62,6 @@ struct ProfileHeaderView: View {
                     }
                     .font(.custom("Dosis", size: 16))
                 }
-                
-                // edit profile button
-                ProfileActionButtonView(viewModel: viewModel)
             }
             .padding(.top, -80)
         }

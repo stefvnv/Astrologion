@@ -16,14 +16,20 @@ struct ProfileView: View {
         ScrollView {
             VStack(spacing: 0) {
                 ProfileHeaderView(viewModel: profileViewModel)
-
                 ProfileTabView(selectedTab: $selectedTab, user: user, profileViewModel: profileViewModel)
             }
         }
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                backButton
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ProfileActionButtonView(viewModel: profileViewModel)
+            }
+        }
     }
     
     var backButton: some View {
@@ -35,7 +41,6 @@ struct ProfileView: View {
         }
     }
 }
-
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {

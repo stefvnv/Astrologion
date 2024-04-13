@@ -22,7 +22,6 @@ struct CurrentUserProfileView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     ProfileHeaderView(viewModel: profileViewModel)
-
                     ProfileTabView(selectedTab: $selectedTab, user: user, profileViewModel: profileViewModel)
                 }
             }
@@ -40,6 +39,9 @@ struct CurrentUserProfileView: View {
                             .frame(width: 24, height: 24)
                             .scaledToFit()
                     }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ProfileActionButtonView(viewModel: profileViewModel)
                 }
             }
             .sheet(isPresented: $showSettingsSheet) {
