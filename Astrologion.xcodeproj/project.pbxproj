@@ -222,6 +222,7 @@
 		F8C0070A2BB5D14E005741FC /* ProfileTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007092BB5D14E005741FC /* ProfileTabView.swift */; };
 		F8C0070C2BB61495005741FC /* PlanetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0070B2BB61495005741FC /* PlanetDetailView.swift */; };
 		F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C0070E2BB62F90005741FC /* Assets.xcassets */; };
+		F8C594652BCAD0210003CB26 /* BirthDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C594642BCAD0210003CB26 /* BirthDetails.swift */; };
 		F8CBE0662BC0D8990013A867 /* PlanetaryPlacementHouseData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */; };
 		F8D3C0832BBDDD520075A137 /* TransitsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */; };
 		F8D3C0852BBDE2E80075A137 /* TransitOverviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */; };
@@ -421,6 +422,7 @@
 		F8C007092BB5D14E005741FC /* ProfileTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabView.swift; sourceTree = "<group>"; };
 		F8C0070B2BB61495005741FC /* PlanetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailView.swift; sourceTree = "<group>"; };
 		F8C0070E2BB62F90005741FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8C594642BCAD0210003CB26 /* BirthDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDetails.swift; sourceTree = "<group>"; };
 		F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementHouseData.json; sourceTree = "<group>"; };
 		F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsTabView.swift; sourceTree = "<group>"; };
 		F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitOverviewDetailView.swift; sourceTree = "<group>"; };
@@ -1416,10 +1418,11 @@
 			isa = PBXGroup;
 			children = (
 				F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */,
-				F8C006FB2BB586A1005741FC /* PlanetPosition.swift */,
-				F8B2745A2BC4682D00E52936 /* TransitPosition.swift */,
+				F8C594642BCAD0210003CB26 /* BirthDetails.swift */,
 				F8BAA9812BB6D200002E349C /* PlanetImage.swift */,
+				F8C006FB2BB586A1005741FC /* PlanetPosition.swift */,
 				F8B7BDB42BBCAA2D0014DD7A /* Transit.swift */,
+				F8B2745A2BC4682D00E52936 /* TransitPosition.swift */,
 			);
 			path = Astrological;
 			sourceTree = "<group>";
@@ -1610,6 +1613,7 @@
 				F819B5AB2BACC425001B138A /* UserListViewModel.swift in Sources */,
 				F819B5CD2BACE00A001B138A /* ConversationsCell.swift in Sources */,
 				F8B7BDB72BBCAB6A0014DD7A /* TransitsViewModel.swift in Sources */,
+				F8C594652BCAD0210003CB26 /* BirthDetails.swift in Sources */,
 				F897CB2D2BC356BC00A804F7 /* CGVector.swift in Sources */,
 				F819B5F32BACE20D001B138A /* EditProfileViewModel.swift in Sources */,
 				F819B5FB2BACE2B8001B138A /* SettingsRowView.swift in Sources */,
