@@ -27,7 +27,7 @@ struct TransitsOverviewView: View {
                     .frame(width: 100, height: 100)
                     .padding(.bottom, -50)
             }
-            .padding(.bottom, 60)
+            .padding(.bottom, 100)
 
             if transitsViewModel.isLoadingChartData {
                 ProgressView()

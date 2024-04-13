@@ -70,6 +70,6 @@ struct TransitsPlanetSummaryView: View {
         .background(Color(transit.planet.color).opacity(0.5))
         .cornerRadius(10)
         .padding(.horizontal)
-        .padding(.vertical, 5)
+        .padding(.vertical, 20)
     }
 }

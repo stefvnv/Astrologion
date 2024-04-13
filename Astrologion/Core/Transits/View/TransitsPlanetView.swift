@@ -32,7 +32,7 @@ struct TransitsPlanetView: View {
                 .frame(width: 100, height: 100)
                 .padding(.bottom, -50)
         }
-        .padding(.bottom, 60)
+        .padding(.bottom, 80)
     }
     
     private func transitSummaryView() -> some View {

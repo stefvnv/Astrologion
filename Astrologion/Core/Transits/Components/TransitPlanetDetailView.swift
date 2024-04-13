@@ -3,7 +3,7 @@ import SwiftUI
 struct TransitsPlanetDetailView: View {
     @ObservedObject var transitsViewModel: TransitsViewModel
     var transit: Transit
-
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -15,13 +15,13 @@ struct TransitsPlanetDetailView: View {
                             .font(Font.custom("PlayfairDisplay-Regular", size: 22))
                             .foregroundColor(Color.theme.lavender)
                             .padding()
-
+                        
                         // aspect symbol
                         Text(aspect.symbol)
                             .font(.system(size: 30))
                             .foregroundColor(Color(uiColor: aspect.darkerColor))
                             .padding(.bottom, 20)
-
+                        
                         // aspect description
                         if let descriptionData = transitsViewModel.transitDescription.first(where: {
                             $0.transit.compare(transit.descriptionKey(for: aspect), options: .caseInsensitive) == .orderedSame
