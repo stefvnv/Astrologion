@@ -18,23 +18,26 @@ struct PostGridView: View {
     }
     
     var body: some View {
-        LazyVGrid(columns: items, spacing: 2, content: {
-            ForEach(viewModel.posts) { post in
-                NavigationLink(value: post) {
-                    KFImage(URL(string: post.imageUrl))
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: width, height: width)
-                        .clipped()
-                }
-                .onAppear {
-                    guard let index = viewModel.posts.firstIndex(where: { $0.id == post.id }) else { return }
-                    if case .explore = config, index == viewModel.posts.count - 1 {
-                        viewModel.fetchExplorePagePosts()
+        ScrollView {
+            LazyVGrid(columns: items, spacing: 2) {
+                ForEach(viewModel.posts) { post in
+                    NavigationLink(destination: FeedCell(post: post)) {
+                        KFImage(URL(string: post.imageUrl))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: width, height: width)
+                            .clipped()
+                    }
+                    .onAppear {
+                        guard let index = viewModel.posts.firstIndex(where: { $0.id == post.id }) else { return }
+                        if case .explore = config, index == viewModel.posts.count - 1 {
+                            viewModel.fetchExplorePagePosts()
+                        }
                     }
                 }
             }
-        })
+        }
+        .background(Color.theme.darkBlue)
         .navigationDestination(for: Post.self) { post in
             FeedCell(post: post)
         }
