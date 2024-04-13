@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SelectDateOfBirthView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
+    @Environment(\.dismiss) var dismiss
     @State private var showTimeOfBirthView = false
     
     @State private var defaultDate = Calendar.current.date(from: DateComponents(year: 2000, month: 1, day: 1)) ?? Date()
@@ -51,10 +52,20 @@ struct SelectDateOfBirthView: View {
                 }
             }
             .padding()
-            
             .navigationDestination(isPresented: $showTimeOfBirthView, destination: {
                 SelectTimeOfBirthView()
             })
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .foregroundColor(Color.theme.lightLavender)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CreatePasswordView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -43,8 +44,20 @@ struct CreatePasswordView: View {
             }
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .foregroundColor(Color.theme.lightLavender)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            }
+        }
     }
 }
+
 
 // MARK: - AuthenticationFormProtocol
 

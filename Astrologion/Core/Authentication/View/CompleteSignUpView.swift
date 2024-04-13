@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CompleteSignUpView: View {
     @EnvironmentObject var registrationViewModel: RegistrationViewModel
+    @Environment(\.dismiss) var dismiss
     @StateObject private var viewModel = CompleteSignUpViewModel()
     @State private var sunOpacity = 0.0
     @State private var moonOpacity = 0.0
@@ -12,66 +13,55 @@ struct CompleteSignUpView: View {
         ZStack {
             Color.theme.darkBlue.edgesIgnoringSafeArea(.all)
             
-            // logo
             VStack {
                 Image("logo")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .padding(.vertical, 80)
-               
                 
-            // welcome to astrologion text
-            VStack {
                 Text("Hi \(registrationViewModel.username), welcome to")
                     .font(.custom("Dosis", size: 20))
                     .foregroundColor(Color.theme.lightLavender)
-                    .padding(.top, -20)
                 
                 Text("Astrologion")
                     .font(.custom("PlayfairDisplay-Regular", size: 34))
                     .foregroundColor(Color.theme.yellow)
-            }
-            .padding(.top, -20)
-            .padding(.bottom, 90)
+                    .padding(.bottom, 90)
 
-                
-            // sun, moon, asc
-            VStack {
-                HStack {
-                    Image("sun-registration")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    Text(viewModel.sunPosition)
-                        .font(.custom("Dosis", size: 24))
-                        .foregroundColor(Color.theme.lightLavender)
+                VStack {
+                    HStack {
+                        Image("sun-registration")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text(viewModel.sunPosition)
+                            .font(.custom("Dosis", size: 24))
+                            .foregroundColor(Color.theme.lightLavender)
+                    }
+                    .opacity(sunOpacity)
+                    .padding()
+
+                    HStack {
+                        Image("moon-registration")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text(viewModel.moonPosition)
+                            .font(.custom("Dosis", size: 24))
+                            .foregroundColor(Color.theme.lightLavender)
+                    }
+                    .opacity(moonOpacity)
+                    .padding()
+
+                    HStack {
+                        Image("ascendant-registration")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text(viewModel.ascendant)
+                            .font(.custom("Dosis", size: 24))
+                            .foregroundColor(Color.theme.lightLavender)
+                    }
+                    .opacity(ascendantOpacity)
+                    .padding()
                 }
-                .opacity(sunOpacity)
-                .padding()
-
-                HStack {
-                    Image("moon-registration")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    Text(viewModel.moonPosition)
-                        .font(.custom("Dosis", size: 24))
-                        .foregroundColor(Color.theme.lightLavender)
-                }
-                .opacity(moonOpacity)
-                .padding()
-
-
-                HStack {
-                    Image("ascendant-registration")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                    Text(viewModel.ascendant)
-                        .font(.custom("Dosis", size: 24))
-                        .foregroundColor(Color.theme.lightLavender)
-                }
-                .opacity(ascendantOpacity)
-                .padding()
-
-            }
 
                 Spacer()
 
@@ -86,7 +76,17 @@ struct CompleteSignUpView: View {
                 }
                 .modifier(ButtonModifier())
                 .opacity(buttonOpacity)
-                .disabled(buttonOpacity < 1)
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .foregroundColor(Color.theme.lightLavender)
+                    .onTapGesture {
+                        dismiss()
+                    }
             }
         }
         .onAppear {
@@ -120,7 +120,7 @@ struct CompleteSignUpView: View {
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
                     withAnimation(.easeIn(duration: 2)) {
-                        buttonOpacity = 1.0 
+                        buttonOpacity = 1.0
                     }
                 }
             }

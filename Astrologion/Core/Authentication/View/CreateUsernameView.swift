@@ -2,8 +2,9 @@ import SwiftUI
 
 struct CreateUsernameView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
+    @Environment(\.dismiss) var dismiss
     @State private var showSelectDateOfBirthView = false
-
+    
     var body: some View {
         ZStack {
             Color.theme.darkBlue.edgesIgnoringSafeArea(.all)
@@ -70,18 +71,27 @@ struct CreateUsernameView: View {
                 .opacity(formIsValid ? 1.0 : 0.5)
             }
             .padding()
-            
-            .onReceive(viewModel.$usernameIsValid, perform: { usernameIsValid in
+            .onReceive(viewModel.$usernameIsValid) { usernameIsValid in
                 if usernameIsValid {
-                    self.showSelectDateOfBirthView.toggle()
+                    self.showSelectDateOfBirthView = true
                 }
-            })
-            .navigationDestination(isPresented: $showSelectDateOfBirthView, destination: {
+            }
+            .navigationDestination(isPresented: $showSelectDateOfBirthView) {
                 SelectDateOfBirthView()
-            })
+            }
             .onAppear {
-                showSelectDateOfBirthView = false
                 viewModel.usernameIsValid = false
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .foregroundColor(Color.theme.lightLavender)
+                    .onTapGesture {
+                        dismiss()
+                    }
             }
         }
     }

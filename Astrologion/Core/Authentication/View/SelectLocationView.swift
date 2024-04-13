@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SelectLocationView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
+    @Environment(\.dismiss) var dismiss
     @State private var showCreatePasswordView = false
     @State private var locationText: String = ""
     
@@ -44,13 +45,24 @@ struct SelectLocationView: View {
                 .opacity(locationText.isEmpty ? 0.5 : 1.0)
             }
             .padding()
-            
-            .navigationDestination(isPresented: $showCreatePasswordView, destination: {
-                CreatePasswordView().environmentObject(viewModel)
-            })
-        }
-    }
-}
+             
+             .navigationDestination(isPresented: $showCreatePasswordView, destination: {
+                 CreatePasswordView().environmentObject(viewModel)
+             })
+         }
+         .navigationBarBackButtonHidden(true)
+         .toolbar {
+             ToolbarItem(placement: .navigationBarLeading) {
+                 Image(systemName: "chevron.left")
+                     .imageScale(.large)
+                     .foregroundColor(Color.theme.lightLavender)
+                     .onTapGesture {
+                         dismiss()
+                     }
+             }
+         }
+     }
+ }
 
 struct SelectLocationView_Previews: PreviewProvider {
     static var previews: some View {

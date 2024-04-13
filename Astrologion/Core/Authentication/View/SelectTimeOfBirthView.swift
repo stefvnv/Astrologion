@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SelectTimeOfBirthView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
+    @Environment(\.dismiss) var dismiss
     @State private var showLocationPickerView = false
 
     var body: some View {
@@ -15,7 +16,7 @@ struct SelectTimeOfBirthView: View {
                     .frame(width: 100, height: 100)
                     .padding(.vertical, 80)
 
-                Text("Select your time of birth")
+                Text("Select time of birth")
                     .font(.custom("Dosis", size: 24))
                     .fontWeight(.bold)
                     .foregroundColor(Color.theme.lavender)
@@ -51,6 +52,17 @@ struct SelectTimeOfBirthView: View {
             .navigationDestination(isPresented: $showLocationPickerView, destination: {
                 SelectLocationView()
             })
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Image(systemName: "chevron.left")
+                    .imageScale(.large)
+                    .foregroundColor(Color.theme.lightLavender)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            }
         }
     }
 }
