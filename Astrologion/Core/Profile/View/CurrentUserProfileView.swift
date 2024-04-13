@@ -29,7 +29,7 @@ struct CurrentUserProfileView: View {
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         selectedSettingsOption = nil
                         showSettingsSheet.toggle()

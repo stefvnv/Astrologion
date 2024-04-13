@@ -637,7 +637,6 @@
 			isa = PBXGroup;
 			children = (
 				F819B5812BACC0AB001B138A /* Components */,
-				F819B5632BACBEEB001B138A /* Notifications */,
 				F819B57F2BACC09C001B138A /* Settings */,
 				F819B5802BACC0A2001B138A /* EditProfile */,
 				F8A102F12BC74E1000841BB3 /* Posts */,
@@ -1128,6 +1127,7 @@
 		F89751952BB84E1000138D25 /* Orbit */ = {
 			isa = PBXGroup;
 			children = (
+				F819B5632BACBEEB001B138A /* Notifications */,
 				F819B5642BACBEF2001B138A /* Messages */,
 				F819B5602BACBECB001B138A /* Search */,
 				F89751A22BB85EC700138D25 /* Views */,
