@@ -9,17 +9,13 @@ struct ProfileActionButtonView: View {
         VStack {
             if viewModel.user.isCurrentUser {
                 Button(action: { showEditProfile.toggle() }) {
-                    Image(systemName: "pencil")
+                    Image("edit")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 24, height: 24)
+                        .frame(width: 32, height: 32)
                         .foregroundColor(Color.theme.lavender)
                 }
                 .frame(width: 32, height: 32)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
                 .fullScreenCover(isPresented: $showEditProfile) {
                     EditProfileView(user: $viewModel.user)
                 }
@@ -32,10 +28,6 @@ struct ProfileActionButtonView: View {
                         .foregroundColor(isFollowed ? .black : .red)
                 }
                 .frame(width: 32, height: 32)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
             }
             
             Divider()

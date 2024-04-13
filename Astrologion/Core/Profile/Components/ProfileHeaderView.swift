@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @ObservedObject var viewModel: ProfileViewModel
-
+    
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             // Semi-circle and profile picture
@@ -49,32 +49,30 @@ struct ProfileHeaderView: View {
                     .font(.custom("Dosis", size: 16))
                     .padding(.vertical)
                 }
-
+                
                 //bio
                 if let bio = viewModel.user.bio, !bio.isEmpty {
                     Text(bio)
                         .font(.custom("Dosis", size: 16))
                 }
                 
+                HStack(spacing: 16) {
                     
-                    HStack(spacing: 16) {
-                        NavigationLink(destination: PostGridView(config: .profile(viewModel.user)).navigationBarTitle(Text(viewModel.user.username), displayMode: .inline)) {
-                            Text("Posts")
-                                .modifier(SmallButtonModifier())
-                        }
-
+                    NavigationLink(destination: PostGridView(config: .profile(viewModel.user)).navigationBarTitle(Text(viewModel.user.username), displayMode: .inline)) {
                         UserStatView(value: viewModel.user.stats?.posts, title: "Posts")
-                        
-                        NavigationLink(value: SearchViewModelConfig.followers(viewModel.user.id)) {
-                            UserStatView(value: viewModel.user.stats?.followers, title: "Orbiters")
-                        }
-                        .disabled(viewModel.user.stats?.followers == 0)
-                        
-                        NavigationLink(value: SearchViewModelConfig.following(viewModel.user.id)) {
-                            UserStatView(value: viewModel.user.stats?.following, title: "Orbiting")
-                        }
-                        .disabled(viewModel.user.stats?.following == 0)
                     }
+                    .disabled(viewModel.user.stats?.posts == 0)
+                    
+                    NavigationLink(value: SearchViewModelConfig.followers(viewModel.user.id)) {
+                        UserStatView(value: viewModel.user.stats?.followers, title: "Orbiters")
+                    }
+                    .disabled(viewModel.user.stats?.followers == 0)
+                    
+                    NavigationLink(value: SearchViewModelConfig.following(viewModel.user.id)) {
+                        UserStatView(value: viewModel.user.stats?.following, title: "Orbiting")
+                    }
+                    .disabled(viewModel.user.stats?.following == 0)
+                }
             }
             .padding(.top, -80)
         }

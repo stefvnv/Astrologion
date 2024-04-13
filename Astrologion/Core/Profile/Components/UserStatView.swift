@@ -8,19 +8,22 @@ struct UserStatView: View {
         VStack {
             Text("\(value ?? 0)")
                 .font(.custom("Dosis", size: 12).weight(.semibold))
-                .foregroundColor(Color.theme.darkBlue)
+                .foregroundColor(.white)
             
             Text(title)
                 .font(.custom("Dosis", size: 12))
-                .foregroundColor(Color.theme.darkBlue)
+                .foregroundColor(.white)
         }
         .opacity(value == 0 ? 0.5 : 1.0)
         .frame(width: 50, height: 40, alignment: .center)
         .padding(2)
+        .background(Color.theme.lavender)
+        .cornerRadius(8)
         .overlay(
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.theme.lavender, lineWidth: 1)
         )
+        .padding(.vertical, 10)
     }
 }
 
@@ -29,5 +32,6 @@ struct UserStatView_Previews: PreviewProvider {
         UserStatView(value: 1, title: "Posts")
             .previewLayout(.sizeThatFits)
             .padding()
+            .background(Color.theme.darkBlue) // Preview on a dark blue background
     }
 }
