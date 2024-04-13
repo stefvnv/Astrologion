@@ -16,7 +16,7 @@ struct AddEmailView: View {
                     .frame(width: 100, height: 100)
                     .padding(.vertical, 80)
                 
-                Text("Enter your email")
+                Text("Email")
                     .font(.custom("Dosis", size: 24))
                     .fontWeight(.bold)
                     .foregroundColor(Color.theme.lavender)
@@ -46,12 +46,11 @@ struct AddEmailView: View {
                             .fontWeight(.bold)
                             .foregroundColor(Color(.systemRed))
                             .padding(.trailing, 40)
-                            .padding(.top, 14)
                     }
                 }
                 
                 if viewModel.emailValidationFailed {
-                    Text("This email is already in use. Please login or try again.")
+                    Text("This email is already in use. Please login or use a different email.")
                         .font(.custom("Dosis", size: 12))
                         .foregroundColor(Color(.systemRed))
                         .frame(maxWidth: .infinity, alignment: .leading)

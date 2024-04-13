@@ -38,6 +38,22 @@ struct CreateUsernameView: View {
                             .padding(.trailing, 40)
                             .padding(.top, 14)
                     }
+                    
+                    if viewModel.usernameValidationFailed {
+                        Image(systemName: "xmark.circle.fill")
+                            .imageScale(.large)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemRed))
+                            .padding(.trailing, 40)
+                    }
+                }
+                
+                if viewModel.usernameValidationFailed {
+                    Text("This username is already in use. Please choose a different one.")
+                        .font(.custom("Dosis", size: 12))
+                        .foregroundColor(Color(.systemRed))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 28)
                 }
                 
                 Spacer()

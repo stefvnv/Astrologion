@@ -5,8 +5,8 @@ struct TextFieldModifier: ViewModifier {
         content
             .font(.custom("Dosis", size: 16))
             .padding(12)
-            .background(Color.theme.lavender).opacity(0.3)
             .foregroundColor(.white)
+            .background(Color.theme.lavender).opacity(0.9)
             .cornerRadius(10)
             .padding(.horizontal, 24)
     }

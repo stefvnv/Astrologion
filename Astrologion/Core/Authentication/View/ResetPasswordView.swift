@@ -7,19 +7,34 @@ struct ResetPasswordView: View {
     init(email: Binding<String>) {
         self._email = email
     }
-
+    
     var body: some View {
+        
+        ZStack {
+            Color.theme.darkBlue.edgesIgnoringSafeArea(.all)
+            
             VStack {
+                
+                
+                Image("logo")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .padding(.vertical, 140)
+                
                 Text("Astrologion")
-                    .font(.custom("PlayfairDisplay-Regular", size: 24))
+                    .font(.custom("PlayfairDisplay-Regular", size: 32))
                     .foregroundColor(Color.theme.yellow)
+                    .padding(.top, -80)
+                
                 
                 VStack(spacing: 20) {
-                    TextField("Enter your email", text: $email)
+                    TextField("Email", text: $email)
                         .autocapitalization(.none)
                         .modifier(TextFieldModifier())
                 }
-                                    
+                
+                Spacer()
+                
                 Button(action: {
                     Task {
                         try await AuthService.shared.sendResetPasswordLink(toEmail: email)
@@ -30,18 +45,24 @@ struct ResetPasswordView: View {
                         .modifier(ButtonModifier())
                 })
                 
-                Spacer()
-                
+                Divider()
+                    .background(Color.theme.lavender)
+                    .padding(.bottom, 18)
+
                 Button(action: { dismiss() }, label: {
-                    HStack {
+                    HStack(spacing: 3) {
                         Text("Already have an account?")
-                            .font(.system(size: 14))
+                            .font(.custom("Dosis", size: 14))
+                            .foregroundColor(Color.theme.yellow)
                         
                         Text("Sign In")
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(.custom("Dosis", size: 14).weight(.semibold))
+                            .foregroundColor(Color.theme.yellow)
                     }
                 })
+                .padding(.bottom, 16)
             }
             .navigationBarBackButtonHidden(true)
+        }
     }
 }

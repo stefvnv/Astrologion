@@ -11,6 +11,7 @@ class RegistrationViewModel: ObservableObject {
     @Published var birthLocation: String = ""
     @Published var latitude: Double = 0.0
     @Published var longitude: Double = 0.0
+    
     @Published var emailIsValid = false
     @Published var usernameIsValid = false
     @Published var isLoading = false
@@ -18,7 +19,6 @@ class RegistrationViewModel: ObservableObject {
     @Published var usernameValidationFailed = false
     
     private var cancellables = Set<AnyCancellable>()
-    
     private let geocoder = CLGeocoder()
     
     
@@ -102,9 +102,19 @@ class RegistrationViewModel: ObservableObject {
     @MainActor
     func validateUsername() async throws {
         isLoading = true
-        let snapshot = try await FirestoreConstants.UserCollection.whereField("username", isEqualTo: username).getDocuments()
-        usernameIsValid = snapshot.isEmpty
-        isLoading = false
+        defer { isLoading = false }
+
+        let snapshot = try await FirestoreConstants.UserCollection
+            .whereField("username", isEqualTo: username)
+            .getDocuments()
+        
+        if !snapshot.isEmpty {
+            usernameValidationFailed = true
+            usernameIsValid = false
+        } else {
+            usernameValidationFailed = false
+            usernameIsValid = true
+        }
     }
     
     var formIsValid: Bool {
