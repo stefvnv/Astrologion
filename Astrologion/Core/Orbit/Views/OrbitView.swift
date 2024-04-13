@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct OrbitView: View {
-    @State private var selectedTab: OrbitTab = .search
-    let user: User
     @StateObject var profileViewModel: ProfileViewModel
+    @State private var selectedTab: OrbitTab = .search
+    @State private var showNotificationsView = false
+
+    let user: User
     
     init(user: User) {
         self.user = user
@@ -16,6 +18,17 @@ struct OrbitView: View {
                 OrbitTabView(selectedTab: $selectedTab, profileViewModel: profileViewModel, userID: user.id)
             }
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showNotificationsView.toggle()
+                    }) {
+                        Image("notifications")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                            .scaledToFit()
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(
                         destination: ConversationsView(),
@@ -28,6 +41,9 @@ struct OrbitView: View {
                                 .foregroundColor(Color.theme.darkBlue)
                         })
                 }
+            }
+            .navigationDestination(isPresented: $showNotificationsView) {
+                NotificationsView()
             }
             .background(Color.theme.darkBlue)
             .navigationTitle("Orbit")

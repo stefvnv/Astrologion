@@ -6,7 +6,6 @@ struct CurrentUserProfileView: View {
     @State private var showSettingsSheet = false
     @State private var selectedSettingsOption: SettingsItemModel?
     @State private var showDetail = false
-    @State private var showNotificationsView = false
     @State private var showPasswordInputSheet = false
     @State private var errorMessage: String?
 
@@ -30,18 +29,6 @@ struct CurrentUserProfileView: View {
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        showNotificationsView.toggle()
-                    }) {
-                        Image("notifications")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 24, height: 24)
-                            .scaledToFit()
-                    }
-                }
-
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         selectedSettingsOption = nil
@@ -54,9 +41,6 @@ struct CurrentUserProfileView: View {
                             .scaledToFit()
                     }
                 }
-            }
-            .navigationDestination(isPresented: $showNotificationsView) {
-                NotificationsView()
             }
             .sheet(isPresented: $showSettingsSheet) {
                 SettingsView()
