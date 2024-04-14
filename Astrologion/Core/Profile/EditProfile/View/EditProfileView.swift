@@ -31,9 +31,8 @@ struct EditProfileView: View {
                                 CircularProfileImageView(user: user, size: .large)
                             }
                             Text("Edit profile picture")
-                                .font(.footnote)
-                                .fontWeight(.semibold)
-                                .font(.custom("Dosis", size: 14)) 
+                                .font(.custom("Dosis", size: 14).weight(.bold))
+                                .foregroundColor(Color.theme.lightLavender)
                         }
                     }
                     .padding(.vertical, 8)
@@ -47,7 +46,6 @@ struct EditProfileView: View {
                     EditProfileDatePickerView(title: "Date of Birth", date: $viewModel.birthDate, displayComponents: .date)
                     
                     EditProfileDatePickerView(title: "Time of Birth", date: $viewModel.birthTime, displayComponents: .hourAndMinute)
-                    
                     
                     LocationSearchView(location: $viewModel.birthLocation)
                         .onChange(of: viewModel.birthLocation) { newLocation in
@@ -68,6 +66,7 @@ struct EditProfileView: View {
                     await viewModel.refreshView()
                 }
             }
+            .background(Color.theme.darkBlue.edgesIgnoringSafeArea(.all))
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     backButton
@@ -112,20 +111,27 @@ struct EditProfileRowView: View {
     @Binding var text: String
     
     var body: some View {
-        
         HStack {
             Text(title)
                 .padding(.leading, 8)
                 .frame(width: 100, alignment: .leading)
-                            
-            VStack {
-                TextField(placeholder, text: $text)
-                
-                Divider()
-            }
+                .foregroundColor(Color.theme.lightLavender)
+                .font(.custom("Dosis", size: 16))
+            
+            TextField(placeholder, text: $text)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 12)
+                .foregroundColor(Color.theme.lightLavender)
+                .font(.custom("Dosis", size: 16))
+                .background(Color.theme.lavender.opacity(0.6))
+                .cornerRadius(5)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.theme.lightLavender, lineWidth: 1)
+                )
         }
-        .font(.custom("Dosis", size: 14))
-        .frame(height: 36)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 4)
     }
 }
 
@@ -139,7 +145,9 @@ struct EditProfileDatePickerView: View {
             Text(title)
                 .padding(.leading, 8)
                 .frame(width: 100, alignment: .leading)
-            
+                .foregroundColor(Color.theme.lightLavender)
+                .font(.custom("Dosis", size: 16))
+
             Spacer()
 
             DatePicker(
@@ -147,11 +155,14 @@ struct EditProfileDatePickerView: View {
                 selection: $date,
                 displayedComponents: displayComponents
             )
-            .datePickerStyle(CompactDatePickerStyle())
             .labelsHidden()
+            .environment(\.colorScheme, .dark)
+            .accentColor(Color.theme.lightLavender)
+            .background(Color.clear)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
         }
-        .font(.custom("Dosis", size: 14))
-        .padding(.vertical, 8)
+        .padding(.horizontal, 16)
     }
 }
 

@@ -12,7 +12,7 @@ struct ProfileActionButtonView: View {
                     Image("edit")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 32, height: 32)
+                        .frame(width: 28, height: 28)
                         .foregroundColor(Color.theme.lavender)
                 }
                 .frame(width: 32, height: 32)
