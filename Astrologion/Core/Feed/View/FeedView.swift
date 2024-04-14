@@ -10,31 +10,35 @@ struct FeedView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.theme.darkBlue.edgesIgnoringSafeArea(.top)
+                Color.theme.darkBlue.edgesIgnoringSafeArea(.all)
                 
                 if viewModel.posts.isEmpty {
-                    ScrollView {
-                        
-                        LazyVStack(alignment: .center) {
-                            Text("You do not orbit anyone or nobody has posted lately. Go to the ")
-                                .font(.custom("Dosis", size: 15))
-                                .foregroundColor(Color.theme.lightLavender)
-                            
-                            HStack {
-                                Image("orbit")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 24, height: 24)
+                    GeometryReader { geometry in
+                        ScrollView {
+                            VStack(spacing: 20) {
+                                Spacer(minLength: (geometry.size.height - totalContentHeight) / 2)
                                 
-                                Text("tab to find people to orbit.")
-                                    .font(.custom("Dosis", size: 15))
-                                    .foregroundColor(Color.theme.lightLavender)
+                                LazyVStack(alignment: .center, spacing: 10) {
+                                    Text("You do not orbit anyone or nobody has posted lately. Go to the ")
+                                        .font(.custom("Dosis", size: 15))
+                                        .foregroundColor(Color.theme.lightLavender)
+                                    
+                                    HStack {
+                                        Image("orbit")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 24, height: 24)
+                                        
+                                        Text("tab to find people to orbit.")
+                                            .font(.custom("Dosis", size: 15))
+                                            .foregroundColor(Color.theme.lightLavender)
+                                    }
+                                }
+                                
+                                Spacer(minLength: (geometry.size.height - totalContentHeight) / 2)
                             }
                         }
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 24)
                     }
-
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 32) {
@@ -48,14 +52,12 @@ struct FeedView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    
                     Text("Astrologion")
                         .font(.custom("PlayfairDisplay-Regular", size: 24))
                         .foregroundColor(Color.theme.yellow)
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    
                     NavigationLink(
                         destination: UploadMediaView(),
                         label: {
@@ -79,6 +81,10 @@ struct FeedView: View {
         }
     }
     
+    private var totalContentHeight: CGFloat {
+        return 150
+    }
+    
     private func configureGlobalAppearances() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
@@ -88,7 +94,6 @@ struct FeedView: View {
         UINavigationBar.appearance().compactAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         
-        // Tab Bar Appearance
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
         tabBarAppearance.backgroundColor = UIColor(Color.theme.darkBlue)
