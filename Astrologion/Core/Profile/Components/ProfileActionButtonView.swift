@@ -16,18 +16,28 @@ struct ProfileActionButtonView: View {
                         .foregroundColor(Color.theme.lavender)
                 }
                 .frame(width: 32, height: 32)
+                .contentShape(Rectangle())
                 .fullScreenCover(isPresented: $showEditProfile) {
                     EditProfileView(user: $viewModel.user)
                 }
             } else {
-                Button(action: { isFollowed ? viewModel.unfollow() : viewModel.follow() }) {
+                Button(action: {
+                    isFollowed ? viewModel.unfollow() : viewModel.follow()
+                    viewModel.user.isFollowed?.toggle()
+                }) {
                     Image(isFollowed ? "follow-fill" : "follow")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 24, height: 24)
-                        .foregroundColor(isFollowed ? .black : .red)
                 }
                 .frame(width: 32, height: 32)
+                .background(isFollowed ? Color.theme.yellow : Color.theme.lightLavender)
+                .cornerRadius(6)
+                .buttonStyle(PlainButtonStyle())
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.clear, lineWidth: 0)
+                )
             }
             
             Divider()

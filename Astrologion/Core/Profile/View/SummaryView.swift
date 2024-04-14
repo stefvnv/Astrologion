@@ -5,10 +5,7 @@ struct SummaryView: View {
 
     var body: some View {
         ZStack {
-            Image("profile-background")
-                .resizable()
-                .scaledToFit()
-                .edgesIgnoringSafeArea(.all)
+            Color.theme.lightLavender.edgesIgnoringSafeArea(.all)
             
             ScrollView {
                 VStack {

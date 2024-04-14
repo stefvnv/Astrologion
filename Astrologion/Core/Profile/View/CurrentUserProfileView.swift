@@ -5,7 +5,6 @@ struct CurrentUserProfileView: View {
     @State private var selectedTab: ProfileTab = .chart
     @State private var showSettingsSheet = false
     @State private var selectedSettingsOption: SettingsItemModel?
-    @State private var showDetail = false
     @State private var showPasswordInputSheet = false
     @State private var errorMessage: String?
 
@@ -25,6 +24,7 @@ struct CurrentUserProfileView: View {
                     ProfileTabView(selectedTab: $selectedTab, user: user, profileViewModel: profileViewModel)
                 }
             }
+            .background(Color.theme.lightLavender.edgesIgnoringSafeArea(.all))
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

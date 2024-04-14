@@ -27,7 +27,7 @@ struct FeedCell: View {
                 VStack(alignment: .leading) {
                     NavigationLink(value: viewModel.post.user) {
                         Text(viewModel.post.user?.username ?? "")
-                            .font(Font.custom("PlayfairDisplay-Regular", size: 14).weight(.semibold))
+                            .font(Font.custom("Dosis", size: 14).weight(.semibold))
                             .foregroundColor(Color.theme.lightLavender)
                     }
                     

@@ -46,7 +46,7 @@ struct PlanetDetailView: View {
                 Spacer()
                 
                 Text(housePosition)
-                    .font(.custom("Dosis", size: 18))
+                    .font(.custom("PlayfairDisplay-Regular", size: 16))
                     .fontWeight(.regular)
                     .frame(minWidth: 44)
                     .padding(.trailing, 20)

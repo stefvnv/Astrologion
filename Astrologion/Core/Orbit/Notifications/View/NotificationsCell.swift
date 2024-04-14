@@ -20,17 +20,20 @@ struct NotificationCell: View {
                 NavigationLink(destination: ProfileView(user: user)) {
                     CircularProfileImageView(user: user, size: .xSmall)
                     
-                    HStack {
-                        Text(user.username)
-                            .font(.system(size: 14, weight: .semibold)) +
-                        
+                        HStack {
+                            
+                            Text(user.username)
+                                .font(.custom("Dosis", size: 15).weight(.semibold))
+                                .foregroundColor(Color.theme.lavender)
+                            
                             Text(notification.type.notificationMessage)
-                            .font(.system(size: 14)) +
-                        
-                        Text(" \(notification.timestamp.timestampString())")
-                            .foregroundColor(.gray).font(.system(size: 12))
-                    }
-                    .multilineTextAlignment(.leading)
+                                .font(.custom("Dosis", size: 14))
+                                .foregroundColor(Color.theme.lightLavender)
+
+                            Text(notification.timestamp.timestampString())
+                                .font(.custom("Dosis", size: 12))
+                                .foregroundColor(.gray)
+                        }
                 }
             }
             
@@ -51,19 +54,15 @@ struct NotificationCell: View {
                     isFollowed ? viewModel.unfollow() : viewModel.follow()
                     notification.isFollowed?.toggle()
                 }, label: {
-                    Text(isFollowed ? "Following" : "Follow")
-                        .font(.system(size: 14, weight: .semibold))
-                        .frame(width: 100, height: 32)
-                        .foregroundColor(isFollowed ? .black : .white)
-                        .background(isFollowed ? Color.white : Color.blue)
-                        .cornerRadius(6)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(Color.gray, lineWidth: isFollowed ? 1 : 0)
-                        )
+                    Image(isFollowed ? "follow-fill" : "follow")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                 })
+                .frame(width: 100, height: 32)
+                .background(isFollowed ? Color.theme.yellow: Color.theme.lightLavender)
+                .cornerRadius(6)
             }
-            
         }
         .padding(.horizontal)
     }

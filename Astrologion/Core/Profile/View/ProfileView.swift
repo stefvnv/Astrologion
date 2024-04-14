@@ -19,6 +19,7 @@ struct ProfileView: View {
                 ProfileTabView(selectedTab: $selectedTab, user: user, profileViewModel: profileViewModel)
             }
         }
+        .background(Color.theme.lightLavender.edgesIgnoringSafeArea(.all))
         .navigationTitle(user.username)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)

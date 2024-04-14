@@ -21,12 +21,14 @@ struct NotificationsView: View {
                 .navigationTitle("Notifications")
                 .navigationBarTitleDisplayMode(.inline)
             }
+            .background(Color.theme.darkBlue)
             .overlay {
                 if viewModel.isLoading {
                     ProgressView()
                 }
             }
         }
+        .background(Color.theme.darkBlue)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
     }
@@ -38,5 +40,11 @@ struct NotificationsView: View {
             Image(systemName: "arrow.left")
                 .foregroundColor(Color.theme.lightLavender)
         }
+    }
+}
+
+struct NotificationsView_Previews: PreviewProvider {
+    static var previews: some View {
+        NotificationsView()
     }
 }
