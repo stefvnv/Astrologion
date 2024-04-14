@@ -24,7 +24,8 @@ struct TransitsPlanetView: View {
                 transitsViewModel: transitsViewModel,
                 selectedPlanet: selectedPlanet
             )
-            .frame(height: 600)
+            .aspectRatio(1, contentMode: .fit)
+            .padding()
 
             Image(self.imageName)
                 .resizable()
@@ -39,14 +40,14 @@ struct TransitsPlanetView: View {
         guard let transit = transitsViewModel.currentTransits.first(where: { $0.planet == selectedPlanet }) else {
             return AnyView(Text("No transiting data for \(selectedPlanet.rawValue)").padding())
         }
-
+        
         let summaryDescription = transit.transitSummaryDescription(
             descriptions: transitsViewModel.transitSummaryDescriptions
         )
-
+        
         return AnyView(TransitsPlanetSummaryView(transit: transit, summaryDescription: summaryDescription))
     }
-
+    
     
     private var transitsDetailSection: some View {
         ForEach(transitsViewModel.currentTransits.filter { $0.planet == selectedPlanet }, id: \.id) { transit in

@@ -4,23 +4,24 @@ struct TransitsOverviewView: View {
     let user: User
     @ObservedObject var transitsViewModel: TransitsViewModel
     @Binding var selectedTab: TransitTab
-
+    
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
-                if transitsViewModel.userChart != nil {
+                if let chart = transitsViewModel.userChart {
                     TransitChartViewRepresentable(
                         user: user,
                         currentTransits: transitsViewModel.currentTransits,
                         transitsViewModel: transitsViewModel,
-                        selectedPlanet: nil 
+                        selectedPlanet: nil
                     )
-                    .frame(height: 600)
+                    .aspectRatio(1, contentMode: .fit)
+                    .padding()
                 } else {
                     Text("Loading chart...")
                         .frame(height: 600)
                 }
-
+                
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -28,7 +29,7 @@ struct TransitsOverviewView: View {
                     .padding(.bottom, -50)
             }
             .padding(.bottom, 100)
-
+            
             if transitsViewModel.isLoadingChartData {
                 ProgressView()
             } else {

@@ -179,6 +179,7 @@
 		F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A709292BB8F3E9008599A5 /* Dosis.ttf */; };
 		F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */; };
 		F8A8BD182BCBF68800B61B4E /* RulerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A8BD172BCBF68800B61B4E /* RulerSummaryView.swift */; };
+		F8A8BD1E2BCC118000B61B4E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A8BD1D2BCC118000B61B4E /* ChartView.swift */; };
 		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
 		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
@@ -215,7 +216,6 @@
 		F8C006FA2BB5866E005741FC /* AstrologicalAspectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */; };
 		F8C006FC2BB586A1005741FC /* PlanetPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006FB2BB586A1005741FC /* PlanetPosition.swift */; };
 		F8C006FE2BB5C6BD005741FC /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006FD2BB5C6BD005741FC /* SummaryView.swift */; };
-		F8C007002BB5C6CA005741FC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C006FF2BB5C6C9005741FC /* ChartView.swift */; };
 		F8C007022BB5C6E4005741FC /* PlanetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007012BB5C6E4005741FC /* PlanetsView.swift */; };
 		F8C007042BB5C6EE005741FC /* HousesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007032BB5C6EE005741FC /* HousesView.swift */; };
 		F8C007062BB5C798005741FC /* AspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C007052BB5C798005741FC /* AspectsView.swift */; };
@@ -382,6 +382,7 @@
 		F8A709292BB8F3E9008599A5 /* Dosis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dosis.ttf; sourceTree = "<group>"; };
 		F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		F8A8BD172BCBF68800B61B4E /* RulerSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerSummaryView.swift; sourceTree = "<group>"; };
+		F8A8BD1D2BCC118000B61B4E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
@@ -418,7 +419,6 @@
 		F8C006F92BB5866E005741FC /* AstrologicalAspectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologicalAspectData.swift; sourceTree = "<group>"; };
 		F8C006FB2BB586A1005741FC /* PlanetPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetPosition.swift; sourceTree = "<group>"; };
 		F8C006FD2BB5C6BD005741FC /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		F8C006FF2BB5C6C9005741FC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		F8C007012BB5C6E4005741FC /* PlanetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsView.swift; sourceTree = "<group>"; };
 		F8C007032BB5C6EE005741FC /* HousesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesView.swift; sourceTree = "<group>"; };
 		F8C007052BB5C798005741FC /* AspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectsView.swift; sourceTree = "<group>"; };
@@ -774,7 +774,7 @@
 				F819B5FE2BACE300001B138A /* ProfileView.swift */,
 				F819B6002BACE33A001B138A /* CurrentUserProfileView.swift */,
 				F8C007092BB5D14E005741FC /* ProfileTabView.swift */,
-				F8C006FF2BB5C6C9005741FC /* ChartView.swift */,
+				F8A8BD1D2BCC118000B61B4E /* ChartView.swift */,
 				F8C007012BB5C6E4005741FC /* PlanetsView.swift */,
 				F8C007032BB5C6EE005741FC /* HousesView.swift */,
 				F8C007052BB5C798005741FC /* AspectsView.swift */,
@@ -1569,7 +1569,6 @@
 				F819B5722BACBF63001B138A /* ImageUploader.swift in Sources */,
 				F897519D2BB8526F00138D25 /* OrbitTabView.swift in Sources */,
 				F819B5D72BACE06D001B138A /* MessageViewModel.swift in Sources */,
-				F8C007002BB5C6CA005741FC /* ChartView.swift in Sources */,
 				F819B61B2BACE555001B138A /* Constants.swift in Sources */,
 				F8BAA9802BB6CB8D002E349C /* AspectDetailView.swift in Sources */,
 				F8C007042BB5C6EE005741FC /* HousesView.swift in Sources */,
@@ -1695,6 +1694,7 @@
 				F8409FE32BADD9D400D007F8 /* NatalChartView.swift in Sources */,
 				F819B5F52BACE226001B138A /* EditProfileView.swift in Sources */,
 				F8A102E22BC6E56E00841BB3 /* TabViewStyleModifier.swift in Sources */,
+				F8A8BD1E2BCC118000B61B4E /* ChartView.swift in Sources */,
 				F819B5A32BACC3B0001B138A /* LoginView.swift in Sources */,
 				F8A1F87F2BBEA2D500A604AF /* AstrologicalCalculations.swift in Sources */,
 				F819B56C2BACBF2B001B138A /* Post.swift in Sources */,
