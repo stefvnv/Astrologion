@@ -39,7 +39,7 @@ struct PlanetExpandedView: View {
                 
                 
                 Text(house.shortHouseFormat)
-                    .font(.custom("Dosis", size: 18))
+                    .font(.custom("PlayfairDisplay-Regular", size: 18))
                     .foregroundColor(Color.theme.darkBlue)
                     .padding(10)
                     .background(

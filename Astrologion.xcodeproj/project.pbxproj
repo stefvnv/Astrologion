@@ -178,6 +178,7 @@
 		F8A620AB2BBB79E200F84AFE /* AspectDescriptionData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A620AA2BBB79E200F84AFE /* AspectDescriptionData.json */; };
 		F8A7092A2BB8F3E9008599A5 /* Dosis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A709292BB8F3E9008599A5 /* Dosis.ttf */; };
 		F8A7092C2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */; };
+		F8A8BD182BCBF68800B61B4E /* RulerSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A8BD172BCBF68800B61B4E /* RulerSummaryView.swift */; };
 		F8B1CF442BAF21C20014E8CF /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF432BAF21C20014E8CF /* Chart.swift */; };
 		F8B1CF462BAF22640014E8CF /* ChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF452BAF22640014E8CF /* ChartService.swift */; };
 		F8B1CF482BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */; };
@@ -380,6 +381,7 @@
 		F8A620AA2BBB79E200F84AFE /* AspectDescriptionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AspectDescriptionData.json; sourceTree = "<group>"; };
 		F8A709292BB8F3E9008599A5 /* Dosis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dosis.ttf; sourceTree = "<group>"; };
 		F8A7092B2BB8F486008599A5 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		F8A8BD172BCBF68800B61B4E /* RulerSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerSummaryView.swift; sourceTree = "<group>"; };
 		F8B1CF432BAF21C20014E8CF /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		F8B1CF452BAF22640014E8CF /* ChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartService.swift; sourceTree = "<group>"; };
 		F8B1CF472BAF7B5C0014E8CF /* NatalChartViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatalChartViewRepresentable.swift; sourceTree = "<group>"; };
@@ -1110,9 +1112,9 @@
 			children = (
 				F8409FFB2BADDBEA00D007F8 /* AspectColor.swift */,
 				F8409FFD2BADDBF700D007F8 /* ChartColor.swift */,
-				F840A0012BADDC1300D007F8 /* PlanetColor.swift */,
 				F8BAA9932BB7698A002E349C /* ElementColor.swift */,
 				F8BAA99E2BB7899D002E349C /* ModalityColor.swift */,
+				F840A0012BADDC1300D007F8 /* PlanetColor.swift */,
 				F8BAA9A02BB7917C002E349C /* PolarityColor.swift */,
 			);
 			path = Color;
@@ -1392,6 +1394,7 @@
 		F8BAA9852BB749B2002E349C /* Summary */ = {
 			isa = PBXGroup;
 			children = (
+				F8A8BD172BCBF68800B61B4E /* RulerSummaryView.swift */,
 				F8BAA98F2BB756A2002E349C /* ElementSummaryView.swift */,
 				F8BAA99C2BB78395002E349C /* ModalitySummaryView.swift */,
 				F8BAA9A22BB7930E002E349C /* PolaritySummaryView.swift */,
@@ -1590,6 +1593,7 @@
 				F8BAA99F2BB7899D002E349C /* ModalityColor.swift in Sources */,
 				F8C006F52BB5832F005741FC /* CGFloat.swift in Sources */,
 				F8A1F8B52BBF90F200A604AF /* PartView.swift in Sources */,
+				F8A8BD182BCBF68800B61B4E /* RulerSummaryView.swift in Sources */,
 				F8B7BDB92BBCB5240014DD7A /* LongitudeParser.swift in Sources */,
 				F840A0142BAE299900D007F8 /* CustomError.swift in Sources */,
 				F819B6032BACE3CD001B138A /* ProfileViewModel.swift in Sources */,

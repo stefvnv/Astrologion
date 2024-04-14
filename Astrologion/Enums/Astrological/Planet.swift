@@ -63,7 +63,7 @@ public enum Planet: String, CaseIterable {
             return model.planetPositions[self]?.longitude
         }
     }
-
+    
     var color: UIColor {
         switch self {
         case .Sun: return PlanetColor.sun.uiColor
@@ -82,6 +82,25 @@ public enum Planet: String, CaseIterable {
         }
     }
     
+    var darkerColor: UIColor {
+        switch self {
+        case .Sun: return PlanetColor.darkSun.uiColor
+        case .Moon: return PlanetColor.darkMoon.uiColor
+        case .Mercury: return PlanetColor.darkMercury.uiColor
+        case .Venus: return PlanetColor.darkVenus.uiColor
+        case .Mars: return PlanetColor.darkMars.uiColor
+        case .Jupiter: return PlanetColor.darkJupiter.uiColor
+        case .Saturn: return PlanetColor.darkSaturn.uiColor
+        case .Uranus: return PlanetColor.darkUranus.uiColor
+        case .Neptune: return PlanetColor.darkNeptune.uiColor
+        case .Pluto: return PlanetColor.darkPluto.uiColor
+        case .NorthNode: return PlanetColor.darkNorthNode.uiColor
+        case .Lilith: return PlanetColor.darkLilith.uiColor
+        case .Ascendant, .Midheaven: return PlanetColor.darkGold.uiColor
+        }
+    }
+    
+    
     // MARK: - Transits
     var descriptionPrefix: String {
         switch self {
@@ -93,5 +112,5 @@ public enum Planet: String, CaseIterable {
     static let primary: [Planet] = [
         .Sun, .Moon, .Mercury, .Venus, .Mars, .Jupiter, .Saturn, .Uranus, .Neptune, .Pluto
     ]
-
+    
 }
