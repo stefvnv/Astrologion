@@ -8,7 +8,7 @@ struct TransitsOverviewView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottom) {
-                if let chart = transitsViewModel.userChart {
+                if transitsViewModel.userChart != nil {
                     TransitChartViewRepresentable(
                         user: user,
                         currentTransits: transitsViewModel.currentTransits,

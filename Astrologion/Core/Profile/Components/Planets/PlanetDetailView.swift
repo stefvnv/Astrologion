@@ -53,7 +53,7 @@ struct PlanetDetailView: View {
                     .foregroundColor(Color.theme.darkBlue)
             }
             .padding()
-            .background(Color.theme.purple.opacity(0.15))
+            .background(Color(Planet(rawValue: planetName)?.color ?? UIColor.gray).opacity(0.5))
             .cornerRadius(10)
             .overlay(
                 Image(imageName)

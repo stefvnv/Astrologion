@@ -12,12 +12,8 @@ struct TransitsView: View {
 
     var body: some View {
         ZStack {
-            // Background image
-            Image("transits-background")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
-
+            Color.theme.darkBlue.edgesIgnoringSafeArea(.all)
+            
             VStack {
                 TransitsTabView(selectedTab: $selectedTab)
 
