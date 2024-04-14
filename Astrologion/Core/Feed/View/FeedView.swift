@@ -10,15 +10,40 @@ struct FeedView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.theme.darkBlue.edgesIgnoringSafeArea(.top) // Navy-colored background
+                Color.theme.darkBlue.edgesIgnoringSafeArea(.top)
                 
-                ScrollView {
-                    LazyVStack(spacing: 32) {
-                        ForEach(viewModel.posts) { post in
-                            FeedCell(post: post)
+                if viewModel.posts.isEmpty {
+                    ScrollView {
+                        
+                        LazyVStack(alignment: .center) {
+                            Text("You do not orbit anyone or nobody has posted lately. Go to the ")
+                                .font(.custom("Dosis", size: 15))
+                                .foregroundColor(Color.theme.lightLavender)
+                            
+                            HStack {
+                                Image("orbit")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 24, height: 24)
+                                
+                                Text("tab to find people to orbit.")
+                                    .font(.custom("Dosis", size: 15))
+                                    .foregroundColor(Color.theme.lightLavender)
+                            }
                         }
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 24)
                     }
-                    .padding(.top)
+
+                } else {
+                    ScrollView {
+                        LazyVStack(spacing: 32) {
+                            ForEach(viewModel.posts) { post in
+                                FeedCell(post: post)
+                            }
+                        }
+                        .padding(.top)
+                    }
                 }
             }
             .toolbar {
@@ -31,7 +56,6 @@ struct FeedView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
-                    // create post TODO: fix after clicking share button
                     NavigationLink(
                         destination: UploadMediaView(),
                         label: {
@@ -63,7 +87,7 @@ struct FeedView: View {
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-
+        
         // Tab Bar Appearance
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()

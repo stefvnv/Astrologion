@@ -21,7 +21,7 @@ struct ProfileActionButtonView: View {
                 }
             } else {
                 Button(action: { isFollowed ? viewModel.unfollow() : viewModel.follow() }) {
-                    Image(isFollowed ? "heart-fill" : "heart")
+                    Image(isFollowed ? "follow-fill" : "follow")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 24, height: 24)
