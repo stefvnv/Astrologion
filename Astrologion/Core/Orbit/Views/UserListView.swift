@@ -33,5 +33,6 @@ struct UserListView: View {
             .padding(.top)
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer)
+        
     }
 }

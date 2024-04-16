@@ -37,7 +37,7 @@ struct NotificationsView: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            Image(systemName: "arrow.left")
+            Image(systemName: "chevron.left")
                 .foregroundColor(Color.theme.lightLavender)
         }
     }

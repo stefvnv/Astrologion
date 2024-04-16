@@ -31,7 +31,7 @@ struct TransitsPlanetView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
-                .padding(.bottom, -50)
+                .padding(.bottom, -80)
         }
         .padding(.bottom, 80)
     }

@@ -32,6 +32,6 @@ struct UserStatView_Previews: PreviewProvider {
         UserStatView(value: 1, title: "Posts")
             .previewLayout(.sizeThatFits)
             .padding()
-            .background(Color.theme.darkBlue) // Preview on a dark blue background
+            .background(Color.theme.darkBlue)
     }
 }

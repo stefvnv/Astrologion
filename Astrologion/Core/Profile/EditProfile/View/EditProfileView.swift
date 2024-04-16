@@ -99,7 +99,7 @@ struct EditProfileView: View {
         Button(action: {
             dismiss()
         }) {
-            Image(systemName: "arrow.left")
+            Image(systemName: "chevron.left")
                 .foregroundColor(Color.theme.lightLavender)
         }
     }
