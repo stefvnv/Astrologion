@@ -12,14 +12,21 @@ struct CommentCell: View {
                 HStack(spacing: 2) {
                     Text(comment.user?.username ?? "")
                         .fontWeight(.semibold)
+                        .font(.custom("Dosis", size: 16))
+                        .foregroundColor(Color.theme.lightLavender)
+                    
+                    Spacer()
                     
                     Text(comment.timestamp.timestampString())
+                        .font(.custom("Dosis", size: 12))
                         .foregroundColor(.gray)
                 }
                 
                 Text(comment.commentText)
+                    .font(.custom("Dosis", size: 14))
+                    .foregroundColor(Color.theme.lightLavender)
             }
-            .font(.caption)
-        }.padding(.horizontal)
+        }
+        .padding(.horizontal)
     }
 }

@@ -28,6 +28,7 @@ struct CommentsView: View {
         }
         .navigationTitle("Comments")
         .toolbar(.hidden, for: .tabBar)
+        .background(Color.theme.darkBlue)
     }
     
     func uploadComment() {

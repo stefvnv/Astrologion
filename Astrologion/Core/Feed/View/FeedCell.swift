@@ -46,8 +46,7 @@ struct FeedCell: View {
             }
             .padding(.leading, 8)
             .padding(.bottom, 10)
-            
-            
+ 
             HStack {
                 
                 KFImage(URL(string: post.imageUrl))
@@ -59,9 +58,16 @@ struct FeedCell: View {
             }
             .padding(.bottom, 5)
             
+            
             HStack(spacing: -8) {
                 Button(action: {
-                    Task { didLike ? try await viewModel.unlike() : try await viewModel.like() }
+                    Task {
+                        if viewModel.post.didLike ?? false {
+                            try await viewModel.unlike()
+                        } else {
+                            try await viewModel.like()
+                        }
+                    }
                 }) {
                     Text("\(viewModel.likeString)")
                         .font(.custom("Dosis", size: 12))
@@ -70,7 +76,6 @@ struct FeedCell: View {
                         .frame(maxWidth: .infinity, minHeight: 40)
                         .background(didLike ? Color.yellow.opacity(0.5) : Color.theme.lavender.opacity(0.5))
                         .cornerRadius(8)
-                    
                 }
                 .padding(8)
                 
@@ -96,7 +101,6 @@ struct FeedCell: View {
                         .font(.custom("Dosis", size: 14))
                         .foregroundColor(Color.theme.lightLavender)
                         .fixedSize(horizontal: false, vertical: true)
-                    
                 }
                 Spacer()
             }

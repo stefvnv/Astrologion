@@ -39,6 +39,11 @@ class FeedViewModel: ObservableObject {
             
             self.posts = posts.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
         })
+        
+        for index in posts.indices {
+            let post = posts[index]
+            posts[index].didLike = try await PostService.checkIfUserLikedPost(post)
+        }
     }
     
     
