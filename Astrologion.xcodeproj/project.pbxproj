@@ -225,7 +225,6 @@
 		F8C0070F2BB62F90005741FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C0070E2BB62F90005741FC /* Assets.xcassets */; };
 		F8C594652BCAD0210003CB26 /* BirthDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C594642BCAD0210003CB26 /* BirthDetails.swift */; };
 		F8C594672BCAE6F60003CB26 /* DeleteButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C594662BCAE6F60003CB26 /* DeleteButtonModifier.swift */; };
-		F8C5946B2BCB23BB0003CB26 /* SmallButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C5946A2BCB23BB0003CB26 /* SmallButtonModifier.swift */; };
 		F8CBE0662BC0D8990013A867 /* PlanetaryPlacementHouseData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */; };
 		F8D3C0832BBDDD520075A137 /* TransitsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */; };
 		F8D3C0852BBDE2E80075A137 /* TransitOverviewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */; };
@@ -234,6 +233,16 @@
 		F8D3C08B2BBDFB2A0075A137 /* TransitDescriptionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = F8D3C08A2BBDFB2A0075A137 /* TransitDescriptionsData.json */; };
 		F8D3C08D2BBDFC2D0075A137 /* TransitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3C08C2BBDFC2D0075A137 /* TransitDescription.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F89F53AE2BCEDC65004F1BB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F819B4CA2BAC970A001B138A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F819B4D12BAC970A001B138A;
+			remoteInfo = Astrologion;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F80536C22BC939FC008E030C /* IntroductionChapters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = IntroductionChapters.json; sourceTree = "<group>"; };
@@ -343,6 +352,7 @@
 		F89751A62BB89C1B00138D25 /* OrbitTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitTab.swift; sourceTree = "<group>"; };
 		F89751AA2BB8EDD300138D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F897CB2C2BC356BC00A804F7 /* CGVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGVector.swift; sourceTree = "<group>"; };
+		F89F53AA2BCEDC65004F1BB4 /* AstrologionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstrologionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundedRectangle.swift; sourceTree = "<group>"; };
 		F8A102DE2BC6BE1D00841BB3 /* BottomRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomRoundedRectangle.swift; sourceTree = "<group>"; };
 		F8A102E12BC6E56E00841BB3 /* TabViewStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewStyleModifier.swift; sourceTree = "<group>"; };
@@ -428,7 +438,6 @@
 		F8C0070E2BB62F90005741FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8C594642BCAD0210003CB26 /* BirthDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDetails.swift; sourceTree = "<group>"; };
 		F8C594662BCAE6F60003CB26 /* DeleteButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonModifier.swift; sourceTree = "<group>"; };
-		F8C5946A2BCB23BB0003CB26 /* SmallButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButtonModifier.swift; sourceTree = "<group>"; };
 		F8CBE0652BC0D8990013A867 /* PlanetaryPlacementHouseData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlanetaryPlacementHouseData.json; sourceTree = "<group>"; };
 		F8D3C0822BBDDD520075A137 /* TransitsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitsTabView.swift; sourceTree = "<group>"; };
 		F8D3C0842BBDE2E80075A137 /* TransitOverviewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitOverviewDetailView.swift; sourceTree = "<group>"; };
@@ -475,6 +484,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F89F53A72BCEDC65004F1BB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -492,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				F819B4D22BAC970A001B138A /* Astrologion.app */,
+				F89F53AA2BCEDC65004F1BB4 /* AstrologionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1024,7 +1041,6 @@
 			children = (
 				F819B61C2BACE570001B138A /* ButtonModifier.swift */,
 				F8C594662BCAE6F60003CB26 /* DeleteButtonModifier.swift */,
-				F8C5946A2BCB23BB0003CB26 /* SmallButtonModifier.swift */,
 				F819B61E2BACE579001B138A /* TextFieldModifier.swift */,
 				F8B7BD9D2BBC85120014DD7A /* DeleteAccountView.swift */,
 				F8A102DC2BC6BDF200841BB3 /* TopRoundedRectangle.swift */,
@@ -1487,6 +1503,24 @@
 			productReference = F819B4D22BAC970A001B138A /* Astrologion.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F89F53A92BCEDC65004F1BB4 /* AstrologionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F89F53B22BCEDC65004F1BB4 /* Build configuration list for PBXNativeTarget "AstrologionTests" */;
+			buildPhases = (
+				F89F53A62BCEDC65004F1BB4 /* Sources */,
+				F89F53A72BCEDC65004F1BB4 /* Frameworks */,
+				F89F53A82BCEDC65004F1BB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F89F53AF2BCEDC65004F1BB4 /* PBXTargetDependency */,
+			);
+			name = AstrologionTests;
+			productName = AstrologionTests;
+			productReference = F89F53AA2BCEDC65004F1BB4 /* AstrologionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1499,6 +1533,10 @@
 				TargetAttributes = {
 					F819B4D12BAC970A001B138A = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					F89F53A92BCEDC65004F1BB4 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = F819B4D12BAC970A001B138A;
 					};
 				};
 			};
@@ -1521,6 +1559,7 @@
 			projectRoot = "";
 			targets = (
 				F819B4D12BAC970A001B138A /* Astrologion */,
+				F89F53A92BCEDC65004F1BB4 /* AstrologionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1547,6 +1586,13 @@
 				F819B4E42BAC9809001B138A /* GoogleService-Info.plist in Resources */,
 				F8A620A02BBB406100F84AFE /* HouseCuspData.json in Resources */,
 				F8A1F8B12BBF7B1700A604AF /* ZodiacSignsChapters.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F89F53A82BCEDC65004F1BB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1662,7 +1708,6 @@
 				F819B6172BACE530001B138A /* Extensions.swift in Sources */,
 				F819B5B32BACC4AC001B138A /* AdaptiveImage.swift in Sources */,
 				F8D3C0852BBDE2E80075A137 /* TransitOverviewDetailView.swift in Sources */,
-				F8C5946B2BCB23BB0003CB26 /* SmallButtonModifier.swift in Sources */,
 				F819B60B2BACE45E001B138A /* UploadMediaView.swift in Sources */,
 				F819B5A52BACC3D8001B138A /* LoginViewModel.swift in Sources */,
 				F8B7BDAB2BBC91F80014DD7A /* TransitTab.swift in Sources */,
@@ -1740,7 +1785,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F89F53A62BCEDC65004F1BB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F89F53AF2BCEDC65004F1BB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F819B4D12BAC970A001B138A /* Astrologion */;
+			targetProxy = F89F53AE2BCEDC65004F1BB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F819B4DE2BAC970C001B138A /* Debug */ = {
@@ -1922,6 +1982,40 @@
 			};
 			name = Release;
 		};
+		F89F53B02BCEDC65004F1BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stefana.AstrologionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astrologion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Astrologion";
+			};
+			name = Debug;
+		};
+		F89F53B12BCEDC65004F1BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stefana.AstrologionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Astrologion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Astrologion";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1939,6 +2033,15 @@
 			buildConfigurations = (
 				F819B4E12BAC970C001B138A /* Debug */,
 				F819B4E22BAC970C001B138A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F89F53B22BCEDC65004F1BB4 /* Build configuration list for PBXNativeTarget "AstrologionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89F53B02BCEDC65004F1BB4 /* Debug */,
+				F89F53B12BCEDC65004F1BB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

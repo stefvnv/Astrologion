@@ -18,82 +18,92 @@ struct FeedCell: View {
         return viewModel.post
     }
     
-    // TODO: Fix structure (figma)
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             HStack {
                 CircularProfileImageView(user: viewModel.post.user, size: .xSmall)
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 0) {
                     NavigationLink(value: viewModel.post.user) {
                         Text(viewModel.post.user?.username ?? "")
                             .font(Font.custom("Dosis", size: 14).weight(.semibold))
                             .foregroundColor(Color.theme.lightLavender)
                     }
                     
-                    // sun, moon, asc
-                    Text("☉ \(viewModel.sunSign) ☾ \(viewModel.moonSign) ↑ \(viewModel.ascendantSign)")
-                        .font(Font.custom("Dosis", size: 12))
-                        .foregroundColor(Color.gray)
+                    HStack {
+                        Text("☉ \(viewModel.sunSign)  ☾ \(viewModel.moonSign)  ↑ \(viewModel.ascendantSign)")
+                            .font(Font.custom("Dosis", size: 12))
+                            .foregroundColor(Color.gray)
+                        
+                        Spacer()
+                        
+                        Text(post.timestamp.timestampString())
+                            .font(.custom("Dosis", size: 12))
+                            .foregroundColor(.gray)
+                            .padding(.trailing)
+                    }
                 }
             }
-            .padding([.leading, .bottom], 4)
-            
-            KFImage(URL(string: post.imageUrl))
-                .resizable()
-                .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width, height: 400)
-                .clipped()
-                .contentShape(Rectangle())
-                      
-            HStack(spacing: 16) {
-                Button(action: {
-                    Task { didLike ? try await viewModel.unlike() : try await viewModel.like() }
-                }, label: {
-                    Image(didLike ? "stardust_fill" : "stardust")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 20, height: 20)
-                        .padding(4)
-                })
-                
-                NavigationLink(destination: CommentsView(post: post)) {
-                    Image(systemName: "bubble.right")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 20, height: 20)
-                        .font(.system(size: 20))
-                        .padding(4)
-                        .foregroundColor(Color.theme.lavender)
-                }
-            }
-            .padding(.leading, 4)
-            
-            // likes display
-            NavigationLink(value: SearchViewModelConfig.likes(viewModel.post.id ?? "")) {
-                Text(viewModel.likeString)
-                    .font(.system(size: 14, weight: .semibold))
-                    .padding(.leading, 8)
-                    .padding(.bottom, 0.5)
-                    .foregroundColor(Color.theme.lightLavender)
-            }
+            .padding(.leading, 8)
+            .padding(.bottom, 10)
             
             
             HStack {
-                //Text(post.user?.username ?? "").font(.system(size: 14, weight: .semibold)) +
-                    Text(" \(post.caption)")
-                    .font(.system(size: 14))
-            }.padding(.horizontal, 8)
+                
+                KFImage(URL(string: post.imageUrl))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width, height: 400)
+                    .clipped()
+                    .contentShape(Rectangle())
+            }
+            .padding(.bottom, 5)
             
-            // post age
-            Text(post.timestamp.timestampString())
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-                .padding(.leading, 8)
-                .padding(.top, -2)
+            HStack(spacing: -8) {
+                Button(action: {
+                    Task { didLike ? try await viewModel.unlike() : try await viewModel.like() }
+                }) {
+                    Text("\(viewModel.likeString)")
+                        .font(.custom("Dosis", size: 12))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, minHeight: 40)
+                        .background(didLike ? Color.yellow.opacity(0.5) : Color.theme.lavender.opacity(0.5))
+                        .cornerRadius(8)
+                    
+                }
+                .padding(8)
+                
+                Spacer()
+                
+                NavigationLink(destination: CommentsView(post: post)) {
+                    Text("Comments")
+                        .font(.custom("Dosis", size: 12))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, minHeight: 40)
+                        .background(Color.theme.lavender.opacity(0.5))
+                        .cornerRadius(8)
+                }
+                .padding(8)
+            }
+            .frame(maxWidth: .infinity)
+            
+            
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(post.caption)
+                        .font(.custom("Dosis", size: 14))
+                        .foregroundColor(Color.theme.lightLavender)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
+                }
+                Spacer()
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
         }
-        .padding(8)
         .cornerRadius(8)
-        .shadow(color: Color.black.opacity(0.1), radius: 2, x: 0, y: 2)
+        .shadow(color: Color.black.opacity(0.9), radius: 2, x: 0, y: 2)
     }
 }

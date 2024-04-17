@@ -10,21 +10,16 @@ class FeedCellViewModel: ObservableObject {
     @Published var ascendantSign: String = ""
     
     
-    ///
     var likeString: String {
-        let label = post.likes == 1 ? "like" : "likes"
+        let label = post.likes == 1 ? "Stardust" : "Stardust"
         return "\(post.likes) \(label)"
     }
     
-    
-    ///
     init(post: Post) {
         self.post = post
         fetchUserChart()
     }
     
-    
-    ///
     func fetchUserChart() {
         Task {
             do {
@@ -43,15 +38,11 @@ class FeedCellViewModel: ObservableObject {
         }
     }
 
-
-    ///
     private func signFromPosition(_ position: String?) -> String {
         guard let positionString = position, let sign = positionString.split(separator: " ").first else { return "Unknown" }
         return String(sign)
     }
     
-    
-    ///
     func like() async throws {
         self.post.didLike = true
         Task {
@@ -60,8 +51,6 @@ class FeedCellViewModel: ObservableObject {
         }
     }
     
-    
-    ///
     func unlike() async throws {
         self.post.didLike = false
         Task {
@@ -70,8 +59,6 @@ class FeedCellViewModel: ObservableObject {
         }
     }
     
-    
-    ///
     func checkIfUserLikedPost() async throws {
         self.post.didLike = try await PostService.checkIfUserLikedPost(post)
     }

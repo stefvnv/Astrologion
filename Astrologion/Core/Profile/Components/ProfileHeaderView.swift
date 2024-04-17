@@ -5,7 +5,8 @@ struct ProfileHeaderView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            // Semi-circle and profile picture
+            
+            // semi-circle and profile picture
             ZStack {
                 Path { path in
                     let width = UIScreen.main.bounds.width
@@ -22,7 +23,7 @@ struct ProfileHeaderView: View {
                     .offset(y: UIScreen.main.bounds.width / 4 - 90)
             }
             
-            // Profile info and stats
+            // profile info and stats
             VStack(alignment: .center, spacing: 8) {
                 Text("@\(viewModel.user.username)")
                     .font(.custom("PlayfairDisplay-Regular", size: 22))
@@ -50,7 +51,7 @@ struct ProfileHeaderView: View {
                     .padding(.vertical)
                 }
                 
-                //bio
+                // bio
                 if let bio = viewModel.user.bio, !bio.isEmpty {
                     Text(bio)
                         .font(.custom("Dosis", size: 16))
