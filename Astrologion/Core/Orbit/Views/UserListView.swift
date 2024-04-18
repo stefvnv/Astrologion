@@ -32,6 +32,7 @@ struct UserListView: View {
             .navigationTitle(config.navigationTitle)
             .padding(.top)
         }
+        .background(Color.theme.darkBlue.edgesIgnoringSafeArea(.all)) 
         .searchable(text: $searchText, placement: .navigationBarDrawer)
         
     }

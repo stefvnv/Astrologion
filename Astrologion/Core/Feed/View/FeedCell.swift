@@ -109,5 +109,7 @@ struct FeedCell: View {
         }
         .cornerRadius(8)
         .shadow(color: Color.black.opacity(0.9), radius: 2, x: 0, y: 2)
+        .background(Color.theme.darkBlue.edgesIgnoringSafeArea(.all))
+
     }
 }
